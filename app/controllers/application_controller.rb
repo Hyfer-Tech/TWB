@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 
   protected
 
-  def configure_permitted_parameters
+  def configure_permitted_parameters_for_broker
     devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name, :email, :password, :password_confirmation, :description, :phone, :address_line_1, :address_line_2, :address_line_3, :city, :zip_or_postcode, :state_province_county, :country])
     devise_parameter_sanitizer.permit(:account_update, keys: [:first_name, :last_name, :email, :password, :password_confirmation, :description, :phone, :address_line_1, :address_line_2, :address_line_3, :city, :zip_or_postcode, :state_province_county, :country])
   end

@@ -32,6 +32,9 @@ gem 'react-rails'
 
 gem 'rails-controller-testing'
 
+# Country selector gem
+gem 'country_select'
+
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
@@ -43,6 +46,7 @@ gem 'rails-controller-testing'
 group :development, :test do
   gem 'rspec-rails', '~> 3.4'
   gem 'shoulda-matchers', '~> 3.1'
+  gem 'capybara'
   gem 'byebug'
   gem "factory_girl_rails", "~> 4.0"
 end
