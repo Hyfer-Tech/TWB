@@ -1,5 +1,5 @@
-<%  user = current_business_user if business_user_signed_in? %>
-	
+<% business_user_signed_in? ? user = current_business_user : user = current_broker %>
+
 	Name: <%= "#{user.first_name} #{user.last_name}" %> <br>
 	Email: <%= user.email %> <br>
 	Phone:<%= user.phone %> <br>
@@ -10,6 +10,5 @@
 	City: <%= user.city %> <br>
 	State: <%= user.state_province_county %> <br>
 	Country: <%= user.country %>
-	
+
 	<%= link_to "Edit", edit_business_user_registration_path(user) %>
-	
