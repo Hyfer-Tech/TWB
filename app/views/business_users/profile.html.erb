@@ -1,0 +1,13 @@
+
+	<%= current_business_user.id %> <br>
+	Name: <%= "#{current_business_user.first_name} #{current_business_user.last_name}" %> <br>
+	<%= current_business_user.email %> <br>
+	<%= current_business_user.phone %> <br>
+	<%= current_business_user.description %> <br>
+	<%= current_business_user.address_line_1 %> <br>
+	<%= current_business_user.address_line_2 if current_business_user.address_line_2.present? %> <br>
+	<%= current_business_user.address_line_3 if current_business_user.address_line_3.present? %>
+	<%= current_business_user.city %> <br>
+	<%= current_business_user.state_province_county %> <br>
+	<%= current_business_user.country %>
+
