@@ -5,6 +5,10 @@ Rails.application.routes.draw do
 
   devise_for :business_users
 
+  authenticated :business_user do
+    root 'business_users#index', as: :authenticated_root
+  end
+
   root 'static_pages#index'
 
 
