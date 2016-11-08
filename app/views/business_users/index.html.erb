@@ -1,0 +1,12 @@
+<%= form_tag  authenticated_root_path, method: :get do %>
+  <%= text_field_tag :query, params[:query], placeholder: 'Search for a broker' %>
+  <%= submit_tag "Search", name:  nil %>
+<% end %>
+
+<% @brokers.each do |broker| %>
+  <%= broker.first_name %> <%= broker.last_name %>
+<% end %>
+
+<% if @brokers.blank? %>
+  <h4>Bad Search Response!!!.</h4>
+<% end %>
