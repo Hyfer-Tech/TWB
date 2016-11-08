@@ -4,7 +4,12 @@
 <% end %>
 
 <% @brokers.each do |broker| %>
+  
   <%= broker.first_name %> <%= broker.last_name %>
+  <%= broker.email %>
+  <%= broker.phone %>
+  <%= broker.broker_number %>
+  <br>
 <% end %>
 
 <% if @brokers.blank? %>
