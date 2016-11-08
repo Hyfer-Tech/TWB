@@ -30,10 +30,10 @@ RSpec.describe "Broker Signing Up" do
   end
 
   scenario "unsuccessfully" do
-    broker = FactoryGirl.create(:invalid_broker)
+    broker = FactoryGirl.create(:broker)
     visit new_broker_registration_path
-    fill_in "First Name", with: broker.first_name
-    fill_in "Last Name", with: broker.last_name
+    fill_in "First Name", with: ""
+    fill_in "Last Name", with: ""
     fill_in "Email", with: "example@user.com"
     fill_in "Password", with: broker.password, match: :prefer_exact
     fill_in "Password Confirmation", with: broker.password_confirmation
@@ -50,9 +50,9 @@ RSpec.describe "Broker Signing Up" do
     fill_in "Past Experience", with: broker.past_experience
     fill_in "Service Rate", with: broker.service_rates
     # attach_file("Avatar", Rails.root + "spec/fixtures/files/5.png", visible: false)
-    fill_in "Broker Number", with: broker.broker_number
+    fill_in "Broker Number", with: ""
     click_on "Sign up"
 
-    expect(page).to have_content "error"
+    expect(page).to have_content "Please review the problems below:"
   end
 end
