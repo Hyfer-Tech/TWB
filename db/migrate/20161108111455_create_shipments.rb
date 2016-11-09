@@ -4,7 +4,8 @@ class CreateShipments < ActiveRecord::Migration[5.0]
     	t.integer :quantity
     	t.integer :broker_id
     	t.integer :forward_freight_id
-    	
+    	t.boolean :approval
+    	t.boolean :shipment_confirmed
 
       t.timestamps
     end
