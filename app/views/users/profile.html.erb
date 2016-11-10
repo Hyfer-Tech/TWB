@@ -1,25 +1,20 @@
-	<% if business_user_signed_in?
-				user = current_business_user
-		elsif forward_freight_signed_in?
-				user = current_forward_freight?
-		else
-				user = current_broker? %>
+<% business_user_signed_in? ? user = current_business_user : (forward_freight_signed_in? ? user = current_forward_freight : user = current_broker) %>
 
-		Name: <%= "#{user.first_name} #{user.last_name}" %> <br>
-		Email: <%= user.email %> <br>
-		Phone:<%= user.phone %> <br>
-		Description: <%= user.description %> <br>
-		Address: <%= user.address_line_1 %> <br>
-		<%= user.address_line_2 if user.address_line_2.present? %> <br>
-		<%= user.address_line_3 if user.address_line_3.present? %>
-		City: <%= user.city %> <br>
-		State: <%= user.state_province_county %> <br>
-		Country: <%= user.country %>
 
-<% if business_user_signed_in?
-					edit = edit_business_user_registration_path(user)
-			elsif forward_freight_signed_in?
-					edit = edit_forward_freight_registration_path(user)
-			else
-					edit = edit_broker_registration_path(user)%>
-	<%= link_to "Edit", edit %>
+	Name: <%= "#{user.first_name} #{user.last_name}" %> <br>
+	Email: <%= user.email %> <br>
+	Phone:<%= user.phone %> <br>
+	Description: <%= user.description %> <br>
+	Address: <%= user.address_line_1 %> <br>
+	<%= user.address_line_2 if user.address_line_2.present? %> <br>
+	<%= user.address_line_3 if user.address_line_3.present? %>
+	City: <%= user.city %> <br>
+	State: <%= user.state_province_county %> <br>
+	Country: <%= user.country %>
+
+	<% business_user_signed_in? ? edit = edit_business_user_registration_path(user) : (forward_freight_signed_in? ? edit = edit_forward_freight_registration_path(user) : edit = edit_broker_registration_path(user)) %>
+
+
+<%= link_to "Edit", edit %>
+
+

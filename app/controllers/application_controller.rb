@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   def authenticate_any!
     if broker_signed_in?
         true
-    elsif forward_freight?
+    elsif forward_freight_signed_in?
         true
     else
 
