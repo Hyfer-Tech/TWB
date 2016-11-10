@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
 
+  devise_for :forward_freights
   devise_for :brokers
 
   devise_for :business_users
