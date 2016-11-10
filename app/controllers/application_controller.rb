@@ -8,10 +8,14 @@ class ApplicationController < ActionController::Base
   def authenticate_any!
     if broker_signed_in?
         true
+    elsif forward_freight?
+        true
     else
+
         authenticate_business_user!
     end
   end
+
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name, :email, :password, :password_confirmation, :description, :phone, :address_line_1, :address_line_2, :address_line_3, :city, :zip_postal_code, :state_province_county, :country, :firm_name, :specialty, :past_experience, :service_rates, :avatar, :broker_number, :business_name])
