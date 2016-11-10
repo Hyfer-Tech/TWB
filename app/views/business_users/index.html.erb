@@ -1,17 +1,14 @@
 <%= form_tag  authenticated_root_path, method: :get do %>
-  <%= text_field_tag :query, params[:query], placeholder: 'Search for a broker' %>
+  <%= text_field_tag :q, params[:q], placeholder: 'Search for a broker' %>
   <%= submit_tag "Search", name:  nil %>
 <% end %>
 
-<% @brokers.each do |broker| %>
-  
-  <%= broker.first_name %> <%= broker.last_name %>
-  <%= broker.email %>
-  <%= broker.phone %>
-  <%= broker.broker_number %>
-  <br>
+<% if @brokers.present? %>
+  <% @brokers.each do |broker| %>
+    <%= broker.first_name %> <%= broker.last_name %>
+    <%= broker.email %>
+  <% end %>
+<% else %>
+  <p>Bad Request !!! </p>
 <% end %>
 
-<% if @brokers.blank? %>
-  <h4>Bad Search Response!!!.</h4>
-<% end %>

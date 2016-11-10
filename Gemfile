@@ -35,6 +35,10 @@ gem 'rails-controller-testing'
 # Country selector gem
 gem 'country_select'
 
+gem 'elasticsearch-rails'
+
+gem 'elasticsearch-model'
+
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'

@@ -3,11 +3,6 @@ class BusinessUsersController < ApplicationController
   end
 
   def index 
-    @brokers = Broker.all
-    if params[:query]
-      @brokers = Broker.search(params[:query])
-    else 
-      @brokers = Broker.all
-    end
+    @brokers = Broker.search((params[:q].present? ? params[:q] : '*')).records
   end
 end
