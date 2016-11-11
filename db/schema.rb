@@ -79,14 +79,14 @@ ActiveRecord::Schema.define(version: 20161111054531) do
     t.index ["reset_password_token"], name: "index_business_users_on_reset_password_token", unique: true, using: :btree
   end
 
-<<<<<<< HEAD
   create_table "tags", force: :cascade do |t|
     t.string   "tag"
     t.integer  "taggable_id"
     t.string   "taggable_type"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
-=======
+  end
+
   create_table "forward_freights", force: :cascade do |t|
     t.string   "email"
     t.string   "encrypted_password",     default: "", null: false
