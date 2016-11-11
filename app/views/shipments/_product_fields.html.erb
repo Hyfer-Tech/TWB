@@ -1,0 +1,13 @@
+<div class="nested-fields">
+	<%= f.input :title %>
+	<%= f.input :taxable, as: :boolean %>
+	<%= f.input :featured_image %>
+	<%= f.input :available, as: :boolean %>
+	<%= f.input :price %>
+	<%= f.input :grams %>
+	<%= f.input :compare_at_price %>
+	<%= f.input :product_id %>
+	<%= f.input :quantity %>
+
+	<%= link_to_remove_association "Remove Product", f %>
+</div>
