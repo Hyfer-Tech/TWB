@@ -1,13 +1,13 @@
 module UsersHelper
-  def user
-    if business_user_signed_in?
-      current_business_user
-    elsif forward_freight_signed_in?
-      current_forward_freight
-    else
-      current_broker
-    end
-  end
+  # def user
+  #   if business_user_signed_in?
+  #     current_business_user
+  #   elsif forward_freight_signed_in?
+  #     current_forward_freight
+  #   else
+  #     current_broker
+  #   end
+  # end
 
   def edit(user)
     if business_user_signed_in?

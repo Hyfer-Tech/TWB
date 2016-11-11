@@ -1,10 +1,10 @@
-Name: <%= "#{user.first_name} #{user.last_name}" %> <br>
-Email: <%= user.email %> <br>
-Phone:<%= user.phone %> <br>
-Description: <%= user.description %> <br>
+Name: <%= "#{@user.first_name} #{@user.last_name}" %> <br>
+Email: <%= @user.email %> <br>
+Phone:<%= @user.phone %> <br>
+Description: <%= @user.description %> <br>
 Address: <%= address_line %> <br>
-City: <%= user.city %> <br>
-State: <%= user.state_province_county %> <br>
-Country: <%= user.country %>
+City: <%= @user.city %> <br>
+State: <%= @user.state_province_county %> <br>
+Country: <%= @user.country %>
 
 <%= link_to "Edit", edit(user) %>
