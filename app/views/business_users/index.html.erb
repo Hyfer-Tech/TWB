@@ -8,7 +8,8 @@
     <%= broker.first_name %> <%= broker.last_name %>
     <%= broker.email %>
   <% end %>
-<% else %>
-  <p>Bad Request !!! </p>
 <% end %>
 
+<% unless @brokers.present? or @brokers.nil? %>
+  <h5>Bad Request!!!</h5>
+<% end %>

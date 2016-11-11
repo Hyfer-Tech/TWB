@@ -3,6 +3,6 @@ class BusinessUsersController < ApplicationController
   end
 
   def index 
-    @brokers = Broker.search((params[:q].present? ? params[:q] : '*')).records
+    @brokers = Broker.search_for(params[:q])
   end
 end
