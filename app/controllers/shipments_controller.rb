@@ -6,7 +6,8 @@ class ShipmentsController < ApplicationController
 	end
 
 	def create
-		@shipment = Shipment.create(shipment_params)
+		binding.pry
+		@shipment = Shipment.create!(shipment_params)
 		if @shipment.valid?
 			redirect_to root_path
 		else
