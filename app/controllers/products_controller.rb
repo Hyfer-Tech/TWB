@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController	
-	before_action :authenticate_user!
-	
+	before_action :authenticate_business_user!
+
 	def new
 		@product = Product.new
 	end
