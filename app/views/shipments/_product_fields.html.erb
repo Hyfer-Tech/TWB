@@ -1,5 +1,5 @@
 <div class="nested-fields">
-	<%= f.input :title %>
+	<%= f.input :title, collection: Product.all, label_method: :title, value_method: :id, label: "Title", include_blank: false %>
 	<%= f.input :taxable, as: :boolean %>
 	<%= f.input :featured_image %>
 	<%= f.input :available, as: :boolean %>
@@ -11,3 +11,5 @@
 
 	<%= link_to_remove_association "Remove Product", f %>
 </div>
+
+<!-- <%= f.collection_select(:product_id, Product.all, :id, :title) %> -->
