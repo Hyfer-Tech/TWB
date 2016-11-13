@@ -13,4 +13,5 @@ Rails.application.routes.draw do
   resources :users, only: :show
 
   resources :shipments, only: [:new, :create]
+  resources :products, only: [:new, :create]
 end

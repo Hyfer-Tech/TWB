@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161111111905) do
+ActiveRecord::Schema.define(version: 20161113115305) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -89,10 +89,11 @@ ActiveRecord::Schema.define(version: 20161111111905) do
     t.integer  "grams"
     t.string   "compare_at_price"
     t.bigint   "product_id"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
-    t.integer  "shipment_id"
-    t.integer  "quantity"
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.integer  "shipment_id",      default: 0, null: false
+    t.integer  "quantity",         default: 0, null: false
+    t.index ["shipment_id"], name: "index_products_on_shipment_id", using: :btree
   end
 
   create_table "shipments", force: :cascade do |t|
@@ -102,6 +103,7 @@ ActiveRecord::Schema.define(version: 20161111111905) do
     t.boolean  "shipment_confirmed"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
+    t.index ["broker_id"], name: "index_shipments_on_broker_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
