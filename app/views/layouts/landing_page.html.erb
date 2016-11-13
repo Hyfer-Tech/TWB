@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <%= render 'shared/meta' %>
+    <%= render 'shared/head' %>
     
   </head>
 
-  <body>
-    <%= render 'layouts/nav' %>
+  <body data-spy="scroll" data-target="#page-nav">
+  	<%= render 'layouts/header' %>
+    
     <%= yield %>
   </body>
 </html>
