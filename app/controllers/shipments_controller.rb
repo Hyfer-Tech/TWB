@@ -3,11 +3,11 @@ class ShipmentsController < ApplicationController
 
 	def new
 		@shipment = Shipment.new
+		# @shipment.build_business_user
 	end
 
 	def create
-		binding.pry
-		@shipment = Shipment.create!(shipment_params)
+		@shipment = current_business_user.shipments.create!(shipment_params)
 		if @shipment.valid?
 			redirect_to root_path
 		else

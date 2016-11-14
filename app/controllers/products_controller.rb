@@ -6,7 +6,9 @@ class ProductsController < ApplicationController
 	end
 
 	def create
-		@product = Product.create(product_params)
+		binding.pry
+		@product = current_business_user.products.create!(product_params)
+		binding.pry
 		if @product.valid?
 			redirect_to root_path
 		else
@@ -16,6 +18,6 @@ class ProductsController < ApplicationController
 
 	private
 	def product_params
-		params.require(:product).permit(:title,:taxable,:featured_image,:available,:price,:grams,:compare_at_price,:product_id)
+		params.require(:product).permit(:title,:taxable,:featured_image,:available,:price,:grams,:compare_at_price,:product_code)
 	end
 end

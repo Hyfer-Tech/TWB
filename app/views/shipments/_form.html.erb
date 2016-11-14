@@ -1,7 +1,7 @@
 <%= simple_form_for @shipment do |f| %>
 	<div id="products">
 
-		<%= f.simple_fields_for :products do |product| %>
+		<%= f.simple_fields_for :shipment_products do |product| %>
 			<%= render 'shipments/product_fields', f: product %>
 		<% end %>
 		
