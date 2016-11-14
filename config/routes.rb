@@ -16,4 +16,7 @@ Rails.application.routes.draw do
   get 'profile', to: :show, controller: 'users'
 
   resources :users, only: :show
+
+  post 'relationships', to: 'relationships#create'
+  delete 'relationships', to: 'relationships#destroy'
 end
