@@ -16,7 +16,7 @@ class UserDecorator < Draper::Decorator
   end
 
   def edit_link
-    "edit_#{object.class.name.underscore}_registration_path(object)"
+    "#{object.class.name.underscore}s/edit"
   end
 
 end
