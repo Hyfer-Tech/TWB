@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
 	before_action :authenticate_any!
-
+	include UsersHelper
 	def profile
-		@user = DeviseDecorator.assign_user
+		@user = assign_user
 	end
 
 end
