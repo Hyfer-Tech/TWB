@@ -4,26 +4,28 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :first_name, required: true, autofocus: true %>
-    <%= f.input :last_name, required: true %>
-    <%= f.input :email, required: true %>
+      <%= f.input :first_name, required: true, autofocus: true %>
+      <%= f.input :last_name, required: true %>
+      <%= f.input :email, required: true %>
 
-    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
-    <% end %>
+      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+      <% end %>
 
-    <%= f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false %>
-    <%= f.input :password_confirmation, required: false %>
-    <%= f.input :phone, required: true %>
-    <%= f.input :description %>
-    <%= f.input :address_line_1, required: true %>
-    <%= f.input :address_line_2 %>
-    <%= f.input :address_line_3 %>
-    <%= f.input :city, required: true %>
+      <%= f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false %>
+      <%= f.input :password_confirmation, required: false %>
+      <%= f.input :phone, required: true %>
+      <%= f.input :description %>
+      <%= f.input :address_line_1, required: true %>
+      <%= f.input :address_line_2 %>
+      <%= f.input :address_line_3 %>
+      <%= f.input :city, required: true %>
 
-    <%= f.input :state_province_county, label: "State/Province/County", required: true %>
-    <%= f.input :country, as: :country, required: true %>
-    <%= f.input :current_password, hint: "we need your current password to confirm your changes", required: true %>
+      <%= f.input :state_province_county, label: "State/Province/County", required: true %>
+      <%= f.input :country, as: :country, required: true %>
+      <%= f.input :current_password, hint: "we need your current password to confirm your changes", required: true %>
+      <!-- <%= f.file_field :avatar %> -->
+
   </div>
 
   <div class="form-actions">

@@ -1,6 +1,5 @@
 <% business_user_signed_in? ? user = current_business_user : (forward_freight_signed_in? ? user = current_forward_freight : user = current_broker) %>
 
-
 	Name: <%= "#{user.first_name} #{user.last_name}" %> <br>
 	Email: <%= user.email %> <br>
 	Phone:<%= user.phone %> <br>
@@ -16,5 +15,3 @@
 
 
 <%= link_to "Edit", edit %>
-
-

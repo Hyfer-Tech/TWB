@@ -8,7 +8,6 @@ Rails.application.routes.draw do
 
   root 'static_pages#index'
 
-
   get 'profile', to: :show, controller: 'users'
 
   resources :users, only: :show
