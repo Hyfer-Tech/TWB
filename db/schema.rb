@@ -80,6 +80,36 @@ ActiveRecord::Schema.define(version: 20161113153051) do
     t.index ["reset_password_token"], name: "index_business_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  create_table "forward_freights", force: :cascade do |t|
+    t.string   "email"
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.inet     "current_sign_in_ip"
+    t.inet     "last_sign_in_ip"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.text     "description"
+    t.string   "phone"
+    t.string   "address_line_1"
+    t.string   "address_line_2"
+    t.string   "address_line_3"
+    t.string   "city"
+    t.string   "zip_postal_code"
+    t.string   "state_province_county"
+    t.string   "country"
+    t.integer  "service_rates"
+    t.string   "avatar"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.index ["email"], name: "index_forward_freights_on_email", unique: true, using: :btree
+    t.index ["reset_password_token"], name: "index_forward_freights_on_reset_password_token", unique: true, using: :btree
+  end
+
   create_table "products", force: :cascade do |t|
     t.string   "title"
     t.boolean  "taxable"
