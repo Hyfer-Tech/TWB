@@ -1,8 +1,9 @@
 class UsersController < ApplicationController
 	before_action :authenticate_any!
-	include UsersHelper
+	include ApplicationHelper
+
 	def profile
-		@user = assign_user
+    @user = current_user.decorate
 	end
 
 end

@@ -1,10 +1,10 @@
-Name: <%= "#{@user.first_name} #{@user.last_name}" %> <br>
+Name: <%= @user.name %> <br>
 Email: <%= @user.email %> <br>
-Phone:<%= @user.phone %> <br>
+Phone: <%= @user.phone %> <br>
 Description: <%= @user.description %> <br>
-Address: <%= address_line %> <br>
+Address: <%= @user.address %> <br>
 City: <%= @user.city %> <br>
 State: <%= @user.state_province_county %> <br>
 Country: <%= @user.country %>
 
-<%= link_to "Edit", edit_profile(@user) %>
+<%= link_to "Edit", @user.edit_link %>

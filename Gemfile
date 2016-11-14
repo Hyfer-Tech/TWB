@@ -37,7 +37,7 @@ gem 'country_select'
 
 # Draper gem for decorator
 gem 'activemodel-serializers-xml', github: 'rails/activemodel-serializers-xml'
-gem 'draper', '~> 2.1'
+gem 'draper', github: 'drapergem/draper'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
