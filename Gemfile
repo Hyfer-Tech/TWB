@@ -35,6 +35,10 @@ gem 'rails-controller-testing'
 # Country selector gem
 gem 'country_select'
 
+gem 'elasticsearch-rails'
+
+gem 'elasticsearch-model'
+
 # Draper gem for decorator
 gem 'activemodel-serializers-xml', github: 'rails/activemodel-serializers-xml'
 gem 'draper', github: 'drapergem/draper'
