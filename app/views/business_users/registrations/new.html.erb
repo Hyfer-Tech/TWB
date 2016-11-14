@@ -18,9 +18,6 @@
 
    <%= f.input :state_province_county, label: "State/Province/County", required: true %>
    <%= f.input :country, as: :country, required: true %>
-   <%= f.simple_fields_for :tag do |p| %>
-    <%= p.input :tag, collection: TagsList::TAG_TYPES.map{|k,v| [k,v]},label: false, include_blank: false %>
-   <% end %>
  </div>
 
 
