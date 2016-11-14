@@ -1,0 +1,14 @@
+<%= simple_form_for @shipment do |f| %>
+	<div id="products">
+
+		<%= f.simple_fields_for :products do |product| %>
+			<%= render 'shipments/product_fields', f: product %>
+		<% end %>
+		
+		<div class="links">
+			<%= link_to_add_association 'Add a Product', f, :products %>
+		</div>
+
+	</div>
+	<%= f.button :submit %>
+<% end %>	

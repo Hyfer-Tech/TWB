@@ -12,4 +12,7 @@ Rails.application.routes.draw do
   get 'profile', to: :show, controller: 'users'
 
   resources :users, only: :show
+
+  resources :shipments, only: [:new, :create]
+  resources :products, only: [:new, :create]
 end

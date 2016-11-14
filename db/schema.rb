@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161109134156) do
+ActiveRecord::Schema.define(version: 20161114093153) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -108,6 +108,33 @@ ActiveRecord::Schema.define(version: 20161109134156) do
     t.datetime "updated_at",                          null: false
     t.index ["email"], name: "index_forward_freights_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_forward_freights_on_reset_password_token", unique: true, using: :btree
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.string   "title"
+    t.boolean  "taxable"
+    t.string   "featured_image"
+    t.boolean  "available"
+    t.string   "price"
+    t.integer  "grams"
+    t.string   "compare_at_price"
+    t.bigint   "product_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.integer  "shipment_id"
+    t.integer  "quantity"
+    t.index ["shipment_id"], name: "index_products_on_shipment_id", using: :btree
+  end
+
+  create_table "shipments", force: :cascade do |t|
+    t.integer  "quantity"
+    t.integer  "broker_id"
+    t.integer  "forward_freight_id"
+    t.boolean  "approval"
+    t.boolean  "shipment_confirmed"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.index ["broker_id"], name: "index_shipments_on_broker_id", using: :btree
   end
 
 end
