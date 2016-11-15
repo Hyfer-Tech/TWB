@@ -2,7 +2,7 @@ class RelationshipsController < ApplicationController
   before_action :authenticate_any!
 
   def create    
-    user = find_user
+    user = find_user    
     current_business_user.follow(user)
   end
 
@@ -14,7 +14,7 @@ class RelationshipsController < ApplicationController
   private
 
   def find_user
-    relationship_params[:user_type].constantize.find(relationship_params[:user_id])
+    relationship_params[:user_type].constantize.find(relationship_params[:user_id].to_i)
   end
 
   def relationship_params

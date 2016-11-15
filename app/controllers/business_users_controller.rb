@@ -8,6 +8,7 @@ class BusinessUsersController < ApplicationController
       @forward_freights = ForwardFreight.search(params[:query])
     else
       @brokers = Broker.all
+      @forward_freights = ForwardFreight.all
     end
   end
 end

@@ -3,17 +3,21 @@
   <%= submit_tag "Search", name: nil, class: 'btn btn-danger' %>
 <% end %>
 
+<ul>
 <% if @brokers.present? %>
   <% @brokers.each do |broker| %>
-    <%= "#{broker.first_name} #{broker.last_name}" %>
-    <%= broker.email %>
+    <li><%= "#{broker.first_name} #{broker.last_name}" %></li>
+    <li><%= broker.email %></li>
   <% end %>
 <% end %>
+</ul>
 
 
+<ul>
 <% if @forward_freights.present? %>
   <% @forward_freights.each do |forward_freight| %>
-    <%= "#{forward_freight.first_name} #{forward_freight.last_name}" %>
-    <%= forward_freight.email %>
+    <li><%= "#{forward_freight.first_name} #{forward_freight.last_name}" %></li>
+    <li><%= forward_freight.email %></li>
   <% end %>
 <% end %>
+</ul>
