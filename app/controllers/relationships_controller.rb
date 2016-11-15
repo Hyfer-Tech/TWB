@@ -1,20 +1,26 @@
 class RelationshipsController < ApplicationController
   before_action :authenticate_any!
 
-  def create    
-    user = find_user    
-    current_business_user.follow(user)
+  def create
+    if find_user
+      current_business_user.follow(find_user)      
+    else
+      # error handling here
+    end
   end
 
   def destroy
-    user = find_user
-    current_business_user.stop_following(user)
+    if find_user
+      current_business_user.stop_following(find_user)      
+    else
+      # error handling here
+    end
   end
 
   private
 
   def find_user
-    relationship_params[:user_type].constantize.find(relationship_params[:user_id].to_i)
+    @user ||= relationship_params[:user_type].constantize.find_by_id(relationship_params[:user_id].to_i)
   end
 
   def relationship_params
