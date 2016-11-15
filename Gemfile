@@ -45,6 +45,14 @@ gem 'rails-controller-testing'
 # Country selector gem
 gem 'country_select'
 
+gem 'elasticsearch-rails'
+
+gem 'elasticsearch-model'
+
+# Draper gem for decorator
+gem 'activemodel-serializers-xml', github: 'rails/activemodel-serializers-xml'
+gem 'draper', github: 'drapergem/draper'
+
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password

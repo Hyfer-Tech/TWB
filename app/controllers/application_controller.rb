@@ -11,14 +11,7 @@ class ApplicationController < ActionController::Base
     elsif forward_freight_signed_in?
         true
     else
-
         authenticate_business_user!
-    end
-  end
-
-  def index
-    if authenticate_any!
-      put "hello"
     end
   end
 
