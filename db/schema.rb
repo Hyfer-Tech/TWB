@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20161114081613) do
-=======
-ActiveRecord::Schema.define(version: 20161113153051) do
->>>>>>> 7e146e27f67b2737dd62b8cd2ec264eeaf10c40d
+ActiveRecord::Schema.define(version: 20161114155202) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -83,6 +79,18 @@ ActiveRecord::Schema.define(version: 20161113153051) do
     t.index ["first_name"], name: "index_business_users_on_first_name", using: :btree
     t.index ["last_name"], name: "index_business_users_on_last_name", using: :btree
     t.index ["reset_password_token"], name: "index_business_users_on_reset_password_token", unique: true, using: :btree
+  end
+
+  create_table "follows", force: :cascade do |t|
+    t.string   "followable_type",                 null: false
+    t.integer  "followable_id",                   null: false
+    t.string   "follower_type",                   null: false
+    t.integer  "follower_id",                     null: false
+    t.boolean  "blocked",         default: false, null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["followable_id", "followable_type"], name: "fk_followables", using: :btree
+    t.index ["follower_id", "follower_type"], name: "fk_follows", using: :btree
   end
 
   create_table "forward_freights", force: :cascade do |t|
