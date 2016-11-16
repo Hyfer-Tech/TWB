@@ -18,6 +18,16 @@ gem 'coffee-rails', '~> 4.2'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+
+# carrierwave for photo upload
+gem 'carrierwave', '>= 1.0.0.rc', '< 2.0'
+
+#using amazon for storing pictures
+gem "fog"
+
+#secure amazon key from world
+gem "figaro"
+
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 
@@ -34,6 +44,14 @@ gem 'rails-controller-testing'
 
 # Country selector gem
 gem 'country_select'
+
+gem 'elasticsearch-rails'
+
+gem 'elasticsearch-model'
+
+# Draper gem for decorator
+gem 'activemodel-serializers-xml', github: 'rails/activemodel-serializers-xml'
+gem 'draper', github: 'drapergem/draper'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
@@ -66,5 +84,8 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+<<<<<<< HEAD
 
 gem "cocoon"
+=======
+>>>>>>> d79ea2234339755ffeeb6878bec440a258ade589

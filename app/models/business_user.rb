@@ -6,4 +6,7 @@ class BusinessUser < ApplicationRecord
 
   has_many :products
   has_many :shipments
+
+  mount_uploader :avatar, AvatarUploader
+
 end
