@@ -1,4 +1,4 @@
-/*   
+/*
  * Template Name: Startup Kit - Responsive website template for startups
  * Version: 1.0
  * Author: Xiaoying Riley at 3rd Wave Media
@@ -24,11 +24,11 @@ h6 {
   font-weight: 300;
 }
 p {
-  margin-bottom: 15px;
+  margin-bottom: 15px;ro
   line-height: 1.5;
 }
 a {
-  color: #51a852;
+  color: #159bc0;
   -webkit-transition: all 0.4s ease-in-out;
   -moz-transition: all 0.4s ease-in-out;
   -ms-transition: all 0.4s ease-in-out;
@@ -37,11 +37,11 @@ a {
 a:hover,
 a:active {
   text-decoration: underline;
-  color: #49974a;
+  color: #1288a9;
 }
 a:focus {
   text-decoration: none;
-  color: #49974a;
+  color: #1288a9;
   outline: none;
 }
 .btn,
@@ -62,8 +62,10 @@ a.btn-cta,
 }
 a.btn-primary,
 .btn-primary {
-  background: #51a852;
-  border: 2px solid #51a852;
+  margin-top: 5px;
+  margin-right: 15px;
+  background: rgba(221,221,211,0.3);
+  border: 2px solid #ddd;
   color: #fff;
 }
 a.btn-primary:hover,
@@ -79,8 +81,8 @@ a.btn-primary:focus,
 }
 a.btn-secondary,
 .btn-secondary {
-  background: #51a852;
-  border: 2px solid #51a852;
+  background: #159bc0;
+  border: 2px solid #159bc0;
   color: #fff;
 }
 a.btn-secondary:hover,
@@ -89,8 +91,8 @@ a.btn-secondary:active,
 .btn-secondary:active,
 a.btn-secondary:focus,
 .btn-secondary:focus {
-  background: #49974a;
-  border: 2px solid #49974a;
+  background: #1288a9;
+  border: 2px solid #1288a9;
   color: #fff;
   outline: none;
 }
@@ -130,7 +132,7 @@ a.btn-ghost-alt:focus,
 }
 a.btn-social,
 .btn-social {
-  background: #51a852;
+  background: #159bc0;
   border: none;
   color: #fff;
   padding: 6px 15px;
@@ -143,7 +145,7 @@ a.btn-social:active,
 .btn-social:active,
 a.btn-social:focus,
 .btn-social:focus {
-  background: #49974a;
+  background: #1288a9;
   border: none;
   color: #fff;
   outline: none;
@@ -398,6 +400,149 @@ textarea {
   top: 0;
   z-index: 5;
 }
+/*sidebar css*/
+
+/* Toggle Styles */
+
+#wrapper {
+    padding-left: 0;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#wrapper.toggled {
+    padding-left: 150px;
+}
+
+#sidebar-wrapper {
+    z-index: 1000;
+    float: left;
+    position: inherit;
+    /*left: 150px;*/
+    width: 0;
+    height: 100%;
+    margin-left: -350px;
+    overflow-y: auto;
+    background: rgba(0,0,0,0.3);
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+    width: 250px;
+}
+
+#page-content-wrapper {
+    width: 100%;
+    position: absolute;
+    padding: 15px;
+}
+
+#wrapper.toggled #page-content-wrapper {
+    position: absolute;
+    margin-right: -250px;
+}
+
+/* Sidebar Styles */
+
+.sidebar-nav {
+    position: absolute;
+    top: 0;
+    width: 250px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sidebar-nav li {
+    text-indent: 20px;
+    line-height: 40px;
+}
+
+.sidebar-nav li a {
+    display: block;
+    text-decoration: none;
+    color: #999999;
+}
+
+.sidebar-nav li a:hover {
+    text-decoration: none;
+    color: #fff;
+    background: rgba(255,255,255,0.2);
+}
+
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus {
+    text-decoration: none;
+}
+
+.sidebar-nav > .sidebar-brand {
+    height: 65px;
+    font-size: 18px;
+    line-height: 60px;
+}
+
+.sidebar-nav > .sidebar-brand a {
+    color: #999999;
+}
+
+.sidebar-nav > .sidebar-brand a:hover {
+    color: #fff;
+    background: none;
+}
+
+@media(min-width:768px) {
+    #wrapper {
+        padding-left: 250px;
+    }
+
+    #wrapper.toggled {
+        padding-left: 0;
+    }
+
+    #sidebar-wrapper {
+        width: 250px;
+    }
+
+    #wrapper.toggled #sidebar-wrapper {
+        width: 0;
+    }
+
+    #page-content-wrapper {
+        padding: 20px;
+        position: relative;
+    }
+
+    #wrapper.toggled #page-content-wrapper {
+        position: relative;
+        margin-right: 0;
+    }
+}
+/*end sidebar*/
+
+/*tab css*/
+#t-wrapper{
+  height: 480px;
+/*  overflow-y: sidebar;
+  overflow-x: hidden;*/
+  padding-left: 200px;
+}
+
+#tHistory{
+  height: 450px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+#tHistory::-webkit-scrollbar {
+    display: none;
+}
+/*end tab css*/
+
 /* Page Nav */
 .page-nav-space-holder {
   height: 62px;
@@ -440,7 +585,7 @@ textarea {
   background: none;
 }
 .page-nav-wrapper .page-nav li.active a {
-  color: #51a852;
+  color: #159bc0;
   background: none;
 }
 .page-nav-wrapper .page-nav li a {
@@ -472,7 +617,8 @@ textarea {
   font-size: 20px;
   font-weight: 500;
   float: left;
-  margin-top: 18px;
+  margin-left: -50px;
+  margin-top: 22px;
   margin-bottom: 0;
 }
 .header .logo .text {
@@ -499,6 +645,7 @@ textarea {
   height: 3px;
 }
 .main-nav .nav .nav-item {
+  margin-left: 100px;
   font-weight: normal;
   text-transform: uppercase;
   font-size: 12px;
@@ -532,7 +679,8 @@ textarea {
 }
 .main-nav .nav .nav-item .btn-signup {
   background: rgba(0, 0, 0, 0.4);
-  padding: 5px 10px;
+  margin-right: 50px;
+  padding: 5px 100px;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
@@ -555,7 +703,7 @@ textarea {
   position: relative;
 }
 .main-nav .nav.active > a {
-  background: #408641;
+  background: #107692;
   color: #fff;
   color: rgba(255, 255, 255, 0.8);
 }
@@ -739,6 +887,7 @@ textarea {
   color: #fff;
 }
 .promo-section .promo-content {
+  margin-top: -70px;
   z-index: 10;
   position: relative;
 }
@@ -787,21 +936,21 @@ textarea {
   height: 680px;
 }
 .hero-slider-wrapper .flexslider .slide.slide-1 {
-  background: #35373C url('../images/hero/hero-1.jpg') no-repeat 50% top;
+  background: #35373C url('../images/hero/background.png') no-repeat 50% top;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
 }
 .hero-slider-wrapper .flexslider .slide.slide-2 {
-  background: #35373C url('../images/hero/hero-2.jpg') no-repeat 50% top;
+  background: #35373C url('../images/hero/background.png') no-repeat 50% top;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
 }
 .hero-slider-wrapper .flexslider .slide.slide-3 {
-  background: #35373C url('../images/hero/hero-3.jpg') no-repeat 50% top;
+  background: #35373C url('../images/hero/background.png') no-repeat 50% top;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -877,7 +1026,7 @@ body.sticky-page-nav .overview-section {
   opacity: 0.8;
 }
 .benefits-wrapper {
-  background: #51a852;
+  background: #159bc0;
   color: #fff;
   padding-top: 60px;
   padding-bottom: 60px;
@@ -976,7 +1125,7 @@ body.sticky-page-nav .overview-section {
   color: #999ca4;
 }
 .reviews-carousel .rating {
-  color: #51a852;
+  color: #159bc0;
   margin-bottom: 15px;
 }
 .reviews-carousel .carousel-indicators {
@@ -1095,7 +1244,7 @@ body.sticky-page-nav .overview-section {
   margin-bottom: 30px;
 }
 .signup-section {
-  background-color: #51a852;
+  background-color: #159bc0;
 }
 .signup-section .section-inner {
   background: url('../images/map.svg') no-repeat left top;
@@ -1200,7 +1349,7 @@ body.sticky-page-nav .overview-section {
   margin: 0 auto;
 }
 .apps-section {
-  background: #51a852;
+  background: #159bc0;
   padding-top: 60px;
   padding-bottom: 45px;
 }
@@ -1288,7 +1437,7 @@ body.sticky-page-nav .overview-section {
   margin-bottom: 60px;
 }
 .story-item {
-  background: #51a852;
+  background: #159bc0;
   color: #fff;
   margin-bottom: 60px;
 }
@@ -1301,7 +1450,7 @@ body.sticky-page-nav .overview-section {
   top: 0;
   width: 100%;
   height: 100%;
-  background: rgba(81, 168, 82, 0.2);
+  background: rgba(21, 155, 192, 0.2);
 }
 .story-item .content .inner {
   padding: 30px;
@@ -1423,7 +1572,7 @@ body.sticky-page-nav .overview-section {
 }
 .story-article-block .client-meta .material-icons {
   font-size: 42px;
-  color: #51a852;
+  color: #159bc0;
 }
 .story-article-block .client-meta .meta-title {
   color: #999ca4;
@@ -1452,12 +1601,12 @@ body.sticky-page-nav .overview-section {
   font-weight: 300;
   border-left: none;
   padding: 30px;
-  color: #51a852;
+  color: #159bc0;
 }
 .story-article-block .quote-container .fa-quote-right {
   width: 36px;
   height: 36px;
-  background: #51a852;
+  background: #159bc0;
   color: #fff;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
@@ -1495,7 +1644,7 @@ body.sticky-page-nav .overview-section {
 }
 .other-stories-block .item-inner {
   padding: 30px;
-  background: #51a852;
+  background: #159bc0;
   color: #fff;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
@@ -1593,7 +1742,7 @@ body.sticky-page-nav .overview-section {
 }
 .pricing-block .summary-box {
   padding: 30px;
-  background: #51a852;
+  background: #159bc0;
   -webkit-border-top-right-radius: 4px;
   -webkit-border-bottom-right-radius: 0;
   -webkit-border-bottom-left-radius: 0;
@@ -1701,7 +1850,7 @@ body.sticky-page-nav .overview-section {
 .faqs-block {
   padding-top: 90px;
   padding-bottom: 90px;
-  background: #51a852;
+  background: #159bc0;
   color: #fff;
 }
 .faqs-block .block-heading {
@@ -2140,7 +2289,7 @@ body.sticky-page-nav .overview-section {
   margin-right: 5px;
 }
 .posts-promo-block .carousel-indicators li.active {
-  background-color: #51a852;
+  background-color: #159bc0;
 }
 .posts-block {
   padding-top: 90px;
@@ -2260,10 +2409,10 @@ body.sticky-page-nav .overview-section {
   background-clip: padding-box;
   border: none;
   margin-right: 5px;
-  color: #51a852;
+  color: #159bc0;
 }
 .pagination li a:hover {
-  color: #387439;
+  color: #0d637b;
 }
 .pagination > .active > a,
 .pagination > .active > span,
@@ -2271,7 +2420,7 @@ body.sticky-page-nav .overview-section {
 .pagination > .active > span:hover,
 .pagination > .active > a:focus,
 .pagination > .active > span:focus {
-  background-color: #51a852;
+  background-color: #159bc0;
   border: none;
 }
 .pagination > li > a:hover,
@@ -2298,7 +2447,7 @@ body.sticky-page-nav .overview-section {
 .blog-signup-block {
   padding-top: 60px;
   padding-bottom: 60px;
-  background: #51a852;
+  background: #159bc0;
   color: #fff;
 }
 .blog-signup-block .block-heading {
@@ -2428,16 +2577,16 @@ body.sticky-page-nav .overview-section {
   margin: 45px auto;
   padding: 45px;
   position: relative;
-  color: #51a852;
+  color: #159bc0;
   font-style: italic;
-  border-top: 2px solid #83c383;
-  border-bottom: 2px solid #83c383;
+  border-top: 2px solid #38c3e9;
+  border-bottom: 2px solid #38c3e9;
 }
 .post-single-block .blog-quote .fa-quote-left {
   position: absolute;
   left: 15px;
   top: 30px;
-  color: #51a852;
+  color: #159bc0;
 }
 .post-single-block .blog-quote .source {
   font-size: 16px;
@@ -2478,7 +2627,7 @@ body.sticky-page-nav .overview-section {
   color: #999ca4;
 }
 .post-single-block .author-container .social a:hover {
-  color: #51a852;
+  color: #159bc0;
 }
 .related-posts {
   padding-top: 60px;
@@ -2664,7 +2813,7 @@ body.sticky-page-nav .overview-section {
   top: 30px;
 }
 .tips-block .item-inner .material-icons {
-  color: #51a852;
+  color: #159bc0;
   font-size: 36px;
 }
 .extra-block {
@@ -2926,7 +3075,7 @@ body.sticky-page-nav .overview-section {
     color: #fff;
   }
   .main-nav .nav .nav-item.active a {
-    color: #51a852;
+    color: #159bc0;
   }
   .heading-section .heading-content .actions .btn {
     margin-right: 0;
@@ -3086,127 +3235,4 @@ body.sticky-page-nav .overview-section {
     top: 120px;
     right: -90px;
   }
-}
-/* ======= Configure Style (Remove in production) ======= */
-.config-trigger {
-  position: absolute;
-  top: 30px;
-  left: -36px;
-  width: 36px;
-  height: 36px;
-  background: #222;
-  color: #fff;
-  text-align: center;
-  -webkit-border-top-right-radius: 0;
-  -webkit-border-bottom-right-radius: 0;
-  -webkit-border-bottom-left-radius: 4px;
-  -webkit-border-top-left-radius: 4px;
-  -moz-border-radius-topright: 0;
-  -moz-border-radius-bottomright: 0;
-  -moz-border-radius-bottomleft: 4px;
-  -moz-border-radius-topleft: 4px;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 4px;
-  border-top-left-radius: 4px;
-  -moz-background-clip: padding;
-  -webkit-background-clip: padding-box;
-  background-clip: padding-box;
-  text-decoration: none;
-}
-.config-trigger:hover {
-  background: #000;
-  text-decoration: none;
-}
-.config-trigger:hover .fa {
-  color: #fff;
-}
-.config-trigger .fa {
-  font-size: 22px;
-  padding-top: 7px;
-  display: block;
-  color: rgba(255, 255, 255, 0.8);
-}
-.config-panel {
-  position: absolute;
-  top: 160px;
-  right: -190px;
-  z-index: 30;
-  width: 190px;
-}
-.config-panel .panel-inner {
-  position: relative;
-  background: #222;
-  color: #fff;
-  padding: 15px;
-  -webkit-border-top-right-radius: 0;
-  -webkit-border-bottom-right-radius: 0;
-  -webkit-border-bottom-left-radius: 4px;
-  -webkit-border-top-left-radius: 4px;
-  -moz-border-radius-topright: 0;
-  -moz-border-radius-bottomright: 0;
-  -moz-border-radius-bottomleft: 4px;
-  -moz-border-radius-topleft: 4px;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 4px;
-  border-top-left-radius: 4px;
-  -moz-background-clip: padding;
-  -webkit-background-clip: padding-box;
-  background-clip: padding-box;
-}
-.config-panel .panel-title {
-  font-weight: 600;
-  margin-bottom: 15px;
-  font-size: 14px;
-  text-transform: uppercase;
-}
-.config-panel label {
-  color: #fff;
-}
-.config-panel #color-options {
-  margin-bottom: 0px;
-}
-.config-panel #color-options li a {
-  display: block;
-  width: 40px;
-  height: 20px;
-  border: 2px solid transparent;
-  margin-bottom: 10px;
-}
-.config-panel #color-options li a:hover {
-  -webkit-opacity: 0.9;
-  -moz-opacity: 0.9;
-  opacity: 0.9;
-  border: 2px solid rgba(255, 255, 255, 0.8);
-}
-.config-panel #color-options li.active a {
-  border: 2px solid #fff;
-}
-.config-panel #color-options li.theme-1 a {
-  background: #159bc0;
-}
-.config-panel #color-options li.theme-2 a {
-  background-color: #28A5A8;
-}
-.config-panel #color-options li.theme-3 a {
-  background-color: #0e83cd;
-}
-.config-panel #color-options li.theme-4 a {
-  background-color: #51a852;
-}
-.config-panel #color-options li.theme-5 a {
-  background-color: #f06060;
-}
-.config-panel #color-options li.theme-6 a {
-  background-color: #F89D29;
-}
-.config-panel .close {
-  position: absolute;
-  right: 5px;
-  top: 5px;
-  color: #fff;
-}
-.config-panel .close .fa {
-  color: #fff;
 }

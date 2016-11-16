@@ -14,6 +14,8 @@ Rails.application.routes.draw do
 
 
   get 'profile', to: :show, controller: 'users'
+  get 'dashboard',   to: 'dashboard#index'
+
 
   resources :users, only: :show
 end
