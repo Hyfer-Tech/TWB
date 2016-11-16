@@ -53,6 +53,9 @@ gem 'elasticsearch-model'
 gem 'activemodel-serializers-xml', github: 'rails/activemodel-serializers-xml'
 gem 'draper', github: 'drapergem/draper'
 
+gem 'acts_as_follower', github: 'tcocca/acts_as_follower', branch: 'master'
+
+
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password

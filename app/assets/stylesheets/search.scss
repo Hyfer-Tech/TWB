@@ -1,0 +1,16 @@
+@import "mixins";
+
+.panel-user {
+  @include smooth_transition(all);
+  position: relative;
+
+  &:hover {
+    @include smooth_transition(all);
+    box-shadow: 1px 3px 8px rgba(0, 0, 0, 0.2);
+    background: #e9eaec;
+  }
+}
+
+.input-group-btn > .btn {
+  height: 45px;
+}

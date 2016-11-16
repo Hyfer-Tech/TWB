@@ -2,11 +2,15 @@
 <html>
   <head>
     <%= render 'shared/meta' %>
-    
+
   </head>
 
-  <body>
+  <body class="bg-image">
     <%= render 'layouts/nav' %>
-    <%= yield %>
+    <div class="container container-authenticated">
+      <%= yield %>
+    </div>
+
+    <%= render 'layouts/footer' %>
   </body>
 </html>
