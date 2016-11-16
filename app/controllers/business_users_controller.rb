@@ -1,7 +1,4 @@
 class BusinessUsersController < ApplicationController
-  def profile
-  end
-
   def index 
     if params[:query].present?      
       @brokers = Broker.search(params[:query])
