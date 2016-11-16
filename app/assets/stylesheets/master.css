@@ -6,6 +6,14 @@
  * Twitter: @3rdwave_themes
 */
 /* ======= Base ======= */
+/*html { 
+  background: url(bg-map.png) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}*/
+
 body {
   overflow-x: hidden;
   font-family: 'Noto Sans', sans-serif;
@@ -607,8 +615,7 @@ textarea {
 .header {
   background: rgba(53, 55, 60, 0.8);
   color: #fff;
-  position: absolute;
-  top: 0;
+  margin-bottom: 50px;
   width: 100%;
   z-index: 100;
   min-height: 70px;
@@ -644,8 +651,7 @@ textarea {
   background-color: #fff;
   height: 3px;
 }
-.main-nav .nav .nav-item {
-  margin-left: 100px;
+.main-nav .nav .nav-item {  
   font-weight: normal;
   text-transform: uppercase;
   font-size: 12px;

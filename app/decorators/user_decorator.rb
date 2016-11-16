@@ -5,6 +5,10 @@ class UserDecorator < Draper::Decorator
     "#{object.first_name} #{object.last_name}"
   end
 
+  def description
+    object.description.empty? ? "This user has not saved an introduction yet." : object.description
+  end
+
   def address
     if object.address_line_2.present? && object.address_line_3.present?
       "#{object.address_line_1}, #{object.address_line_2}, #{object.address_line_3}"

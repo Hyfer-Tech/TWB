@@ -1,0 +1,54 @@
+
+<div class="row profile">
+  <div class="col-xs-12 col-md-3">
+    <div class="panel panel-default panelbg1">
+      <div class="profile-sidebar">
+        <!-- SIDEBAR USERPIC -->
+        <div class="profile-userpic">
+          <%= image_tag @user.avatar, class: 'prof-pic' %>
+        </div>
+        <!-- END SIDEBAR USERPIC -->
+
+        <h3 class="text-center"><%= @user.name %></h3>
+        <h5 class="text-center"><label class="label label-success">Broker</label></h5>
+        
+        <!-- SIDEBAR BUTTONS -->
+        <div class="btn-group">
+          <%= link_to 'Save', '#', class: 'btn btn-success btn-sm' %>
+          <%= link_to 'Message', '#', class: 'btn btn-danger btn-sm' %>
+        </div>        
+        <!-- END SIDEBAR BUTTONS -->
+        <!-- SIDEBAR MENU -->
+        <ul class="nav">
+          <li class="active">
+            <a href="#">
+            <i class="glyphicon glyphicon-home"></i>
+            Overview </a>
+          </li>
+          <li>
+            <a href="#">
+            <i class="glyphicon glyphicon-star"></i>
+            Reviews </a>
+          </li>
+          <li>
+            <a href="#">
+            <i class="glyphicon glyphicon-saved"></i>
+            Saved </a>
+          </li>
+        </ul>
+      </div>
+      <!-- END MENU -->
+    </div> <!-- panel end -->
+  </div>
+  <div class="col-md-9 col-xs-12">
+    <div class="panel panel-default panelbg2">
+      <div class="panel-body">
+        <%= simple_format @user.description %>
+
+        <i class="fa fa-tags" aria-hidden="true"></i> 
+        <span class="label label-default">Tag 1</span>
+        <span class="label label-default">Tag 2</span>
+      </div><!-- panel-body -->
+    </div><!-- panel -->
+  </div>
+</div>  

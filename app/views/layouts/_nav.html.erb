@@ -3,31 +3,6 @@
     <header id="header" class="header">
         <%= render 'layouts/nav_content' %>
     </header><!--//header-->
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
-
-        <% if broker_signed_in? %>
-          <%= current_broker.email %>
-          <li><%= link_to 'Edit Profile', edit_broker_registration_path %></li>
-          <li><%= link_to 'Log Out', destroy_broker_session_path, method: :delete %></li>
-        <% elsif business_user_signed_in? %>
-          <%= current_business_user.email %>
-          <li><%= link_to 'Edit Profile', edit_business_user_registration_path %></li>
-          <li><%= link_to 'Log Out', destroy_business_user_session_path, method: :delete %></li>
-        <% elsif forward_freight_signed_in? %>
-          <%= current_forward_freight.email %>
-          <li><%= link_to 'Edit Profile', edit_forward_freight_registration_path %></li>
-          <li><%= link_to 'Log Out', destroy_forward_freight_session_path, method: :delete %></li>
-        <% else %>
-          <li><%= link_to 'Sign in as business user', new_business_user_session_path %></li>
-          <li><%= link_to 'Sign in as broker', new_broker_session_path %></li>
-          <li><%= link_to 'Sign in as forward_freights', new_forward_freight_session_path %></li>
-        <% end %>
-
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
+  
 </nav>
 
