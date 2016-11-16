@@ -3,7 +3,6 @@ class ShipmentsController < ApplicationController
 
 	def new
 		@shipment = Shipment.new
-		# @shipment.build_business_user
 	end
 
 	def create
@@ -17,6 +16,6 @@ class ShipmentsController < ApplicationController
 
 	private
 	def shipment_params
-		params.require(:shipment).permit(:quantity, :broker_id, :forward_freight_id,:approval, :shipment_confirmed)
+		params.require(:shipment).permit(:quantity)
 	end
 end

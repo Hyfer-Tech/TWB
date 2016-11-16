@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161114154903) do
+ActiveRecord::Schema.define(version: 20161116100629) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -121,7 +121,6 @@ ActiveRecord::Schema.define(version: 20161114154903) do
     t.bigint   "product_code"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
-    t.integer  "quantity"
     t.integer  "business_user_id"
     t.integer  "shipment_id"
     t.index ["business_user_id"], name: "index_products_on_business_user_id", using: :btree
@@ -133,17 +132,19 @@ ActiveRecord::Schema.define(version: 20161114154903) do
     t.integer  "shipment_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "quantity"
   end
 
   create_table "shipments", force: :cascade do |t|
-    t.integer  "quantity"
     t.integer  "broker_id"
     t.integer  "forward_freight_id"
     t.boolean  "approval"
     t.boolean  "shipment_confirmed"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
+    t.integer  "business_user_id"
     t.index ["broker_id"], name: "index_shipments_on_broker_id", using: :btree
+    t.index ["business_user_id"], name: "index_shipments_on_business_user_id", using: :btree
   end
 
 end

@@ -6,9 +6,7 @@ class ProductsController < ApplicationController
 	end
 
 	def create
-		binding.pry
 		@product = current_business_user.products.create!(product_params)
-		binding.pry
 		if @product.valid?
 			redirect_to root_path
 		else
