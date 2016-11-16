@@ -6,5 +6,6 @@ class BusinessUsersController < ApplicationController
     else
       @brokers = Broker.all.decorate
     end
+    render layout: 'landing_page'
   end
 end

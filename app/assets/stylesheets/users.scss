@@ -1,10 +1,18 @@
 .prof-pic {
   border-radius: 50%;
   width: 150px;
+  height: 150px;
   display: block;
   margin: 30px auto;
   border: 3px solid #eee;
   padding: 2px;
+}
+
+.prof-pic-xs {
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: block;
 }
 
 .user-actions {
@@ -15,6 +23,33 @@
 
 .nav-user-actions {
   li {
-    border: 1px solid #eee;
+    &:first-child {
+      border-top: 1px solid #eee;
+    }
+    border-bottom: 1px solid #eee;
   }
+}
+
+.nav-prof {
+  display: inline;
+}
+
+.btn-user-info {
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
+}
+
+.following-list-item {
+  position:relative; 
+  background: white;
+  border-bottom: 3px solid #eee;
+  padding: 15px;
+}
+
+.profile-details-container {
+  background: white;
+  padding: 15px 20px;
+  min-height: 200px;
+  border: 2px solid #eee;
 }

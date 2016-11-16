@@ -9,7 +9,7 @@ $(document).ready(function() {
     
     
     /* ======= Scrollspy ======= */
-   $('body').scrollspy({ target: '#page-nav-wrapper', offset: 100});
+   // $('body').scrollspy({ target: '#page-nav-wrapper', offset: 100});
     
     /* ======= ScrollTo ======= */
     $('.scrollto').on('click', function(e){
@@ -100,9 +100,9 @@ $(document).ready(function() {
     
      /* ======= Testimonial Bootstrap Carousel ======= */
      /* Ref: http://getbootstrap.com/javascript/#carousel */
-    $('#testimonials-carousel').carousel({
-      interval: 8000 
-    });
+    // $('#testimonials-carousel').carousel({
+    //   interval: 8000 
+    // });
     
 
 });

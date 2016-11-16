@@ -5,8 +5,13 @@
 
   </head>
 
-  <body data-spy="scroll" data-target="#page-nav">
+  <body data-spy="scroll" data-target="#page-nav" class="background-bg">
     <%= render 'layouts/nav' %>
     <%= yield %>
+
+    <%= render 'layouts/footer' %>
+
+    <%= render 'layouts/signup_modal' %>
+    <%= render 'layouts/login_modal' %>
   </body>
 </html>

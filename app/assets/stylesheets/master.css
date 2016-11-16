@@ -21,6 +21,7 @@ body {
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: whitesmoke;
 }
 h1,
 h2,
@@ -72,8 +73,8 @@ a.btn-primary,
 .btn-primary {
   margin-top: 5px;
   margin-right: 15px;
-  background: rgba(221,221,211,0.3);
-  border: 2px solid #ddd;
+  background: #51a852;
+  border: 2px solid #51a852;
   color: #fff;
 }
 a.btn-primary:hover,
@@ -615,7 +616,6 @@ textarea {
 .header {
   background: rgba(53, 55, 60, 0.8);
   color: #fff;
-  margin-bottom: 50px;
   width: 100%;
   z-index: 100;
   min-height: 70px;
@@ -685,8 +685,7 @@ textarea {
 }
 .main-nav .nav .nav-item .btn-signup {
   background: rgba(0, 0, 0, 0.4);
-  margin-right: 50px;
-  padding: 5px 100px;
+  padding: 5px 10px;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
@@ -1176,19 +1175,19 @@ body.sticky-page-nav .overview-section {
   background: -o-linear-gradient(top, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0.8) 35%);
 }
 .customers-section .item-1 .item-inner {
-  background: url('../images/customers/customer-1.jpg') no-repeat 50% 50%;
+  background: url('customers/customer-1.jpg') no-repeat 50% 50%;
   background-size: cover;
 }
 .customers-section .item-2 .item-inner {
-  background: url('../images/customers/customer-2.jpg') no-repeat 50% 50%;
+  background: url('customers/customer-2.jpg') no-repeat 50% 50%;
   background-size: cover;
 }
 .customers-section .item-3 .item-inner {
-  background: url('../images/customers/customer-3.jpg') no-repeat 50% 50%;
+  background: url('customers/customer-3.jpg') no-repeat 50% 50%;
   background-size: cover;
 }
 .customers-section .item-4 .item-inner {
-  background: url('../images/customers/customer-4.jpg') no-repeat 50% 50%;
+  background: url('customers/customer-4.jpg') no-repeat 50% 50%;
   background-size: cover;
 }
 .customers-section .item-mask {

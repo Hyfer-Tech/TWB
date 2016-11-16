@@ -12,13 +12,15 @@ Rails.application.routes.draw do
 
   root 'static_pages#index'
 
-  get 'profile', to: :show, controller: 'users'
   get 'dashboard',   to: 'dashboard#index'
 
   resources :brokers, only: :show
 
 
-  resources :users, only: :show
+  resources :users, only: :show do
+    get 'profile', to: :show, controller: 'users', on: :collection
+    get 'saved', to: :saved, controller: 'users', on: :collection
+  end
 
   post 'relationships', to: 'relationships#create'
   delete 'relationships', to: 'relationships#destroy'
