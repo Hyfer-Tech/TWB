@@ -1,6 +1,9 @@
 class UsersController < ApplicationController
 	before_action :authenticate_any!
-	include ApplicationHelper
+
+  def show
+    @user = current_user.decorate
+  end
 
 	def profile
     @user = current_user.decorate

@@ -10,7 +10,7 @@ RSpec.describe RelationshipsController, type: :controller do
         allow(business_user).to receive(:follow).with(broker)
 
         sign_in business_user
-        post :create, params: { relationship: {user_type: broker.class.name, user_id: broker.id} }
+        post :create, params: {user_type: broker.class.name, user_id: broker.id}, format: :js
 
         expect(business_user).to have_received(:follow)
       end
@@ -32,7 +32,7 @@ RSpec.describe RelationshipsController, type: :controller do
         allow(business_user).to receive(:stop_following).with(broker)      
 
         sign_in business_user
-        delete :destroy, params: { relationship: {user_type: broker.class.name, user_id: broker.id} }
+        delete :destroy, params: {user_type: broker.class.name, user_id: broker.id}, format: :js
 
         expect(business_user).to have_received(:stop_following)
       end

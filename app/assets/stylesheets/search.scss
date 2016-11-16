@@ -1,0 +1,30 @@
+@mixin smooth_transition($property) {
+  transition: $property 700ms ease;
+  -webkit-transition: $property 700ms ease;
+  -moz-transition: $property 700ms ease;
+  -o-transition: $property 700ms ease;
+}
+
+
+.panel-user {
+  @include smooth_transition(all);
+  position: relative;
+
+  &:hover {
+    @include smooth_transition(all);
+    box-shadow: 1px 3px 8px rgba(0, 0, 0, 0.2);
+    background: #e9eaec;
+  }
+
+  .btn-user-info {
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+  }
+
+}
+
+
+.input-group-btn > .btn {
+  height: 45px;
+}

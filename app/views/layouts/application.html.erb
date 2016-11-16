@@ -2,11 +2,13 @@
 <html>
   <head>
     <%= render 'shared/meta' %>
-    
+
   </head>
 
-  <body>
+  <body class="bg-image">
     <%= render 'layouts/nav' %>
-    <%= yield %>
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>
