@@ -15,9 +15,9 @@ describe UserDecorator do
       business_user = FactoryGirl.create(:business_user)
       broker = FactoryGirl.create(:broker)
 
-      expect(ff.decorate.edit_link).to eq("forward_freights/edit")
-      expect(business_user.decorate.edit_link).to eq("business_users/edit")
-      expect(broker.decorate.edit_link).to eq("brokers/edit")
+      expect(ff.decorate.edit_link).to eq("/forward_freights/edit")
+      expect(business_user.decorate.edit_link).to eq("/business_users/edit")
+      expect(broker.decorate.edit_link).to eq("/brokers/edit")
     end
   end
 
