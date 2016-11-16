@@ -18,6 +18,16 @@ gem 'coffee-rails', '~> 4.2'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+
+# carrierwave for photo upload
+gem 'carrierwave', '>= 1.0.0.rc', '< 2.0'
+
+#using amazon for storing pictures
+gem "fog"
+
+#secure amazon key from world
+gem "figaro"
+
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 
@@ -39,6 +49,9 @@ gem 'elasticsearch-rails'
 
 gem 'elasticsearch-model'
 
+# Draper gem for decorator
+gem 'activemodel-serializers-xml', github: 'rails/activemodel-serializers-xml'
+gem 'draper', github: 'drapergem/draper'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
