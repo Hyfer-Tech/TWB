@@ -12,7 +12,6 @@ Rails.application.routes.draw do
 
   root 'static_pages#index'
 
-
   get 'profile', to: :show, controller: 'users'
   get 'dashboard',   to: 'dashboard#index'
 

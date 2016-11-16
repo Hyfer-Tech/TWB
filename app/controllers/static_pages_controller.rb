@@ -8,4 +8,5 @@ class StaticPagesController < ApplicationController
       render layout: 'landing_page'
     end
   end
+
 end
