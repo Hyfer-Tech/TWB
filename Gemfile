@@ -48,12 +48,15 @@ gem 'country_select'
 gem 'elasticsearch-rails'
 
 gem 'elasticsearch-model'
+gem 'bonsai-elasticsearch-rails'
 
 # Draper gem for decorator
 gem 'activemodel-serializers-xml', github: 'rails/activemodel-serializers-xml'
 gem 'draper', github: 'drapergem/draper'
 
 gem 'acts_as_follower', github: 'tcocca/acts_as_follower', branch: 'master'
+
+
 
 
 # Use Redis adapter to run Action Cable in production

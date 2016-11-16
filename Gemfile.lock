@@ -89,6 +89,9 @@ GEM
       babel-source (>= 4.0, < 6)
       execjs (~> 2.0)
     bcrypt (3.1.11)
+    bonsai-elasticsearch-rails (0.1.0)
+      elasticsearch-model (~> 0)
+      elasticsearch-rails (~> 0)
     bootstrap-sass (3.3.7)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
@@ -451,6 +454,7 @@ PLATFORMS
 DEPENDENCIES
   activemodel-serializers-xml!
   acts_as_follower!
+  bonsai-elasticsearch-rails
   bootstrap-sass (~> 3.3.6)
   bullet
   byebug
