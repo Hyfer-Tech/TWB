@@ -1,0 +1,37 @@
+<%= form_tag search_path, method: :get do %>
+  <div class="input-group">
+    <%= text_field_tag :query, params[:query], placeholder: 'Search for a broker or freight forwarder', class: 'form-control' if business_user_signed_in? %>
+
+    <%= text_field_tag :query, params[:query], placeholder: 'Search for a potential client', class: 'form-control' if broker_signed_in? || forward_freight_signed_in? %>
+
+    <span class="input-group-btn">
+      <%= submit_tag "Search", name: nil, class: 'btn btn-danger', type: "button" %>
+    </span>
+  </div>
+<% end %>     
+
+<hr/>
+
+<% if business_user_signed_in? %>
+
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active"><a href="#brokers" aria-controls="brokers" role="tab" data-toggle="tab">Brokers</a></li>
+    <li role="presentation"><a href="#freight_forwarders" aria-controls="freight_forwarders" role="tab" data-toggle="tab">Freight Forwarders</a></li>
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="brokers">
+      <%= render partial: "brokers/broker", collection: @brokers %>
+    </div>
+
+    <div role="tabpanel" class="tab-pane" id="freight_forwarders">
+      <%= render partial: "forward_freights/forward_freight", collection: @forward_freights %>
+    </div>
+  </div>
+
+<% elsif forward_freight_signed_in? || broker_signed_in? %>
+
+  <%= render partial: 'business_users/business_user', collection: @business_users %>
+  
+<% end %>

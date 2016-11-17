@@ -1,0 +1,27 @@
+<h1>Saved Profiles</h1>
+
+<% @following.each do |user| %>
+  <div class="row following-list-item">
+
+      <div class="col-xs-12 col-md-3">
+        <%= image_tag user.avatar, class: 'prof-pic' %>
+        <%= link_to 'Message', "#", class: 'btn btn-success btn-round' %>
+      </div><!-- column -->  
+
+      <div class="col-xs-12 col-md-8 col-md-offset-1">              
+        <h3><%= user.name %></h3>
+        <p>
+          <%= simple_format user.description %>
+        </p>  
+
+        <i class="fa fa-tags" aria-hidden="true"></i> 
+        <span class="label label-default">Tag 1</span>
+        <span class="label label-default">Tag 2</span>
+
+      </div>
+
+      <%= link_to 'More info', user.profile_link, class: 'btn btn-info btn-user-info' %>
+
+      <hr/>
+  </div><!-- row -->
+<% end %>

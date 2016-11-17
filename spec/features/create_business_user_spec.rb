@@ -19,9 +19,10 @@ RSpec.describe "User Signing Up" do
     fill_in "State/Province/County", with: user.state_province_county
     # fill_in "Country", with: user.country
     select "Nepal", from: "business_user[country]"
-    click_on "Sign up"
+    find('input[name="commit"]').click
 
-    expect(page).to have_content "someone@example.com"
+    expect(page).to have_link(nil, href: '/users/profile')
+
 
   end
 end
