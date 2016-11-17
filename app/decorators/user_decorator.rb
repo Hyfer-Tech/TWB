@@ -36,7 +36,7 @@ class UserDecorator < Draper::Decorator
   end
 
   def destroy_session_path
-    "/#{object.class.name.underscore}s"
+    "/#{object.class.name.underscore}s/sign_out"
   end
 
 end

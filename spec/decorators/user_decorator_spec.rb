@@ -29,7 +29,7 @@ describe UserDecorator do
     end
   end
 
-  describe "#edit_link" do
+  describe "#profile_link" do
     it "returns correct path to edit page" do
       ff = FactoryGirl.create(:forward_freight)
       business_user = FactoryGirl.create(:business_user)
