@@ -25,8 +25,8 @@ Rails.application.routes.draw do
 
 
   resources :users, only: :show do
-    get 'profile', to: :show, controller: 'users', on: :collection
-    get 'saved', to: :saved, controller: 'users', on: :collection
+    get 'profile', to: 'users#profile', on: :collection
+    get 'saved', to: 'users#saved', on: :collection
   end
 
   post 'relationships', to: 'relationships#create'
