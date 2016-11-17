@@ -19,8 +19,6 @@ gem 'coffee-rails', '~> 4.2'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
-gem 'font-awesome-sass', '~> 4.7.0'
-
 # carrierwave for photo upload
 gem 'carrierwave', '>= 1.0.0.rc', '< 2.0'
 
