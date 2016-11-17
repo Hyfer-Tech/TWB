@@ -4,10 +4,17 @@
   @include smooth_transition(all);
   position: relative;
 
+  background: rgba(0, 0, 0, 0.4);
+  border-color: #3a3a3a;
+
+  .prof-pic {
+    background: #fff;
+  }
+
   &:hover {
     @include smooth_transition(all);
     box-shadow: 1px 3px 8px rgba(0, 0, 0, 0.2);
-    background: #e9eaec;
+    background: rgba(0, 0, 0, 0.7);
   }
 }
 

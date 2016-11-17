@@ -7,12 +7,14 @@ Rails.application.routes.draw do
   devise_for :business_users
 
   authenticated :business_user do
-    root 'business_users#index', as: :authenticated_root
+    root 'dashboard#index', as: :authenticated_root
   end
 
   root 'static_pages#index'
 
   get 'dashboard',   to: 'dashboard#index'
+  get 'search',   to: 'dashboard#search'
+  get 'favorites',   to: 'dashboard#favorites'
 
   resources :brokers, only: :show
 

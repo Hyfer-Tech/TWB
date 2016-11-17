@@ -1,0 +1,32 @@
+<ul class="sidebar-nav">
+  <li>
+    <%= link_to 'Home', dashboard_path %>
+  </li>
+  <li>
+    <%= link_to 'Search', search_path %>
+  </li>
+  <li>
+     <a href="#">Notification</a>
+  </li>
+  <li>
+     <a href="#">Messages</a>
+  </li>
+  <li>
+     <a href="#">Matches</a>
+  </li>
+  <li>
+    <%= link_to 'Favorites', favorites_path %>     
+  </li>
+  <li>
+     <a href="#">Create Shipment</a>
+  </li>
+  <li>
+     <a href="#">History</a>
+  </li>
+  <li>
+    <%= link_to 'Profile', profile_users_path %>
+  </li>
+  <li>
+    <%= link_to "Settings", current_user.decorate.edit_link %>    
+  </li>
+</ul>
