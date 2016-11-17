@@ -55,6 +55,7 @@ gem 'draper', github: 'drapergem/draper'
 
 gem 'acts_as_follower', github: 'tcocca/acts_as_follower', branch: 'master'
 
+gem 'rails_12factor', group: [:production]
 
 
 
