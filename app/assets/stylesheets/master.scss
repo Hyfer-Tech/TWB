@@ -33,7 +33,7 @@ h6 {
   font-weight: 300;
 }
 p {
-  margin-bottom: 15px;ro
+  margin-bottom: 15px;
   line-height: 1.5;
 }
 a {
@@ -459,11 +459,17 @@ textarea {
 /* Sidebar Styles */
 
 .sidebar-nav {
-  background: rgba(0,0,0,0.2);
+  background: rgba(0, 0, 0, 0.4);
   width: 250px;
   margin: 0;
   padding: 0;
   list-style: none;
+  border-radius: 2px;
+  border: 1px solid #4a4a4a;
+
+  .fa {
+    margin-right: 10px;
+  }
 }
 
 .sidebar-nav li {

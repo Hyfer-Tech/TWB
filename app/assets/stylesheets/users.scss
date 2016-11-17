@@ -1,3 +1,5 @@
+@import "mixins";
+
 .prof-pic {
   border-radius: 50%;
   width: 150px;
@@ -52,4 +54,23 @@
   padding: 15px 20px;
   min-height: 200px;
   border: 2px solid #eee;
+}
+
+
+.panel-user {
+  @include smooth_transition(all);
+  position: relative;
+
+  background: rgba(0, 0, 0, 0.4);
+  border-color: #3a3a3a;
+
+  .prof-pic {
+    background: #fff;
+  }
+
+  &:hover {
+    @include smooth_transition(all);
+    box-shadow: 1px 3px 8px rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.2);
+  }
 }

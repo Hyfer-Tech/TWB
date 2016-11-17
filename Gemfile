@@ -33,7 +33,6 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'devise', git: 'https://github.com/plataformatec/devise.git'
 
-gem 'bootstrap-sass', '~> 3.3.6'
 
 gem 'simple_form'
 

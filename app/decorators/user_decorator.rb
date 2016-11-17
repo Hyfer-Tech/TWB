@@ -35,4 +35,8 @@ class UserDecorator < Draper::Decorator
     "/#{object.class.name.underscore}s/#{object.id}"
   end
 
+  def destroy_session_path
+    "/#{object.class.name.underscore}s"
+  end
+
 end
