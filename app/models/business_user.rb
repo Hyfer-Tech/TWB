@@ -9,4 +9,6 @@ class BusinessUser < ApplicationRecord
 
   mount_uploader :avatar, AvatarUploader
 
+  enum account_type: [:free_account, :premium_account]
+
 end

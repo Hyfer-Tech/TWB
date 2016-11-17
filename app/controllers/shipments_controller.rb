@@ -6,7 +6,7 @@ class ShipmentsController < ApplicationController
 	end
 
 	def create
-		@shipment = current_business_user.shipments.create!(shipment_params)
+		@shipment = current_business_user.shipments.create(shipment_params)
 		if @shipment.valid?
 			redirect_to root_path
 		else
@@ -16,6 +16,6 @@ class ShipmentsController < ApplicationController
 
 	private
 	def shipment_params
-		params.require(:shipment).permit(:quantity)
+		params.require(:shipment).permit(:business_user_id)
 	end
 end
