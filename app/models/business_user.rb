@@ -9,4 +9,5 @@ class BusinessUser < ApplicationRecord
   mount_uploader :avatar, AvatarUploader
 
   acts_as_follower
+  acts_as_followable
 end
