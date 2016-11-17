@@ -6,8 +6,8 @@ class ShipmentsController < ApplicationController
 	end
 
 	def create
-		@shipment = current_business_user.shipments.create!(shipment_params)
-		if @shipment.valid?
+		@shipment = current_business_user.shipments.new(shipment_params)
+		if @shipment.save
 			redirect_to root_path
 		else
 			render :new, status: :inprocessable_entity
