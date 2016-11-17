@@ -13,4 +13,5 @@ class BusinessUser < ApplicationRecord
   enum account_type: [:free_account, :premium_account]
 
   acts_as_follower
+  acts_as_followable
 end
