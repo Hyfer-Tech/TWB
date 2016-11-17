@@ -18,6 +18,7 @@ Rails.application.routes.draw do
 
   resources :brokers, only: :show
   resources :forward_freights, only: :show
+  resources :business_users, only: :show
 
 
   resources :users, only: :show do

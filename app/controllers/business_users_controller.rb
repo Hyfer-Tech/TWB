@@ -1,5 +1,5 @@
 class BusinessUsersController < ApplicationController
-  def index 
-    
+  def show
+    @user = ForwardFreight.find(params[:id]).decorate
   end
 end
