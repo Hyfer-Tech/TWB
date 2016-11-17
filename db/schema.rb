@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 20161116100629) do
     t.integer  "service_rates",                       null: false
     t.string   "avatar"
     t.string   "broker_number",                       null: false
-    t.boolean  "verified_flag"
+    t.boolean  "verified_flag"    
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.index ["email"], name: "index_brokers_on_email", unique: true, using: :btree

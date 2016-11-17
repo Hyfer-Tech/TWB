@@ -19,6 +19,8 @@ gem 'coffee-rails', '~> 4.2'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
+gem 'font-awesome-sass', '~> 4.7.0'
+
 # carrierwave for photo upload
 gem 'carrierwave', '>= 1.0.0.rc', '< 2.0'
 
@@ -33,7 +35,6 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'devise', git: 'https://github.com/plataformatec/devise.git'
 
-gem 'bootstrap-sass', '~> 3.3.6'
 
 gem 'simple_form'
 
@@ -48,10 +49,16 @@ gem 'country_select'
 gem 'elasticsearch-rails'
 
 gem 'elasticsearch-model'
+gem 'bonsai-elasticsearch-rails'
 
 # Draper gem for decorator
 gem 'activemodel-serializers-xml', github: 'rails/activemodel-serializers-xml'
 gem 'draper', github: 'drapergem/draper'
+
+gem 'acts_as_follower', github: 'tcocca/acts_as_follower', branch: 'master'
+
+
+
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'

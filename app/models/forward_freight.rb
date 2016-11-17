@@ -7,4 +7,5 @@ class ForwardFreight < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   mount_uploader :avatar, AvatarUploader
 
+  acts_as_followable
 end

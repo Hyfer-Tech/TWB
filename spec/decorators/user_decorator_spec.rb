@@ -9,15 +9,47 @@ describe UserDecorator do
     end
   end
 
+  describe "#original" do
+    it "returns the original object" do
+      user = FactoryGirl.create(:forward_freight, first_name: "Mark", last_name: "Zuckerburg")      
+
+      expect(user.decorate.original).to eq(user)
+    end
+  end
+
   describe "#edit_link" do
     it "returns correct path to edit page" do
       ff = FactoryGirl.create(:forward_freight)
       business_user = FactoryGirl.create(:business_user)
       broker = FactoryGirl.create(:broker)
 
-      expect(ff.decorate.edit_link).to eq("forward_freights/edit")
-      expect(business_user.decorate.edit_link).to eq("business_users/edit")
-      expect(broker.decorate.edit_link).to eq("brokers/edit")
+      expect(ff.decorate.edit_link).to eq("/forward_freights/edit")
+      expect(business_user.decorate.edit_link).to eq("/business_users/edit")
+      expect(broker.decorate.edit_link).to eq("/brokers/edit")
+    end
+  end
+
+  describe "#edit_link" do
+    it "returns correct path to edit page" do
+      ff = FactoryGirl.create(:forward_freight)
+      business_user = FactoryGirl.create(:business_user)
+      broker = FactoryGirl.create(:broker)
+
+      expect(ff.decorate.profile_link).to eq("/forward_freights/#{ff.id}")
+      expect(business_user.decorate.profile_link).to eq("/business_users/#{business_user.id}")
+      expect(broker.decorate.profile_link).to eq("/brokers/#{broker.id}")
+    end
+  end
+
+  describe "#user_type" do
+    it "returns the correct type for the user" do
+      ff = FactoryGirl.create(:forward_freight)
+      business_user = FactoryGirl.create(:business_user)
+      broker = FactoryGirl.create(:broker)
+
+      expect(ff.decorate.user_type).to eq(ff.class)
+      expect(business_user.decorate.user_type).to eq(business_user.class)
+      expect(broker.decorate.user_type).to eq(broker.class)
     end
   end
 
