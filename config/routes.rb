@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   get 'favorites',   to: 'dashboard#favorites'
 
   resources :brokers, only: :show
+  resources :forward_freights, only: :show
 
 
   resources :users, only: :show do
