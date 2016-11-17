@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161114155202) do
+ActiveRecord::Schema.define(version: 20161116100629) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 20161114155202) do
     t.integer  "service_rates",                       null: false
     t.string   "avatar"
     t.string   "broker_number",                       null: false
-    t.boolean  "verified_flag"
+    t.boolean  "verified_flag"    
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.index ["email"], name: "index_brokers_on_email", unique: true, using: :btree
@@ -131,6 +131,16 @@ ActiveRecord::Schema.define(version: 20161114155202) do
     t.string   "price"
     t.integer  "grams"
     t.string   "compare_at_price"
+    t.bigint   "product_code"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.integer  "business_user_id"
+    t.integer  "shipment_id"
+    t.index ["business_user_id"], name: "index_products_on_business_user_id", using: :btree
+    t.index ["shipment_id"], name: "index_products_on_shipment_id", using: :btree
+  end
+
+  create_table "shipment_products", force: :cascade do |t|
     t.bigint   "product_id"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
@@ -145,6 +155,9 @@ ActiveRecord::Schema.define(version: 20161114155202) do
     t.boolean  "shipment_confirmed"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
+    t.integer  "business_user_id"
+    t.index ["broker_id"], name: "index_shipments_on_broker_id", using: :btree
+    t.index ["business_user_id"], name: "index_shipments_on_business_user_id", using: :btree
     t.index ["broker_id"], name: "index_shipments_on_broker_id", using: :btree
   end
 

@@ -16,6 +16,9 @@ Rails.application.routes.draw do
   get 'search',   to: 'dashboard#search'
   get 'favorites',   to: 'dashboard#favorites'
 
+  resources :shipments, only: [:new, :create]
+  resources :products, only: [:new, :create]
+
   resources :brokers, only: :show
 
 

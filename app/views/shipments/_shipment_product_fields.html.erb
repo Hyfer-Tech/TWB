@@ -1,0 +1,6 @@
+<div class="nested-fields">
+	<%= f.association :product, :collection => Product.all, :prompt => 'Choose an existing Product' %>
+	<%= f.input :quantity %>
+	<%= link_to_remove_association 'Remove Product', f %>
+</div>
+

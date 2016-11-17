@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 	def profile
     @user = current_user.decorate
     render layout: 'profile'
-	end  
+	end
 
   def saved  
     @user = current_user.decorate  
