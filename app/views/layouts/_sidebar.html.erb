@@ -1,0 +1,32 @@
+<ul class="sidebar-nav">
+  <li>
+    <%= link_to '<i class="fa fa-home" aria-hidden="true"></i> Home'.html_safe, dashboard_path %>
+  </li>
+  <li>
+    <%= link_to '<i class="fa fa-search" aria-hidden="true"></i> Search'.html_safe, search_path %>
+  </li>
+  <li>
+    <%= link_to '<i class="fa fa-bell-o" aria-hidden="true"></i> Notifications'.html_safe, '#' %>     
+  </li>
+  <li>
+    <%= link_to '<i class="fa fa-envelope" aria-hidden="true"></i> Messages'.html_safe, '#' %>     
+  </li>
+  <li>
+    <%= link_to '<i class="fa fa-user" aria-hidden="true"></i> Matches'.html_safe, '#' %>     
+  </li>
+  <li>
+    <%= link_to '<i class="fa fa-star" aria-hidden="true"></i> Favorites'.html_safe, favorites_path %>     
+  </li>
+  <li>
+    <%= link_to '<i class="fa fa-truck" aria-hidden="true"></i> Shipments'.html_safe, '#' %>     
+  </li>
+  <li>
+    <%= link_to '<i class="fa fa-history" aria-hidden="true"></i> History'.html_safe, '#' %>          
+  </li>
+  <li>
+    <%= link_to '<i class="fa fa-edit" aria-hidden="true"></i> Profile'.html_safe, profile_users_path %>
+  </li>
+  <li>
+    <%= link_to '<i class="fa fa-gear" aria-hidden="true"></i> Settings'.html_safe, current_user.decorate.edit_link %>    
+  </li>
+</ul>

@@ -1,10 +1,5 @@
-Name: <%= @user.name %> <br>
-Email: <%= @user.email %> <br>
-Phone: <%= @user.phone %> <br>
-Description: <%= @user.description %> <br>
-Address: <%= @user.address %> <br>
-City: <%= @user.city %> <br>
-State: <%= @user.state_province_county %> <br>
-Country: <%= @user.country %>
+<%= simple_format @user.description %>
 
-<%= link_to "Edit", @user.edit_link %>
+<i class="fa fa-tags" aria-hidden="true"></i> 
+<span class="label label-default">Tag 1</span>
+<span class="label label-default">Tag 2</span>

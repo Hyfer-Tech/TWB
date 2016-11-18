@@ -13,17 +13,30 @@
         </div><!--//navbar-header-->
         <div id="navbar-collapse" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-              <% if broker_signed_in? %>
-                <li class="nav-item"><%= link_to 'Edit Profile', edit_broker_registration_path %></li>
-                <li class="nav-item"><%= link_to 'Log Out', destroy_broker_session_path, method: :delete %></li>
-              <% elsif business_user_signed_in? %>
-                <li class="nav-item"><%= link_to 'Edit Profile', edit_business_user_registration_path %></li>
-                <li class="nav-item"><%= link_to 'Log Out', destroy_business_user_session_path, method: :delete %></li>
-              <% else %>
-                <li class="nav-item"><%= link_to 'Sign in as business user', new_business_user_session_path %></li>
-                <li class="nav-item"><%= link_to 'Sign in as broker', new_broker_session_path %></li>
-                <li class="nav-item"><%= link_to 'Sign in as forward_freights', new_forward_freight_session_path %></li>
+              <% if current_user.present? %>
 
+                <li>
+                  <%= link_to '<i class="fa fa-bell" aria-hidden="true"></i>'.html_safe, '#' %>     
+                </li>
+                <li role="presentation" class="dropdown">
+                  <a class="dropdown-toggle nav-dropdown" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                    <%= image_tag current_user.avatar, class: 'prof-pic-xs nav-prof' %> <span class="caret"></span>
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><%= link_to "Profile", profile_users_path %></li>
+
+                    <li><%= link_to 'Log Out', current_user.decorate.destroy_session_path, method: :delete %></li>
+                  </ul>
+                </li>    
+
+              <% else %>
+
+                <li class="nav-item">
+                  <a href="#" class="login-trigger" data-toggle="modal" data-target="#login-modal">Log in</a>
+                </li>
+                <li class="nav-item nav-item-cta last">
+                  <a class="btn-signup" href="#" data-toggle="modal" data-target="#signup-modal">Sign Up</a>
+                </li>
               <% end %>
             </ul><!--//nav-->
         </div><!--//navabr-collapse-->

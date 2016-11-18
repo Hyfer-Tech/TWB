@@ -1,5 +1,9 @@
 class UserDecorator < Draper::Decorator
   delegate_all
+  
+  def original
+    object
+  end
 
   def name
     "#{object.first_name} #{object.last_name}"
@@ -19,8 +23,20 @@ class UserDecorator < Draper::Decorator
     end
   end
 
+  def user_type
+    object.class
+  end
+
   def edit_link
-    "#{object.class.name.underscore}s/edit"
+    "/#{object.class.name.underscore}s/edit"
+  end
+
+  def profile_link
+    "/#{object.class.name.underscore}s/#{object.id}"
+  end
+
+  def destroy_session_path
+    "/#{object.class.name.underscore}s/sign_out"
   end
 
 end

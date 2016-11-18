@@ -1,0 +1,113 @@
+<!-- Login Modal -->
+<div class="modal modal-auth modal-login" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 id="loginModalLabel" class="modal-title text-center">Log in to your account</h4>
+            </div>
+            <div class="modal-body">
+
+              <!-- Nav tabs -->
+              <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#business-user" aria-controls="home" role="tab" data-toggle="tab">Business User</a></li>
+                <li role="presentation"><a href="#broker" aria-controls="profile" role="tab" data-toggle="tab">Broker</a></li>
+                <li role="presentation"><a href="#forward-freight" aria-controls="messages" role="tab" data-toggle="tab">Forward Freight</a></li>
+              </ul>
+
+              <!-- Tab panes -->
+              <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="business-user">
+                  <div class="login-form-container">
+                    <%= simple_form_for(BusinessUser.new, as: :business_user, url: session_path(:business_user), input_html: {class: 'login-form'}) do |f| %>               
+                        <div class="form-group email">
+                          <i class="material-icons icon" style="z-index: 9999;">&#xE0BE;</i>
+                          <label class="sr-only" for="login-email">Email</label>
+                          <%= f.input :email, required: false, autofocus: true, label: false, id: 'login-email', class: 'form-control login-email', placeholder: 'Email' %>
+                        </div><!--//form-group-->
+                        <div class="form-group password">
+                            <i class="material-icons icon" style="z-index: 9999;">&#xE897;</i>
+                            <label class="sr-only" for="login-password">Password</label>
+                            <%= f.input :password, label: false, class: 'form-control login-password', placeholder: 'Password' %>
+                            <div class="extra">
+                            <%= f.input :remember_me, as: :boolean if Devise.mappings[:business_user].rememberable? %> 
+
+                                <div class="forgotten-password">
+                                    <a href="#" id="resetpass-link" data-toggle="modal" data-target="#resetpass-modal">Forgotten password?</a>
+                                </div>
+                            </div><!--//extra-->
+                        </div><!--//form-group-->
+                        <%= f.button :submit, "Log in", class: 'btn btn-cta btn-block btn-primary' %>                            
+                    <% end %>
+                  </div><!--//login-form-container-->
+                  <div class="option-container">
+                    <div class="lead-text">Don't have an account?</div> 
+                    <%= link_to 'Sign Up', new_business_user_registration_path, class: 'signup-link btn btn-ghost-alt', id: 'signup-link' %>
+                  </div><!--//option-container-->
+                </div><!-- tabpanel -->
+
+                <div role="tabpanel" class="tab-pane" id="broker">
+                  <div class="login-form-container">
+                    <%= simple_form_for(Broker.new, as: :broker, url: session_path(:broker), input_html: {class: 'login-form'}) do |f| %>               
+                        <div class="form-group email">
+                          <i class="material-icons icon" style="z-index: 9999;">&#xE0BE;</i>
+                          <label class="sr-only" for="login-email">Email</label>
+                          <%= f.input :email, required: false, autofocus: true, label: false, id: 'login-email', class: 'form-control login-email', placeholder: 'Email' %>
+                        </div><!--//form-group-->
+                        <div class="form-group password">
+                            <i class="material-icons icon" style="z-index: 9999;">&#xE897;</i>
+                            <label class="sr-only" for="login-password">Password</label>
+                            <%= f.input :password, label: false, class: 'form-control login-password', placeholder: 'Password' %>
+                            <div class="extra">
+                            <%= f.input :remember_me, as: :boolean if Devise.mappings[:broker].rememberable? %> 
+
+                                <div class="forgotten-password">
+                                    <a href="#" id="resetpass-link" data-toggle="modal" data-target="#resetpass-modal">Forgotten password?</a>
+                                </div>
+                            </div><!--//extra-->
+                        </div><!--//form-group-->
+                        <%= f.button :submit, "Log in", class: 'btn btn-cta btn-block btn-primary' %>                            
+                    <% end %>
+                  </div><!--//login-form-container-->
+
+                  <div class="option-container">
+                    <div class="lead-text">Don't have an account?</div> 
+                    <%= link_to 'Sign Up', new_broker_registration_path, class: 'signup-link btn btn-ghost-alt', id: 'signup-link' %>
+                  </div><!--//option-container-->
+                </div><!-- tabpanel -->
+
+                <div role="tabpanel" class="tab-pane" id="forward-freight">
+                  <div class="login-form-container">
+                    <%= simple_form_for(ForwardFreight.new, as: :forward_freight, url: session_path(:forward_freight), input_html: {class: 'login-form'}) do |f| %>               
+                        <div class="form-group email">
+                          <i class="material-icons icon" style="z-index: 9999;">&#xE0BE;</i>
+                          <label class="sr-only" for="login-email">Email</label>
+                          <%= f.input :email, required: false, autofocus: true, label: false, id: 'login-email', class: 'form-control login-email', placeholder: 'Email' %>
+                        </div><!--//form-group-->
+                        <div class="form-group password">
+                            <i class="material-icons icon" style="z-index: 9999;">&#xE897;</i>
+                            <label class="sr-only" for="login-password">Password</label>
+                            <%= f.input :password, label: false, class: 'form-control login-password', placeholder: 'Password' %>
+                            <div class="extra">
+                            <%= f.input :remember_me, as: :boolean if Devise.mappings[:forward_freight].rememberable? %> 
+
+                                <div class="forgotten-password">
+                                    <a href="#" id="resetpass-link" data-toggle="modal" data-target="#resetpass-modal">Forgotten password?</a>
+                                </div>
+                            </div><!--//extra-->
+                        </div><!--//form-group-->
+                        <%= f.button :submit, "Log in", class: 'btn btn-cta btn-block btn-primary' %>                            
+                    <% end %>
+                  </div><!--//login-form-container-->
+                  <div class="option-container">
+                    <div class="lead-text">Don't have an account?</div> 
+                    <%= link_to 'Sign Up', new_forward_freight_registration_path, class: 'signup-link btn btn-ghost-alt', id: 'signup-link' %>
+                  </div><!--//option-container-->
+                </div><!-- tabpanel -->
+                
+              </div><!-- tab-content -->
+             
+            </div><!--//modal-body-->
+        </div><!--//modal-content-->
+    </div><!--//modal-dialog-->
+</div><!--//modal-->

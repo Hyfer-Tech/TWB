@@ -35,7 +35,6 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'devise', git: 'https://github.com/plataformatec/devise.git'
 
-gem 'bootstrap-sass', '~> 3.3.6'
 
 gem 'simple_form'
 
@@ -50,10 +49,17 @@ gem 'country_select'
 gem 'elasticsearch-rails'
 
 gem 'elasticsearch-model'
+gem 'bonsai-elasticsearch-rails'
 
 # Draper gem for decorator
 gem 'activemodel-serializers-xml', github: 'rails/activemodel-serializers-xml'
 gem 'draper', github: 'drapergem/draper'
+
+gem 'acts_as_follower', github: 'tcocca/acts_as_follower', branch: 'master'
+
+gem 'rails_12factor', group: [:production]
+
+
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
