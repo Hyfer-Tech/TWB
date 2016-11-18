@@ -10,7 +10,7 @@ class ShipmentsController < ApplicationController
 		if @shipment.valid?
 			redirect_to root_path
 		else
-			render :new, status: :inprocessable_entity
+			render :new, status: :unnprocessable_entity
 		end
 	end
 

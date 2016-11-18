@@ -12,7 +12,7 @@ class Shipment < ApplicationRecord
 
 	def check_user_quota
 		return if business_user.premium_account?
-		if business_user.shipments.this_month.count >= 5
+		if business_user.shipments.this_month.count >= Shipment.find_by(user_type: BusinessUser.class.name.underscore).amount
 		 	errors.add(:base, "Exceeds monthly limit")
 		end
 	end
