@@ -18,9 +18,18 @@ ActiveAdmin.register AdminUser do
 
   form do |f|
     f.inputs "Admin Details" do
+      f.input :name_name
+      f.input :last_name
       f.input :email
       f.input :password
       f.input :password_confirmation
+      f.input :phone
+      f.input :city
+      f.input :zip_postal_code
+      f.input :state_province_county
+      f.input :country
+      f.input :service_rates
+      f.input :broker_number
     end
     f.actions
   end
