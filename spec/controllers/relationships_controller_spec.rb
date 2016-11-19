@@ -15,12 +15,6 @@ RSpec.describe RelationshipsController, type: :controller do
         expect(business_user).to have_received(:follow)
       end
     end
-
-    context "params are invalid" do
-      it "returns an error message" do
-        
-      end
-    end
   end
 
   describe "#DELETE destroy" do
@@ -35,12 +29,6 @@ RSpec.describe RelationshipsController, type: :controller do
         delete :destroy, params: {user_type: broker.class.name, user_id: broker.id}, format: :js
 
         expect(business_user).to have_received(:stop_following)
-      end
-    end
-
-    context "params are invalid" do
-      it "returns an error message" do
-        
       end
     end
   end
