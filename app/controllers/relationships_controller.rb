@@ -1,20 +1,12 @@
 class RelationshipsController < ApplicationController
   before_action :authenticate_any!
 
-  def create
-    if find_user      
-      current_business_user.follow(find_user)      
-    else
-      # error handling here
-    end
+  def create    
+    current_user.follow(find_user)     
   end
 
   def destroy
-    if find_user
-      current_business_user.stop_following(find_user)      
-    else
-      # error handling here
-    end
+    current_user.stop_following(find_user)
   end
 
   private

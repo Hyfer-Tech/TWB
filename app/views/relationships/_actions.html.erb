@@ -1,5 +1,7 @@
-<% if current_user.following?(user.original) %>
-  <%= link_to 'Remove Profile', relationships_path(user_type: user.user_type, user_id: user.id), method: :delete, remote: true, class: 'btn btn-warning btn-round' %>
-<% else %>
-  <%= link_to 'Save Profile', relationships_path(user_type: user.user_type, user_id: user.id), method: :post, remote: true, class: 'btn btn-success btn-round' %>
+<% if current_user.present? %>
+  <% if current_user.following?(user.original) %>
+    <%= link_to 'Remove Profile', relationships_path(user_type: user.user_type, user_id: user.id), method: :delete, remote: true, class: 'btn btn-warning btn-round' %>
+  <% else %>
+    <%= link_to 'Save Profile', relationships_path(user_type: user.user_type, user_id: user.id), method: :post, remote: true, class: 'btn btn-success btn-round' %>
+  <% end %>
 <% end %>
