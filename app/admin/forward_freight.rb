@@ -12,7 +12,7 @@ ActiveAdmin.register ForwardFreight do
 #   permitted << :other if params[:action] == 'create' && current_user.admin?
 #   permitted
 # end
-  permit_params :email, :password, :password_confirmation
+  permit_params :first_name, :last_name, :email, :password, :password_confirmation, :phone, :address_line_1, :city, :state_province_county, :zip_postal_code, :service_rates, :country 
 
   index do
     selectable_column
