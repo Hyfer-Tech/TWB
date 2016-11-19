@@ -17,16 +17,15 @@ RSpec.describe "Broker Signing Up" do
     fill_in "City",with: broker.city
     fill_in "Zip/Postal/Code", with: broker.zip_postal_code
     fill_in "State/Province/County", with: broker.state_province_county
-    # fill_in "Country", with: broker.country
     select "Nepal", from: "broker[country]"
     fill_in "Specialty", with: broker.specialty
     fill_in "Past Experience", with: broker.past_experience
     fill_in "Service Rate", with: broker.service_rates
     # attach_file("Avatar", Rails.root + "spec/fixtures/files/5.png", visible: false)
     fill_in "Broker Number", with: broker.broker_number
-    click_on "Sign up"
+    find('input[name="commit"]').click
     
-    expect(page).to have_content "example@user.com"
+    expect(page).to have_link(nil, href: '/users/profile')
   end
 
   scenario "unsuccessfully" do
@@ -43,16 +42,15 @@ RSpec.describe "Broker Signing Up" do
     fill_in "Address Line 1",with: broker.address_line_1
     fill_in "City",with: broker.city
     fill_in "Zip/Postal/Code", with: broker.zip_postal_code
-    fill_in "State/Province/County", with: broker.state_province_county
-    # fill_in "Country", with: broker.country
+    fill_in "State/Province/County", with: broker.state_province_county    
     select "Nepal", from: "broker[country]"
     fill_in "Specialty", with: broker.specialty
     fill_in "Past Experience", with: broker.past_experience
     fill_in "Service Rate", with: broker.service_rates
     # attach_file("Avatar", Rails.root + "spec/fixtures/files/5.png", visible: false)
     fill_in "Broker Number", with: ""
-    click_on "Sign up"
+    find('input[name="commit"]').click
 
-    expect(page).to have_content "Please review the problems below:"
+    expect(page).to_not have_link(nil, href: '/users/profile')
   end
 end
