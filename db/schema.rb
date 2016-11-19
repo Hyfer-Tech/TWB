@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161118083507) do
+ActiveRecord::Schema.define(version: 20161119171841) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -106,6 +106,7 @@ ActiveRecord::Schema.define(version: 20161118083507) do
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "avatar"
+    t.integer  "account_type"
     t.index ["email"], name: "index_business_users_on_email", unique: true, using: :btree
     t.index ["first_name"], name: "index_business_users_on_first_name", using: :btree
     t.index ["last_name"], name: "index_business_users_on_last_name", using: :btree
@@ -160,15 +161,15 @@ ActiveRecord::Schema.define(version: 20161118083507) do
     t.string   "featured_image"
     t.boolean  "available"
     t.string   "price"
-    t.integer  "grams"
     t.string   "compare_at_price"
     t.bigint   "product_code"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
     t.integer  "business_user_id"
-    t.integer  "shipment_id"
+    t.float    "height"
+    t.float    "width"
+    t.float    "grams"
     t.index ["business_user_id"], name: "index_products_on_business_user_id", using: :btree
-    t.index ["shipment_id"], name: "index_products_on_shipment_id", using: :btree
   end
 
   create_table "shipment_products", force: :cascade do |t|
@@ -177,17 +178,17 @@ ActiveRecord::Schema.define(version: 20161118083507) do
     t.datetime "updated_at",  null: false
     t.integer  "shipment_id"
     t.integer  "quantity"
+    t.index ["product_id", "shipment_id"], name: "index_shipment_products_on_product_id_and_shipment_id", using: :btree
+    t.index ["product_id"], name: "index_shipment_products_on_product_id", using: :btree
+    t.index ["shipment_id"], name: "index_shipment_products_on_shipment_id", using: :btree
   end
 
   create_table "shipments", force: :cascade do |t|
-    t.integer  "broker_id"
-    t.integer  "forward_freight_id"
     t.boolean  "approval"
     t.boolean  "shipment_confirmed"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
     t.integer  "business_user_id"
-    t.index ["broker_id"], name: "index_shipments_on_broker_id", using: :btree
     t.index ["business_user_id"], name: "index_shipments_on_business_user_id", using: :btree
   end
 
