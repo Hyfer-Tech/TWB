@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "User Signing Up" do
   scenario "successfully" do
-    user = FactoryGirl.create(:business_user)
+    user = FactoryGirl.build(:business_user)
 
     visit new_business_user_registration_path
     fill_in "First name", with: user.first_name
