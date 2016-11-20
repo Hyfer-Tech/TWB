@@ -15,4 +15,5 @@ Rails.application.routes.draw do
   get 'profile', to: :show, controller: 'users'
 
   resources :users, only: :show
+  resources :taggings, only: :create
 end

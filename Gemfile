@@ -49,6 +49,9 @@ gem 'elasticsearch-rails'
 
 gem 'elasticsearch-model'
 
+#taggable gem
+gem 'acts-as-taggable-on', '~> 4.0'
+
 # Draper gem for decorator
 gem 'activemodel-serializers-xml', github: 'rails/activemodel-serializers-xml'
 gem 'draper', github: 'drapergem/draper'
