@@ -7,6 +7,8 @@ class ForwardFreight < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   mount_uploader :avatar, AvatarUploader
 
+  validates :email, :first_name, :last_name, :phone, :address_line_1, :city, :state_province_county, :country, presence: true
+
   acts_as_followable
   acts_as_follower
 end
