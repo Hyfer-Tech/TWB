@@ -5,11 +5,7 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-      <%= f.label :tag_list, "Tags (separated by commas)" %><br />
-      <%= f.text_field :tag_list %>
-
-      <%= resource.tag_list.map { |t| t } %>
-      
+      <%= f.input :tag_list , collection: ActsAsTaggableOn::Tag.all %>
       <%= f.input :first_name, required: true, autofocus: true %>
       <%= f.input :last_name, required: true %>
       <%= f.input :email, required: true %>
