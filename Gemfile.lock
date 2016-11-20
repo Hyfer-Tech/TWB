@@ -508,7 +508,6 @@ DEPENDENCIES
   activeadmin!
   activemodel-serializers-xml!
   acts-as-taggable-on (~> 4.0)
-  bootstrap-sass (~> 3.3.6)
   acts_as_follower!
   bonsai-elasticsearch-rails
   bullet
