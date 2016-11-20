@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :shipment_limit do
+  factory :user_limit do
     
   end
 end

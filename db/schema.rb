@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161117161240) do
+ActiveRecord::Schema.define(version: 20161118105010) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -168,6 +168,14 @@ ActiveRecord::Schema.define(version: 20161117161240) do
     t.integer  "business_user_id"
     t.index ["broker_id"], name: "index_shipments_on_broker_id", using: :btree
     t.index ["business_user_id"], name: "index_shipments_on_business_user_id", using: :btree
+  end
+
+  create_table "user_limits", force: :cascade do |t|
+    t.integer  "amount"
+    t.string   "user_type"
+    t.integer  "limit_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
