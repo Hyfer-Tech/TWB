@@ -10,42 +10,42 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161117154153) do
+ActiveRecord::Schema.define(version: 20161120053005) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "brokers", force: :cascade do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
+    t.string   "email",                  default: "",    null: false
+    t.string   "encrypted_password",     default: "",    null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",          default: 0,     null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.inet     "current_sign_in_ip"
     t.inet     "last_sign_in_ip"
-    t.string   "first_name",                          null: false
-    t.string   "last_name",                           null: false
+    t.string   "first_name",                             null: false
+    t.string   "last_name",                              null: false
     t.text     "description"
-    t.string   "phone",                               null: false
-    t.string   "firm_name",                           null: false
-    t.string   "address_line_1",                      null: false
+    t.string   "phone",                                  null: false
+    t.string   "firm_name",                              null: false
+    t.string   "address_line_1",                         null: false
     t.string   "address_line_2"
     t.string   "address_line_3"
-    t.string   "city",                                null: false
-    t.integer  "zip_postal_code",                     null: false
-    t.string   "state_province_county",               null: false
-    t.string   "country",                             null: false
-    t.string   "specialty",                           null: false
+    t.string   "city",                                   null: false
+    t.integer  "zip_postal_code",                        null: false
+    t.string   "state_province_county",                  null: false
+    t.string   "country",                                null: false
+    t.string   "specialty",                              null: false
     t.string   "past_experience"
-    t.integer  "service_rates",                       null: false
+    t.integer  "service_rates",                          null: false
     t.string   "avatar"
-    t.string   "broker_number",                       null: false
-    t.boolean  "verified_flag"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
+    t.string   "broker_number",                          null: false
+    t.boolean  "verified_flag",          default: false, null: false
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
     t.index ["email"], name: "index_brokers_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_brokers_on_reset_password_token", unique: true, using: :btree
   end
@@ -82,6 +82,18 @@ ActiveRecord::Schema.define(version: 20161117154153) do
     t.index ["reset_password_token"], name: "index_business_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  create_table "follows", force: :cascade do |t|
+    t.string   "followable_type",                 null: false
+    t.integer  "followable_id",                   null: false
+    t.string   "follower_type",                   null: false
+    t.integer  "follower_id",                     null: false
+    t.boolean  "blocked",         default: false, null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["followable_id", "followable_type"], name: "fk_followables", using: :btree
+    t.index ["follower_id", "follower_type"], name: "fk_follows", using: :btree
+  end
+
   create_table "forward_freights", force: :cascade do |t|
     t.string   "email"
     t.string   "encrypted_password",     default: "", null: false
@@ -114,14 +126,14 @@ ActiveRecord::Schema.define(version: 20161117154153) do
 
   create_table "products", force: :cascade do |t|
     t.string   "title"
-    t.boolean  "taxable"
+    t.boolean  "taxable",          default: false, null: false
     t.string   "featured_image"
-    t.boolean  "available"
+    t.boolean  "available",        default: false, null: false
     t.string   "price"
     t.string   "compare_at_price"
     t.bigint   "product_code"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
     t.integer  "business_user_id"
     t.integer  "shipment_id"
     t.float    "height"
@@ -129,6 +141,13 @@ ActiveRecord::Schema.define(version: 20161117154153) do
     t.float    "grams"
     t.index ["business_user_id"], name: "index_products_on_business_user_id", using: :btree
     t.index ["shipment_id"], name: "index_products_on_shipment_id", using: :btree
+  end
+
+  create_table "shipment_limits", force: :cascade do |t|
+    t.integer  "amount"
+    t.string   "user_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "shipment_products", force: :cascade do |t|
@@ -142,13 +161,21 @@ ActiveRecord::Schema.define(version: 20161117154153) do
   create_table "shipments", force: :cascade do |t|
     t.integer  "broker_id"
     t.integer  "forward_freight_id"
-    t.boolean  "approval"
-    t.boolean  "shipment_confirmed"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.boolean  "approval",           default: false, null: false
+    t.boolean  "shipment_confirmed", default: false, null: false
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
     t.integer  "business_user_id"
     t.index ["broker_id"], name: "index_shipments_on_broker_id", using: :btree
     t.index ["business_user_id"], name: "index_shipments_on_business_user_id", using: :btree
+  end
+
+  create_table "user_limits", force: :cascade do |t|
+    t.integer  "amount"
+    t.string   "user_type"
+    t.integer  "limit_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
