@@ -1,0 +1,6 @@
+@mixin smooth_transition($property) {
+  transition: $property 700ms ease;
+  -webkit-transition: $property 700ms ease;
+  -moz-transition: $property 700ms ease;
+  -o-transition: $property 700ms ease;
+}

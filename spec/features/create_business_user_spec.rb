@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "User Signing Up" do
   scenario "successfully" do
-    user = FactoryGirl.create(:business_user)
+    user = FactoryGirl.build(:business_user)
 
     visit new_business_user_registration_path
     fill_in "First name", with: user.first_name
@@ -19,9 +19,10 @@ RSpec.describe "User Signing Up" do
     fill_in "State/Province/County", with: user.state_province_county
     # fill_in "Country", with: user.country
     select "Nepal", from: "business_user[country]"
-    click_on "Sign up"
+    find('input[name="commit"]').click
 
-    expect(page).to have_content "someone@example.com"
+    expect(page).to have_link(nil, href: '/users/profile')
+
 
   end
 end

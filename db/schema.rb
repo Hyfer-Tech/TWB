@@ -10,10 +10,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161119141519) do
+ActiveRecord::Schema.define(version: 20161119171841) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "active_admin_comments", force: :cascade do |t|
+    t.string   "namespace"
+    t.text     "body"
+    t.string   "resource_id",   null: false
+    t.string   "resource_type", null: false
+    t.string   "author_type"
+    t.integer  "author_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["author_type", "author_id"], name: "index_active_admin_comments_on_author_type_and_author_id", using: :btree
+    t.index ["namespace"], name: "index_active_admin_comments_on_namespace", using: :btree
+    t.index ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id", using: :btree
+  end
+
+  create_table "admin_users", force: :cascade do |t|
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.inet     "current_sign_in_ip"
+    t.inet     "last_sign_in_ip"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.index ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
+    t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
+  end
 
   create_table "brokers", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -35,7 +66,7 @@ ActiveRecord::Schema.define(version: 20161119141519) do
     t.string   "address_line_2"
     t.string   "address_line_3"
     t.string   "city",                                null: false
-    t.integer  "zip_postal_code",                     null: false
+    t.string   "zip_postal_code",                     null: false
     t.string   "state_province_county",               null: false
     t.string   "country",                             null: false
     t.string   "specialty",                           null: false
@@ -75,6 +106,7 @@ ActiveRecord::Schema.define(version: 20161119141519) do
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "avatar"
+    t.integer  "account_type"
     t.index ["email"], name: "index_business_users_on_email", unique: true, using: :btree
     t.index ["first_name"], name: "index_business_users_on_first_name", using: :btree
     t.index ["last_name"], name: "index_business_users_on_last_name", using: :btree
@@ -128,6 +160,43 @@ ActiveRecord::Schema.define(version: 20161119141519) do
     t.index ["taggable_type"], name: "index_taggings_on_taggable_type", using: :btree
     t.index ["tagger_id", "tagger_type"], name: "index_taggings_on_tagger_id_and_tagger_type", using: :btree
     t.index ["tagger_id"], name: "index_taggings_on_tagger_id", using: :btree
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.string   "title"
+    t.boolean  "taxable"
+    t.string   "featured_image"
+    t.boolean  "available"
+    t.string   "price"
+    t.string   "compare_at_price"
+    t.bigint   "product_code"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.integer  "business_user_id"
+    t.float    "height"
+    t.float    "width"
+    t.float    "grams"
+    t.index ["business_user_id"], name: "index_products_on_business_user_id", using: :btree
+  end
+
+  create_table "shipment_products", force: :cascade do |t|
+    t.bigint   "product_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "shipment_id"
+    t.integer  "quantity"
+    t.index ["product_id", "shipment_id"], name: "index_shipment_products_on_product_id_and_shipment_id", using: :btree
+    t.index ["product_id"], name: "index_shipment_products_on_product_id", using: :btree
+    t.index ["shipment_id"], name: "index_shipment_products_on_shipment_id", using: :btree
+  end
+
+  create_table "shipments", force: :cascade do |t|
+    t.boolean  "approval"
+    t.boolean  "shipment_confirmed"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.integer  "business_user_id"
+    t.index ["business_user_id"], name: "index_shipments_on_business_user_id", using: :btree
   end
 
   create_table "tags", force: :cascade do |t|

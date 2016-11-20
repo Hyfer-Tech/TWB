@@ -1,0 +1,14 @@
+language: ruby
+cache: bundler
+rvm:
+- 2.3.0
+env:
+- DB=postgresql
+services:
+- elasticsearch
+before_script:
+- sleep 10
+- psql -c 'create database twb_test;' -U postgres
+script:
+- RAILS_ENV=test bundle exec rake db:reset db:migrate --trace
+- bundle exec rspec
