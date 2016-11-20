@@ -54,6 +54,9 @@ gem 'bonsai-elasticsearch-rails'
 #taggable gem
 gem 'acts-as-taggable-on', '~> 4.0'
 
+#chosen-rails gem
+gem 'chosen-rails'
+
 # Draper gem for decorator
 gem 'activemodel-serializers-xml', github: 'rails/activemodel-serializers-xml'
 gem 'draper', github: 'drapergem/draper'
