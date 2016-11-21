@@ -11,6 +11,6 @@
 
 # Broker.create(first_name: "", last_name: "", email: "", description: "", phone: "", firm_name: "", address_line_1: "", city:"", zip_postal_code: , state_province_county: "", country: "", specialty:"", past_experience: "", service_rates: ,avatar: "", broker_number: "", verified_flag: )
 
-ShipmentLimit.create(amount: , user_type: "")
-ShipmentLimit.create(amount: , user_type: "")
-ShipmentLimit.create(amount: , user_type: "")
+UserLimit.create(amount: 5, user_type: "Business User", limit_type: :job_post_limit)
+UserLimit.create(amount: 15, user_type: "Forward Freight", limit_type: :bid_limit )
+UserLimit.create(amount: 10, user_type: "Broker", limit_type: :bid_limit)
