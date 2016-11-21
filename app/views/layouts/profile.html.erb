@@ -18,7 +18,7 @@
               </div>
               <!-- END SIDEBAR USERPIC -->
 
-              <%= react_component 'EditName', { name: @user.name } %>
+              <%= react_component 'EditName', { name: {first_name: @user.first_name, last_name: @user.last_name } } %>
             
               <!-- END SIDEBAR BUTTONS -->
               <!-- SIDEBAR MENU -->
