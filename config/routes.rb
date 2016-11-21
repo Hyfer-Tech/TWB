@@ -18,6 +18,8 @@ Rails.application.routes.draw do
   get 'search',   to: 'dashboard#search'
   get 'favorites',   to: 'dashboard#favorites'
 
+  resources :users, only: :show
+  resources :taggings, only: :create
   resources :brokers, only: :show
   resources :forward_freights, only: :show
   resources :business_users, only: :show

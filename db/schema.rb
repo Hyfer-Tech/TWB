@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161119171841) do
+ActiveRecord::Schema.define(version: 20161119141519) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -106,7 +106,6 @@ ActiveRecord::Schema.define(version: 20161119171841) do
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "avatar"
-    t.integer  "account_type"
     t.index ["email"], name: "index_business_users_on_email", unique: true, using: :btree
     t.index ["first_name"], name: "index_business_users_on_first_name", using: :btree
     t.index ["last_name"], name: "index_business_users_on_last_name", using: :btree
@@ -155,72 +154,29 @@ ActiveRecord::Schema.define(version: 20161119171841) do
     t.index ["reset_password_token"], name: "index_forward_freights_on_reset_password_token", unique: true, using: :btree
   end
 
-  create_table "products", force: :cascade do |t|
-    t.string   "title"
-    t.boolean  "taxable"
-    t.string   "featured_image"
-    t.boolean  "available"
-    t.string   "price"
-    t.string   "compare_at_price"
-    t.bigint   "product_code"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
-    t.integer  "business_user_id"
-    t.float    "height"
-    t.float    "width"
-    t.float    "grams"
-    t.index ["business_user_id"], name: "index_products_on_business_user_id", using: :btree
+  create_table "taggings", force: :cascade do |t|
+    t.integer  "tag_id"
+    t.string   "taggable_type"
+    t.integer  "taggable_id"
+    t.string   "tagger_type"
+    t.integer  "tagger_id"
+    t.string   "context",       limit: 128
+    t.datetime "created_at"
+    t.index ["context"], name: "index_taggings_on_context", using: :btree
+    t.index ["tag_id", "taggable_id", "taggable_type", "context", "tagger_id", "tagger_type"], name: "taggings_idx", unique: true, using: :btree
+    t.index ["tag_id"], name: "index_taggings_on_tag_id", using: :btree
+    t.index ["taggable_id", "taggable_type", "context"], name: "index_taggings_on_taggable_id_and_taggable_type_and_context", using: :btree
+    t.index ["taggable_id", "taggable_type", "tagger_id", "context"], name: "taggings_idy", using: :btree
+    t.index ["taggable_id"], name: "index_taggings_on_taggable_id", using: :btree
+    t.index ["taggable_type"], name: "index_taggings_on_taggable_type", using: :btree
+    t.index ["tagger_id", "tagger_type"], name: "index_taggings_on_tagger_id_and_tagger_type", using: :btree
+    t.index ["tagger_id"], name: "index_taggings_on_tagger_id", using: :btree
   end
 
-  create_table "shipment_products", force: :cascade do |t|
-    t.bigint   "product_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.integer  "shipment_id"
-    t.integer  "quantity"
-    t.index ["product_id", "shipment_id"], name: "index_shipment_products_on_product_id_and_shipment_id", using: :btree
-    t.index ["product_id"], name: "index_shipment_products_on_product_id", using: :btree
-    t.index ["shipment_id"], name: "index_shipment_products_on_shipment_id", using: :btree
-  end
-
-  create_table "shipments", force: :cascade do |t|
-    t.boolean  "approval"
-    t.boolean  "shipment_confirmed"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
-    t.integer  "business_user_id"
-    t.index ["business_user_id"], name: "index_shipments_on_business_user_id", using: :btree
-  end
-
-  create_table "users", force: :cascade do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.inet     "current_sign_in_ip"
-    t.inet     "last_sign_in_ip"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
-    t.string   "first_name"
-    t.string   "last_name"
-    t.text     "description"
-    t.string   "phone"
-    t.string   "address_line_1"
-    t.string   "address_line_2"
-    t.string   "address_line_3"
-    t.string   "city"
-    t.string   "zip_or_postcode"
-    t.string   "state_province_county"
-    t.string   "country"
-    t.text     "other_address_details"
-    t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
-    t.index ["first_name"], name: "index_users_on_first_name", using: :btree
-    t.index ["last_name"], name: "index_users_on_last_name", using: :btree
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  create_table "tags", force: :cascade do |t|
+    t.string  "name"
+    t.integer "taggings_count", default: 0
+    t.index ["name"], name: "index_tags_on_name", unique: true, using: :btree
   end
 
 end
