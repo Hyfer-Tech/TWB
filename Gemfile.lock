@@ -1,4 +1,33 @@
 GIT
+  remote: git://github.com/activeadmin/activeadmin.git
+  revision: 78324a83fa01d62bbc372bafc2313be5b3837529
+  specs:
+    activeadmin (1.0.0.pre4)
+      arbre (~> 1.0, >= 1.0.2)
+      bourbon
+      coffee-rails
+      formtastic (~> 3.1)
+      formtastic_i18n
+      inherited_resources (~> 1.6)
+      jquery-rails
+      jquery-ui-rails
+      kaminari (~> 0.15)
+      railties (>= 3.2, < 5.1)
+      ransack (~> 1.3)
+      sass-rails
+      sprockets (< 4.1)
+
+GIT
+  remote: git://github.com/activeadmin/inherited_resources.git
+  revision: 4434f0ae72f790cf371728838c927c338100555d
+  specs:
+    inherited_resources (1.6.0)
+      actionpack (>= 3.2, < 5.1)
+      has_scope (~> 0.6)
+      railties (>= 3.2, < 5.1)
+      responders
+
+GIT
   remote: git://github.com/drapergem/draper.git
   revision: 45e18569d9631710f889d75d49f971fb60d5cbcd
   specs:
@@ -79,8 +108,12 @@ GEM
       i18n (~> 0.7)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
+    acts-as-taggable-on (4.0.0)
+      activerecord (>= 4.0)
     addressable (2.5.0)
       public_suffix (~> 2.0, >= 2.0.2)
+    arbre (1.1.1)
+      activesupport (>= 3.0.0)
     arel (7.1.4)
     babel-source (5.8.35)
     babel-transpiler (0.7.0)
@@ -90,6 +123,9 @@ GEM
     bonsai-elasticsearch-rails (0.1.0)
       elasticsearch-model (~> 0)
       elasticsearch-rails (~> 0)
+    bourbon (4.2.7)
+      sass (~> 3.4)
+      thor (~> 0.19)
     builder (3.2.2)
     bullet (5.4.2)
       activesupport (>= 3.0.0)
@@ -106,6 +142,10 @@ GEM
       activemodel (>= 4.0.0)
       activesupport (>= 4.0.0)
       mime-types (>= 1.16)
+    chosen-rails (1.5.2)
+      coffee-rails (>= 3.2)
+      railties (>= 3.0)
+      sass-rails (>= 3.2)
     cocoon (1.2.9)
     coderay (1.1.1)
     coffee-rails (4.2.1)
@@ -280,8 +320,14 @@ GEM
       fog-core
       nokogiri (~> 1.5, >= 1.5.11)
     formatador (0.2.5)
+    formtastic (3.1.4)
+      actionpack (>= 3.2.13)
+    formtastic_i18n (0.6.0)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
+    has_scope (0.7.0)
+      actionpack (>= 4.1, < 5.1)
+      activesupport (>= 4.1, < 5.1)
     hashie (3.4.6)
     i18n (0.7.0)
     i18n_data (0.7.0)
@@ -294,7 +340,12 @@ GEM
       rails-dom-testing (>= 1, < 3)
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
+    jquery-ui-rails (5.0.5)
+      railties (>= 3.2.16)
     json (2.0.2)
+    kaminari (0.17.0)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
     launchy (2.4.3)
       addressable (~> 2.3)
     letter_opener (1.4.1)
@@ -319,6 +370,8 @@ GEM
       mini_portile2 (~> 2.1.0)
     orm_adapter (0.5.0)
     pg (0.19.0)
+    polyamorous (1.3.1)
+      activerecord (>= 3.0)
     pry (0.10.4)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -363,6 +416,12 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     rake (11.3.0)
+    ransack (1.8.2)
+      actionpack (>= 3.0)
+      activerecord (>= 3.0)
+      activesupport (>= 3.0)
+      i18n
+      polyamorous (~> 1.3)
     rb-fsevent (0.9.8)
     rb-inotify (0.9.7)
       ffi (>= 0.5.0)
@@ -453,13 +512,16 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activeadmin!
   activemodel-serializers-xml!
+  acts-as-taggable-on (~> 4.0)
   acts_as_follower!
   bonsai-elasticsearch-rails
   bullet
   byebug
   capybara
   carrierwave (>= 1.0.0.rc, < 2.0)
+  chosen-rails
   cocoon
   coffee-rails (~> 4.2)
   country_select
@@ -470,6 +532,7 @@ DEPENDENCIES
   factory_girl_rails (~> 4.0)
   figaro
   fog
+  inherited_resources!
   jbuilder (~> 2.5)
   jquery-rails
   letter_opener
@@ -492,4 +555,4 @@ DEPENDENCIES
   web-console
 
 BUNDLED WITH
-   1.13.5
+   1.13.6
