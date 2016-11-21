@@ -1,6 +1,6 @@
 class BusinessUser < ApplicationRecord  
-  acts_as_taggable
   include Searchable
+  acts_as_taggable
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,

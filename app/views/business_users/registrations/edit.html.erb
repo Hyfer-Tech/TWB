@@ -6,7 +6,7 @@
 
   <div class="form-inputs">
       <%= f.input :tag_list,
-                  collection: ActsAsTaggableOn::Tag.all,
+                  collection: ActsAsTaggableOn::Tag.all.map(&:name),
                   input_html: { class: 'chosen-select', multiple: true }
       %>
       <%= f.input :first_name, required: true, autofocus: true %>
