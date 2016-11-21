@@ -25,13 +25,41 @@ RSpec.describe ProductsController, type: :controller do
 	describe "POST #create" do
 		context "params are valid" do
 			it "creates a new product" do
+				user = FactoryGirl.create(:business_user)
 
+				sign_in user
+				expect {
+					post :create, product: FactoryGirl.attributes_for(:product)				
+				}.to change(Product,:count).by (1)
+			end
+
+			it "redirects the user to root path" do
+				user = FactoryGirl.create(:business_user)
+
+				sign_in user
+				post :create, product: FactoryGirl.attributes_for(:product)		
+
+				expect(response).to redirect_to root_path
 			end
 		end
 
 		context "params are not valid" do 
 			it "doesn't create a new product" do
+				user = FactoryGirl.create(:business_user)
 
+				sign_in user
+				expect {
+					post :create, product: FactoryGirl.attributes_for(:product, title: nil)
+				}.to change(Product,:count).by (0)			
+			end
+
+			it "renders the new template" do
+				user = FactoryGirl.create(:business_user)
+
+				sign_in user
+				post :create, product: FactoryGirl.attributes_for(:product, title: nil)		
+				
+				expect(response).to render_template :new
 			end
 		end
 	end
