@@ -7,7 +7,7 @@ class Shipment < ApplicationRecord
 	scope :this_month, -> {where(created_at: (Time.now.beginning_of_month..Time.zone.now))}	
 
 	validate :check_user_quota
-	validate :business_user_id, :approval, :shipment_confirmed, presence: true
+	validates :business_user_id, :approval, :shipment_confirmed, presence: true
 
 	private
 
