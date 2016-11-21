@@ -14,7 +14,12 @@
         <div id="navbar-collapse" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
               <% if current_user.present? %>
-
+                <li>
+                  <%= link_to '<i class="fa fa-plus-circle" aria-hidden="true"></i>'.html_safe, '#' %>     
+                </li>
+                <li>
+                  <%= link_to '<i class="fa fa-envelope" aria-hidden="true"></i>'.html_safe, '#' %>     
+                </li>
                 <li>
                   <%= link_to '<i class="fa fa-bell" aria-hidden="true"></i>'.html_safe, '#' %>     
                 </li>
