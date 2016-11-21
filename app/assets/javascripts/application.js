@@ -12,11 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
-<<<<<<< HEAD
+//= require react
+//= require react_ujs
+//= require chosen-jquery
+//= require scaffold
+//= require components
 //= require bootstrap-sprockets
 //= require cocoon
 //= require_tree .
-=======
-//= require_tree .
-//= require_tree ../../../vendor/assets/javascripts/.
->>>>>>> e4a315b1cd959c3bab2efc04f185bddf0daa8056

@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
 
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   devise_for :forward_freights
   devise_for :brokers
 
@@ -17,11 +19,11 @@ Rails.application.routes.draw do
   get 'favorites',   to: 'dashboard#favorites'
 
 
-  resources :users, only: :show
 
   resources :shipments, only: [:new, :create]
   resources :products, only: [:new, :create]
 
+  resources :taggings, only: :create
   resources :brokers, only: :show
   resources :forward_freights, only: :show
   resources :business_users, only: :show

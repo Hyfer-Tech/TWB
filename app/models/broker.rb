@@ -1,6 +1,6 @@
 class Broker < ApplicationRecord
   include Searchable
-
+  acts_as_taggable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
