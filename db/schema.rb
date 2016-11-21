@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161120053005) do
+ActiveRecord::Schema.define(version: 20161121085536) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -156,6 +156,8 @@ ActiveRecord::Schema.define(version: 20161120053005) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.integer  "quantity"
+    t.index ["product_id"], name: "index_shipment_products_on_product_id", using: :btree
+    t.index ["shipment_id"], name: "index_shipment_products_on_shipment_id", using: :btree
   end
 
   create_table "shipments", force: :cascade do |t|
@@ -168,6 +170,7 @@ ActiveRecord::Schema.define(version: 20161120053005) do
     t.integer  "business_user_id"
     t.index ["broker_id"], name: "index_shipments_on_broker_id", using: :btree
     t.index ["business_user_id"], name: "index_shipments_on_business_user_id", using: :btree
+    t.index ["forward_freight_id"], name: "index_shipments_on_forward_freight_id", using: :btree
   end
 
   create_table "user_limits", force: :cascade do |t|
