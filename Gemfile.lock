@@ -108,6 +108,8 @@ GEM
       i18n (~> 0.7)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
+    acts-as-taggable-on (4.0.0)
+      activerecord (>= 4.0)
     addressable (2.5.0)
       public_suffix (~> 2.0, >= 2.0.2)
     arbre (1.1.1)
@@ -140,6 +142,10 @@ GEM
       activemodel (>= 4.0.0)
       activesupport (>= 4.0.0)
       mime-types (>= 1.16)
+    chosen-rails (1.5.2)
+      coffee-rails (>= 3.2)
+      railties (>= 3.0)
+      sass-rails (>= 3.2)
     cocoon (1.2.9)
     coderay (1.1.1)
     coffee-rails (4.2.1)
@@ -508,12 +514,14 @@ PLATFORMS
 DEPENDENCIES
   activeadmin!
   activemodel-serializers-xml!
+  acts-as-taggable-on (~> 4.0)
   acts_as_follower!
   bonsai-elasticsearch-rails
   bullet
   byebug
   capybara
   carrierwave (>= 1.0.0.rc, < 2.0)
+  chosen-rails
   cocoon
   coffee-rails (~> 4.2)
   country_select

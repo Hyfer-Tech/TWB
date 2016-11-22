@@ -1,3 +1,14 @@
+tag_list = ["Mineral Products","Wood Products","Metals","Stone and Glass",
+            "Animal and Vegetable Bi-Products","Paper Goods","Vegetable Products",
+            "Animal Products","Foodstuffs","Weapons","Footwear and Headwear",
+            "Animal Hides","Textiles","Transportation","Machines","Arts and Antiques",
+            "Precious Metals","Chemical Products","Instruments","Plastics and Rubbers",
+            "Miscellaneous"]
+
+tag_list.each do |tag|
+  ActsAsTaggableOn::Tag.new(:name => tag).save
+end
+
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
@@ -14,3 +25,5 @@
 UserLimit.create(amount: 5, user_type: "business_user", limit_type: :job_post_limit)
 UserLimit.create(amount: 15, user_type: "Forward Freight", limit_type: :bid_limit )
 UserLimit.create(amount: 10, user_type: "Broker", limit_type: :bid_limit)
+
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
