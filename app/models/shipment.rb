@@ -6,15 +6,16 @@ class Shipment < ApplicationRecord
 
 	scope :this_month, -> {where(created_at: (Time.now.beginning_of_month..Time.zone.now))}	
 
-	validate :check_user_quota
-	validates :business_user_id, :approval, :shipment_confirmed, presence: true
+	# validate :check_user_quota
+	validates :business_user_id, presence: true
+	validates :shipment_products, length: {minimum: 1}
 
 	private
 
-	def check_user_quota
-		return if business_user.premium_account?
-		if business_user.shipments.this_month.count >= 5
-		 	errors.add(:base, "Exceeds monthly limit")
-		end
-	end
+	# def check_user_quota
+	# 	return if business_user.premium_account?
+	# 	if business_user.shipments.this_month.count >= 5
+	# 	 	errors.add(:base, "Exceeds monthly limit")
+	# 	end
+	# end
 end

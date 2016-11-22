@@ -3,19 +3,23 @@ class ShipmentsController < ApplicationController
 
 	def new
 		@shipment = Shipment.new
+		@shipment.shipment_products.build
 	end
 
 	def create
-		@shipment = current_business_user.shipments.create(shipment_params)
-		if @shipment.valid?
+		@shipment = current_business_user.shipments.new(shipment_params)
+		if @shipment.save
+			flash[:success] = "A shipment has been created."			
 			redirect_to root_path
 		else
+			flash[:alert] = "An error has occured. Please try again."
 			render :new, status: :inprocessable_entity
 		end
 	end
 
 	private
+
 	def shipment_params
-		params.require(:shipment).permit(:business_user_id)
+		params.require(:shipment).permit(:business_user_id, :approval, :shipment_confirmed, shipment_products_attributes: [:id, :shipment_id, :quantity, :product_id, :_destroy])
 	end
 end

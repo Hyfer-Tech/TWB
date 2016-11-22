@@ -6,8 +6,8 @@ class ProductsController < ApplicationController
 	end
 
 	def create
-		@product = current_business_user.products.create!(product_params)
-		if @product.valid?
+		@product = current_business_user.products.new(product_params)
+		if @product.save
 			redirect_to root_path
 		else
 			render :new, status: :inprocessable_entity

@@ -1,6 +1,22 @@
-<div class="nested-fields">
-	<%= f.association :product, :collection => Product.all, :prompt => 'Choose an existing Product' %>
-	<%= f.input :quantity %>
-	<%= link_to_remove_association 'Remove Product', f %>
+<div class="nested-fields nested-fields-shipments">
+  <div class="row">
+    <div class="col-xs-12 col-md-6">
+     <%= f.label :product %><br />
+	   <%= f.association :product, collection: current_user.products.all, label: false, prompt: 'Choose an existing Product', input_html: {class: 'chosen-select', style: 'width: auto'} %>
+    </div>
+    <div class="col-xs-12 col-md-6">
+	   <%= f.input :quantity %>  
+    </div>
+  </div>
+  
+
+	<%= link_to_remove_association '<i class="fa fa-trash" aria-hidden="true"></i>'.html_safe, f, class: 'btn btn-sm btn-danger btn-remove' %>
+
 </div>
 
+
+<script type="text/javascript">
+$(document).bind('cocoon:after-insert', function(e,inserted_item) {
+  $('.chosen-select').chosen()
+});
+</script>
