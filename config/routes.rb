@@ -18,8 +18,6 @@ Rails.application.routes.draw do
   get 'search',   to: 'dashboard#search'
   get 'favorites',   to: 'dashboard#favorites'
 
-
-
   resources :shipments, only: [:new, :create]
   resources :products, only: [:new, :create]
 
@@ -29,7 +27,7 @@ Rails.application.routes.draw do
   resources :business_users, only: :show
 
 
-  resources :users, only: :show do
+  resources :users, only: [] do
     get 'profile', to: :show, controller: 'users', on: :collection
     get 'saved', to: :saved, controller: 'users', on: :collection
   end
