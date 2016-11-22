@@ -27,6 +27,10 @@ class UserDecorator < Draper::Decorator
     object.class
   end
 
+  def user_type_name
+    object.class.name.underscore.pluralize
+  end
+
   def edit_link
     "/#{object.class.name.underscore}s/edit"
   end
