@@ -2,8 +2,8 @@ let EditName = React.createClass({
   getInitialState() {
     return { 
       editable: false,
-      first_name: this.props.user_info.first_name,
-      last_name: this.props.user_info.last_name
+      first_name: this.props.user.first_name,
+      last_name: this.props.user.last_name
     };  
   },
 
@@ -23,7 +23,7 @@ let EditName = React.createClass({
   firstName(){
     if(this.state.editable){
       return (
-        <input type='text' ref='first_name'
+        <input type='text' ref='first_name' className='form-control'
                onChange={this.handleFirstNameChange}
                defaultValue={this.state.first_name} />
       )
@@ -38,7 +38,7 @@ let EditName = React.createClass({
     if(this.state.editable) {
       return (
         <div> 
-          <input type='text' ref='last_name' 
+          <input type='text' ref='last_name' className="form-control" 
                  onChange={this.handleLastNameChange}
                  defaultValue={this.state.last_name} />
 
@@ -65,15 +65,18 @@ let EditName = React.createClass({
   },
 
   handleUpdate(updated_user_info) {
+
+    let data = {};
+    data[this.props.user_type_name] = updated_user_info
+
     $.ajax({
-      url: '/' + this.props.user_info.user_type_name,
+
+      url: `/${this.props.user_type_name}s`,
       type: 'PATCH',
       dataType: 'JSON',
-      data: { business_user: updated_user_info },
-      success: () => {
-        console.log('yes sucess');
-      }
+      data: data
     })
+
   },
 
   render() {
