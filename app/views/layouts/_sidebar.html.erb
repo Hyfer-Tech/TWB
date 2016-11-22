@@ -11,15 +11,19 @@
   <li>
     <%= link_to '<i class="fa fa-envelope" aria-hidden="true"></i> Messages'.html_safe, '#' %>     
   </li>
-  <li>
-    <%= link_to '<i class="fa fa-plus-circle" aria-hidden="true"></i> Post a Job'.html_safe, '#' %>     
-  </li>
-  <li>
-    <%= link_to '<i class="fa fa-shopping-basket" aria-hidden="true"></i> Products'.html_safe, new_product_path %>     
-  </li>
-  <li>
-    <%= link_to '<i class="fa fa-truck" aria-hidden="true"></i> Shipments'.html_safe, new_shipment_path %>     
-  </li>
+
+  <% if business_user_signed_in? %>
+    <li>
+      <%= link_to '<i class="fa fa-plus-circle" aria-hidden="true"></i> Post a Job'.html_safe, '#' %>     
+    </li>
+    <li>
+      <%= link_to '<i class="fa fa-shopping-basket" aria-hidden="true"></i> Products'.html_safe, new_product_path %>     
+    </li>
+    <li>
+      <%= link_to '<i class="fa fa-truck" aria-hidden="true"></i> Shipments'.html_safe, new_shipment_path %>     
+    </li>
+  <% end %>
+  
   <li>
     <%= link_to '<i class="fa fa-user" aria-hidden="true"></i> Matches'.html_safe, '#' %>     
   </li>  
