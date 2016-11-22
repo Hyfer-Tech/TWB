@@ -1,13 +1,56 @@
-<%= simple_form_for @product do |f| %>
-	<%= f.input :title %>	
-	<%= f.input :taxable, as: :boolean %>
-	<%= f.input :featured_image %>
-	<%= f.input :available, as: :boolean %>
-	<%= f.input :price %>
-	<%= f.input :grams %>
-	<%= f.input :height %>
-	<%= f.input :width %>
-	<%= f.input :compare_at_price %>
-	<%= f.input :product_code, label: "Product ID" %>
-	<%= f.button :submit %>
-<% end %>
+<div class="row">
+	<div class="col-xs-12 col-md-6 col-md-offset-3">
+		<h1>Add a New Product</h1>		
+
+		<%= simple_form_for @product do |f| %>
+			<div class="row">
+				<div class="col-xs-12 col-md-6">
+					<%= f.input :title, label: false, placeholder: 'Title' %>				
+				</div>
+		
+				<div class="col-xs-12 col-md-6">
+					<%= f.input :price, label: false, placeholder: 'Price' %>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-xs-12 col-md-6">
+					<%= f.input :grams, label: false, placeholder: 'Grams' %>
+				</div>
+			
+				<div class="col-xs-12 col-md-6">
+					<%= f.input :height, label: false, placeholder: 'Height' %>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-xs-12 col-md-6">
+					<%= f.input :width, label: false, placeholder: 'Width' %>
+				</div>
+	
+				<div class="col-xs-12 col-md-6">
+					<%= f.input :compare_at_price, label: false, placeholder: 'Compare At Price' %>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-xs-12 col-md-6">
+					<%= f.input :product_code, label: false, placeholder: "Product ID" %>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-xs-12 col-md-6">
+					<%= f.input :taxable, as: :boolean %>			
+				</div>
+
+				<div class="col-xs-12 col-md-6">
+					<%= f.input :available, as: :boolean %>
+				</div>
+			</div>
+
+			<%= f.input :featured_image %>
+			<%= f.button :submit, class: 'btn btn-primary pull-right' %>
+		<% end %>
+	</div>
+</div>
