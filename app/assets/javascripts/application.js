@@ -17,4 +17,5 @@
 //= require chosen-jquery
 //= require scaffold
 //= require components
+//= require cocoon
 //= require_tree .

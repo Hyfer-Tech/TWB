@@ -18,6 +18,9 @@ Rails.application.routes.draw do
   get 'search',   to: 'dashboard#search'
   get 'favorites',   to: 'dashboard#favorites'
 
+  resources :shipments, only: [:new, :create]
+  resources :products, only: [:new, :create]
+
   resources :taggings, only: :create
   resources :brokers, only: :show
   resources :forward_freights, only: :show
@@ -31,4 +34,5 @@ Rails.application.routes.draw do
 
   post 'relationships', to: 'relationships#create'
   delete 'relationships', to: 'relationships#destroy'
+
 end
