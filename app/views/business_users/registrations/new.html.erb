@@ -1,30 +1,115 @@
-<h2>Sign up</h2>
+<h1><center>Sign Up</center></h1>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
+  <div class="col-md-6" style="text-align: center;text-indent: 19px; padding-top: 50px;    line-height: 2.3em;">
+    <img src="https://openclipart.org/image/2400px/svg_to_png/99949/radacina-men-in-black-orange.png" width="300px"alt="" />
+    <p>
+      <h2>title</h2>
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+      Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+    </p>
+    </div>
 
-  <div class="form-inputs">
-   <%= f.input :first_name, required: true, autofocus: true %>
-   <%= f.input :last_name, required: true %>
-   <%= f.input :email, required: true %>
-   <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-   <%= f.input :password_confirmation, required: true %>
-   <%= f.input :phone, required: true %>
-   <%= f.input :description %>
-   <%= f.input :address_line_1, required: true %>
-   <%= f.input :address_line_2 %>
-   <%= f.input :address_line_3 %>
-   <%= f.input :city, required: true %>
-
-   <%= f.input :state_province_county, label: "State/Province/County", required: true %>
-   <%= f.input :country, as: :country, required: true %>
-   <%= f.file_field :avatar, required: true %>
- </div>
-
-
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
+  <div class="col-md-5 col-md-offset-1 form">
+    <div class="row">
+      <div class="col-md-6">
+      <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+        <%= f.input :first_name, required: true, autofocus: true, label: false, placeholder: "John" %>
+      </div><br>
+    </div>
+    <div class="col-md-6">
+      <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+        <%= f.input :last_name, required: true, label: false, class: "form-control", placeholder: "Doe"  %>
+      </div><br>
+    </div>
   </div>
-<% end %>
+    <div class="input-group">
+      <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+      <%= f.input :email, required: true, label: false, placeholder: "user@example.com" %>
+    </div><br>
+    <div class="input-group">
+      <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+      <!-- <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), label: false, placeholder: "minimum 6 character length" %> -->
+      <%= f.input :password, required: true, label: false, placeholder: "minimum 6 character length" %>
+    </div><br>
 
-<%= render "business_users/shared/links" %>
+    <div class="input-group">
+      <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+      <%= f.input :password_confirmation, required: true, label: false, placeholder: "password confirmation" %>
+    </div><br>
+
+    <div class="input-group">
+      <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+      <%= f.input :phone, required: true, label: false, placeholder: "98XXXXXX" %>
+    </div><br>
+
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+        <%= f.input :description, label: false, placeholder: "we are a five-star company called..." %>
+    </div><br>
+
+
+    <div class="input-group">
+         <span class="input-group-addon"><i class="glyphicon glyphicon-send"></i></span>
+         <%= f.input :address_line_1, required: true, label: false, placeholder: "963 Lovelace Road, Tampa Bay, FL 25235." %>
+    </div><br>
+
+
+    <div class="input-group">
+         <span class="input-group-addon"><i class="glyphicon glyphicon-send"></i></span>
+         <%= f.input :address_line_2, label: false, placeholder: "963 Lovelace Road, Tampa Bay, FL 25235." %>
+    </div><br>
+
+
+    <div class="input-group">
+         <span class="input-group-addon"><i class="glyphicon glyphicon-send"></i></span>
+         <%= f.input :address_line_3, label: false, placeholder: "963 Lovelace Road, Tampa Bay, FL 25235."  %>
+    </div><br>
+
+    <div class="input-group">
+         <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+         <%= f.input :city, required: true, label: false, placeholder: "paris" %>
+    </div><br>
+
+    <div class="input-group">
+         <span class="input-group-addon"><i class="glyphicon glyphicon-road"></i></span>
+         <%= f.input :state_province_county, label: false, required: true, placeholder: "California" %>
+    </div><br>
+
+    <div class="input-group">
+         <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
+         <%= f.input :country, as: :country, required: true, placeholder: "USA", label: false %>
+    </div><br>
+
+    <div class="input-group">
+         <!-- <span class="input-group-addon"><i class="glyphicon glyphicon-camera"></i></span> -->
+
+           <%= f.file_field :avatar, required: true, placeholder: "profile.jpg" %>
+    </div><br>
+
+    <div class="form-actions ">
+      <div class="input-group sign-up">
+      <%= f.button :submit, "Sign up" %>
+    </div>
+    </div>
+  <% end %>
+  <hr>
+  <div class="form-actions ">
+    <div class="input-group sign-up">
+  <%= render "business_users/shared/links" %>
+ </div>
+ </div>
+ </div>
+ <style>
+   .sign-up{
+       margin: 0 auto;
+       float: none;
+   }
+   .form{
+     background-color: white;
+     padding: 20px 10px 20px 10px;
+   }
+ </style>

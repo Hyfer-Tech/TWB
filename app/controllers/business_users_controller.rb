@@ -1,4 +1,5 @@
 class BusinessUsersController < ApplicationController
-  def profile
+  def show
+    @user = BusinessUser.find(params[:id]).decorate
   end
 end

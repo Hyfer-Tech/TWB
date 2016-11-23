@@ -1,9 +1,14 @@
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
+
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
+      <%= f.input :tag_list,
+                  collection: ActsAsTaggableOn::Tag.all.map(&:name),
+                  input_html: { class: 'chosen-select', multiple: true }
+      %>
       <%= f.input :first_name, required: true, autofocus: true %>
       <%= f.input :last_name, required: true %>
       <%= f.input :email, required: true %>
@@ -24,8 +29,13 @@
       <%= f.input :state_province_county, label: "State/Province/County", required: true %>
       <%= f.input :country, as: :country, required: true %>
       <%= f.input :current_password, hint: "we need your current password to confirm your changes", required: true %>
+<<<<<<< HEAD
       <%= f.file_field :avatar %>
       
+=======
+      <%= f.input :avatar %>
+
+>>>>>>> 6fe2526e9c407f0ed3b2358884475d0945eb57a7
   </div>
 
   <div class="form-actions">

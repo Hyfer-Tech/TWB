@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%= render 'shared/meta' %>
+
+  </head>
+
+  <body class="bg-image">
+    <%= render 'layouts/nav' %>
+    <div class="container container-authenticated">
+      <div class="row profile">
+        <div class="col-xs-12 col-md-3">
+          <div class="panel panel-default panelbg1">
+            <div class="profile-sidebar">
+              <!-- SIDEBAR USERPIC -->
+              <div class="profile-userpic">
+                <%= image_tag @user.avatar, class: 'prof-pic' %>
+              </div>
+              <!-- END SIDEBAR USERPIC -->
+
+              <h3 class="text-center"><%= @user.name %></h3>
+            
+              <!-- END SIDEBAR BUTTONS -->
+              <!-- SIDEBAR MENU -->
+              <ul class="nav nav-user-actions text-center">
+                <li class="active">
+                  <a href="#">
+                  <i class="glyphicon glyphicon-home"></i>
+                  Overview </a>
+                </li>
+                <li>
+                  <a href="#">
+                  <i class="glyphicon glyphicon-star"></i>
+                  Reviews </a>
+                </li>
+                <li>
+                  <%= link_to saved_users_path do %>
+                    <i class="glyphicon glyphicon-saved"></i>
+                    Saved </a>
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to @user.edit_link do %>
+                    <%= "<i class='glyphicon glyphicon-edit'></i> Edit".html_safe %>
+                  <% end %>
+                </li>
+              </ul>
+            </div>
+            <!-- END MENU -->
+          </div> <!-- panel end -->
+        </div>
+        <div class="col-md-8 col-md-offset-1 col-xs-12">
+          <div class="profile-details-container">
+            <%= yield %>
+          </div>
+        </div><!-- column -->
+      </div><!-- row-profile -->
+    </div><!-- container -->
+
+    <%= render 'layouts/footer' %>
+  </body>
+</html>

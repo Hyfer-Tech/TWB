@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%= render 'shared/meta' %>
+
+  </head>
+
+  <body class="background-bg">
+    <%= render 'layouts/nav' %>
+    <section class="mg-100">
+      <div class="container-fluid">
+
+          <!-- Sidebar -->
+          <div class="col-xs-12 col-md-3">
+            <%= render 'layouts/sidebar' %>
+          </div>
+
+          <div class="col-xs-12 col-md-7 col-md-offset-1 color-white">
+            <%= yield %>
+          </div><!-- column -->
+
+      </div>   
+    </section>
+
+    <%= render 'layouts/footer' %>
+  </body>
+</html>

@@ -1,6 +1,8 @@
 source 'http://rubygems.org'
 
-
+#active admin gem
+gem 'activeadmin', github: 'activeadmin'
+gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 # Use postgresql as the database for Active Record
@@ -33,7 +35,6 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'devise', git: 'https://github.com/plataformatec/devise.git'
 
-gem 'bootstrap-sass', '~> 3.3.6'
 
 gem 'simple_form'
 
@@ -44,6 +45,27 @@ gem 'rails-controller-testing'
 
 # Country selector gem
 gem 'country_select'
+
+gem 'elasticsearch-rails'
+
+gem 'elasticsearch-model'
+gem 'bonsai-elasticsearch-rails'
+
+#taggable gem
+gem 'acts-as-taggable-on', '~> 4.0'
+
+#chosen-rails gem
+gem 'chosen-rails'
+
+# Draper gem for decorator
+gem 'activemodel-serializers-xml', github: 'rails/activemodel-serializers-xml'
+gem 'draper', github: 'drapergem/draper'
+
+gem 'acts_as_follower', github: 'tcocca/acts_as_follower', branch: 'master'
+
+gem 'rails_12factor', group: [:production]
+
+
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'

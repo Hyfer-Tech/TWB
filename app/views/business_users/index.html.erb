@@ -1,0 +1,19 @@
+<%= form_tag  authenticated_root_path, method: :get, class: 'form-inline' do %>
+  <%= text_field_tag :query, params[:query], placeholder: 'Search for a broker', class: 'form-control' %>
+  <%= submit_tag "Search", name: nil, class: 'btn btn-danger' %>
+<% end %>
+
+<% if @brokers.present? %>
+  <% @brokers.each do |broker| %>
+    <%= "#{broker.first_name} #{broker.last_name}" %>
+    <%= broker.email %>
+  <% end %>
+<% end %>
+
+
+<% if @forward_freights.present? %>
+  <% @forward_freights.each do |forward_freight| %>
+    <%= "#{forward_freight.first_name} #{forward_freight.last_name}" %>
+    <%= forward_freight.email %>
+  <% end %>
+<% end %>
