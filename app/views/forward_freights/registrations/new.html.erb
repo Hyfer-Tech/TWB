@@ -53,21 +53,20 @@
     </div><br>
 
     <div class="input-group">
-         <span class="input-group-addon"><i class="glyphicon glyphicon-send"></i></span>
+         <span class="input-group-addon"><i class="glyphicon glyphicon-map-marker"></i></span>
          <%= f.input :address_line_1, required: true, label: false, placeholder: "963 Lovelace Road, Tampa Bay, FL 25235." %>
     </div><br>
 
-
     <div class="input-group">
-         <span class="input-group-addon"><i class="glyphicon glyphicon-send"></i></span>
+         <span class="input-group-addon"><i class="glyphicon glyphicon-map-marker"></i></span>
          <%= f.input :address_line_2, label: false, placeholder: "963 Lovelace Road, Tampa Bay, FL 25235." %>
     </div><br>
 
-
     <div class="input-group">
-         <span class="input-group-addon"><i class="glyphicon glyphicon-send"></i></span>
+         <span class="input-group-addon"><i class="glyphicon glyphicon-map-marker"></i></span>
          <%= f.input :address_line_3, label: false, placeholder: "963 Lovelace Road, Tampa Bay, FL 25235."  %>
     </div><br>
+
     <div class="input-group">
          <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
          <%= f.input :city, required: true, label: false, placeholder: "Los Angeles" %>
@@ -122,13 +121,4 @@ function updateSlider(val) {
   $("#service_rate_val").text(val)
 };
 </script>
-<style>
-  .sign-up{
-      margin: 0 auto;
-      float: none;
-  }
-  .form{
-    background-color: white;
-    padding: 20px 10px 20px 10;
-  }
-</style>
+<script>$( ".help-block" ).remove();</script>
