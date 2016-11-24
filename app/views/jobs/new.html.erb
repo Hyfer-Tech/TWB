@@ -1,0 +1,4 @@
+<%= simple_form_for @job do |f| %>
+	<%= f.input :shipment_id, as: :select, collection: current_business_user.shipments.all.map(&:id) %>
+	<%= f.submit class: "btn btn-success" %>
+<% end %>

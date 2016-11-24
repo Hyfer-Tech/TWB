@@ -10,6 +10,8 @@ class Shipment < ApplicationRecord
 	validates :business_user_id, presence: true
 	validates :shipment_products, length: {minimum: 1}
 
+	has_one :job
+
 	private
 
 	def check_user_quota

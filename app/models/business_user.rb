@@ -18,4 +18,5 @@ class BusinessUser < ApplicationRecord
   acts_as_follower
   acts_as_followable
 
+  has_many :jobs, as: :client
 end
