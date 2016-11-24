@@ -14,7 +14,7 @@
             <div class="profile-sidebar">
               <!-- SIDEBAR USERPIC -->
               <div class="profile-userpic">
-                <%= image_tag @user.avatar, class: 'prof-pic' %>
+                <%= react_component 'EditPhoto', { user: @user } %>
               </div>
               <!-- END SIDEBAR USERPIC -->
               <div class="row">
