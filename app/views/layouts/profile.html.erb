@@ -14,11 +14,32 @@
             <div class="profile-sidebar">
               <!-- SIDEBAR USERPIC -->
               <div class="profile-userpic">
-                <%= image_tag @user.avatar, class: 'prof-pic' %>
-                <%= simple_form_for @user.original, url: "/" + @user.user_type_name + "s", method: :patch do |f| %>
-                  <%= f.input :avatar %>
-                  <%= f.button :submit %>
-                <% end %>
+                <%= image_tag @user.avatar_url(:thumb), class: 'prof-pic' %>
+
+                <div class="text-center">  
+                  <label class="custom-file-upload" data-toggle="modal" data-target="#myModal">
+                    <i class="fa fa-cloud-upload"></i> Upload Photo
+                  </label>
+                </div>
+
+                <div class="modal fade" id="myModal" role="dialog">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <%= simple_form_for @user.original, url: "/" + @user.user_type_name + "s", method: :patch do |f| %>
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                          <h4 class="modal-title">Upload Picture</h4>
+                        </div>
+                        <div class="modal-body">
+                          <%= f.input :avatar %>
+                        </div>
+                        <div class="modal-footer">
+                          <%= f.button :submit  %>
+                        </div>
+                      <% end %>
+                    </div>
+                  </div>
+                </div>
               </div>
               <!-- END SIDEBAR USERPIC -->
               <div class="row">
