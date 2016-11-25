@@ -14,7 +14,11 @@
             <div class="profile-sidebar">
               <!-- SIDEBAR USERPIC -->
               <div class="profile-userpic">
-                <%= react_component 'EditPhoto', { user: @user } %>
+                <%= image_tag @user.avatar, class: 'prof-pic' %>
+                <%= simple_form_for @user.original, url: "/" + @user.user_type_name + "s", method: :patch do |f| %>
+                  <%= f.input :avatar %>
+                  <%= f.button :submit %>
+                <% end %>
               </div>
               <!-- END SIDEBAR USERPIC -->
               <div class="row">

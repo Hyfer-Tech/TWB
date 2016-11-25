@@ -26,7 +26,7 @@ let EditPhoto = React.createClass({
                   <h4 className="modal-title">Upload Picture</h4>
                 </div>
                 <div className="modal-body">
-                
+                  
                 </div>
                 <div className="modal-footer">
                   <button type="button" className="btn btn-default" data-dismiss="modal">Submit</button>
