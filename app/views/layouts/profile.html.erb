@@ -18,7 +18,7 @@
 
                 <div class="text-center">  
                   <label class="custom-file-upload" data-toggle="modal" data-target="#myModal">
-                    <i class="fa fa-cloud-upload"></i> Upload Photo
+                    <i class="fa fa-cloud-upload"></i> Update Profile Picture
                   </label>
                 </div>
 
@@ -28,7 +28,7 @@
                       <%= simple_form_for @user.original, url: "/" + @user.user_type_name + "s", method: :patch do |f| %>
                         <div class="modal-header">
                           <button type="button" class="close" data-dismiss="modal">&times;</button>
-                          <h4 class="modal-title">Upload Picture</h4>
+                          <h4 class="modal-title">Upload Profile Picture</h4>
                         </div>
                         <div class="modal-body">
                           <%= f.input :avatar %>
