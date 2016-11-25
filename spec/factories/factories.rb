@@ -16,5 +16,6 @@ FactoryGirl.define do
     city "Durham"
     state_province_county "North Carolina"
     country "US"
+    confirmed_at DateTime.now
   end
 end
