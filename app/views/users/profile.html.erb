@@ -1,7 +1,2 @@
 <%= simple_format @user.description %>
-
-<i class="fa fa-tags" aria-hidden="true"></i> 
-
-<% @user.tag_list.each do |tag| %>
-	<span class="label label-default"><%= tag %></span>
-<% end %>
+<%= react_component 'EditTags', { tag_list: @user.tag_list, all_tags: ActsAsTaggableOn::Tag.all.map(&:name), user_type_name: @user.user_type_name } %>
