@@ -16,6 +16,7 @@ Rails.application.routes.draw do
 
   get 'dashboard',   to: 'dashboard#index'
   get 'search',   to: 'dashboard#search'
+  get 'search/:tag', to: 'dashboard#search', as: :tag
   get 'favorites',   to: 'dashboard#favorites'
 
   resources :shipments, only: [:new, :create]
