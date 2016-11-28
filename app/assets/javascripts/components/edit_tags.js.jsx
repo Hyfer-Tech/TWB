@@ -6,6 +6,10 @@ let EditTags = React.createClass({
     }
   },
 
+  componentDidUpdate() {
+    $('.chosen-select').chosen().change(this.handleTags);
+  },
+
   handleEdit() {
     if(this.state.editable) { 
       let updated_tag_list = {
@@ -13,33 +17,47 @@ let EditTags = React.createClass({
       }
 
       this.handleUpdate(updated_tag_list);
+      $(".chosen-container").remove();
     }
-    this.defineArray();
-    this.setState({editable: !this.state.editable});
+  
+    this.setState(
+      {editable: !this.state.editable},
+    );
+
+    
+  },
+
+  handleTags(e) {
+    this.setState({ tag_list: $(".chosen-select").val() });
+  },
+
+  handleCancel() {
+    this.setState({editable:false});
+    $(".chosen-container").remove();
   },
 
   showTags(){
     if (this.state.editable) {
       return (
         <div>
-          <select multiple className="chosen-select" onChange={this.handleTags}>
+          <select multiple="true" className="chosen-select" value={this.state.tag_list}>
             {this.tags_list_display()}
           </select>
           <button type="button" onClick={this.handleEdit}>Update</button>
+          <button type="button" onClick={this.handleCancel}>Cancel</button>
         </div>
       )  
     } else {
       return (
-        <div>
+        <div onClick={this.handleEdit}>
           <i className="fa fa-tags" aria-hidden="true"></i>
           {
             this.state.tag_list.map((tag) => {
               return (
-                <span className="label label-default" key={tag}>{tag}</span>
+                <span className="label label-default" id="tags-list-profile" key={tag}>{tag}</span>
               )
             })
           }
-          <a href="#" onClick={this.handleEdit} className="pull-right">Edit</a>
         </div>
       ) 
     }
@@ -52,18 +70,6 @@ let EditTags = React.createClass({
           <option value={tag} key={tag}>{tag}</option>
         )
       })
-    )
-  },
-
-  handleTags(e) {
-    new_tags.push(e.target.value);
-
-    this.setState({ tag_list: new_tags });
-  },
-
-  defineArray() {
-    return (
-      new_tags = []
     )
   },
 

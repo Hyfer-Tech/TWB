@@ -24,7 +24,7 @@ let EditName = React.createClass({
     if(this.state.editable){
       return (
         <div className='col-xs-6'>
-          <input type='text' ref='first_name' className='form-control'
+          <input type='text' ref='first_name' className='form-control first_name_profile_form'
                onChange={this.handleFirstNameChange}
                defaultValue={this.state.first_name} />
         </div>
@@ -40,7 +40,7 @@ let EditName = React.createClass({
     if(this.state.editable) {
       return (
         <div className='col-xs-6'>
-          <input type='text' ref='last_name' className='form-control' 
+          <input type='text' ref='last_name' className='form-control last_name_profile_form' 
                  onChange={this.handleLastNameChange}
                  defaultValue={this.state.last_name} />
         </div>
@@ -58,6 +58,18 @@ let EditName = React.createClass({
         <button onClick={this.handleEdit} className="btn btn-primary"> Update </button>
       )
     }
+  },
+
+  cancelButton() {
+    if(this.state.editable) {
+      return (
+        <button onClick={this.handleCancel} className="btn btn-primary"> Cancel </button>
+      )
+    }
+  },
+
+  handleCancel() {
+    this.setState({editable:false});
   },
 
   handleFirstNameChange(e){
@@ -93,6 +105,7 @@ let EditName = React.createClass({
         <h3>{ this.firstName() } { this.lastName() }</h3>
         <div className="update-name-button">
           { this.updateButton() }
+          { this.cancelButton() }
         </div>
       </div>
     )
