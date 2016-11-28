@@ -14,7 +14,7 @@
         <i class="fa fa-tags" aria-hidden="true"></i> 
         <span>
             <% forward_freight.tag_list.each do |tag| %>
-              <span class="label label-default"><%= tag %></span>
+              <span class="label label-default"><%= link_to tag, tag_path(tag) %></span>
             <% end %>
           </span>
 
