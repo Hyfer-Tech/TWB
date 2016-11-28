@@ -11,6 +11,8 @@ class Job < ApplicationRecord
 	validate :user_job_limit
 	validates :client, :shipment_id, presence: true
 
+	EXPECTED_BORDERS_TO_BE_CROSSED = ["US", "Canada"]
+
 	belongs_to :shipment
 
 	# def clone_job
