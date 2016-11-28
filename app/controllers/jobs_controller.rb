@@ -1,5 +1,9 @@
 class JobsController < ApplicationController
-	before_action :ensure_business_user!
+	before_action :ensure_business_user! ,except: :index
+
+	def index
+		@jobs = Job.all
+	end
 
 	def new
 		@job = Job.new		
