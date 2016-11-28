@@ -43,8 +43,8 @@ let EditTags = React.createClass({
           <select multiple="true" className="chosen-select" value={this.state.tag_list}>
             {this.tags_list_display()}
           </select>
-          <button type="button" onClick={this.handleEdit}>Update</button>
-          <button type="button" onClick={this.handleCancel}>Cancel</button>
+          <button type="button" className="btn btn-primary" onClick={this.handleEdit}>Update</button>
+          <button type="button" className="btn btn-primary" onClick={this.handleCancel}>Cancel</button>
         </div>
       )  
     } else {
