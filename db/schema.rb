@@ -77,8 +77,6 @@ ActiveRecord::Schema.define(version: 20161128134554) do
     t.boolean  "verified_flag",          default: false, null: false
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false
-    t.boolean  "email_confirmed",        default: false
-    t.string   "confirm_token"
     t.string   "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
@@ -208,13 +206,6 @@ ActiveRecord::Schema.define(version: 20161128134554) do
     t.date     "date_of_manufacture"
     t.index ["business_user_id"], name: "index_products_on_business_user_id", using: :btree
     t.index ["shipment_id"], name: "index_products_on_shipment_id", using: :btree
-  end
-
-  create_table "shipment_limits", force: :cascade do |t|
-    t.integer  "amount"
-    t.string   "user_type"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "shipment_products", force: :cascade do |t|
