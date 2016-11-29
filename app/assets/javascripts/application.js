@@ -18,4 +18,5 @@
 //= require scaffold
 //= require components
 //= require cocoon
+//= require profile
 //= require_tree .
