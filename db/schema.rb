@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161123112017) do
+ActiveRecord::Schema.define(version: 20161128134554) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -169,23 +169,52 @@ ActiveRecord::Schema.define(version: 20161123112017) do
     t.index ["reset_password_token"], name: "index_forward_freights_on_reset_password_token", unique: true, using: :btree
   end
 
+  create_table "jobs", force: :cascade do |t|
+    t.integer  "job_type"
+    t.integer  "shipment_id"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.integer  "client_id"
+    t.integer  "agent_id"
+    t.string   "client_type"
+    t.string   "agent_type"
+    t.date     "date_of_shipment"
+    t.string   "location_of_shipment"
+    t.string   "place_being_shipped_to"
+    t.string   "border_expected_to_cross"
+    t.index ["agent_id"], name: "index_jobs_on_agent_id", using: :btree
+    t.index ["client_id", "agent_id"], name: "index_jobs_on_client_id_and_agent_id", using: :btree
+    t.index ["client_id"], name: "index_jobs_on_client_id", using: :btree
+    t.index ["shipment_id"], name: "index_jobs_on_shipment_id", using: :btree
+  end
+
   create_table "products", force: :cascade do |t|
     t.string   "title"
-    t.boolean  "taxable",          default: false, null: false
+    t.boolean  "taxable",               default: false, null: false
     t.string   "featured_image"
-    t.boolean  "available",        default: false, null: false
+    t.boolean  "available",             default: false, null: false
     t.string   "price"
     t.string   "compare_at_price"
     t.bigint   "product_code"
-    t.datetime "created_at",                       null: false
-    t.datetime "updated_at",                       null: false
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
     t.integer  "business_user_id"
     t.integer  "shipment_id"
     t.float    "height"
     t.float    "width"
     t.float    "grams"
+    t.string   "origin_of_manufacture"
+    t.string   "materials_used"
+    t.date     "date_of_manufacture"
     t.index ["business_user_id"], name: "index_products_on_business_user_id", using: :btree
     t.index ["shipment_id"], name: "index_products_on_shipment_id", using: :btree
+  end
+
+  create_table "shipment_limits", force: :cascade do |t|
+    t.integer  "amount"
+    t.string   "user_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "shipment_products", force: :cascade do |t|
@@ -234,6 +263,14 @@ ActiveRecord::Schema.define(version: 20161123112017) do
     t.string  "name"
     t.integer "taggings_count", default: 0
     t.index ["name"], name: "index_tags_on_name", unique: true, using: :btree
+  end
+
+  create_table "user_limits", force: :cascade do |t|
+    t.integer  "amount"
+    t.string   "user_type"
+    t.integer  "limit_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

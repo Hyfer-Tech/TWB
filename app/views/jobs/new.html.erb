@@ -1,0 +1,8 @@
+<%= simple_form_for @job do |f| %>
+	<%= f.input :shipment_id, as: :select, collection: current_business_user.shipments.all.map(&:id) %>
+	<%= f.input :date_of_shipment, as: :string, class: "datepicker" %>
+	<%= f.input :location_of_shipment %>
+	<%= f.input :place_being_shipped_to %>
+	<%= f.input :border_expected_to_cross,as: :select, collection: Job::EXPECTED_BORDERS_TO_BE_CROSSED %>
+	<%= f.submit class: "btn btn-success" %>
+<% end %>
