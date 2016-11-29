@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161121085536) do
+ActiveRecord::Schema.define(version: 20161123112017) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -77,6 +77,12 @@ ActiveRecord::Schema.define(version: 20161121085536) do
     t.boolean  "verified_flag",          default: false, null: false
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false
+    t.boolean  "email_confirmed",        default: false
+    t.string   "confirm_token"
+    t.string   "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.index ["confirmation_token"], name: "index_brokers_on_confirmation_token", unique: true, using: :btree
     t.index ["email"], name: "index_brokers_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_brokers_on_reset_password_token", unique: true, using: :btree
   end
@@ -107,6 +113,10 @@ ActiveRecord::Schema.define(version: 20161121085536) do
     t.datetime "updated_at",                          null: false
     t.string   "avatar"
     t.integer  "account_type"
+    t.string   "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.index ["confirmation_token"], name: "index_business_users_on_confirmation_token", unique: true, using: :btree
     t.index ["email"], name: "index_business_users_on_email", unique: true, using: :btree
     t.index ["first_name"], name: "index_business_users_on_first_name", using: :btree
     t.index ["last_name"], name: "index_business_users_on_last_name", using: :btree
@@ -151,6 +161,10 @@ ActiveRecord::Schema.define(version: 20161121085536) do
     t.string   "avatar"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.index ["confirmation_token"], name: "index_forward_freights_on_confirmation_token", unique: true, using: :btree
     t.index ["email"], name: "index_forward_freights_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_forward_freights_on_reset_password_token", unique: true, using: :btree
   end
