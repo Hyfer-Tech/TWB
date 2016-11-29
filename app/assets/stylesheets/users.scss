@@ -1,5 +1,9 @@
 @import "mixins";
 
+.first_name_profile_form, .last_name_profile_form {
+  height:5%;
+}
+
 .prof-pic {
   border-radius: 50%;
   width: 150px;
@@ -16,6 +20,22 @@
   height: 35px;
   display: block;
   background: #fff
+}
+
+.custom-file-upload {
+  margin-top:20px;
+  border: 1px solid #ccc;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+.update-name-button {
+  padding-bottom:5px; 
+}
+
+#tags-list-profile {
+  margin:5px; 
 }
 
 .user-actions {

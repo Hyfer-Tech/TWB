@@ -96,13 +96,13 @@ $(document).ready(function() {
         $('#login-modal').modal('hide');
         e.preventDefault();
     });
-     
+    
+    
     
      /* ======= Testimonial Bootstrap Carousel ======= */
      /* Ref: http://getbootstrap.com/javascript/#carousel */
     // $('#testimonials-carousel').carousel({
     //   interval: 8000 
     // });
-    
-
 });
+

@@ -3,10 +3,10 @@ Rails.application.routes.draw do
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  devise_for :forward_freights, controllers: { confirmations: 'confirmations' }
-  devise_for :brokers, controllers: { confirmations: 'confirmations' }
 
-  devise_for :business_users, controllers: { confirmations: 'confirmations' }
+  devise_for :forward_freights, controllers: {registrations: 'registrations', confirmations: 'confirmations'}
+  devise_for :brokers, controllers: {registrations: 'registrations', confirmations: 'confirmations'} 
+  devise_for :business_users, controllers: {registrations: 'registrations', confirmations: 'confirmations'}
 
   authenticated :business_user do
     root 'dashboard#index', as: :authenticated_root
