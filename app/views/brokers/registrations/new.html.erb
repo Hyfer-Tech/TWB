@@ -9,22 +9,23 @@
       Lorem Ipsum is simply dummy text of the printing and typesetting industry.
       Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
     </p>
-    </div>
+  </div>
 
-    <div class="col-md-5 col-md-offset-1 form">
+
+  <div class="col-md-5 col-md-offset-1 form">
     <div class="row">
       <div class="col-md-6">
-      <div class="input-group">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-        <%= f.input :first_name, required: true, autofocus: true, label: false, placeholder: "John" %>
-      </div><br>
-    </div>
-    <div class="col-md-6">
-      <div class="input-group">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-        <%= f.input :last_name, required: true, label: false, class: "form-control", placeholder: "Doe"  %>
-      </div><br>
-    </div>
+        <div class="input-group">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+          <%= f.input :first_name, required: true, autofocus: true, label: false, placeholder: "John" %>
+        </div><br>
+      </div>
+      <div class="col-md-6">
+        <div class="input-group">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+          <%= f.input :last_name, required: true, label: false, class: "form-control", placeholder: "Doe"  %>
+        </div><br>
+      </div>
     </div>
     <div class="input-group">
       <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
@@ -51,85 +52,88 @@
     </div><br>
 
     <div class="input-group">
-         <span class="input-group-addon"><i class="glyphicon glyphicon-bookmark"></i></span>
-        <%= f.input :firm_name, placeholder: "john's import export", label: false  %>
-      </div><br>
-
-    <div class="input-group">
-         <span class="input-group-addon"><i class="glyphicon glyphicon-map-marker"></i></span>
-         <%= f.input :address_line_1, required: true, label: false, placeholder: "963 Lovelace Road, Tampa Bay, FL 25235." %>
+      <span class="input-group-addon"><i class="glyphicon glyphicon-bookmark"></i></span>
+      <%= f.input :firm_name, placeholder: "john's import export", label: false  %>
     </div><br>
 
     <div class="input-group">
-         <span class="input-group-addon"><i class="glyphicon glyphicon-map-marker"></i></span>
-         <%= f.input :address_line_2, label: false, placeholder: "963 Lovelace Road, Tampa Bay, FL 25235." %>
+       <span class="input-group-addon"><i class="glyphicon glyphicon-map-marker"></i></span>
+       <%= f.input :address_line_1, required: true, label: false, placeholder: "963 Lovelace Road, Tampa Bay, FL 25235." %>
     </div><br>
 
     <div class="input-group">
-         <span class="input-group-addon"><i class="glyphicon glyphicon-map-marker"></i></span>
-         <%= f.input :address_line_3, label: false, placeholder: "963 Lovelace Road, Tampa Bay, FL 25235."  %>
+      <span class="input-group-addon"><i class="glyphicon glyphicon-map-marker"></i></span>
+      <%= f.input :address_line_2, label: false, placeholder: "963 Lovelace Road, Tampa Bay, FL 25235." %>
     </div><br>
 
     <div class="input-group">
-         <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-         <%= f.input :city, required: true, label: false, placeholder: "Los Angeles" %>
-    </div><br>
-    <div class="input-group">
-         <span class="input-group-addon"><i class="glyphicon glyphicon-send"></i></span>
-        <%= f.input :zip_postal_code, label: false, required: true, placeholder: "90250" %>
-      </div><br>
-
-    <div class="input-group">
-         <span class="input-group-addon"><i class="glyphicon glyphicon-road"></i></span>
-         <%= f.input :state_province_county, label: false, required: true, placeholder: "California" %>
-    </div><br>
-    <div class="input-group">
-         <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
-         <%= f.input :country, as: :country, required: true, placeholder: "USA", label: false %>
+      <span class="input-group-addon"><i class="glyphicon glyphicon-map-marker"></i></span>
+      <%= f.input :address_line_3, label: false, placeholder: "963 Lovelace Road, Tampa Bay, FL 25235."  %>
     </div><br>
 
     <div class="input-group">
-         <span class="input-group-addon"><i class="glyphicon glyphicon-star"></i></span>
-         <%= f.input :specialty, required:false, placeholder: "specialtyXX", label: false %>
+      <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+      <%= f.input :city, required: true, label: false, placeholder: "Los Angeles" %>
     </div><br>
 
     <div class="input-group">
-         <span class="input-group-addon"><i class="glyphicon glyphicon-folder-open"></i></span>
-        <%= f.input :past_experience, required: false, placeholder: "experienceXX", label: false %>
+      <span class="input-group-addon"><i class="glyphicon glyphicon-send"></i></span>
+      <%= f.input :zip_postal_code, label: false, required: true, placeholder: "90250" %>
+    </div><br>
+
+    <div class="input-group">
+      <span class="input-group-addon"><i class="glyphicon glyphicon-road"></i></span>
+      <%= f.input :state_province_county, label: false, required: true, placeholder: "California" %>
+    </div><br>
+
+    <div class="input-group">
+      <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
+      <%= f.input :country, as: :country, required: true, placeholder: "USA", label: false %>
+    </div><br>
+
+    <div class="input-group">
+      <span class="input-group-addon"><i class="glyphicon glyphicon-star"></i></span>
+      <%= f.input :specialty, required:false, placeholder: "specialtyXX", label: false %>
+    </div><br>
+
+    <div class="input-group">
+      <span class="input-group-addon"><i class="glyphicon glyphicon-folder-open"></i></span>
+      <%= f.input :past_experience, required: false, placeholder: "experienceXX", label: false %>
     </div><br>
 
     <div class="row">
-    <div class="col-md-11">
-      <%= f.input :service_rates, as: :range, label: "Service rate", input_html: {oninput: "updateSlider(value)"} %>
-    </div>
-    <div class="col-md-1" style="padding-top:36px;">
-      <span id="service_rate_val" >50</span>
-    </div>
-  </div>
+      <div class="col-md-11">
+        <%= f.input :service_rates, as: :range, label: "Service rate", input_html: {oninput: "updateSlider(value)"} %>
+      </div>
+      <div class="col-md-1" style="padding-top:36px;">
+        <span id="service_rate_val" >50</span>
+      </div>
 
     <%= f.input :avatar %>
 
-  <div class="input-group">
+    <div class="input-group">
        <span class="input-group-addon"><i class="glyphicon glyphicon-qrcode"></i></span>
        <%= f.input :broker_number, required: true, placeholder: "007", label: false %>
-  </div><br>
+    </div><br>
 
-  <div class="form-actions ">
-    <div class="input-group sign-up">
-    <%= f.button :submit, "Sign up" %>
-  </div>
+    <div class="form-actions ">
+      <div class="input-group sign-up">
+      <%= f.button :submit, "Sign up" %>
+    </div>
   </div>
 <% end %>
 <hr>
+
 <div class="form-actions ">
   <div class="input-group sign-up">
     <%= render "brokers/shared/links" %>
+  </div>
 </div>
-</div>
+
 </div>
 <script>
 function updateSlider(val) {
   $("#service_rate_val").text(val)
 };
+$( ".help-block" ).remove();
 </script>
-<script>$( ".help-block" ).remove();</script>

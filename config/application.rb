@@ -17,5 +17,7 @@ module Twb
       g.javascripts = false
       g.helper = false
     end
+
+    config.react.addons = true
   end
 end

@@ -10,7 +10,7 @@ class UserDecorator < Draper::Decorator
   end
 
   def description
-    object.description.empty? ? "This user has not saved an introduction yet." : object.description
+    object.description.nil? ? "This user has not saved an introduction yet." : object.description
   end
 
   def address
@@ -25,6 +25,10 @@ class UserDecorator < Draper::Decorator
 
   def user_type
     object.class
+  end
+
+  def user_type_name
+    object.class.name.underscore
   end
 
   def edit_link

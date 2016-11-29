@@ -3,10 +3,10 @@ Rails.application.routes.draw do
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  devise_for :forward_freights
-  devise_for :brokers
 
-  devise_for :business_users
+  devise_for :forward_freights, controllers: {registrations: 'registrations', confirmations: 'confirmations'}
+  devise_for :brokers, controllers: {registrations: 'registrations', confirmations: 'confirmations'} 
+  devise_for :business_users, controllers: {registrations: 'registrations', confirmations: 'confirmations'}
 
   authenticated :business_user do
     root 'dashboard#index', as: :authenticated_root
@@ -16,20 +16,24 @@ Rails.application.routes.draw do
 
   get 'dashboard',   to: 'dashboard#index'
   get 'search',   to: 'dashboard#search'
+  get 'search/:tag', to: 'dashboard#search', as: :tag
   get 'favorites',   to: 'dashboard#favorites'
 
-  resources :users, only: :show
+  resources :shipments, only: [:new, :create]
+  resources :products, only: [:new, :create]
+
   resources :taggings, only: :create
   resources :brokers, only: :show
   resources :forward_freights, only: :show
   resources :business_users, only: :show
 
 
-  resources :users, only: :show do
+  resources :users, only: [] do
     get 'profile', to: :show, controller: 'users', on: :collection
     get 'saved', to: :saved, controller: 'users', on: :collection
   end
 
   post 'relationships', to: 'relationships#create'
   delete 'relationships', to: 'relationships#destroy'
+
 end
