@@ -21,8 +21,6 @@ RSpec.describe "User Signing Up" do
     select "Nepal", from: "business_user[country]"
     find('input[name="commit"]').click
 
-    expect(page).to have_link(nil, href: '/users/profile')
-
-
+    expect(page).to have_content("A message with a confirmation link has been sent to your email address")
   end
 end

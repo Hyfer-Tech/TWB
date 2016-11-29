@@ -11,6 +11,5 @@ $(document).ready(function() {
         start: function(){
              $(this).find('.slide').css("display", "block"); //prevent flash of the images
         },
-    });     
-
+    });   
 });

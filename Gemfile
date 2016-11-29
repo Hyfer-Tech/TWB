@@ -21,6 +21,9 @@ gem 'jquery-rails'
 # carrierwave for photo upload
 gem 'carrierwave', '>= 1.0.0.rc', '< 2.0'
 
+#mini_magick to crop image
+gem "mini_magick"
+
 #using amazon for storing pictures
 gem "fog"
 
