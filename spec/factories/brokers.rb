@@ -20,5 +20,6 @@ FactoryGirl.define do
     service_rates "24"  
     specialty "specialty"
     broker_number "1235"
+    confirmed_at DateTime.now
   end
 end

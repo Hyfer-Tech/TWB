@@ -25,7 +25,7 @@ RSpec.describe "Broker Signing Up" do
     fill_in "Broker Number", with: broker.broker_number
     find('input[name="commit"]').click
     
-    expect(page).to have_link(nil, href: '/users/profile')
+    expect(page).to have_content("A message with a confirmation link has been sent to your email address")
   end
 
   scenario "unsuccessfully" do
@@ -51,6 +51,6 @@ RSpec.describe "Broker Signing Up" do
     fill_in "Broker Number", with: ""
     find('input[name="commit"]').click
 
-    expect(page).to_not have_link(nil, href: '/users/profile')
+    expect(page).to_not have_content("A message with a confirmation link has been sent to your email address")
   end
 end
