@@ -1,13 +1,13 @@
 class JobsController < ApplicationController
 	before_action :ensure_business_user! ,except: :index
-	before_action :ensure_broker!, only: [:index, :show]
-	
+	before_action :ensure_broker!, only: [:show]
+
 	def index
 		@jobs = Job.all.includes(:shipment, :client, shipment: :products, shipment: :shipment_products)
 	end
 
 	def new
-		@job = Job.new		
+		@job = Job.new
 	end
 
 	def create
