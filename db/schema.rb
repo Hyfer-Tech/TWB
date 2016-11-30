@@ -77,6 +77,8 @@ ActiveRecord::Schema.define(version: 20161128134554) do
     t.boolean  "verified_flag",          default: false, null: false
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false
+    t.boolean  "email_confirmed",        default: false
+    t.string   "confirm_token"
     t.string   "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"

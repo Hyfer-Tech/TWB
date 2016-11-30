@@ -18,9 +18,11 @@ permit_params :first_name, :last_name, :email, :password, :password_confirmation
   index do
     selectable_column
     id_column
+    column :first_name
     column :email
-    column :current_sign_in_at
-    column :sign_in_count
+    column :broker_number do |a|
+        link_to a.broker_number, broker_path(a.id)
+      end 
     column :created_at
     actions
   end
