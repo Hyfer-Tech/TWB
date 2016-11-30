@@ -11,7 +11,7 @@ RSpec.describe "User Signing Up" do
     find(:css, "#business_sign_up_form input[id$='business_user_password']").set(user.password)
     find(:css, "#business_sign_up_form input[id$='business_user_password_confirmation']").set(user.password_confirmation)
     find(:css, "#business_sign_up_form input[id$='business_user_phone']").set(user.phone)
-    find(:css, "#business_sign_up_form input[id$='business_user_description']").set(user.description)
+    find(:css, "#business_sign_up_form #business_user_description").set(user.description)
     find(:css, "#business_sign_up_form input[id$='business_user_address_line_1']").set(user.address_line_1)
     find(:css, "#business_sign_up_form input[id$='business_user_address_line_2']").set(user.address_line_2)
     find(:css, "#business_sign_up_form input[id$='business_user_address_line_3']").set(user.address_line_3)
