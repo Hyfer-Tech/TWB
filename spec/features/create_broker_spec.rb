@@ -24,7 +24,8 @@ RSpec.describe "Broker Signing Up" do
     fill_in "Service Rate", with: broker.service_rates
     # attach_file("Avatar", Rails.root + "spec/fixtures/files/5.png", visible: false)
     fill_in "Broker Number", with: broker.broker_number
-    find('input[name="commit"]').click
+    #find('input[name="commit"]').click
+    find('input[class="sign_up_button"]').click
     
     expect(page).to have_content("A message with a confirmation link has been sent to your email address")
   end
