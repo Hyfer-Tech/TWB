@@ -7,7 +7,7 @@ RSpec.describe "User Signing Up" do
     visit new_business_user_registration_path
     fill_in "First name", with: user.first_name
     fill_in "Last name", with: user.last_name
-    fill_in "Email", with: "someone@example.com"
+    fill_in "business_user_email", with: "someone@example.com"
     fill_in "Password", with: user.password, :match => :prefer_exact
     fill_in "Password confirmation", with: user.password_confirmation, :match => :prefer_exact
     fill_in "Phone", with: user.phone
