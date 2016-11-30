@@ -7,8 +7,8 @@ RSpec.describe "Broker Signing Up" do
     visit new_broker_registration_path
     fill_in "First Name", with: broker.first_name
     fill_in "Last Name", with: broker.last_name
-    # fill_in "broker_email", with: "example@user.com"
-    find(:css, "input[id$='broker_email']").set(broker.email)
+    fill_in "broker_email", with: "example@user.com", exact: true
+    # find(:css, "input[id$='broker_email']").set(broker.email)
     fill_in "Password", with: broker.password, match: :prefer_exact
     fill_in "Password Confirmation", with: broker.password_confirmation
     fill_in "Description", with: broker.description
