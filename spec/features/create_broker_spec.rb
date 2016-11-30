@@ -25,7 +25,7 @@ RSpec.describe "Broker Signing Up" do
     # attach_file("Avatar", Rails.root + "spec/fixtures/files/5.png", visible: false)
     fill_in "Broker Number", with: broker.broker_number
     # find('input[name="commit"]').click
-    find('input[id="sign_up_button"]').click
+    find(:css, "input[id='sign_up_button_broker']").click
     
     expect(page).to have_content("A message with a confirmation link has been sent to your email address")
   end
@@ -53,7 +53,7 @@ RSpec.describe "Broker Signing Up" do
     # attach_file("Avatar", Rails.root + "spec/fixtures/files/5.png", visible: false)
     fill_in "Broker Number", with: ""
     # find('input[name="commit"]').click
-    find('input[id="sign_up_button"]').click
+    find(:css, "input[id='sign_up_button_broker']").click
 
     expect(page).to_not have_content("A message with a confirmation link has been sent to your email address")
   end
