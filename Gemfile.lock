@@ -543,7 +543,6 @@ DEPENDENCIES
   fog
   inherited_resources!
   jbuilder (~> 2.5)
-  jquery-rails
   letter_opener
   listen (~> 3.0.5)
   pg (~> 0.18)

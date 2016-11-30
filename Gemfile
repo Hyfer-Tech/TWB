@@ -16,7 +16,7 @@ gem 'coffee-rails', '~> 4.2'
 # gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
-gem 'jquery-rails'
+# gem 'jquery-rails'
 
 # carrierwave for photo upload
 gem 'carrierwave', '>= 1.0.0.rc', '< 2.0'
