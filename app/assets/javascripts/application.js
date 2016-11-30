@@ -19,5 +19,5 @@
 //= require_tree ../../../vendor/assets/javascripts/.
 
 $(document).ready(function(){
-	$('#product_date_of_manufacture #job_date_of_shipment').datepicker();
+	$('#product_date_of_manufacture').datepicker();
 });
