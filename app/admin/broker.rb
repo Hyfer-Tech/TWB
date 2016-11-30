@@ -20,8 +20,8 @@ permit_params :first_name, :last_name, :email, :password, :password_confirmation
     id_column
     column :first_name
     column :email
-    column :broker_number do |a|
-        link_to a.broker_number, broker_path(a.id)
+    column :View_Profile   do |a|
+        link_to "View", broker_path(a.id)
       end 
     column :created_at
     actions

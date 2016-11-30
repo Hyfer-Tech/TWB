@@ -17,7 +17,11 @@ permit_params :first_name, :last_name, :email, :password, :password_confirmation
   index do
     selectable_column
     id_column
+    column :first_name
     column :email
+    column :View_Profile   do |a|
+        link_to "View", broker_path(a.id)
+      end 
     column :current_sign_in_at
     column :sign_in_count
     column :created_at
