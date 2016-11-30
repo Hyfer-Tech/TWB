@@ -7,7 +7,8 @@ RSpec.describe "Broker Signing Up" do
     visit new_broker_registration_path
     fill_in "First Name", with: broker.first_name
     fill_in "Last Name", with: broker.last_name
-    fill_in "Email", with: "example@user.com"
+
+    fill_in "email_form_broker", with: "example@user.com"
     fill_in "Password", with: broker.password, match: :prefer_exact
     fill_in "Password Confirmation", with: broker.password_confirmation
     fill_in "Description", with: broker.description
@@ -33,7 +34,7 @@ RSpec.describe "Broker Signing Up" do
     visit new_broker_registration_path
     fill_in "First Name", with: ""
     fill_in "Last Name", with: ""
-    fill_in "Email", with: "example@user.com"
+    fill_in "email_form_broker", with: "example@user.com"
     fill_in "Password", with: broker.password, match: :prefer_exact
     fill_in "Password Confirmation", with: broker.password_confirmation
     fill_in "Description", with: broker.description
