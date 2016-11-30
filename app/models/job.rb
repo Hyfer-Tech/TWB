@@ -9,7 +9,7 @@ class Job < ApplicationRecord
 	scope :this_month, -> {where(created_at: (Time.now.beginning_of_month..Time.zone.now))}	
 
 	validate :user_job_limit
-	validates :client, :shipment_id, presence: true
+	validates :shipment_id, :date_of_shipment, :location_of_shipment, :place_being_shipped_to, :border_expected_to_cross, :client_id,:client_type, presence: true
 
 	EXPECTED_BORDERS_TO_BE_CROSSED = ["US", "Canada"]
 
