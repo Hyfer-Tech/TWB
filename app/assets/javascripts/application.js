@@ -16,7 +16,15 @@
 //= require react_ujs
 //= require chosen-jquery
 //= require scaffold
+//= require datetimepicker
 //= require components
 //= require cocoon
 //= require profile
 //= require_tree .
+//= require_tree ../../../vendor/assets/javascripts/.
+
+$(document).ready(function(){
+	$('#product_date_of_manufacture #job_date_of_shipment').datetimepicker({
+		timepicker: false
+	});
+});

@@ -10,12 +10,14 @@ class Shipment < ApplicationRecord
 	validates :business_user_id, presence: true
 	validates :shipment_products, length: {minimum: 1}
 
+	has_one :job
+
 	private
 
-	# def check_user_quota
-	# 	return if business_user.premium_account?
-	# 	if business_user.shipments.this_month.count >= 5
-	# 	 	errors.add(:base, "Exceeds monthly limit")
-	# 	end
-	# end
+	def check_user_quota
+		# return if business_user.premium_account?
+		# if business_user.shipments.this_month.count >= UserLimit.find_by(user_type: BusinessUser.class.name.underscore).amount
+		#  	errors.add(:base, "Exceeds monthly limit")
+		# end
+	end
 end

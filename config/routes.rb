@@ -21,6 +21,7 @@ Rails.application.routes.draw do
 
   resources :shipments, only: [:new, :create]
   resources :products, only: [:new, :create]
+  resources :jobs, only: [:new, :create, :index]
 
   resources :taggings, only: :create
   resources :brokers, only: :show

@@ -1,8 +1,5 @@
 source 'http://rubygems.org'
 
-#active admin gem
-gem 'activeadmin', github: 'activeadmin'
-gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 # Use postgresql as the database for Active Record
@@ -35,6 +32,7 @@ gem "figaro"
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
+
 
 gem 'devise', git: 'https://github.com/plataformatec/devise.git'
 
@@ -102,4 +100,11 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem "cocoon"
+gem 'cocoon'
+
+gem 'activeadmin', github: 'activeadmin'
+gem 'inherited_resources', github: 'activeadmin/inherited_resources'
+
+source 'https://rails-assets.org' do
+  gem 'rails-assets-datetimepicker'
+end

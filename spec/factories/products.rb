@@ -8,5 +8,8 @@ FactoryGirl.define do
     height 100.0
     width 100.0
     grams 100.0
+    origin_of_manufacture "Canada"
+    materials_used "Steel"
+    date_of_manufacture DateTime.now
   end
 end

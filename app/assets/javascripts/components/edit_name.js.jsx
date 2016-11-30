@@ -55,7 +55,7 @@ let EditName = React.createClass({
   updateButton() {
     if(this.state.editable) {
       return (
-        <button onClick={this.handleEdit} className="btn btn-primary"> Update </button>
+        <button onClick={this.handleEdit} className="btn btn-sm btn-success">Update</button>
       )
     }
   },
@@ -63,7 +63,20 @@ let EditName = React.createClass({
   cancelButton() {
     if(this.state.editable) {
       return (
-        <button onClick={this.handleCancel} className="btn btn-primary"> Cancel </button>
+        <button onClick={this.handleCancel} className="btn btn-sm btn-danger">Cancel</button>
+      )
+    }
+  },
+
+  btnGroup(){
+    if (this.state.editable) {
+      return (
+        <div className="btn-group" style={{"margin-bottom": "25px"}}>
+          <hr/>
+          { this.updateButton() }
+          { this.cancelButton() }
+          <br />
+        </div>
       )
     }
   },
@@ -99,14 +112,12 @@ let EditName = React.createClass({
 
   },
 
-  render() {
+  render() {    
     return (
       <div className="text-center">
         <h3>{ this.firstName() } { this.lastName() }</h3>
-        <div className="update-name-button">
-          { this.updateButton() }
-          { this.cancelButton() }
-        </div>
+
+        {this.btnGroup()}
       </div>
     )
   }
