@@ -17,5 +17,6 @@ FactoryGirl.define do
     country "US"
     zip_postal_code "12345"
     service_rates "24"
+    confirmed_at DateTime.now
   end
 end
