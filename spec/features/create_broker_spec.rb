@@ -25,9 +25,9 @@ RSpec.describe "Broker Signing Up" do
 
     fill_in "First Name", with: broker.first_name
     fill_in "Last Name", with: broker.last_name
-    fill_in "#broker_sign_up_form  input[id$='broker_email']", with: "example@user.com"
-    fill_in "#broker_sign_up_form  input[id$='broker_password']", with: broker.password, match: :prefer_exact
-    fill_in "#broker_sign_up_form  input[id$='broker_password_confirmation']", with: broker.password_confirmation
+    fill_in "sign_up_broker_email", with: "example@user.com"
+    fill_in "sign_up_broker_password", with: broker.password, match: :prefer_exact
+    fill_in "sign_up_broker_password_confirmation", with: broker.password_confirmation
     fill_in "Description", with: broker.description
     fill_in "Phone",with: broker.phone
     fill_in "Firm name",with: broker.firm_name
@@ -69,9 +69,9 @@ RSpec.describe "Broker Signing Up" do
     
     fill_in "First Name", with: ""
     fill_in "Last Name", with: ""
-    fill_in "#broker_sign_up_form  input[id$='broker_email']", with: "example@user.com"
-    fill_in "#broker_sign_up_form  input[id$='broker_password']", with: broker.password, match: :prefer_exact
-    fill_in "#broker_sign_up_form  input[id$='broker_password_confirmation']", with: broker.password_confirmation
+    fill_in "sign_up_broker_email", with: "example@user.com"
+    fill_in "sign_up_broker_password", with: broker.password, match: :prefer_exact
+    fill_in "sign_up_broker_password_confirmation", with: broker.password_confirmation
     fill_in "Description", with: broker.description
     fill_in "Phone",with: broker.phone
     fill_in "Firm name",with: broker.firm_name
