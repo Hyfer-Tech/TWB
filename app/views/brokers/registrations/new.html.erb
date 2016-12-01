@@ -6,9 +6,9 @@
   <div class="form-inputs" id="broker_sign_up_form">
     <%= f.input :first_name,label: "First Name", required: true,autofocus: true %>
     <%= f.input :last_name,label: "Last Name", required: true %>
-    <%= f.input :email, required: true, input_html: { class: "sign_up_broker_email" } %>
-    <%= f.input :password,label: "Password", required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), input_html: { class: "sign_up_broker_password" } %>
-    <%= f.input :password_confirmation,label: "Password Confirmation", required: true, input_html: { class: "sign_up_broker_password_confirmation" } %>
+    <%= f.input :email, required: true, input_html: { id: "sign_up_broker_email" } %>
+    <%= f.input :password,label: "Password", required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), input_html: { id: "sign_up_broker_password" } %>
+    <%= f.input :password_confirmation,label: "Password Confirmation", required: true, input_html: { id: "sign_up_broker_password_confirmation" } %>
     <%= f.input :description, as: :text, required: false %>
     <%= f.input :phone, required: true %>
     <%= f.input :firm_name %>
