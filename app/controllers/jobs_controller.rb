@@ -35,7 +35,7 @@ class JobsController < ApplicationController
 	end
 
 	def ensure_broker!
-		return if broker_signed_in?
+		return if broker_signed_in? || current_user.business_user?
 		flash[:alert] = "You must be a broker to view the jobs."
 		redirect_to root_path
 	end
