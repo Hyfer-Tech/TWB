@@ -1,38 +1,37 @@
 <center><h1>Jobs</h1></center>
 <div class="all-jobs">
 <% @jobs.each do |job| %>
-	<div class="col-xs-12">
+	<div class="">
 		<h2>verifry the classified docs</h2>
 	</div>
-
-	<div class="col-xs-12">
-		<i class="fa fa-briefcase " aria-hidden="true" title="job_type">	<span class="data"><%= job.job_type %>hourly</span></i>
-		<i class="fa fa-gear " aria-hidden="true" title="skill required">	<span class="data"><%= job.job_type %>expert</span></i>
-		<i class="fa fa-clock-o " aria-hidden="true" title="time required">	<span class="data">1-3 months</span></i>
-		<i class="fa fa-flag " aria-hidden="true" title="job required">	<span class="data"><%= job.created_at %> ago</span></i>
+	<div class="">
+		<span class="fa fa-briefcase " aria-hidden="true" title="job_type"></span><span class="data"><%= job.job_type %>hourly</span>
+		<span class="fa fa-gear " aria-hidden="true" title="skill required"></span>	<span class="data"><%= job.job_type %>expert</span>
+		<span class="fa fa-clock-o " aria-hidden="true" title="time required"></span>		<span class="data">1-3 months</span>
+		<span class="fa fa-flag " aria-hidden="true" title="job required"></span>		<span class="data"><%= job.created_at %> ago</span>
 	</div>
 
-	<div class="col-xs-12">
+	<div class="">
 		  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 	</div>
 
-	<div class="col-xs-12">
-		<i class="fa fa-check-circle-o " aria-hidden="true" title="job_type">	<span class="data">verifed businessman</span></i>
-		<i class="fa fa-star " aria-hidden="true" title="skill required"></i>
-		<i class="fa fa-star " aria-hidden="true" title="skill required"></i>
-		<i class="fa fa-star " aria-hidden="true" title="skill required"></i>
-		<i class="fa fa-star " aria-hidden="true" title="skill required"></i>
-		<i class="fa fa-star " aria-hidden="true" title="skill required"></i>
+	<div class="">
+		<span class="fa fa-check-circle-o " aria-hidden="true" title="job_type"></span>	<span class="data">verifed businessman</span>
+		<span class="fa fa-star " aria-hidden="true" title="skill required"></span>
+		<span class="fa fa-star " aria-hidden="true" title="skill required"></span>
+		<span class="fa fa-star " aria-hidden="true" title="skill required"></span>
+		<span class="fa fa-star " aria-hidden="true" title="skill required"></span>
+		<span class="fa fa-star " aria-hidden="true" title="skill required"></span>
 		<span class="data"></span>
-		<i class="fa fa-usd " aria-hidden="true" title="time required">	<span class="data">500</span></i>
-		<i class="fa fa-globe " aria-hidden="true" title="job required">	<span class="data"><%= job.border_expected_to_cross %> japan hongkong nepal</span></i>
+		<span class="fa fa-usd " aria-hidden="true" title="time required">	</span><span class="data">500</span>
+		<span class="fa fa-globe " aria-hidden="true" title="job required">	</span><span class="data"><%= job.border_expected_to_cross %> japan hongkong nepal</span>
 	</div>
-
+<hr>
 <% end %>
 </div>
 
 <style>
-  .glyphicon{
+  .fa{
 		font-size: 20px;
 		padding-top: 20px;
 	}
@@ -47,11 +46,12 @@
 	}
 	.all-jobs{
 		background-color: white;
-		/*padding:0 20px 0 20px;*/
+		padding:10px 20px 10px 20px;
 	}
 	hr{
-		border-width: thick;
+		border-width: thin;
 		border-color: black;
+		width: 70%;
 	}
 
 </style>
