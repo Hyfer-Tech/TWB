@@ -25,9 +25,9 @@ class JobsController < ApplicationController
 
 	private
 	def jobs_params
-		params.require(:job).permit(:job_type, :shipment_id).merge(client_id: current_user.id, client_type: current_user.class.name)
+		params.require(:job).permit(:job_type, :shipment_id, :date_of_shipment, :location_of_shipment, :place_being_shipped_to, :border_expected_to_cross).merge(client_id: current_user.id, client_type: current_user.class.name)
 	end
-
+	
 	def ensure_business_user!
 		return if business_user_signed_in?
 		flash[:alert] = "You must be a business account type to create a job."
@@ -35,7 +35,7 @@ class JobsController < ApplicationController
 	end
 
 	def ensure_broker!
-		return if broker_signed_in?
+		return if broker_signed_in? || current_user.business_user?
 		flash[:alert] = "You must be a broker to view the jobs."
 		redirect_to root_path
 	end
