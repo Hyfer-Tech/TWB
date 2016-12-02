@@ -14,12 +14,12 @@
             <div class="profile-sidebar">
               <!-- SIDEBAR USERPIC -->
               <div class="profile-userpic">
-                <%= image_tag @user.avatar_url(:thumb), class: 'prof-pic' %>
-
-                <div class="text-center">  
-                  <label class="custom-file-upload" data-toggle="modal" data-target="#myModal">
-                    <i class="fa fa-cloud-upload"></i> Update Profile Picture
-                  </label>
+                <div class="picture">
+                  <%= image_tag @user.avatar_url(:thumb), class: 'prof-pic' %>
+                
+                  <a href="#" class="profile-pic-edit" data-toggle="modal" data-target="#myModal">
+                    <i class="fa fa-cloud-upload"></i> Update
+                  </a>
                 </div>
 
                 <div class="modal fade" id="myModal" role="dialog">

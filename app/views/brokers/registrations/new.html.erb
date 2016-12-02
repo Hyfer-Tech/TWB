@@ -3,12 +3,14 @@
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
+  <div class="form-inputs" id="broker_sign_up_form">
     <%= f.input :first_name,label: "First Name", required: true,autofocus: true %>
     <%= f.input :last_name,label: "Last Name", required: true %>
-    <%= f.input :email, required: true %>
-    <%= f.input :password,label: "Password", required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-    <%= f.input :password_confirmation,label: "Password Confirmation", required: true %>
+    <%= f.input :email, required: true, input_html: { id: "sign_up_broker_email" } %>
+    <%= f.input :password,label: "Password", required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), 
+        input_html: { id: "sign_up_broker_password" } %>
+    <%= f.input :password_confirmation,label: "Password Confirmation", required: true, 
+        input_html: { id: "sign_up_broker_password_confirmation" } %>
     <%= f.input :description, as: :text, required: false %>
     <%= f.input :phone, required: true %>
     <%= f.input :firm_name %>
@@ -27,7 +29,7 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
+    <%= f.button :submit, "Sign up", id: "sign_up_button_broker" %>
   </div>
 <% end %>
 

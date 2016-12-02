@@ -19,6 +19,7 @@
 //= require datetimepicker
 //= require components
 //= require cocoon
+//= require profile
 //= require_tree .
 //= require_tree ../../../vendor/assets/javascripts/.
 
