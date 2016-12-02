@@ -5,5 +5,5 @@ class Product < ApplicationRecord
 
 	validates :title, :price, :compare_at_price, :product_code, :height, :width, :grams, :business_user_id, :origin_of_manufacture, :materials_used, :date_of_manufacture, presence: true
 
-  mount_uploader :featured_image, ProductImageUploader
+	mount_uploader :featured_image, ProductImageUploader
 end

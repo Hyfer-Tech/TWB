@@ -29,6 +29,5 @@ class ProductsController < ApplicationController
 			:origin_of_manufacture,
 			:materials_used,
 			:date_of_manufacture)
-
 	end
 end
