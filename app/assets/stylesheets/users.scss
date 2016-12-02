@@ -4,14 +4,20 @@
   height:5%;
 }
 
+.picture {
+  width: 150px;
+  height: 150px;
+  position: relative;
+  margin: 30px auto;
+}
+
 .prof-pic {
-  border-radius: 50%;
   width: 150px;
   height: 150px;
   display: block;
-  margin: 30px auto;
   border: 3px solid #eee;
   padding: 2px;
+  object-fit: cover;
 }
 
 .prof-pic-xs {
@@ -19,15 +25,24 @@
   width: 35px;
   height: 35px;
   display: block;
-  background: #fff
+  background: #ffffff;
+  object-fit: cover;
 }
 
-.custom-file-upload {
-  margin-top:20px;
-  border: 1px solid #ccc;
-  display: inline-block;
-  padding: 6px 12px;
-  cursor: pointer;
+.profile-pic-edit {
+  background-color: #656972;
+  color: #ffffff;
+  padding:2%;
+  position: absolute;
+  top: 3%;
+  right: 3%;
+  display: none;
+  opacity: 0.7;
+}
+
+.profile-pic-edit:hover, .profile-pic-edit:focus  {
+  text-decoration: none;
+  color: #ffffff;
 }
 
 .update-name-button {

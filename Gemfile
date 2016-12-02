@@ -108,3 +108,4 @@ gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 source 'https://rails-assets.org' do
   gem 'rails-assets-datetimepicker'
 end
+

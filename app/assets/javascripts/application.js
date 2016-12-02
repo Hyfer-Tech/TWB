@@ -14,7 +14,8 @@
 //= require react_ujs
 //= require scaffold
 //= require components
-//= require cocoon	
+//= require cocoon
+//= require profile
 //= require_tree .
 //= require_tree ../../../vendor/assets/javascripts/.
 
