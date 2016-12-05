@@ -12,16 +12,14 @@
 
 <br>
 
-  <a class="TagSearch"> Search by Tag </a>
-  <div class = "Tag_searching">
-    <div class="panel panel-default" style="background: none">
+  <h5>Search by Tag</h5>
+    <div class="panel panel-default">
       <div class="panel-body">
         <% ActsAsTaggableOn::Tag.all.each do |tag| %>
         <span class="label label-default" style= "display:inline-block;"> <%= link_to tag, tag_path(tag.name), style: 'color: white' %> </span>
         <% end %>
       </div>
     </div>
-  </div>
 
 <hr/>
 
