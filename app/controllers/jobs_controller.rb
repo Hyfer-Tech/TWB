@@ -12,7 +12,6 @@ class JobsController < ApplicationController
 
 	def create
 		@job = Job.new(jobs_params)
-		binding.pry
 		if @job.save
 			redirect_to root_path
 		else
