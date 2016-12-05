@@ -1,4 +1,4 @@
-class BusinessUser < ApplicationRecord  
+class BusinessUser < ApplicationRecord
   include Searchable
   acts_as_taggable
   # Include default devise modules. Others available are:
@@ -19,4 +19,5 @@ class BusinessUser < ApplicationRecord
   acts_as_followable
 
   has_many :jobs, as: :client
+  has_many :uploads, as: :user
 end
