@@ -7,12 +7,13 @@ class JobsController < ApplicationController
 	end
 
 	def new
-		@job = Job.new		
+		@job = Job.new
 	end
 
 	def create
 		@job = Job.new(jobs_params)
 		if @job.save
+			flash[:success] = "Your job has been posted!"
 			redirect_to root_path
 		else
 			render :new, status: :inprocessable_entity
@@ -24,8 +25,9 @@ class JobsController < ApplicationController
 	end
 
 	private
+
 	def jobs_params
-		params.require(:job).permit(:job_type, :shipment_id, :date_of_shipment, :location_of_shipment, :place_being_shipped_to, :border_expected_to_cross).merge(client_id: current_user.id, client_type: current_user.class.name)
+		params.require(:job).permit(:job_type, :shipment_id, :date_of_shipment, :location_of_shipment, :place_being_shipped_to, :border_expected_to_cross).merge(client_id: current_user.id, client_type: current_user.class.name, shipment_id: params[:shipment_id])
 	end
 	
 	def ensure_business_user!

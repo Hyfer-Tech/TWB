@@ -19,9 +19,12 @@ Rails.application.routes.draw do
   get 'search/:tag', to: 'dashboard#search', as: :tag
   get 'favorites',   to: 'dashboard#favorites'
 
-  resources :shipments, only: [:new, :create]
-  resources :products, only: [:new, :create]
-  resources :jobs, only: [:new, :create, :index]
+  resources :shipments, only: [:index, :show, :new, :create] do 
+    resources :jobs, only: [:new, :create]
+  end
+
+  resources :products, only: [:new, :create, :show]
+  resources :jobs, only: [:index]
 
   resources :taggings, only: :create
   resources :brokers, only: :show
