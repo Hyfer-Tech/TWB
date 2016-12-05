@@ -8,7 +8,12 @@ class ForwardFreight < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
   mount_uploader :avatar, AvatarUploader
 
-  validates :email, :first_name, :last_name, :phone, :address_line_1, :city, :state_province_county, :country, presence: true
+  CANADIAN_POSTAL_CODE = /\A[ABCEGHJKLMNPRSTVXY]{1}\\d{1}[A-Z]{1}[ -]?\\d{1}[A-Z]{1}\\d{1}\z/
+
+
+  validates :email, :first_name, :last_name, :phone, :address_line_1, :city, :zip_postal_code, :state_province_county, :country, presence: true
+  validates :zip_postal_code, format: { with: CANADIAN_POSTAL_CODE }
+
 
   acts_as_followable
   acts_as_follower

@@ -4,7 +4,11 @@ class Broker < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
+  CANADIAN_POSTAL_CODE = /\A[ABCEGHJKLMNPRSTVXY]{1}\\d{1}[A-Z]{1}[ -]?\\d{1}[A-Z]{1}\\d{1}\z/
+
+
   validates :first_name, :last_name, :phone, :firm_name,:address_line_1, :city, :zip_postal_code,:state_province_county, :country, :broker_number, presence: true
+  validates :zip_postal_code, format: { with: CANADIAN_POSTAL_CODE }
 
   mount_uploader :avatar, AvatarUploader
   acts_as_followable
