@@ -11,4 +11,5 @@ class Broker < ApplicationRecord
   acts_as_follower
 
   has_many :jobs, as: :agent
+  has_many :bids, as: :bidder
 end

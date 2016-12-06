@@ -47,15 +47,16 @@ ActiveRecord::Schema.define(version: 20161205080046) do
   end
 
   create_table "bids", force: :cascade do |t|
-    t.integer  "broker_id"
+    t.integer  "bidder_id"
     t.integer  "job_id"
+    t.string   "bidder_type"
     t.boolean  "accepted",     default: false
-    t.string   "cover_letter"
+    t.text     "cover_letter"
     t.string   "attachment"
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
-    t.index ["broker_id", "accepted"], name: "index_bids_on_broker_id_and_accepted", using: :btree
-    t.index ["broker_id"], name: "index_bids_on_broker_id", using: :btree
+    t.index ["bidder_id", "accepted"], name: "index_bids_on_bidder_id_and_accepted", using: :btree
+    t.index ["bidder_id"], name: "index_bids_on_bidder_id", using: :btree
     t.index ["job_id", "accepted"], name: "index_bids_on_job_id_and_accepted", using: :btree
     t.index ["job_id"], name: "index_bids_on_job_id", using: :btree
   end
