@@ -47,10 +47,10 @@ gem 'rails-controller-testing'
 # Country selector gem
 gem 'country_select'
 
-gem 'elasticsearch-rails'
+# gem 'elasticsearch-rails'
 
-gem 'elasticsearch-model'
-gem 'bonsai-elasticsearch-rails'
+# gem 'elasticsearch-model'
+# gem 'bonsai-elasticsearch-rails'
 
 #taggable gem
 gem 'acts-as-taggable-on', '~> 4.0'
