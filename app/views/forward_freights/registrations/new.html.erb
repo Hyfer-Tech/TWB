@@ -17,7 +17,7 @@
     <%= f.input :city, required: true %>
 
     <%= f.input :state_province_county, label: "State/Province/County", required: true %>
-    <%= f.input :zip_postal_code, label: "Zip/Postal Code", required: true, input_html: { onkeydown: "a"} %>
+    <%= f.input :zip_postal_code, label: "Zip/Postal Code", required: true%>
     <%= f.input :service_rates, label: "Service rate" %>
 
     <%= f.file_field :avatar %>
@@ -32,29 +32,13 @@
 <%= render "forward_freights/shared/links" %>
 
 <script type="text/javascript">
-    var a =  function(){
-      console.log("a");
-    };
-    // }
-    // $("")
-// $(document).ready(function(){
-  // $(document).onkeydown(function(){
-    // var elem = document.getElementById("forward_freight_zip_postal_code").value;
-    // if ( isNaN(parseInt(elem[0])) ){
-    //     $('#forward_freight_zip_postal_code').mask('AAA AAA');
-    //   
-    // console.log("asdf");
-  // });
-    
-  // });
-// });
+  $( "#forward_freight_zip_postal_code" ).keydown(function( event ) {
+    var elem = document.getElementById("forward_freight_zip_postal_code").value;
+    if(!(isNaN(elem[0]))){
+      $('#forward_freight_zip_postal_code').mask('AAAAA');
+    } else {
+      $('#forward_freight_zip_postal_code').mask('AAA AAA');
+    }
+});
 
-  // $(document).on(change, '#forward_freight_zip_postal_code', function({
-  //   debugger
-  // }));
-  // var elem = document.getElementById("forward_freight_zip_postal_code").value;
-  // if ( isNaN(parseInt(elem[0])) ){
-  //     $('#forward_freight_zip_postal_code').mask('AAA AAA');
-  //   }MASDKKSJDFLKSJD
-  // });
 </script>
