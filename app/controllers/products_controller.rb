@@ -8,6 +8,7 @@ class ProductsController < ApplicationController
 	def create
 		@product = current_business_user.products.new(product_params)
 		if @product.save
+			flash[:success] = "Product has been created!"
 			redirect_to root_path
 		else
 			render :new, status: :unprocessable_entity
@@ -16,7 +17,18 @@ class ProductsController < ApplicationController
 
 	private
 	def product_params
-		params.require(:product).permit(:title, :taxable, :featured_image,:available, :price, :grams, :height, :width,
-									    :compare_at_price, :product_code, :origin_of_manufacture, :materials_used, :date_of_manufacture)
+		params.require(:product).permit(
+			:title, 
+			:taxable, 
+			:featured_image,
+			:available, :price,
+		 	:grams,
+			:height,
+			:width,
+			:compare_at_price,
+			:product_code,
+			:origin_of_manufacture,
+			:materials_used,
+			:date_of_manufacture)
 	end
 end
