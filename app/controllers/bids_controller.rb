@@ -1,5 +1,9 @@
 class BidsController < ApplicationController
-  before_action :ensure_business_user!
+  before_action :ensure_business_user! ,except: :index
+  
+  def index
+    @bids = Bid.all.where(job_id: params[:job_id])
+  end
 
   def new
     @bid = Bid.new    

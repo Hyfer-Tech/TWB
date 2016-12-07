@@ -22,7 +22,7 @@ Rails.application.routes.draw do
 
   
   resources :jobs, only: [:index] do 
-    resources :bids, only: [:new, :create]  
+    resources :bids, only: [:new, :create, :index]  
   end
 
   resources :shipments, only: [:index, :show, :new, :create] do 
