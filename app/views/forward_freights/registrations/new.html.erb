@@ -17,7 +17,7 @@
     <%= f.input :city, required: true %>
 
     <%= f.input :state_province_county, label: "State/Province/County", required: true %>
-    <%= f.input :zip_postal_code, label: "Zip/Postal Code", required: true%>
+    <%= f.input :zip_postal_code, label: "Zip/Postal Code", input_html: { class: 'zipcode'}, required: true%>
     <%= f.input :service_rates, label: "Service rate" %>
 
     <%= f.file_field :avatar %>
@@ -40,5 +40,4 @@
       $('#forward_freight_zip_postal_code').mask('AAA AAA');
     }
 });
-
 </script>
