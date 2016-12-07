@@ -1,5 +1,5 @@
 class Broker < ApplicationRecord
-  include Searchable
+  # include Searchable
   acts_as_taggable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
@@ -15,4 +15,5 @@ class Broker < ApplicationRecord
   acts_as_follower
 
   has_many :jobs, as: :agent
+  has_many :uploads, as: :user
 end

@@ -54,7 +54,7 @@ let EditTags = React.createClass({
           {
             this.state.tag_list.map((tag) => {
               return (
-                <span className="label label-default" id="tags-list-profile" key={tag}>{tag}</span>
+                <span className="label label-user" id="tags-list-profile" key={tag}>{tag}</span>
               )
             })
           }
