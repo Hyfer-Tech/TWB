@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161205080046) do
+ActiveRecord::Schema.define(version: 20161207081236) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 20161205080046) do
     t.string   "attachment"
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
+    t.float    "price"
     t.index ["bidder_id", "accepted"], name: "index_bids_on_bidder_id_and_accepted", using: :btree
     t.index ["bidder_id"], name: "index_bids_on_bidder_id", using: :btree
     t.index ["job_id", "accepted"], name: "index_bids_on_job_id_and_accepted", using: :btree

@@ -4,7 +4,8 @@ class BidsController < ApplicationController
   end
 
   def create
-    @bid = Bid.new(bids_params)
+    @job = Job.find(params[:job_id])
+    @bid = @job.bids.new(bids_params)
     if @bid.save
       redirect_to root_path
     else
@@ -15,6 +16,6 @@ class BidsController < ApplicationController
   private 
 
   def bids_params
-    params.require(:bid).permit(:job_id,:cover_letter,:attachment).merge(bidder_id: current_user.id, bidder_type: current_user.class.name)
+    params.require(:bid).permit(:cover_letter,:attachment, :price).merge(bidder_id: current_user.id, bidder_type: current_user.class.name)
   end
 end

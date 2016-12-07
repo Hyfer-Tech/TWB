@@ -1,5 +1,5 @@
 class ForwardFreight < ApplicationRecord
-  include Searchable
+  # include Searchable
   acts_as_taggable
   
   # Include default devise modules. Others available are:
