@@ -1,8 +1,9 @@
 class BidsController < ApplicationController
   before_action :ensure_business_user! ,except: :index
-  
+  before_action :ensure_my_job!, only: :index
+
   def index
-    @bids = Bid.all.where(job_id: params[:job_id])
+    @bids = Bid.where(job_id: params[:job_id])
   end
 
   def new
@@ -28,6 +29,12 @@ class BidsController < ApplicationController
   def ensure_business_user!
     return unless business_user_signed_in?
     flash[:alert] = "Your Account type is business user you can't bid to jobs"
+    redirect_to root_path
+  end
+
+  def ensure_my_job!
+    return if current_user.id.equal? Job.find(params[:job_id]).client_id
+    flash[:alert] = "Sorry! this job is not related to you"
     redirect_to root_path
   end
 end
