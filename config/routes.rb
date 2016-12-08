@@ -25,6 +25,11 @@ Rails.application.routes.draw do
     resources :bids, only: [:new, :create, :index]  
   end
 
+  
+  resources :bids, only: :update do  
+    resources :bid_acceptances, only: :create 
+  end
+
   resources :shipments, only: [:index, :show, :new, :create] do 
     resources :jobs, only: [:new, :create]
   end

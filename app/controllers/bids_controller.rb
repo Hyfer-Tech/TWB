@@ -3,7 +3,7 @@ class BidsController < ApplicationController
   before_action :ensure_my_job!, only: :index
 
   def index
-    @bids = Bid.where(job_id: params[:job_id])
+    @bids = Bid.where(job_id: params[:job_id]).order("created_at DESC")
   end
 
   def new
