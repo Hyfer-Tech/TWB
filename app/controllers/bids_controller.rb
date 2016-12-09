@@ -2,13 +2,14 @@ class BidsController < ApplicationController
   before_action :authenticate_any!
   before_action :ensure_business_user! ,except: :index
   before_action :ensure_my_job!, only: :index
+  before_action :ensure_one_bid_by_one_user_for_one_job!, only: :new
 
   def index
     @bids = Bid.where(job_id: params[:job_id]).order("created_at DESC")
   end
 
   def new
-    @bid = Bid.new    
+    @bid = Bid.new
   end
 
   def create
@@ -21,7 +22,7 @@ class BidsController < ApplicationController
     end
   end
 
-  private 
+  private
 
   def bids_params
     params.require(:bid).permit(:cover_letter, :price).merge(bidder_id: current_user.id, bidder_type: current_user.class.name)
@@ -37,5 +38,18 @@ class BidsController < ApplicationController
     return if current_user.id.equal? Job.find(params[:job_id]).client_id
     flash[:alert] = "Sorry! this job is not related to you"
     redirect_to root_path
+  end
+
+  def ensure_one_bid_by_one_user_for_one_job!
+    @bidder_id = Bid.find(current_user.id).present?
+    #@job_id = Bid.find(params[:job_id]).present?
+    @bidder_type = Bid.where(bidder_type: current_user.class.name).present?
+
+    return unless @bidder_id && @bidder_type
+    flash[:alert] = "Sorry! You already have bidded for this Job"
+    redirect_to root_path
+    # return unless Bid.where("bidder_id = ? AND bidder_type = ?", current_user.id, current_user.class.name)
+    # flash[:alert] = "Sorry! You already have bidded for this Job"
+    # redirect_to root_path
   end
 end

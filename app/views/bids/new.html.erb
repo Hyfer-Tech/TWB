@@ -1,6 +1,5 @@
 <%= simple_form_for @bid, url: job_bids_path, method: :post do |f| %>
   <%= f.input :cover_letter, as: :text %>
-  <%= f.input :attachment , as: :file %>
   <%= f.input :price %>
   <%= f.button :submit, 'Bid' %>
 <% end %>
