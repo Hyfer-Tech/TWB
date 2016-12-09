@@ -1,6 +1,14 @@
 class ShipmentsController < ApplicationController
 	before_action :authenticate_business_user!
 
+	def index
+		@shipments = current_business_user.shipments.includes(:products).order("created_at DESC")
+	end
+
+	def show
+		@shipment = Shipment.find(params[:id])
+	end	
+
 	def new
 		@shipment = Shipment.new
 		@shipment.shipment_products.build

@@ -1,7 +1,7 @@
 class ForwardFreight < ApplicationRecord
-  include Searchable
+  # include Searchable
   acts_as_taggable
-  
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -14,4 +14,5 @@ class ForwardFreight < ApplicationRecord
   acts_as_follower
 
   has_many :jobs, as: :agent
+  has_many :uploads, as: :user
 end
