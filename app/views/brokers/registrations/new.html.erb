@@ -7,9 +7,9 @@
     <%= f.input :first_name,label: "First Name", required: true,autofocus: true %>
     <%= f.input :last_name,label: "Last Name", required: true %>
     <%= f.input :email, required: true, input_html: { id: "sign_up_broker_email" } %>
-    <%= f.input :password,label: "Password", required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), 
+    <%= f.input :password,label: "Password", required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
         input_html: { id: "sign_up_broker_password" } %>
-    <%= f.input :password_confirmation,label: "Password Confirmation", required: true, 
+    <%= f.input :password_confirmation,label: "Password Confirmation", required: true,
         input_html: { id: "sign_up_broker_password_confirmation" } %>
     <%= f.input :description, as: :text, required: false %>
     <%= f.input :phone, required: true %>
@@ -36,7 +36,12 @@
 <%= render "brokers/shared/links" %>
 
 <script type="text/javascript">
-    $(document).ready(function(){
-      $('#broker_zip_postal_code').mask('AAA AAA');
-  });
-</script>
+   $( "#broker_zip_postal_code" ).keydown(function( event ) {
+     var elem = document.getElementById("broker_zip_postal_code").value;
+     if(!(isNaN(elem[0]))){
+       $('#broker_zip_postal_code').mask('AAAAA');
+     } else {
+       $('#broker_zip_postal_code').mask('AAA AAA');
+     }
+ });
+ </script>
