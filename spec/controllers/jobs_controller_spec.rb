@@ -5,9 +5,10 @@ RSpec.describe JobsController, type: :controller do
 		context "User is a business user" do
 			it "renders the new template" do
 				user = FactoryGirl.create(:business_user)
+				setup_shipment(user: user)
 
 				sign_in user
-				get :new
+				get :new, shipment_id: @shipment.id
 
 				expect(response).to render_template :new
 			end
@@ -16,9 +17,11 @@ RSpec.describe JobsController, type: :controller do
 		context "User is not a business user" do
 			it "redirects to root path" do
 				broker = FactoryGirl.create(:broker)
-
+				user = FactoryGirl.create(:business_user)
+				setup_shipment(user: user)
+				
 				sign_in broker
-				get :new
+				get :new, shipment_id: @shipment.id
 
 				expect(response).to redirect_to root_path
 			end
@@ -36,7 +39,7 @@ RSpec.describe JobsController, type: :controller do
 
 					sign_in user
 					expect{
-						post :create, job: FactoryGirl.attributes_for(:job, shipment_id: @shipment.id)
+						post :create, shipment_id: @shipment.id, job: FactoryGirl.attributes_for(:job)
 					}.to change(Job, :count).by(0)
 				end
 			end
@@ -50,7 +53,7 @@ RSpec.describe JobsController, type: :controller do
 
 					sign_in user
 					expect{
-						post :create, job: FactoryGirl.attributes_for(:job, shipment_id: @shipment.id)
+						post :create, shipment_id: @shipment.id, job: FactoryGirl.attributes_for(:job)
 					}.to change(Job, :count).by(1)
 				end
 			end
@@ -65,7 +68,7 @@ RSpec.describe JobsController, type: :controller do
 
 				sign_in user
 				expect{
-					post :create, job: FactoryGirl.attributes_for(:job, shipment_id: @shipment.id)
+					post :create, shipment_id: @shipment.id, job: FactoryGirl.attributes_for(:job)
 				}.to change(Job, :count).by(1)
 			end
 		end

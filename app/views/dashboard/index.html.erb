@@ -1,0 +1,8 @@
+<%= simple_form_for Upload.new do |f| %>
+  <%= f.input :file %>
+  <%= f.submit class: 'btn btn-primary' %>
+<% end %>
+
+<% @uploads.each do |upload| %>
+  <%= link_to upload, upload.file.url %>
+<% end %>

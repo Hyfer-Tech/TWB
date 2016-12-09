@@ -1,12 +1,12 @@
 <div class="row">
   <div class="col-xs-12 col-md-6 col-md-offset-3">
 		<h1>Create a New Job</h1>
+		<p><small><%= link_to 'Review your shipment', shipment_path(params[:shipment_id]), target: '_blank' %></small></p>
 
-		<%= simple_form_for @job do |f| %>
+		<hr/>
+
+		<%= simple_form_for @job, url: shipment_jobs_path(params[:shipment_id]) do |f| %>
 			<div class="row">
-				<div class="col-xs-12 col-md-6">
-					<%= f.input :shipment_id, as: :select, collection: current_business_user.shipments.all.map(&:id) %>
-				</div>
 
 				<div class="col-xs-12 col-md-6">
 					<%= f.input :date_of_shipment, as: :string, class: "datepicker", placeholder: 'Date Of Shipment' %>
@@ -25,7 +25,7 @@
 				</div>
 
 				<div class="col-xs-12">
-					<%= f.submit class: "btn btn-success" %>
+					<%= f.submit class: "btn btn-success pull-right" %>
 				</div>
 			</div>
 		<% end %>
