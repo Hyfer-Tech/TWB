@@ -1,4 +1,5 @@
 class BidsController < ApplicationController
+  before_action :authenticate_any!
   before_action :ensure_business_user! ,except: :index
   before_action :ensure_my_job!, only: :index
 
@@ -23,7 +24,7 @@ class BidsController < ApplicationController
   private 
 
   def bids_params
-    params.require(:bid).permit(:cover_letter,:attachment, :price).merge(bidder_id: current_user.id, bidder_type: current_user.class.name)
+    params.require(:bid).permit(:cover_letter, :price).merge(bidder_id: current_user.id, bidder_type: current_user.class.name)
   end
 
   def ensure_business_user!
