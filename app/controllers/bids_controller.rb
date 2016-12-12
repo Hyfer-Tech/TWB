@@ -3,6 +3,7 @@ class BidsController < ApplicationController
   before_action :ensure_business_user! ,except: :index
   before_action :ensure_my_job!, only: :index
   before_action :ensure_one_bid_by_one_user_for_one_job!, only: :new
+  before_action :is_owner_of_bid?, only: :destroy
 
   def index
     @bids = Bid.where(job_id: params[:job_id]).order("created_at DESC")
@@ -53,11 +54,11 @@ class BidsController < ApplicationController
     redirect_to root_path
   end
 
-  # def is_owner_of_bid?
-  #   @bid = Bid.find(params[:id])
-  #   unless (bid.bidder_id.eql? current_user.id) && (bid.bidder_type.eql? current_user.class.name)
-  #     flash[:alert] = "Sorry! You are not the owner of this Bid"
-  #     redirect_to root_path
-  #   end
-  # end
+  def is_owner_of_bid?
+    @bid = Bid.find(params[:id])
+    unless (bid.bidder_id.eql? current_user.id) && (bid.bidder_type.eql? current_user.class.name)
+      flash[:alert] = "Sorry! You are not the owner of this Bid"
+      redirect_to root_path
+    end
+  end
 end
