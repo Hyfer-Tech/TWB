@@ -18,7 +18,7 @@ RSpec.describe BidsController, type: :controller do
       it "should redirect to the login page" do
         get :new, job_id: 1
 
-        expect(response).to redirect_to new_business_user_session_path
+        expect(response).to redirect_to root_path
       end
     end
   end

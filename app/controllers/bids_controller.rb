@@ -41,15 +41,8 @@ class BidsController < ApplicationController
   end
 
   def ensure_one_bid_by_one_user_for_one_job!
-    @bidder_id = Bid.find(current_user.id).present?
-    #@job_id = Bid.find(params[:job_id]).present?
-    @bidder_type = Bid.where(bidder_type: current_user.class.name).present?
-
-    return unless @bidder_id && @bidder_type
+    return if Bid.where(job_id: params[:job_id], bidder_id: current_user.id, bidder_type: current_user.class.name).empty?
     flash[:alert] = "Sorry! You already have bidded for this Job"
     redirect_to root_path
-    # return unless Bid.where("bidder_id = ? AND bidder_type = ?", current_user.id, current_user.class.name)
-    # flash[:alert] = "Sorry! You already have bidded for this Job"
-    # redirect_to root_path
   end
 end
