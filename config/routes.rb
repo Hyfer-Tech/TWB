@@ -18,6 +18,10 @@ Rails.application.routes.draw do
   get 'search',   to: 'dashboard#search'
   get 'search/:tag', to: 'dashboard#search', as: :tag
   get 'favorites',   to: 'dashboard#favorites'
+  
+  namespace :user do
+    resources :jobs, only: :index
+  end 
 
 
   
