@@ -1,0 +1,11 @@
+<%= @bids.each  do |bid| %>
+  <%= bid.cover_letter %>
+
+  <% if business_user_signed_in? %>
+
+    <%= simple_form_for  :bid, url: bid_bid_acceptances_path(bid), method: :post do |f| %>
+      <%= f.button :submit , bid.accepted ? 'Reject Bid' : 'Accept Bid' %>
+    <% end %>
+    
+  <% end %>
+<% end %>
