@@ -22,6 +22,12 @@ class BidsController < ApplicationController
     end
   end
 
+  def destroy
+    @bid = Bid.find(params[:id])
+    @bid.destroy
+    redirect_to job_bids_path(job_id: params[:job_id])
+  end
+
   private
 
   def bids_params
