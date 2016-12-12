@@ -38,11 +38,11 @@ RSpec.describe BidsController, type: :controller do
     context "User has already bidded on a job" do
       it "should redirect to dashboard with flash message" do
         sb = FactoryGirl.create(:business_user)
-        job = FactoryGirl.create(:job, client_id: sb.id, )
+        job = FactoryGirl.create(:job, client_id: sb.id)
         broker = FactoryGirl.create(:broker)
-        bid = FactoryGirl.create(:bid, bidder_id: broker.id, bidder_type: broker.class.name)
 
         sign_in broker
+        bid = FactoryGirl.create(:bid, bidder_id: broker.id, bidder_type: broker.class.name)
 
         get :new, job_id: 1
 
@@ -101,6 +101,37 @@ RSpec.describe BidsController, type: :controller do
         post :create, bid: FactoryGirl.attributes_for(:bid, price: nil, bidder_id: broker.id, job_id: job.id), job_id: job.id
 
         expect(response).to render_template :new
+      end
+    end
+  end
+
+  describe 'DELETE #destroy' do
+    context "User is owner of bid" do
+      it "deletes the bid" do
+        sb  = FactoryGirl.create(:business_user)
+        job = FactoryGirl.create(:job, client_id: sb.id)
+        broker = FactoryGirl.create(:broker)
+
+        sign_in broker
+        bid = FactoryGirl.create(:bid, bidder_id: broker.id, bidder_type: broker.class.name)
+
+        expect {
+          delete :destroy, job_id: job.id, id: bid.id
+        }.to change(Bid, :count).by (-1)
+      end
+
+      it "redirects to bids list for particular job" do
+        sb  = FactoryGirl.create(:business_user)
+        job = FactoryGirl.create(:job, client_id: sb.id)
+        broker = FactoryGirl.create(:broker)
+
+        sign_in broker
+        bid = FactoryGirl.create(:bid, bidder_id: broker.id, bidder_type: broker.class.name)
+
+        delete :destroy, job_id: job.id, id: bid.id
+
+        expect(response).to redirect_to job_bids_path(job_id: job.id)
+        expect(flash[:success]).to be_present
       end
     end
   end
