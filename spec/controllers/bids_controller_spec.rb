@@ -134,5 +134,34 @@ RSpec.describe BidsController, type: :controller do
         expect(flash[:success]).to be_present
       end
     end
+
+    context "user is not the owner" do
+      it "does not deletes the bid" do
+        sb  = FactoryGirl.create(:business_user)
+        job = FactoryGirl.create(:job, client_id: sb.id)
+        broker = FactoryGirl.create(:broker)
+
+        sign_in broker
+        bid = FactoryGirl.create(:bid, bidder_id: 23, bidder_type: broker.class.name)
+
+        expect {
+          delete :destroy, job_id: job.id, id: bid.id
+        }.to change(Bid, :count).by (0)
+      end
+
+      it "redirects to dashboard" do
+        sb  = FactoryGirl.create(:business_user)
+        job = FactoryGirl.create(:job, client_id: sb.id)
+        broker = FactoryGirl.create(:broker)
+
+        sign_in broker
+        bid = FactoryGirl.create(:bid, bidder_id: 23, bidder_type: broker.class.name)
+
+        delete :destroy, job_id: job.id, id: bid.id
+
+        expect(response).to redirect_to root_path
+        expect(flash[:alert]).to be_present
+      end
+    end
   end
 end
