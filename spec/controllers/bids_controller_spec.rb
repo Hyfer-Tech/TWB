@@ -21,6 +21,35 @@ RSpec.describe BidsController, type: :controller do
         expect(response).to redirect_to root_path
       end
     end
+
+    context "User is a bussiness_user" do
+      it "should be redirect to dashboard with flash message" do
+        sb = FactoryGirl.create(:business_user)
+
+        sign_in sb
+
+        get :new, job_id: 1
+
+        expect(response).to redirect_to root_path
+        expect(flash[:alert]).to be_present
+      end
+    end
+
+    context "User has already bidded on a job" do
+      it "should redirect to dashboard with flash message" do
+        sb = FactoryGirl.create(:business_user)
+        job = FactoryGirl.create(:job, client_id: sb.id, )
+        broker = FactoryGirl.create(:broker)
+        bid = FactoryGirl.create(:bid, bidder_id: broker.id, bidder_type: broker.class.name)
+
+        sign_in broker
+
+        get :new, job_id: 1
+
+        expect(response).to redirect_to root_path
+        expect(flash[:alert]).to be_present
+      end
+    end
   end
 
   describe 'POST #create' do
