@@ -3,6 +3,7 @@ class BidsController < ApplicationController
   before_action :ensure_business_user! ,except: :index
   before_action :ensure_my_job!, only: :index
   before_action :ensure_one_bid_by_one_user_for_one_job!, only: :new
+  before_action :is_owner_of_bid?, only: :destroy
 
   def index
     @bids = Bid.where(job_id: params[:job_id]).order("created_at DESC")
@@ -20,6 +21,13 @@ class BidsController < ApplicationController
     else
       render :new, status: :inprocessable_entity
     end
+  end
+
+  def destroy
+    @bid = Bid.find(params[:id])
+    @bid.destroy
+    flash[:success] = "Bid has been sucessfully deleted"
+    redirect_to job_bids_path(job_id: params[:job_id])
   end
 
   private
@@ -41,15 +49,16 @@ class BidsController < ApplicationController
   end
 
   def ensure_one_bid_by_one_user_for_one_job!
-    @bidder_id = Bid.find(current_user.id).present?
-    #@job_id = Bid.find(params[:job_id]).present?
-    @bidder_type = Bid.where(bidder_type: current_user.class.name).present?
-
-    return unless @bidder_id && @bidder_type
+    return if Bid.where(job_id: params[:job_id], bidder_id: current_user.id, bidder_type: current_user.class.name).empty?
     flash[:alert] = "Sorry! You already have bidded for this Job"
     redirect_to root_path
-    # return unless Bid.where("bidder_id = ? AND bidder_type = ?", current_user.id, current_user.class.name)
-    # flash[:alert] = "Sorry! You already have bidded for this Job"
-    # redirect_to root_path
+  end
+
+  def is_owner_of_bid?
+    @bid = Bid.find(params[:id])
+    unless (@bid.bidder_id.eql? current_user.id) && (@bid.bidder_type.eql? current_user.class.name)
+      flash[:alert] = "Sorry! You are not the owner of this Bid"
+      redirect_to root_path
+    end
   end
 end

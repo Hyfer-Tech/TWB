@@ -21,7 +21,7 @@ class ApplicationController < ActionController::Base
     elsif business_user_signed_in?
         authenticate_business_user!
     else
-        # flash[:alert] = "Please sign in."
+        flash[:alert] = "Please sign in."
         redirect_to root_path
     end
   end
