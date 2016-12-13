@@ -1,0 +1,37 @@
+<h1>My Jobs</h1>
+<% if @applied_bids.present? %>
+	<div class="container">
+		<% @applied_bids.each do |applied_bid| %>
+			<div class="row">
+				<div class="col-md-6">
+					Job Type: <%= applied_bid.job.job_type %>
+				</div>
+				<div class="col-md-6">
+					Shipment Id: <%= applied_bid.job.shipment_id %>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-6">
+					Date of shipment: <%= applied_bid.job.date_of_shipment %>
+				</div>
+				<div class="col-md-6">
+					Location of shipment: <%= applied_bid.job.location_of_shipment %>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-6">
+					Place being shipped to: <%= applied_bid.job.place_being_shipped_to %>
+				</div>
+				<div class="col-md-6">
+					Border expected to cross: <%= applied_bid.job.border_expected_to_cross %>
+				</div>
+			</div>
+
+			<hr>
+		<% end %>
+<% else %>
+	<h2> You have not applied for any jobs yet!</h2>
+<% end %>
+</div>
