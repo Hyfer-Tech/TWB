@@ -6,7 +6,7 @@
 
     <div>
         Location of shipment: <%= @job.location_of_shipment %>
-    </div>    
+    </div>
 
     <div>
         Place being shipped to: <%= @job.place_being_shipped_to %>
@@ -16,3 +16,6 @@
         Border expected to cross: <%= @job.border_expected_to_cross %>
     </div>
 </div>
+
+
+<%= link_to "Apply", new_job_bid_path(@job.id) %>
