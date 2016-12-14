@@ -20,5 +20,10 @@ class ForwardFreight < ApplicationRecord
   acts_as_follower
 
   has_many :jobs, as: :agent
+
+  has_many :bids, as: :bidder
+
+
   has_many :uploads, as: :user
 end
+
