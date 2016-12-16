@@ -7,5 +7,12 @@
 		<div class="links">	
 			<%= link_to_add_association 'Add Product', f, :shipment_products, class: 'btn btn-sm btn-success' %>
 		</div>
-		<%= f.button :submit, class: 'btn-primary pull-right' %> 
+		<div class="row">
+			<div class="col-xs-12 col-md-6">
+				<%= f.input :save_for_later_use %>
+			</div>
+			<div class="col-xs-12 col-md-6">
+				<%= f.button :submit, class: 'btn-primary pull-right' %> 
+			</div>
+		</div>
 <% end %>	

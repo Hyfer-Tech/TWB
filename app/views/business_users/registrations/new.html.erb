@@ -68,6 +68,7 @@
     </div><br>
 
 
+
     <div class="input-group">
          <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
          <%= f.input :city, required: true, label: false, placeholder: "paris" %>
@@ -91,15 +92,15 @@
 
     <div class="form-actions ">
       <div class="input-group sign-up">
-      <%= f.button :submit, "Sign up" %>
+      <%= f.button :submit, "Sign up", id: "sign_up_button_business" %>
     </div>
     </div>
   <% end %>
   <hr>
-  <div class="form-actions ">
-    <div class="input-group sign-up">
-  <%= render "business_users/shared/links" %>
+    <div class="form-actions ">
+      <div class="input-group sign-up">
+        <%= render "business_users/shared/links" %>
+      </div>
+    </div>
  </div>
- </div>
- </div>
- <script>$( ".help-block" ).remove();</script>
+ <script>$(".help-block").remove();</script>

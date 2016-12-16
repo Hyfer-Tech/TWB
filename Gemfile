@@ -1,8 +1,5 @@
 source 'http://rubygems.org'
 
-#active admin gem
-gem 'activeadmin', github: 'activeadmin'
-gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 # Use postgresql as the database for Active Record
@@ -19,7 +16,7 @@ gem 'coffee-rails', '~> 4.2'
 # gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
-gem 'jquery-rails'
+# gem 'jquery-rails'
 
 # carrierwave for photo upload
 gem 'carrierwave', '>= 1.0.0.rc', '< 2.0'
@@ -36,6 +33,7 @@ gem "figaro"
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 
+
 gem 'devise', git: 'https://github.com/plataformatec/devise.git'
 
 
@@ -49,10 +47,10 @@ gem 'rails-controller-testing'
 # Country selector gem
 gem 'country_select'
 
-gem 'elasticsearch-rails'
+# gem 'elasticsearch-rails'
 
-gem 'elasticsearch-model'
-gem 'bonsai-elasticsearch-rails'
+# gem 'elasticsearch-model'
+# gem 'bonsai-elasticsearch-rails'
 
 #taggable gem
 gem 'acts-as-taggable-on', '~> 4.0'
@@ -102,4 +100,12 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem "cocoon"
+gem 'cocoon'
+
+gem 'activeadmin', github: 'activeadmin'
+gem 'inherited_resources', github: 'activeadmin/inherited_resources'
+
+source 'https://rails-assets.org' do
+  gem 'rails-assets-datetimepicker'
+end
+

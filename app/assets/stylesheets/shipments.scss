@@ -5,3 +5,19 @@
   padding-bottom: 20px;
   margin-bottom: 20px;
 }
+
+.shipment-container {
+	background: white;
+	padding: 20px;
+	position: relative;
+
+	.btn-create-job {
+		position: absolute;
+		right: 20px; 
+		bottom: 20px;
+	}
+}
+
+.trash {
+	margin-top: 33px;
+}

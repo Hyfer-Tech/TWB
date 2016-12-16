@@ -1,0 +1,41 @@
+<div class="row">
+  <div class="col-xs-12 col-md-6 col-md-offset-3">
+		<h1>Create a New Job</h1>
+		<p><small><%= link_to 'Review your shipment', shipment_path(params[:shipment_id]), target: '_blank' %></small></p>
+
+		<hr/>
+
+		<%= simple_form_for @job, url: shipment_jobs_path(params[:shipment_id]) do |f| %>
+			<div class="row">
+
+				<div class="col-xs-12 col-md-6">
+					<%= f.input :date_of_shipment, as: :string, class: "datepicker", placeholder: 'Date Of Shipment' %>
+				</div>
+
+				<div class="col-xs-12 col-md-6">
+					<%= f.input :location_of_shipment, placeholder: "Location of Shipment" %>
+				</div>
+
+				<div class="col-xs-12 col-md-6">
+					<%= f.input :place_being_shipped_to, placeholder: "Place Being Shipped To" %>
+				</div>
+
+				<div class="col-xs-12 col-md-6">
+					<%= f.input :border_expected_to_cross, as: :select, collection: Job::EXPECTED_BORDERS_TO_BE_CROSSED %>
+				</div>
+
+				<div class="col-xs-12">
+					<%= f.submit class: "btn btn-success pull-right" %>
+				</div>
+			</div>
+		<% end %>
+	</div>
+</div>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+	$('#job_date_of_shipment').datepicker({
+		dateFormat: 'yy-mm-dd'
+	});
+});
+</script>

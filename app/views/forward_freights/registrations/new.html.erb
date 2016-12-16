@@ -66,7 +66,6 @@
          <span class="input-group-addon"><i class="glyphicon glyphicon-map-marker"></i></span>
          <%= f.input :address_line_3, label: false, placeholder: "963 Lovelace Road, Tampa Bay, FL 25235."  %>
     </div><br>
-
     <div class="input-group">
          <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
          <%= f.input :city, required: true, label: false, placeholder: "Los Angeles" %>
@@ -92,8 +91,6 @@
     </div>
 
     <div class="input-group">
-         <!-- <span class="input-group-addon"><i class="glyphicon glyphicon-camera"></i></span> -->
-
            <%= f.file_field :avatar, required: true, placeholder: "profile.jpg" %>
     </div><br>
 
@@ -102,11 +99,11 @@
          <%= f.input :country, as: :country, required: true, placeholder: "USA", label: false %>
     </div><br>
 
-  <div class="form-actions ">
-    <div class="input-group sign-up">
-    <%= f.button :submit, "Sign up" %>
-  </div>
-  </div>
+    <div class="form-actions ">
+      <div class="input-group sign-up">
+      <%= f.button :submit, "Sign up" %>
+    </div>
+    </div>
 <% end %>
 <hr>
 <div class="form-actions ">
@@ -122,3 +119,13 @@ function updateSlider(val) {
 };
 </script>
 <script>$( ".help-block" ).remove();</script>
+<script type="text/javascript">
+  $( "#forward_freight_zip_postal_code" ).keydown(function( event ) {
+    var elem = document.getElementById("forward_freight_zip_postal_code").value;
+    if(!(isNaN(elem[0]))){
+      $('#forward_freight_zip_postal_code').mask('AAAAA');
+    } else {
+      $('#forward_freight_zip_postal_code').mask('AAA AAA');
+    }
+});
+</script>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161123112017) do
+ActiveRecord::Schema.define(version: 20161208163843) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,6 +46,21 @@ ActiveRecord::Schema.define(version: 20161123112017) do
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  create_table "bids", force: :cascade do |t|
+    t.integer  "bidder_id"
+    t.integer  "job_id"
+    t.string   "bidder_type"
+    t.boolean  "accepted",     default: false
+    t.text     "cover_letter"
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.float    "price"
+    t.index ["bidder_id", "accepted"], name: "index_bids_on_bidder_id_and_accepted", using: :btree
+    t.index ["bidder_id"], name: "index_bids_on_bidder_id", using: :btree
+    t.index ["job_id", "accepted"], name: "index_bids_on_job_id_and_accepted", using: :btree
+    t.index ["job_id"], name: "index_bids_on_job_id", using: :btree
+  end
+
   create_table "brokers", force: :cascade do |t|
     t.string   "email",                  default: "",    null: false
     t.string   "encrypted_password",     default: "",    null: false
@@ -77,8 +92,6 @@ ActiveRecord::Schema.define(version: 20161123112017) do
     t.boolean  "verified_flag",          default: false, null: false
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false
-    t.boolean  "email_confirmed",        default: false
-    t.string   "confirm_token"
     t.string   "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
@@ -117,6 +130,7 @@ ActiveRecord::Schema.define(version: 20161123112017) do
     t.string   "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
+    t.string   "zip_postal_code"
     t.index ["confirmation_token"], name: "index_business_users_on_confirmation_token", unique: true, using: :btree
     t.index ["email"], name: "index_business_users_on_email", unique: true, using: :btree
     t.index ["first_name"], name: "index_business_users_on_first_name", using: :btree
@@ -170,21 +184,43 @@ ActiveRecord::Schema.define(version: 20161123112017) do
     t.index ["reset_password_token"], name: "index_forward_freights_on_reset_password_token", unique: true, using: :btree
   end
 
+  create_table "jobs", force: :cascade do |t|
+    t.integer  "job_type"
+    t.integer  "shipment_id"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.integer  "client_id"
+    t.integer  "agent_id"
+    t.string   "client_type"
+    t.string   "agent_type"
+    t.date     "date_of_shipment"
+    t.string   "location_of_shipment"
+    t.string   "place_being_shipped_to"
+    t.string   "border_expected_to_cross"
+    t.index ["agent_id"], name: "index_jobs_on_agent_id", using: :btree
+    t.index ["client_id", "agent_id"], name: "index_jobs_on_client_id_and_agent_id", using: :btree
+    t.index ["client_id"], name: "index_jobs_on_client_id", using: :btree
+    t.index ["shipment_id"], name: "index_jobs_on_shipment_id", using: :btree
+  end
+
   create_table "products", force: :cascade do |t|
     t.string   "title"
-    t.boolean  "taxable",          default: false, null: false
+    t.boolean  "taxable",               default: false, null: false
     t.string   "featured_image"
-    t.boolean  "available",        default: false, null: false
+    t.boolean  "available",             default: false, null: false
     t.string   "price"
     t.string   "compare_at_price"
     t.bigint   "product_code"
-    t.datetime "created_at",                       null: false
-    t.datetime "updated_at",                       null: false
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
     t.integer  "business_user_id"
     t.integer  "shipment_id"
     t.float    "height"
     t.float    "width"
     t.float    "grams"
+    t.string   "origin_of_manufacture"
+    t.string   "materials_used"
+    t.date     "date_of_manufacture"
     t.index ["business_user_id"], name: "index_products_on_business_user_id", using: :btree
     t.index ["shipment_id"], name: "index_products_on_shipment_id", using: :btree
   end
@@ -208,6 +244,7 @@ ActiveRecord::Schema.define(version: 20161123112017) do
     t.datetime "created_at",                         null: false
     t.datetime "updated_at",                         null: false
     t.integer  "business_user_id"
+    t.boolean  "save_for_later_use", default: false, null: false
     t.index ["broker_id"], name: "index_shipments_on_broker_id", using: :btree
     t.index ["business_user_id"], name: "index_shipments_on_business_user_id", using: :btree
   end
@@ -235,6 +272,23 @@ ActiveRecord::Schema.define(version: 20161123112017) do
     t.string  "name"
     t.integer "taggings_count", default: 0
     t.index ["name"], name: "index_tags_on_name", unique: true, using: :btree
+  end
+
+  create_table "uploads", force: :cascade do |t|
+    t.string   "file"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "user_type"
+    t.index ["user_id"], name: "index_uploads_on_user_id", using: :btree
+  end
+
+  create_table "user_limits", force: :cascade do |t|
+    t.integer  "amount"
+    t.string   "user_type"
+    t.integer  "limit_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

@@ -1,6 +1,14 @@
 class ShipmentsController < ApplicationController
 	before_action :authenticate_business_user!
 
+	def index
+		@shipments = current_business_user.shipments.includes(:products).order("created_at DESC")
+	end
+
+	def show
+		@shipment = Shipment.find(params[:id])
+	end	
+
 	def new
 		@shipment = Shipment.new
 		@shipment.shipment_products.build
@@ -20,6 +28,6 @@ class ShipmentsController < ApplicationController
 	private
 
 	def shipment_params
-		params.require(:shipment).permit(:business_user_id, :approval, :shipment_confirmed, shipment_products_attributes: [:id, :shipment_id, :quantity, :product_id, :_destroy])
+		params.require(:shipment).permit(:business_user_id, :approval, :shipment_confirmed, :save_for_later_use, shipment_products_attributes: [:id, :shipment_id, :quantity, :product_id, :_destroy])
 	end
 end
