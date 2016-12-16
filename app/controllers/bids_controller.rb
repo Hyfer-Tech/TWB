@@ -4,6 +4,8 @@ class BidsController < ApplicationController
   before_action :ensure_my_job!, only: :index
   before_action :ensure_one_bid_by_one_user_for_one_job!, only: :new
   before_action :is_owner_of_bid?, only: :destroy
+  before_action :ensure_less_then_ten_bids?, only: :new
+  before_action :ensure_less_then_fifteen_bids?, only: :new
 
   def index
     @bids = Bid.where(job_id: params[:job_id]).order("created_at DESC")
@@ -58,6 +60,24 @@ class BidsController < ApplicationController
     @bid = Bid.find(params[:id])
     unless (@bid.bidder_id.eql? current_user.id) && (@bid.bidder_type.eql? current_user.class.name)
       flash[:alert] = "Sorry! You are not the owner of this Bid"
+      redirect_to root_path
+    end
+  end
+
+  def ensure_less_then_ten_bids?
+    @bids = Bid.where(bidder_id: current_user.id, bidder_type: current_user.class.name)
+    @bids_this_month = @bids.this_month.count
+    if @bids_this_month >= 10 && current_user.account_type == 0 && broker_signed_in?
+      flash[:alert] = "Sorry! You can't bid on more then 10 jobs please switch to premium plan."
+      redirect_to root_path
+    end
+  end
+
+  def ensure_less_then_fifteen_bids?
+    @bids = Bid.where(bidder_id: current_user.id, bidder_type: current_user.class.name)
+    @bids_this_month = @bids.this_month.count
+    if @bids_this_month >= 1 && current_user.account_type == 0 && forward_freight_signed_in?
+      flash[:alert] = "Sorry! You can't bid on more then 15 jobs please switch to premium plan."
       redirect_to root_path
     end
   end
