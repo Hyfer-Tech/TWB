@@ -2,9 +2,7 @@ class User::ApplicationsController < ApplicationController
 	before_action :ensure_either_broker_or_ff
 	
 	def index
-		if current_user.bids.exists?
-			@applied_bids = current_user.bids.all.includes(:jobs, :bidder,job: :shipment, shipment: :products, shipment: :shipment_products)
-		end
+		@applied_bids = current_user.bids.all.includes(:job, :bidder,job: :shipment)
 	end
 
 	private
