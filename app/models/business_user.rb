@@ -1,4 +1,3 @@
-
 class BusinessUser < ApplicationRecord
   # include Searchable
   acts_as_taggable

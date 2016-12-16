@@ -18,8 +18,6 @@ class Job < ApplicationRecord
 	has_many :bids
 	
 
-	acts_as_taggable
-	
 	# def clone_job
 	# 	job_type = job_type.broker? forward_freight : broker
 	# 	job = Job.new(business_user_id: current_business_user.id, job_type: job_type, agent_id: nil)
