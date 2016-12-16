@@ -29,6 +29,7 @@
 		<span class="fa fa-globe " aria-hidden="true" title="border_expected_to_cross"><span class="data"><%= job.border_expected_to_cross %> japan hongkong nepal</span>	</span>
 	</div>
 <hr>
+<span> Tag: <%= raw job.tag_list.map { |t| link_to t, job_tag_path(t) }.join(', ') %></span>
 <% end %>
 </div>
 
