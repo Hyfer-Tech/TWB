@@ -3,7 +3,11 @@ class JobsController < ApplicationController
 	before_action :ensure_broker!, only: [:show]
 
 	def index
-		@jobs = Job.all.includes(:shipment, :client, shipment: :products, shipment: :shipment_products)
+		if params[:tag]
+			@jobs = Job.tagged_with(params[:tag]).includes(:shipment, :client, shipment: :products, shipment: :shipment_products)
+  	else
+    	@jobs = Job.all.includes(:shipment, :client, shipment: :products, shipment: :shipment_products)
+  	end
 	end
 
 	def new

@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   get 'search',   to: 'dashboard#search'
   get 'search/:tag', to: 'dashboard#search', as: :tag
   get 'favorites',   to: 'dashboard#favorites'
+  get 'job_tag/:tag', to: 'jobs#index', as: :job_tag
 
   namespace :user do
     resources :jobs, only: :index
@@ -26,7 +27,7 @@ Rails.application.routes.draw do
 
 
   resources :jobs, only: [:index] do
-    resources :bids, only: [:new, :create, :index, :destroy]  
+    resources :bids, only: [:new, :create, :index, :destroy]
   end
 
 
