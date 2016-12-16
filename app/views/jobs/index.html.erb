@@ -5,6 +5,9 @@
 		<h2>Verify the classified docs</h2>
 	</div>
 	<div class="flashing-topbar">
+
+		<%= link_to job.job_title, job_path(job) %>
+
 		<span class="fa fa-briefcase " aria-hidden="true" title="job_type"><span class="data"><%= job.job_type %>hourly</span></span>
 		<span class="fa fa-gear " aria-hidden="true" title="skill required"><span class="data"><%= job.job_type %>expert</span></span>
 		<span class="fa fa-clock-o " aria-hidden="true" title="time required"><span class="data">1-3 months</span></span>
