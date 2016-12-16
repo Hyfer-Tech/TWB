@@ -1,6 +1,5 @@
 class Job < ApplicationRecord
-	belongs_to :client, polymorphic: true, foreign_key: "client_id"
-	belongs_to :agent, polymorphic: true, foreign_key: "agent_id"
+	EXPECTED_BORDERS_TO_BE_CROSSED = ["US", "Canada"]
 
 	enum job_type: [:broker, :forward_freight]
 
@@ -9,20 +8,13 @@ class Job < ApplicationRecord
 	scope :this_month, -> {where(created_at: (Time.now.beginning_of_month..Time.zone.now))}	
 
 	validate :user_job_limit
-	validates :shipment_id, :date_of_shipment, :location_of_shipment, :place_being_shipped_to, :border_expected_to_cross, :client_id,:client_type, presence: true
+	validates :shipment_id, :date_of_shipment, :location_of_shipment, :place_being_shipped_to, :border_expected_to_cross, :client_id,:client_type, presence: true	
 
-	EXPECTED_BORDERS_TO_BE_CROSSED = ["US", "Canada"]
-
+	belongs_to :client, polymorphic: true, foreign_key: "client_id"
+	belongs_to :agent, polymorphic: true, foreign_key: "agent_id"
 	belongs_to :shipment
 
-	has_many :bids
-	
-
-	# def clone_job
-	# 	job_type = job_type.broker? forward_freight : broker
-	# 	job = Job.new(business_user_id: current_business_user.id, job_type: job_type, agent_id: nil)
-	# 	job.save
-	# end
+	has_many :bids	
 	
 	private
 

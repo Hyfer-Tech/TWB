@@ -56,9 +56,8 @@ class BidsController < ApplicationController
 
   def is_owner_of_bid?
     @bid = Bid.find(params[:id])
-    unless (@bid.bidder_id.eql? current_user.id) && (@bid.bidder_type.eql? current_user.class.name)
-      flash[:alert] = "Sorry! You are not the owner of this Bid"
-      redirect_to root_path
-    end
+    return if (@bid.bidder_id.eql? current_user.id) && (@bid.bidder_type.eql? current_user.class.name)
+    flash[:alert] = "Sorry! You are not the owner of this Bid"
+    redirect_to root_path    
   end
 end
