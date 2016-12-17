@@ -25,5 +25,8 @@ class ForwardFreight < ApplicationRecord
 
 
   has_many :uploads, as: :user
-end
 
+  def bid_limit_exceeded?
+    return account_type == 0 && bids.this_month.count >= 15
+  end
+end

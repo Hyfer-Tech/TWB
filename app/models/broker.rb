@@ -20,4 +20,8 @@ class Broker < ApplicationRecord
 
   has_many :uploads, as: :user
 
+  def bid_limit_exceeded?
+    return account_type == 0 && bids.this_month.count >= 10
+  end
+
 end
