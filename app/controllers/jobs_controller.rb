@@ -1,5 +1,5 @@
 class JobsController < ApplicationController
-	before_action :ensure_business_user! ,except: :index
+	before_action :ensure_business_user! ,except: [:index, :show]
 	before_action :ensure_broker!, only: [:show]
 
 	def index
