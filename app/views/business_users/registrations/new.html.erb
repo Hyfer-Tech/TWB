@@ -11,72 +11,72 @@
     </p>
     </div>
 
-  <div class="col-md-5 col-md-offset-1 form">
+  <div class="col-md-5 col-md-offset-1 form" id="business_user_sign_up_form">
     <div class="row">
       <div class="col-md-6">
       <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-        <%= f.input :first_name, required: true, autofocus: true, label: false, placeholder: "John" %>
+        <%= f.input :first_name, required: true, autofocus: true, label: false, placeholder: "John", input_html: { id: "business_user_first_name" } %>
       </div><br>
     </div>
     <div class="col-md-6">
       <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-        <%= f.input :last_name, required: true, label: false, class: "form-control", placeholder: "Doe"  %>
+        <%= f.input :last_name, required: true, label: false, class: "form-control", placeholder: "Doe", input_html: { id: "business_user_last_name" }   %>
       </div><br>
     </div>
   </div>
     <div class="input-group">
       <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-      <%= f.input :email, required: true, label: false, placeholder: "user@example.com" %>
+        <%= f.input :email, required: true, label: false, placeholder: "user@example.com", input_html: { id: "sign_up_business_user_email" } %>
     </div><br>
     <div class="input-group">
       <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
       <!-- <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), label: false, placeholder: "minimum 6 character length" %> -->
-      <%= f.input :password, required: true, label: false, placeholder: "minimum 6 character length" %>
+      <%= f.input :business_user_sign_up_password, required: true, label: false, placeholder: "minimum 6 character length", input_html: { id: "business_user_sign_up_password" } %>
     </div><br>
 
     <div class="input-group">
       <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-      <%= f.input :password_confirmation, required: true, label: false, placeholder: "password confirmation" %>
+      <%= f.input :business_user_password_confirmation, required: true, label: false, placeholder: "password confirmation", input_html: { id: "business_user_password_confirmation" }  %>
     </div><br>
 
     <div class="input-group">
       <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-      <%= f.input :phone, required: true, label: false, placeholder: "98XXXXXX" %>
+      <%= f.input :phone, required: true, label: false, placeholder: "98XXXXXX", input_html: { id: "business_user_phone" } %>
     </div><br>
 
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
-        <%= f.input :description, label: false, placeholder: "we are a five-star company called..." %>
+        <%= f.input :description, label: false, placeholder: "we are a five-star company called...", input_html: { id: "business_user_description" } %>
     </div><br>
 
 
     <div class="input-group">
          <span class="input-group-addon"><i class="glyphicon glyphicon-map-marker"></i></span>
-         <%= f.input :address_line_1, required: true, label: false, placeholder: "963 Lovelace Road, Tampa Bay, FL 25235." %>
+         <%= f.input :address_line_1, required: true, label: false, placeholder: "963 Lovelace Road, Tampa Bay, FL 25235.", input_html: { id: "business_user_address_line_1" } %>
     </div><br>
 
     <div class="input-group">
          <span class="input-group-addon"><i class="glyphicon glyphicon-map-marker"></i></span>
-         <%= f.input :address_line_2, label: false, placeholder: "963 Lovelace Road, Tampa Bay, FL 25235." %>
+         <%= f.input :address_line_2, label: false, placeholder: "963 Lovelace Road, Tampa Bay, FL 25235.", input_html: { id: "business_user_address_line_2" } %>
     </div><br>
 
     <div class="input-group">
          <span class="input-group-addon"><i class="glyphicon glyphicon-map-marker"></i></span>
-         <%= f.input :address_line_3, label: false, placeholder: "963 Lovelace Road, Tampa Bay, FL 25235."  %>
+         <%= f.input :address_line_3, label: false, placeholder: "963 Lovelace Road, Tampa Bay, FL 25235.", input_html: { id: "business_user_address_line_3" }%>
     </div><br>
 
 
 
     <div class="input-group">
          <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-         <%= f.input :city, required: true, label: false, placeholder: "paris" %>
+         <%= f.input :city, required: true, label: false, placeholder: "paris", input_html: { id: "business_user_city" } %>
     </div><br>
 
     <div class="input-group">
          <span class="input-group-addon"><i class="glyphicon glyphicon-road"></i></span>
-         <%= f.input :state_province_county, label: false, required: true, placeholder: "California" %>
+         <%= f.input :state_province_county, label: false, required: true, placeholder: "California", input_html: { id: "business_user_state" } %>
     </div><br>
 
     <div class="input-group">

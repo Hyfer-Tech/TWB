@@ -12,7 +12,7 @@
   </div>
 
 
-  <div class="col-md-5 col-md-offset-1 form">
+  <div class="col-md-5 col-md-offset-1 form" id="broker_sign_up_form">
     <div class="row">
       <div class="col-md-6">
         <div class="input-group">
@@ -29,36 +29,36 @@
     </div>
     <div class="input-group">
       <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-      <%= f.input :email, required: true, label: false, placeholder: "user@example.com" %>
+      <%= f.input :email, required: true, label: false, placeholder: "user@example.com", input_html: { id: "sign_up_broker_email" } %>
     </div><br>
     <div class="input-group">
       <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
       <!-- <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), label: false, placeholder: "minimum 6 character length" %> -->
-      <%= f.input :password, required: true, label: false, placeholder: "minimum 6 character length" %>
+      <%= f.input :password, required: true, label: false, placeholder: "minimum 6 character length", input_html: { id: "sign_up_broker_password" } %>
     </div><br>
 
     <div class="input-group">
       <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-      <%= f.input :password_confirmation, required: true, label: false, placeholder: "password confirmation" %>
+      <%= f.input :password_confirmation, required: true, label: false, placeholder: "password confirmation", input_html: { id: "sign_up_broker_password_confirmation" } %>
     </div><br>
 
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
-        <%= f.input :description, label: false, placeholder: "we are a five-star company called..." %>
+        <%= f.input :description, label: false, placeholder: "we are a five-star company called...", input_html: { id: "broker_description" } %>
     </div><br>
     <div class="input-group">
       <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-      <%= f.input :phone, required: true, label: false, placeholder: "98XXXXXX" %>
+      <%= f.input :phone, required: true, label: false, placeholder: "98XXXXXX", input_html: { id: "broker_phone" } %>
     </div><br>
 
     <div class="input-group">
       <span class="input-group-addon"><i class="glyphicon glyphicon-bookmark"></i></span>
-      <%= f.input :firm_name, placeholder: "john's import export", label: false  %>
+      <%= f.input :firm_name, placeholder: "john's import export", label: false, input_html: { id: "broker_firm_name" }  %>
     </div><br>
 
     <div class="input-group">
        <span class="input-group-addon"><i class="glyphicon glyphicon-map-marker"></i></span>
-       <%= f.input :address_line_1, required: true, label: false, placeholder: "963 Lovelace Road, Tampa Bay, FL 25235." %>
+       <%= f.input :address_line_1, required: true, label: false, placeholder: "963 Lovelace Road, Tampa Bay, FL 25235.", input_html: { id: "broker_address_line_1" } %>
     </div><br>
 
     <div class="input-group">
@@ -73,17 +73,17 @@
 
     <div class="input-group">
       <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-      <%= f.input :city, required: true, label: false, placeholder: "Los Angeles" %>
+      <%= f.input :city, required: true, label: false, placeholder: "Los Angeles", input_html: { id: "broker_city" } %>
     </div><br>
 
     <div class="input-group">
       <span class="input-group-addon"><i class="glyphicon glyphicon-send"></i></span>
-      <%= f.input :zip_postal_code, label: false, required: true, placeholder: "90250" %>
+      <%= f.input :zip_postal_code, label: false, required: true, placeholder: "90250", input_html: { id: "broker_zip_postal_code" } %>
     </div><br>
 
     <div class="input-group">
       <span class="input-group-addon"><i class="glyphicon glyphicon-road"></i></span>
-      <%= f.input :state_province_county, label: false, required: true, placeholder: "California" %>
+      <%= f.input :state_province_county, label: false, required: true, placeholder: "California", input_html: { id: "broker_State" } %>
     </div><br>
 
     <div class="input-group">
@@ -93,17 +93,17 @@
 
     <div class="input-group">
       <span class="input-group-addon"><i class="glyphicon glyphicon-star"></i></span>
-      <%= f.input :specialty, required:false, placeholder: "specialtyXX", label: false %>
+      <%= f.input :specialty, required:false, placeholder: "specialtyXX", label: false, input_html: { id: "broker_Specialty" } %>
     </div><br>
 
     <div class="input-group">
       <span class="input-group-addon"><i class="glyphicon glyphicon-folder-open"></i></span>
-      <%= f.input :past_experience, required: false, placeholder: "experienceXX", label: false %>
+      <%= f.input :past_experience, required: false, placeholder: "experienceXX", label: false, input_html: { id: "broker_past_experience" } %>
     </div><br>
 
     <div class="row">
       <div class="col-md-11">
-        <%= f.input :service_rates, as: :range, label: "Service rate", input_html: {oninput: "updateSlider(value)"} %>
+        <%= f.input :service_rates, as: :range, label: "Service rate", input_html: {oninput: "updateSlider(value)", id: "broker_service_rate"} %>
       </div>
       <div class="col-md-1" style="padding-top:36px;">
         <span id="service_rate_val" >50</span>
@@ -118,18 +118,17 @@
 
     <div class="input-group">
        <span class="input-group-addon"><i class="glyphicon glyphicon-qrcode"></i></span>
-       <%= f.input :broker_number, required: true, placeholder: "007", label: false %>
+       <%= f.input :broker_number, required: true, placeholder: "007", label: false, input_html: { id: "broker_number" }  %>
     </div><br>
+  </div>
 
     <div class="form-actions ">
       <div class="input-group sign-up">
       <%= f.button :submit, "Sign up", id: "sign_up_button_broker"  %>
     </div>
-<% end %>
-<hr>
-
-
-</div>
+    <% end %>
+    <hr>
+    </div>
 <script>
 function updateSlider(val) {
   $("#service_rate_val").text(val)
