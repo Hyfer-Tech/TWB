@@ -1,3 +1,4 @@
+
 require 'rails_helper'
 
 RSpec.describe "Broker Signing Up" do

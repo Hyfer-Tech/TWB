@@ -33,12 +33,12 @@
     <div class="input-group">
       <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
       <!-- <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), label: false, placeholder: "minimum 6 character length" %> -->
-      <%= f.input :business_user_sign_up_password, required: true, label: false, placeholder: "minimum 6 character length", input_html: { id: "business_user_sign_up_password" } %>
+      <%= f.input :password, required: true, label: false, placeholder: "minimum 6 character length", input_html: { id: "business_user_sign_up_password" } %>
     </div><br>
 
     <div class="input-group">
       <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-      <%= f.input :business_user_password_confirmation, required: true, label: false, placeholder: "password confirmation", input_html: { id: "business_user_password_confirmation" }  %>
+      <%= f.input :password_confirmation, required: true, label: false, placeholder: "password confirmation", input_html: { id: "business_user_password_confirmation" }  %>
     </div><br>
 
     <div class="input-group">
@@ -67,7 +67,10 @@
          <%= f.input :address_line_3, label: false, placeholder: "963 Lovelace Road, Tampa Bay, FL 25235.", input_html: { id: "business_user_address_line_3" }%>
     </div><br>
 
-
+    <div class="input-group">
+      <span class="input-group-addon"><i class="glyphicon glyphicon-send"></i></span>
+      <%= f.input :zip_postal_code, label: false, required: true, placeholder: "90250", input_html: { id: "business_user_zip_postal_code" } %>
+    </div><br>
 
     <div class="input-group">
          <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
@@ -103,4 +106,14 @@
       </div>
     </div>
  </div>
- <script>$(".help-block").remove();</script>
+ <!-- <script>$(".help-block").remove();</script> -->
+ <script type="text/javascript">
+    $( "#business_user_zip_postal_code" ).keydown(function( event ) {
+      var elem = document.getElementById("business_user_zip_postal_code").value;
+      if(!(isNaN(elem[0]))){
+        $('#business_user_zip_postal_code').mask('AAAAA');
+      } else {
+        $('#business_user_zip_postal_code').mask('AAA AAA');
+      }
+  });
+  </script>

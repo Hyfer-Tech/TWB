@@ -11,7 +11,6 @@
     </p>
   </div>
 
-
   <div class="col-md-5 col-md-offset-1 form" id="broker_sign_up_form">
     <div class="row">
       <div class="col-md-6">
@@ -120,7 +119,6 @@
        <span class="input-group-addon"><i class="glyphicon glyphicon-qrcode"></i></span>
        <%= f.input :broker_number, required: true, placeholder: "007", label: false, input_html: { id: "broker_number" }  %>
     </div><br>
-  </div>
 
     <div class="form-actions ">
       <div class="input-group sign-up">
@@ -129,13 +127,17 @@
     <% end %>
     <hr>
     </div>
+    <%= render "brokers/shared/links" %>
+
+  </div>
+
+
 <script>
 function updateSlider(val) {
   $("#service_rate_val").text(val)
 }
 </script>
 
-<%= render "brokers/shared/links" %>
 
 <script type="text/javascript">
    $( "#broker_zip_postal_code" ).keydown(function( event ) {
