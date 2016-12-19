@@ -26,6 +26,15 @@ class Job < ApplicationRecord
 	# 	job.save
 	# end
 
+	def self.search(search)
+		search_array = search.split(" ")
+		if search
+			find(:all, conditions: ['(lower(location_of_shipment) || lower(place_being_shipped_to), like ?', "%#{search}%"]) || Job.tagged_with(search_array, :any => true)
+		else
+			find(:all)
+		end
+	end
+
 	private
 
 	def user_job_limit
