@@ -44,11 +44,10 @@ class BidsController < ApplicationController
   end
 
   def ensure_my_job!
-    if(business_user_signed_in?)
-      return if current_user.id.equal? Job.find(params[:job_id]).client_id
-      flash[:alert] = "Sorry! this job is not related to you"
-      redirect_to root_path
-    end
+    return unless business_user_signed_in?
+    return if current_user.id.equal? Job.find(params[:job_id]).client_id
+    flash[:alert] = "Sorry! this job is not related to you"
+    redirect_to root_path
   end
 
   def ensure_one_bid_by_one_user_for_one_job!
