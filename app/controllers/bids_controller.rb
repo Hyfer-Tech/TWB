@@ -66,12 +66,14 @@ class BidsController < ApplicationController
 
   def ensure_bid_limit?
     return unless current_user.bid_limit_exceeded?
-    if broker_signed_in?
-      flash[:alert] = "Sorry! You can't bid on more then 10 jobs please switch to premium plan."
-      redirect_to root_path
-    else
-      flash[:alert] = "Sorry! You can't bid on more then 15 jobs please switch to premium plan."
-      redirect_to root_path
-    end
+    # if broker_signed_in?
+    #   flash[:alert] = "Sorry! You can't bid on more then 10 jobs please switch to premium plan."
+    #   redirect_to root_path
+    # else
+    #   flash[:alert] = "Sorry! You can't bid on more then 15 jobs please switch to premium plan."
+    #   redirect_to root_path
+    # end
+    flash[:alert] = "Sorry! You can't bid on more then #{current_user.class::BID_LIMIT} jobs please switch to premium plan."
+    redirect_to root_path
   end
 end
