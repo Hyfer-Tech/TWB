@@ -21,11 +21,10 @@ Rails.application.routes.draw do
 
   namespace :user do
     resources :jobs, only: :index
+    resources :applications, only: :index
   end
 
-
-
-  resources :jobs, only: [:index] do
+  resources :jobs, only: [:index, :show] do
     resources :bids, only: [:new, :create, :index, :destroy]  
   end
 
