@@ -18,6 +18,7 @@ class BidsController < ApplicationController
     @job = Job.find(params[:job_id])
     @bid = @job.bids.new(bids_params)
     if @bid.save
+      flash[:notice] = "Bid successfully created."
       redirect_to root_path
     else
       render :new, status: :inprocessable_entity
