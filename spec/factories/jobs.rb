@@ -1,5 +1,6 @@
 FactoryGirl.define do
   factory :job do
+    job_title "Job Title"
     job_type "broker"
     shipment_id 1
     client_id 1
