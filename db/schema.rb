@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161216110555) do
+
+ActiveRecord::Schema.define(version: 20161213105919) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -199,6 +200,7 @@ ActiveRecord::Schema.define(version: 20161216110555) do
     t.string   "location_of_shipment"
     t.string   "place_being_shipped_to"
     t.string   "border_expected_to_cross"
+    t.string   "job_title"
     t.index ["agent_id"], name: "index_jobs_on_agent_id", using: :btree
     t.index ["client_id", "agent_id"], name: "index_jobs_on_client_id_and_agent_id", using: :btree
     t.index ["client_id"], name: "index_jobs_on_client_id", using: :btree
