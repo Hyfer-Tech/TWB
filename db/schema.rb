@@ -125,12 +125,12 @@ ActiveRecord::Schema.define(version: 20161213105919) do
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "avatar"
-    t.string   "files"
     t.integer  "account_type"
     t.string   "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string   "zip_postal_code"
+    t.string   "files"
     t.index ["confirmation_token"], name: "index_business_users_on_confirmation_token", unique: true, using: :btree
     t.index ["email"], name: "index_business_users_on_email", unique: true, using: :btree
     t.index ["first_name"], name: "index_business_users_on_first_name", using: :btree
@@ -215,7 +215,6 @@ ActiveRecord::Schema.define(version: 20161213105919) do
     t.datetime "created_at",                            null: false
     t.datetime "updated_at",                            null: false
     t.integer  "business_user_id"
-    t.integer  "shipment_id"
     t.float    "height"
     t.float    "width"
     t.float    "grams"
@@ -223,7 +222,13 @@ ActiveRecord::Schema.define(version: 20161213105919) do
     t.string   "materials_used"
     t.date     "date_of_manufacture"
     t.index ["business_user_id"], name: "index_products_on_business_user_id", using: :btree
-    t.index ["shipment_id"], name: "index_products_on_shipment_id", using: :btree
+  end
+
+  create_table "shipment_limits", force: :cascade do |t|
+    t.integer  "amount"
+    t.string   "user_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "shipment_products", force: :cascade do |t|
@@ -238,15 +243,12 @@ ActiveRecord::Schema.define(version: 20161213105919) do
   end
 
   create_table "shipments", force: :cascade do |t|
-    t.integer  "broker_id"
-    t.integer  "forward_freight_id"
     t.boolean  "approval",           default: false, null: false
     t.boolean  "shipment_confirmed", default: false, null: false
     t.datetime "created_at",                         null: false
     t.datetime "updated_at",                         null: false
     t.integer  "business_user_id"
     t.boolean  "save_for_later_use", default: false, null: false
-    t.index ["broker_id"], name: "index_shipments_on_broker_id", using: :btree
     t.index ["business_user_id"], name: "index_shipments_on_business_user_id", using: :btree
   end
 

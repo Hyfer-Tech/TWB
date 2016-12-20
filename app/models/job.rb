@@ -27,11 +27,11 @@ class Job < ApplicationRecord
 	# end
 
 	def self.search(search)
-		search_array = search.split(" ")
 		if search
+			search_array = search.split(" ")
 			find(:all, conditions: ['(lower(location_of_shipment) || lower(place_being_shipped_to), like ?', "%#{search}%"]) || Job.tagged_with(search_array, :any => true)
 		else
-			find(:all)
+			Job.all
 		end
 	end
 

@@ -1,4 +1,5 @@
-class SearchesController < ApplicationController
+class Jobs::SearchesController < ApplicationController
+
 	def index
 		@jobs = Job.search(params[:search])
 
