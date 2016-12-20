@@ -4,6 +4,7 @@ class JobsController < ApplicationController
 
 	def index
 		@jobs = Job.all.includes(:shipment, :client, shipment: :products, shipment: :shipment_products)
+		@user_suggestions = Job.search_on(current_user).tagged_with(current_user.tag_list, :any => true).order("RANDOM()").limit(10)
 	end
 
 	def new
