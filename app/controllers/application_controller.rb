@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
   end
 
   def authenticate_any!
-    return if broker_signed_in? || forward_freight_signed_in? || business_user_signed_in?
+    return true if broker_signed_in? || forward_freight_signed_in? || business_user_signed_in?
     flash[:alert] = "Please sign in."
     redirect_to root_path
   end
