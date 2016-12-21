@@ -11,6 +11,7 @@
 # It's strongly recommended that you check this file into your version control system.
 
 
+
 ActiveRecord::Schema.define(version: 20161213105919) do
 
   # These are extensions that must be enabled in order to support this database
@@ -127,12 +128,12 @@ ActiveRecord::Schema.define(version: 20161213105919) do
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "avatar"
-    t.string   "files"
     t.integer  "account_type"
     t.string   "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string   "zip_postal_code"
+    t.string   "files"
     t.index ["confirmation_token"], name: "index_business_users_on_confirmation_token", unique: true, using: :btree
     t.index ["email"], name: "index_business_users_on_email", unique: true, using: :btree
     t.index ["first_name"], name: "index_business_users_on_first_name", using: :btree
@@ -294,5 +295,6 @@ ActiveRecord::Schema.define(version: 20161213105919) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+end
 
 end
