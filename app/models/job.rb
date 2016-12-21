@@ -6,7 +6,7 @@ class Job < ApplicationRecord
 
 	enum job_type: [:broker, :forward_freight]
 
-	default_scope {order("created_at DESC")}
+	# default_scope {order("created_at DESC")}
 
 	scope :this_month, -> {where(created_at: (Time.now.beginning_of_month..Time.zone.now))}
 

@@ -1,5 +1,7 @@
 <%= render partial: '/jobs/searches/search_form' %>
 <% if @jobs.present? %>
+	<%= sortable "created_at", "Sort by date" %>
+	<%= sortable "job_title", "Sort by name" %>
 	<% @jobs.each do |job| %>
 		<div class="all-jobs">
 			<div class="">
