@@ -29,10 +29,11 @@
 			<span class="fa fa-usd " aria-hidden="true" title="payment"><span class="data">500</span>	</span>
 			<span class="fa fa-globe " aria-hidden="true" title="border_expected_to_cross"><span class="data"><%= job.border_expected_to_cross %> japan hongkong nepal</span>	</span>
 		</div>
-	<hr>
-	<% end %>
-	</div>
+	  <hr>
+    <span> Tag: <%= raw job.tag_list.map { |t| link_to t, job_tag_path(t) }.join(', ') %></span>
+  <% end %>
 </div>
+  
 <div class="col-xs-2">
 	<h1>Suggestions</h1>
 	<% @user_suggestions.each do |user| %>

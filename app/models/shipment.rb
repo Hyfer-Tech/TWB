@@ -4,7 +4,7 @@ class Shipment < ApplicationRecord
 	has_many :products, through: :shipment_products
 	accepts_nested_attributes_for :shipment_products, reject_if: :all_blank, allow_destroy: true
 
-	scope :this_month, -> {where(created_at: (Time.now.beginning_of_month..Time.zone.now))}	
+	scope :this_month, -> {where(created_at: (Time.now.beginning_of_month..Time.zone.now))}
 
 	# validate :check_user_quota
 	validates :business_user_id, presence: true
