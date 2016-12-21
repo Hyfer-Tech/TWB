@@ -33,5 +33,4 @@ class Job < ApplicationRecord
 
 		errors.add(:base, "Exceeds monthly limit")
 	end
-
 end
