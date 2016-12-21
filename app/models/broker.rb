@@ -1,5 +1,7 @@
 class Broker < ApplicationRecord
   # include Searchable
+  BID_LIMIT = 10
+
   acts_as_taggable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
@@ -19,5 +21,9 @@ class Broker < ApplicationRecord
   has_many :bids, as: :bidder
 
   has_many :uploads, as: :user
+
+  def bid_limit_exceeded?
+    return account_type == 0 && bids.this_month.count >= BID_LIMIT
+  end
 
 end

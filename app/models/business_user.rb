@@ -1,4 +1,3 @@
-
 class BusinessUser < ApplicationRecord
   # include Searchable
   acts_as_taggable
@@ -11,6 +10,7 @@ class BusinessUser < ApplicationRecord
   has_many :shipments
 
   mount_uploader :avatar, AvatarUploader
+  mount_uploader :files, FilesUploader
 
   validates :email, :first_name, :last_name, :phone, :address_line_1, :city, :state_province_county, :country, presence: true
 
