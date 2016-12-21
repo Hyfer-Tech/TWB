@@ -20,7 +20,6 @@ class Job < ApplicationRecord
 
 	acts_as_taggable
 
-
 	private
 
 	def user_job_limit
@@ -34,5 +33,4 @@ class Job < ApplicationRecord
 
 		errors.add(:base, "Exceeds monthly limit")
 	end
-
 end
