@@ -29,4 +29,8 @@ class ForwardFreight < ApplicationRecord
   def bid_limit_exceeded?
     return account_type == 0 && bids.this_month.count >= 15
   end
+
+  def suggested_users
+    return BusinessUser
+  end
 end

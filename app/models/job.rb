@@ -39,8 +39,4 @@ class Job < ApplicationRecord
 
 		errors.add(:base, "Exceeds monthly limit")
 	end
-
-	def self.search_on(user)
-		return BusinessUser if user.class.name == 'ForwardFreight' || user.class.name == 'Broker'
-	end
 end

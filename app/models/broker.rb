@@ -24,4 +24,7 @@ class Broker < ApplicationRecord
     return account_type == 0 && bids.this_month.count >= 10
   end
 
+  def suggested_users
+    return BusinessUser
+  end
 end
