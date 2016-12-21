@@ -20,6 +20,15 @@ class Job < ApplicationRecord
 
 	acts_as_taggable
 
+	# job_type is not implemented yet
+	# def job_taker
+	# 	if self.job_type == "broker"
+	# 		return Broker
+	# 	else
+	# 	  return ForwardFreight
+	# 	end
+	# end
+
 	private
 
 	def user_job_limit
