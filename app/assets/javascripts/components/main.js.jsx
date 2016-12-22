@@ -12,13 +12,14 @@ let Main = React.createClass({
 
   render() {
     return (
-      <UserInfo
-        description={this.state.description}
-        email={this.state.email}
-        phone={this.state.phone}
-        country={this.state.country}
-        state_province_county={this.state.state_province_county}
-        city={this.state.city}/>
+      <div>
+        <Description description={this.state.description} />
+        <ContactInfo email={this.state.email} phone={this.state.phone} />
+        <Address
+          country={this.state.country}
+          state_province_county={this.state.state_province_county}
+          city={this.state.city}/>
+      </div>
     )
   }
 });
