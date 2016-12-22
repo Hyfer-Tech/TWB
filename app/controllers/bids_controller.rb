@@ -4,6 +4,7 @@ class BidsController < ApplicationController
   before_action :ensure_my_job!, only: :index
   before_action :ensure_one_bid_by_one_user_for_one_job!, only: :new
   before_action :is_owner_of_bid?, only: :destroy
+  before_action :ensure_bid_limit?, only: :new
 
   def index
     @bids = Bid.where(job_id: params[:job_id]).order("created_at DESC")
@@ -44,6 +45,7 @@ class BidsController < ApplicationController
   end
 
   def ensure_my_job!
+    return unless business_user_signed_in?
     return if current_user.id.equal? Job.find(params[:job_id]).client_id
     flash[:alert] = "Sorry! this job is not related to you"
     redirect_to root_path
@@ -57,9 +59,14 @@ class BidsController < ApplicationController
 
   def is_owner_of_bid?
     @bid = Bid.find(params[:id])
-    unless (@bid.bidder_id.eql? current_user.id) && (@bid.bidder_type.eql? current_user.class.name)
-      flash[:alert] = "Sorry! You are not the owner of this Bid"
-      redirect_to root_path
-    end
+    return if (@bid.bidder_id.eql? current_user.id) && (@bid.bidder_type.eql? current_user.class.name)
+    flash[:alert] = "Sorry! You are not the owner of this Bid"
+    redirect_to root_path
+  end
+
+  def ensure_bid_limit?
+    return unless current_user.bid_limit_exceeded?
+    flash[:alert] = "Sorry! You can't bid on more then #{current_user.class::BID_LIMIT} jobs please switch to premium plan."
+    redirect_to root_path
   end
 end

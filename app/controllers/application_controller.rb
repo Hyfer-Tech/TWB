@@ -5,25 +5,16 @@ class ApplicationController < ActionController::Base
 
   protected
 
-  def authenticate_any!
-    # if broker_signed_in?
-    #     true
-    # elsif forward_freight_signed_in?
-    #     true
-    # else 
-    #     authenticate_business_user!
-    # end
+  def authenticate_broker_or_forward_freight
+    return if broker_signed_in? || forward_freight_signed_in?
+    flash[:alert] = "Please sign in."
+    redirect_to root_path
+  end
 
-    if broker_signed_in?
-        authenticate_broker!
-    elsif forward_freight_signed_in?
-        authenticate_forward_freight!
-    elsif business_user_signed_in?
-        authenticate_business_user!
-    else
-        flash[:alert] = "Please sign in."
-        redirect_to root_path
-    end
+  def authenticate_any!
+    return true if broker_signed_in? || forward_freight_signed_in? || business_user_signed_in?
+    flash[:alert] = "Please sign in."
+    redirect_to root_path
   end
 
   def current_user

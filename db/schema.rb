@@ -95,6 +95,7 @@ ActiveRecord::Schema.define(version: 20161221110741) do
     t.string   "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
+    t.integer  "account_type",           default: 0
     t.index ["confirmation_token"], name: "index_brokers_on_confirmation_token", unique: true, using: :btree
     t.index ["email"], name: "index_brokers_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_brokers_on_reset_password_token", unique: true, using: :btree
@@ -179,6 +180,7 @@ ActiveRecord::Schema.define(version: 20161221110741) do
     t.string   "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
+    t.integer  "account_type",           default: 0
     t.index ["confirmation_token"], name: "index_forward_freights_on_confirmation_token", unique: true, using: :btree
     t.index ["email"], name: "index_forward_freights_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_forward_freights_on_reset_password_token", unique: true, using: :btree

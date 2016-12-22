@@ -1,4 +1,7 @@
 class ForwardFreight < ApplicationRecord
+
+  BID_LIMIT = 15
+
   # include Searchable
   acts_as_taggable
 
@@ -25,5 +28,13 @@ class ForwardFreight < ApplicationRecord
 
 
   has_many :uploads, as: :user
-end
 
+  def bid_limit_exceeded?
+    return account_type == 0 && bids.this_month.count >= BID_LIMITr
+  end
+  
+  def suggested_users
+    return BusinessUser
+  end
+
+end
