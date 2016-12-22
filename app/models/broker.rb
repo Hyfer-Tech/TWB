@@ -29,5 +29,4 @@ class Broker < ApplicationRecord
   def suggested_users
     return BusinessUser
   end
-  
 end
