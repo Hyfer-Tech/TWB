@@ -6,6 +6,7 @@
     	t.integer :job_type
     	t.integer :shipment_id
       t.integer :forward_freight_id
+      t.boolean :completed, :default => false
       t.timestamps
     end
 

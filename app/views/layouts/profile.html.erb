@@ -2,7 +2,9 @@
 <html>
   <head>
     <%= render 'shared/meta' %>
-
+    <link rel="stylesheet" type="text/scss" href="scss/rating.scss">
+    <script type="text/javascript" src="javascript/rating.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
   </head>
 
   <body class="bg-image">
@@ -42,6 +44,36 @@
                 </div>
               </div>
               <!-- END SIDEBAR USERPIC -->
+
+              <br>
+                  <div class= "rating_system">
+                      <p class = "ratetext">Rate this user:</p> 
+                        <div id = "r1" class = "rate_widget">
+                          <div class="star_1 ratings_stars"></div>
+                          <div class="star_2 ratings_stars"></div>
+                          <div class="star_3 ratings_stars"></div>
+                          <div class="star_4 ratings_stars"></div>
+                          <div class="star_5 ratings_stars"></div>
+                          <div class="total_votes">give rating to this user?</div>
+                        </div>
+
+                        <script>
+                            $('.ratings_stars').hover(
+                                // Handles the mouseover
+                                function() {
+                                    $(this).prevAll().andSelf().addClass('ratings_over');
+                                    $(this).nextAll().removeClass('ratings_vote'); 
+                                },
+                                // Handles the mouseout
+                                function() {
+                                    $(this).prevAll().andSelf().removeClass('ratings_over');
+                                    set_votes($(this).parent());
+                                }
+                            );
+                        </script>
+                  </div>
+                  
+              <br>
               <div class="row">
                 <div class="container-fluid">
                   <%= react_component 'EditName', { user: @user, user_type_name: @user.user_type_name } %>

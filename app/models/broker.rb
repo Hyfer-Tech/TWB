@@ -12,4 +12,5 @@ class Broker < ApplicationRecord
 
   has_many :jobs, as: :agent
   has_many :uploads, as: :user
+  has_many :business_user, through: :rating
 end

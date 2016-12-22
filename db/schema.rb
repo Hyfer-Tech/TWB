@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161205093816) do
+ActiveRecord::Schema.define(version: 20161221094838) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -110,7 +110,6 @@ ActiveRecord::Schema.define(version: 20161205093816) do
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "avatar"
-    t.string   "files"
     t.integer  "account_type"
     t.string   "confirmation_token"
     t.datetime "confirmed_at"
@@ -171,8 +170,9 @@ ActiveRecord::Schema.define(version: 20161205093816) do
   create_table "jobs", force: :cascade do |t|
     t.integer  "job_type"
     t.integer  "shipment_id"
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.boolean  "completed",                default: false
+    t.datetime "created_at",                               null: false
+    t.datetime "updated_at",                               null: false
     t.integer  "client_id"
     t.integer  "agent_id"
     t.string   "client_type"
@@ -198,6 +198,7 @@ ActiveRecord::Schema.define(version: 20161205093816) do
     t.datetime "created_at",                            null: false
     t.datetime "updated_at",                            null: false
     t.integer  "business_user_id"
+    t.integer  "shipment_id"
     t.float    "height"
     t.float    "width"
     t.float    "grams"
@@ -205,11 +206,12 @@ ActiveRecord::Schema.define(version: 20161205093816) do
     t.string   "materials_used"
     t.date     "date_of_manufacture"
     t.index ["business_user_id"], name: "index_products_on_business_user_id", using: :btree
+    t.index ["shipment_id"], name: "index_products_on_shipment_id", using: :btree
   end
 
-  create_table "shipment_limits", force: :cascade do |t|
-    t.integer  "amount"
-    t.string   "user_type"
+  create_table "ratings", force: :cascade do |t|
+    t.integer  "total_rate"
+    t.string   "rate_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -226,11 +228,14 @@ ActiveRecord::Schema.define(version: 20161205093816) do
   end
 
   create_table "shipments", force: :cascade do |t|
+    t.integer  "broker_id"
+    t.integer  "forward_freight_id"
     t.boolean  "approval",           default: false, null: false
     t.boolean  "shipment_confirmed", default: false, null: false
     t.datetime "created_at",                         null: false
     t.datetime "updated_at",                         null: false
     t.integer  "business_user_id"
+    t.index ["broker_id"], name: "index_shipments_on_broker_id", using: :btree
     t.index ["business_user_id"], name: "index_shipments_on_business_user_id", using: :btree
   end
 
