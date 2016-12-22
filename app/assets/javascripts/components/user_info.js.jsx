@@ -8,11 +8,11 @@ let UserInfo = React.createClass({
   description() {
     if(this.state.editable) {
       return (
-        <input type="text" />
+        <input type="text" defaultValue={this.props.description}/>
       )
     } else {
       return (
-        this.props.description
+        <span onClick={this.handleClick} >{this.props.description}</span>
       )
     }
   },
@@ -20,11 +20,11 @@ let UserInfo = React.createClass({
   email() {
     if(this.state.editable) {
       return (
-        <input type="text" />
+        <input type="text" defaultValue={this.props.email}/>
       )
     } else {
       return (
-        this.props.email
+        <h4 onClick={this.handleClick} >{this.props.email}</h4>
       )
     }
   },
@@ -32,11 +32,11 @@ let UserInfo = React.createClass({
   phoneNumber() {
     if(this.state.editable) {
       return (
-        <input type="text" />
+        <input type="text" defaultValue={this.props.phone}/>
       )
     } else {
       return (
-        this.props.phone
+        <h4 onClick={this.handleClick} >{this.props.phone}</h4>
       )
     }
   },
@@ -44,11 +44,11 @@ let UserInfo = React.createClass({
   country() {
     if(this.state.editable) {
       return (
-        <input type="text" />
+        <input type="text" defaultValue={this.props.country}/>
       )
     } else {
       return (
-        this.props.country
+        <h4 onClick={this.handleClick} >{this.props.country}</h4>
       )
     }
   },
@@ -56,11 +56,11 @@ let UserInfo = React.createClass({
   stateProvinceCounty() {
     if(this.state.editable) {
       return (
-        <input type="text" />
+        <input type="text" defaultValue={this.props.state_province_county}/>
       )
     } else {
       return (
-        this.props.state_province_county
+        <h4 onClick={this.handleClick} >{this.props.state_province_county}</h4>
       )
     }
   },
@@ -68,13 +68,17 @@ let UserInfo = React.createClass({
   city() {
     if(this.state.editable) {
       return (
-        <input type="text" />
+        <input type="text" defaultValue={this.props.city}/>
       )
     } else {
       return (
-        this.props.city
+        <h4 onClick={this.handleClick} >{this.props.city}</h4>
       )
     }
+  },
+
+  handleClick() {
+    this.setState({editable: !this.state.editable});
   },
 
   render() {
@@ -94,7 +98,7 @@ let UserInfo = React.createClass({
             <h4>Email</h4>
           </div>
           <div className="col-xs-9">
-            <h4>{this.email()}</h4>
+            {this.email()}
           </div>
         </div>
         <div className="col-xs-12">
@@ -102,7 +106,7 @@ let UserInfo = React.createClass({
             <h4>Phone No</h4>
           </div>
           <div className="col-xs-9">
-            <h4>{this.phoneNumber()}</h4>
+            {this.phoneNumber()}
           </div>
         </div>
         <div className="col-xs-12">
@@ -113,7 +117,7 @@ let UserInfo = React.createClass({
             <h4>County</h4>
           </div>
           <div className="col-xs-9">
-            <h4>{this.country()}</h4>
+            {this.country()}
           </div>
         </div>
         <div className="col-xs-12">
@@ -121,7 +125,7 @@ let UserInfo = React.createClass({
             <h4>State</h4>
           </div>
           <div className="col-xs-9">
-            <h4>{this.stateProvinceCounty()}</h4>
+            {this.stateProvinceCounty()}
           </div>
         </div>
         <div className="col-xs-12">
@@ -129,7 +133,7 @@ let UserInfo = React.createClass({
             <h4>City</h4>
           </div>
           <div className="col-xs-9">
-            <h4>{this.city()}</h4>
+            {this.city()}
           </div>
         </div>
       </div>
