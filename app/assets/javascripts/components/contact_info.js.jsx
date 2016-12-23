@@ -3,7 +3,7 @@ let ContactInfo = React.createClass({
     return {
       editable: false,
       email: this.props.email,
-      phone: this.props.phone
+      phone: this.props.phone,
     }
   },
 

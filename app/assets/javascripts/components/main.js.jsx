@@ -38,7 +38,9 @@ let Main = React.createClass({
           country={this.state.country}
           state_province_county={this.state.state_province_county}
           city={this.state.city}
-          user_type_name={this.state.user_type_name} />
+          user_type_name={this.state.user_type_name}
+          handleUpdate={this.handleUpdate}
+        />
       </div>
     )
   }
