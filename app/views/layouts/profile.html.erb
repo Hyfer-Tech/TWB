@@ -5,7 +5,7 @@
 
   </head>
 
-  <body class="bg-image">
+  <body class="background-bg">
     <%= render 'layouts/nav' %>
     <div class="container container-authenticated">
       <div class="row profile">
@@ -16,7 +16,7 @@
               <div class="profile-userpic">
                 <div class="picture">
                   <%= image_tag @user.avatar_url(:thumb), class: 'prof-pic' %>
-                
+
                   <a href="#" class="profile-pic-edit" data-toggle="modal" data-target="#myModal">
                     <i class="fa fa-cloud-upload"></i> Update
                   </a>

@@ -12,16 +12,20 @@
         <h3 class="text-center"><%= @user.name %></h3>
 
         <div id="actions" class="user-actions">
-          <%= render partial: 'relationships/actions', locals: {user: @user} %>          
+          <%= render partial: 'relationships/actions', locals: {user: @user} %>
         </div>
 
         <!-- SIDEBAR BUTTONS -->
         <div class="user-actions">
           <%= link_to 'Message', '#', class: 'btn btn-danger btn-round' %>
-        </div>        
+        </div>
         <!-- END SIDEBAR BUTTONS -->
         <!-- SIDEBAR MENU -->
+        <h1>hello</h1>
+        <h1>hello</h1>
+
         <ul class="nav nav-user-actions text-center">
+
           <li class="active">
             <a href="#">
             <i class="glyphicon glyphicon-home"></i>
@@ -47,13 +51,11 @@
       <div class="panel-body">
         <%= simple_format @user.description %>
 
-        <i class="fa fa-tags" aria-hidden="true"></i> 
+        <i class="fa fa-tags" aria-hidden="true"></i>
           <% @user.tag_list.each do |tag| %>
             <span class="label label-default"><%= tag %></span>
           <% end %>
       </div><!-- panel-body -->
     </div><!-- panel -->
   </div>
-</div>  
-
-
+</div>
