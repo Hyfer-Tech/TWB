@@ -21,4 +21,7 @@ class BusinessUser < ApplicationRecord
 
   has_many :jobs, as: :client
   has_many :uploads, as: :user
+
+  # delegate :email, :business_name, :first_name, :last_name, :phone, :description, :address_line_1, :address_line_2, :address_line_3, :city, :state_province_county, :country, :avatar, :account_type, :zip_postal_code, to: :jobs
+
 end
