@@ -1,5 +1,6 @@
 <% @bids.each do |bid| %>
-	<%= bid.job.client.email %>
+	<%= bid.job_client_email %><br />
+	
 
-	<%= BusinessUser.find(bid.job.client_id).first_name %>
+	<%= bid.job.client_first_name %>
 <% end %>

@@ -6,6 +6,6 @@ class BrokersController < ApplicationController
   end
 
   def past_clients
-  	@bids = PastClient.new(current_user).successful_bids
+  	@bids = Broker.successful_bids(current_user)
   end
 end
