@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   
 	def profile
     @user = current_user.decorate
+    @rating = @user.ratings.new
     render layout: 'profile'
 	end  
 

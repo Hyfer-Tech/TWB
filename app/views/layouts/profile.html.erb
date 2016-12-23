@@ -57,6 +57,12 @@
                           <div class="total_votes">give rating to this user?</div>
                         </div>
 
+
+                        <% form_for [@user,@rating] do |f| %>
+                          <%= f.select("rating", "value", (1..5)) %>
+                          <%= f.submit "Rate this user" %>
+                        <% end %>
+
                         <script>
                             $('.ratings_stars').hover(
                                 // Handles the mouseover
@@ -74,6 +80,7 @@
                   </div>
                   
               <br>
+
               <div class="row">
                 <div class="container-fluid">
                   <%= react_component 'EditName', { user: @user, user_type_name: @user.user_type_name } %>
@@ -112,7 +119,7 @@
           <div class="profile-details-container">
             <%= render 'shared/flash_messages' %>
             <%= yield %>
-          </div>
+                        </div>
         </div><!-- column -->
       </div><!-- row-profile -->
     </div><!-- container -->
