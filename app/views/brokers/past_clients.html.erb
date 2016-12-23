@@ -1,6 +1,53 @@
-<% @bids.each do |bid| %>
-	<%= bid.job_client_email %><br />
-	
+<div class="container">
+	<% @bids.each do |bid| %>
+		<%= bid.client.avatar %>
+		<%= bid.client.first_name %>
+		<%= bid.client.last_name %>
 
-	<%= bid.job.client_first_name %>
-<% end %>
+		<div class="row">
+			<div class="col-md-6 col-xs-12">
+				Business Name: <%= bid.client.business_name %>
+			</div>
+
+			<div class="col-md-6 col-xs-12">
+				Email Address: <%= bid.client.email %>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-12 col-xs-12">
+				Description: <%= bid.client.description %>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-6 col-xs-12">
+				Phone: <%= bid.client.phone %>
+			</div>
+
+			<div class="col-md-6 col-xs-12">
+				Address: <%= bid.client.address_line_1 %>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-md-6 col-xs-12">
+				City: <%= bid.client.city %>
+			</div>
+
+			<div class="col-md-6 col-xs-12">
+				Zip/Postal Code: <%= bid.client.zip_postal_code %>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-6 col-xs-12">
+				State/Province/County: <%= bid.client.state_province_county %>
+			</div>
+
+			<div class="col-md-6 col-xs-12">
+				Country: <%= bid.client.country %>
+			</div>
+		</div>
+	<% end %>
+</div>
