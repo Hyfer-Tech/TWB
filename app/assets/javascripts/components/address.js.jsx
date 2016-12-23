@@ -8,10 +8,15 @@ let Address = React.createClass({
     }
   },
 
+  onChange(e) {
+    let name = e.target.name;
+    this.setState({ [name]: e.target.value });
+  },
+
   country() {
     if(this.state.editable) {
       return (
-        <input ref="country" type="text" defaultValue={this.state.country} className='form-control'/>
+        <input name="country" onChange={this.onChange} type="text" defaultValue={this.state.country} className='form-control'/>
       )
     } else {
       return (
@@ -23,7 +28,7 @@ let Address = React.createClass({
   stateProvinceCounty() {
     if(this.state.editable) {
       return (
-        <input ref="state_province_county" type="text" defaultValue={this.state.state_province_county} className='form-control'/>
+        <input name="state_province_county" onChange={this.onChange} type="text" defaultValue={this.state.state_province_county} className='form-control'/>
       )
     } else {
       return (
@@ -35,7 +40,7 @@ let Address = React.createClass({
   city() {
     if(this.state.editable) {
       return (
-        <input ref="city" type="text" defaultValue={this.state.city} className='form-control'/>
+        <input name="city" type="text" onChange={this.onChange} defaultValue={this.state.city} className='form-control'/>
       )
     } else {
       return (
@@ -46,24 +51,24 @@ let Address = React.createClass({
 
   handleClick() {
     if(this.state.editable) {
-      let city = this.refs.city.value;
-      let state_province_county = this.refs.state_province_county.value;
-      let country =  this.refs.country.value;
-      let updated_user_info = { city, state_province_county, country }
+      let updated_user_info = { city:this.state.city, state_province_county:this.state.state_province_county, country:this.state.country }
       this.props.handleUpdate(updated_user_info);
-      this.setState({city, state_province_county, country});
     }
     this.setState({editable: !this.state.editable});
   },
 
+  valid() {
+    return this.state.city && this.state.state_province_county && this.state.country;
+  },
+
   handleCancel() {
-    this.setState({editable:false});
+    this.setState({editable:false, city: this.props.city, state_province_county: this.props.state_province_county, country: this.props.country});
   },
 
   updateButton() {
     if(this.state.editable) {
       return (
-        <button onClick={this.handleClick} className="btn btn-sm btn-success">Update</button>
+        <button onClick={this.handleClick} className="btn btn-sm btn-success" disabled={!this.valid()}>Update</button>
       )
     }
   },

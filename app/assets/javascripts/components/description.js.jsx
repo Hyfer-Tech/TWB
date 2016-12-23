@@ -9,7 +9,7 @@ let Description = React.createClass({
   description() {
     if(this.state.editable) {
       return (
-        <input ref="description" type="text" defaultValue={this.state.description} className='form-control'/>
+        <input onChange={this.onChange} type="text" defaultValue={this.state.description} className='form-control'/>
       )
     } else {
       return (
@@ -18,36 +18,31 @@ let Description = React.createClass({
     }
   },
 
+  onChange(e) {
+    let description = e.target.value;
+    this.setState({description});
+  },
+
   handleClick() {
     if(this.state.editable) {
-      let description = this.refs.description.value;
-      let updated_user_info = { description }
+      let updated_user_info = { description: this.state.description }
       this.props.handleUpdate(updated_user_info);
-      this.setState({description});
     }
     this.setState({editable: !this.state.editable});
   },
 
-  // handleUpdate(updated_user_info) {
-  //   let data = {};
-  //   data[this.props.user_type_name] = updated_user_info;
-  //
-  //   $.ajax({
-  //     url: `/${this.props.user_type_name}s`,
-  //     type: 'PATCH',
-  //     dataType: 'JSON',
-  //     data: data
-  //   });
-  // },
+  valid() {
+    return this.state.description;
+  },
 
   handleCancel() {
-    this.setState({editable:false});
+    this.setState({editable:false, description: this.props.description});
   },
 
   updateButton() {
     if(this.state.editable) {
       return (
-        <button onClick={this.handleClick} className="btn btn-sm btn-success">Update</button>
+        <button onClick={this.handleClick} className="btn btn-sm btn-success" disabled={!this.valid()}>Update</button>
       )
     }
   },
