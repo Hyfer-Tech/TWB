@@ -22,23 +22,23 @@ let Description = React.createClass({
     if(this.state.editable) {
       let description = this.refs.description.value;
       let updated_user_info = { description }
-      this.handleUpdate(updated_user_info);
+      this.props.handleUpdate(updated_user_info);
       this.setState({description});
     }
     this.setState({editable: !this.state.editable});
   },
 
-  handleUpdate(updated_user_info) {
-    let data = {};
-    data[this.props.user_type_name] = updated_user_info;
-
-    $.ajax({
-      url: `/${this.props.user_type_name}s`,
-      type: 'PATCH',
-      dataType: 'JSON',
-      data: data
-    });
-  },
+  // handleUpdate(updated_user_info) {
+  //   let data = {};
+  //   data[this.props.user_type_name] = updated_user_info;
+  //
+  //   $.ajax({
+  //     url: `/${this.props.user_type_name}s`,
+  //     type: 'PATCH',
+  //     dataType: 'JSON',
+  //     data: data
+  //   });
+  // },
 
   handleCancel() {
     this.setState({editable:false});

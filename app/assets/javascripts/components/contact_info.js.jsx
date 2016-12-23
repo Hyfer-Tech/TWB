@@ -1,22 +1,31 @@
 let ContactInfo = React.createClass({
   getInitialState() {
     return {
-      editable: false
+      editable: false,
+      email: this.props.email,
+      phone: this.props.phone
     }
   },
 
   handleClick() {
+    if(this.state.editable) {
+      let email = this.refs.email.value;
+      let phone =  this.refs.phone.value;
+      let updated_user_info = { email, phone }
+      this.props.handleUpdate(updated_user_info);
+      this.setState({email, phone});
+    }
     this.setState({editable: !this.state.editable});
   },
 
   email() {
     if(this.state.editable) {
       return (
-        <input type="text" defaultValue={this.props.email} className='form-control'/>
+        <input ref="email" type="text" defaultValue={this.state.email} className='form-control'/>
       )
     } else {
       return (
-        <h4 onClick={this.handleClick} >{this.props.email}</h4>
+        <h4 onClick={this.handleClick} >{this.state.email}</h4>
       )
     }
   },
@@ -24,11 +33,11 @@ let ContactInfo = React.createClass({
   phoneNumber() {
     if(this.state.editable) {
       return (
-        <input type="text" defaultValue={this.props.phone} className='form-control'/>
+        <input ref="phone" type="text" defaultValue={this.state.phone} className='form-control'/>
       )
     } else {
       return (
-        <h4 onClick={this.handleClick} >{this.props.phone}</h4>
+        <h4 onClick={this.handleClick} >{this.state.phone}</h4>
       )
     }
   },
@@ -40,7 +49,7 @@ let ContactInfo = React.createClass({
   updateButton() {
     if(this.state.editable) {
       return (
-        <button onClick={this.handleEdit} className="btn btn-sm btn-success">Update</button>
+        <button onClick={this.handleClick} className="btn btn-sm btn-success">Update</button>
       )
     }
   },
