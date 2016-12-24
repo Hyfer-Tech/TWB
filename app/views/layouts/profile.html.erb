@@ -58,7 +58,7 @@
                         </div>
 
 
-                        <% form_for [@user,@rating] do |f| %>
+                        <% simple_form_for Rating.new, url: user_ratings_path(user_id @user.id), method: :post do |f| %>
                           <%= f.select("rating", "value", (1..5)) %>
                           <%= f.submit "Rate this user" %>
                         <% end %>
