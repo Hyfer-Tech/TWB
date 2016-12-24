@@ -28,8 +28,3 @@ class RatingsController < ApplicationController
 	end
 
 end
-
-@user = User.find(params[:user_id])
-return if current_user.class.name != @user.class.name
-flash[:alert] = "You can't rate a #{current_user.class.name}!"
-redirect_to :back
