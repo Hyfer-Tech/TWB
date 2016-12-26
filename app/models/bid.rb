@@ -11,8 +11,11 @@ class Bid < ApplicationRecord
 
   scope :this_month, -> {where(created_at: (Time.now.beginning_of_month..Time.zone.now))}
 
-  def toggle_accept(status)
-    update(accepted: !status)
+  def toggle_accept!(status)
+  	self.accepted = !status
+  	self.job.agent_id = accepted ? bidder.id : nil
+  	self.save
+  	self.job.save
   end
 
   def client_business_name
