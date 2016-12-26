@@ -53,6 +53,7 @@ let Address = React.createClass({
     if(this.state.editable) {
       let updated_user_info = { city:this.state.city, state_province_county:this.state.state_province_county, country:this.state.country }
       this.props.handleUpdate(updated_user_info);
+      this.props.updateMain(updated_user_info);
     }
     this.setState({editable: !this.state.editable});
   },

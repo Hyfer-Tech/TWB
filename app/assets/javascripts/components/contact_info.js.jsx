@@ -16,6 +16,7 @@ let ContactInfo = React.createClass({
     if(this.state.editable) {
       let updated_user_info = { email: this.state.email, phone: this.state.phone }
       this.props.handleUpdate(updated_user_info);
+      this.props.updateMain(updated_user_info);
     }
     this.setState({editable: !this.state.editable});
   },

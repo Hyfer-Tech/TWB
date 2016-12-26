@@ -27,6 +27,7 @@ let Description = React.createClass({
     if(this.state.editable) {
       let updated_user_info = { description: this.state.description }
       this.props.handleUpdate(updated_user_info);
+      this.props.updateMain(updated_user_info);
     }
     this.setState({editable: !this.state.editable});
   },
