@@ -32,7 +32,10 @@ let ContactInfo = React.createClass({
       )
     } else {
       return (
-        <h4 onClick={this.handleClick} >{this.state.email}</h4>
+        <h4 onClick={this.handleClick} className="email-text" >
+          {this.state.email}
+          <i className="fa fa-pencil" id="edit-pencil" aria-hidden="true"></i>
+        </h4>
       )
     }
   },
@@ -44,7 +47,10 @@ let ContactInfo = React.createClass({
       )
     } else {
       return (
-        <h4 onClick={this.handleClick} >{this.state.phone}</h4>
+        <h4 onClick={this.handleClick} className="phone-text">
+          {this.state.phone}
+          <i className="fa fa-pencil" id="edit-pencil" aria-hidden="true"></i>
+        </h4>
       )
     }
   },

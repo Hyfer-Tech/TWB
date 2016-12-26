@@ -5,5 +5,4 @@ $(document).ready(function() {
   }, function() {
     $(".profile-pic-edit").hide();
   });
-  
 });

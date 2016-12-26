@@ -20,7 +20,10 @@ let Address = React.createClass({
       )
     } else {
       return (
-        <h4 onClick={this.handleClick} >{this.state.country}</h4>
+        <h4 onClick={this.handleClick}  className="country-text" >
+          {this.state.country}
+          <i className="fa fa-pencil" id="edit-pencil" aria-hidden="true"></i>
+        </h4>
       )
     }
   },
@@ -32,7 +35,10 @@ let Address = React.createClass({
       )
     } else {
       return (
-        <h4 onClick={this.handleClick} >{this.state.state_province_county}</h4>
+        <h4 onClick={this.handleClick} className="state-province-county-text">
+          {this.state.state_province_county}
+          <i className="fa fa-pencil" id="edit-pencil" aria-hidden="true"></i>
+        </h4>
       )
     }
   },
@@ -44,7 +50,10 @@ let Address = React.createClass({
       )
     } else {
       return (
-        <h4 onClick={this.handleClick} >{this.state.city}</h4>
+        <h4 onClick={this.handleClick} className="city-text">
+          {this.state.city}
+          <i className="fa fa-pencil" id="edit-pencil" aria-hidden="true"></i>
+        </h4>
       )
     }
   },

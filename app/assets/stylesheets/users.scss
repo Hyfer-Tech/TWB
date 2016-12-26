@@ -118,3 +118,17 @@
   padding: 5px;
   margin-bottom: 5px;
 }
+
+#edit-pencil {
+  padding:10px;
+}
+
+.description-text:hover,
+.email-text:hover,
+.phone-text:hover,
+.country-text:hover,
+.city-text:hover,
+.state-province-county-text:hover
+{
+  background-color:#EEEEEE;
+}
