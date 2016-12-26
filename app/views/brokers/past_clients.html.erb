@@ -2,54 +2,66 @@
 
 <div class="container">
 	<% @bids.each do |bid| %>
-		<%= bid.client_avatar %>
-		<%= bid.client_first_name %>
-		<%= bid.client_last_name %>
-
 		<div class="row">
-			<div class="col-md-6 col-xs-12">
-				Business Name: <%= bid.client_business_name %>
+			<div class="col-md-2 col-xs-12">
+				<%= image_tag bid.client_avatar, class: "past_client_image" %>
 			</div>
 
-			<div class="col-md-6 col-xs-12">
-				Email Address: <%= bid.client_email %>
-			</div>
-		</div>
+			<div class="col-md-10 col-xs-12">
+				<div class="row">
+					<div class="col-md-12 col-xs-12">
+						<%= bid.client_first_name %>
+						<%= bid.client_last_name %>
+					</div>
+				</div>
 
-		<div class="row">
-			<div class="col-md-12 col-xs-12">
-				Description: <%= bid.client_description %>
-			</div>
-		</div>
+				<div class="row">
+					<div class="col-md-6 col-xs-12">
+						Business Name: <%= bid.client_business_name %>
+					</div>
 
-		<div class="row">
-			<div class="col-md-6 col-xs-12">
-				Phone: <%= bid.client_phone %>
-			</div>
+					<div class="col-md-6 col-xs-12">
+						Email Address: <%= bid.client_email %>
+					</div>
+				</div>
 
-			<div class="col-md-6 col-xs-12">
-				Address: <%= bid.client_address_line_1 %>
-			</div>
-		</div>
-		
-		<div class="row">
-			<div class="col-md-6 col-xs-12">
-				City: <%= bid.client_city %>
-			</div>
+				<div class="row">
+					<div class="col-md-12 col-xs-12">
+						Description: <%= bid.client_description %>
+					</div>
+				</div>
 
-			<div class="col-md-6 col-xs-12">
-				Zip/Postal Code: <%= bid.client_zip_postal_code %>
-			</div>
-		</div>
+				<div class="row">
+					<div class="col-md-6 col-xs-12">
+						Phone: <%= bid.client_phone %>
+					</div>
 
-		<div class="row">
-			<div class="col-md-6 col-xs-12">
-				State/Province/County: <%= bid.client_state_province_county %>
-			</div>
+					<div class="col-md-6 col-xs-12">
+						Address: <%= bid.client_address_line_1 %>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="col-md-6 col-xs-12">
+						City: <%= bid.client_city %>
+					</div>
 
-			<div class="col-md-6 col-xs-12">
-				Country: <%= bid.client_country %>
+					<div class="col-md-6 col-xs-12">
+						Zip/Postal Code: <%= bid.client_zip_postal_code %>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-6 col-xs-12">
+						State/Province/County: <%= bid.client_state_province_county %>
+					</div>
+
+					<div class="col-md-6 col-xs-12">
+						Country: <%= bid.client_country %>
+					</div>
+				</div>
 			</div>
-		</div>
+		</div>	
+		<hr />
 	<% end %>
 </div>
