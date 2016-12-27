@@ -45,7 +45,9 @@ Rails.application.routes.draw do
   resources :products, only: [:new, :create, :show]
 
   resources :taggings, only: :create
-  resources :brokers, only: :show
+  resources :brokers, only: :show do
+    get 'Clients', to: "brokers#past_clients"
+  end
   resources :forward_freights, only: :show
   resources :business_users, only: :show
 

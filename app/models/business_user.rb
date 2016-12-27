@@ -21,4 +21,5 @@ class BusinessUser < ApplicationRecord
 
   has_many :jobs, as: :client
   has_many :uploads, as: :user
+
 end
