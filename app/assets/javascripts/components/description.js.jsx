@@ -15,7 +15,7 @@ let Description = React.createClass({
       return (
         <span onClick={this.handleClick} className="description-text" >
           {this.state.description}
-          <i className="fa fa-pencil" id="edit-pencil" aria-hidden="true"></i>
+          <i className="fa fa-pencil edit-pencil" aria-hidden="true"></i>
         </span>
       )
     }

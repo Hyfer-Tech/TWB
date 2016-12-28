@@ -6,7 +6,8 @@ let Main = React.createClass({
       phone: this.props.phone,
       country: this.props.country,
       state_province_county: this.props.state_province_county,
-      city: this.props.city
+      city: this.props.city,
+      countries_list: this.props.countries_list
     }
   },
 
@@ -47,6 +48,7 @@ let Main = React.createClass({
           user_type_name={this.state.user_type_name}
           handleUpdate={this.handleUpdate}
           updateMain={this.updateMain}
+          countries_list={this.state.countries_list}
         />
       </div>
     )

@@ -16,16 +16,28 @@ let Address = React.createClass({
   country() {
     if(this.state.editable) {
       return (
-        <input name="country" onChange={this.onChange} type="text" defaultValue={this.state.country} className='form-control'/>
+        <select onChange={this.onChange} name="country" className='form-control'>
+          {this.countries_list_display()}
+        </select>
       )
     } else {
       return (
         <h4 onClick={this.handleClick}  className="country-text" >
           {this.state.country}
-          <i className="fa fa-pencil" id="edit-pencil" aria-hidden="true"></i>
+          <i className="fa fa-pencil edit-pencil" aria-hidden="true"></i>
         </h4>
       )
     }
+  },
+
+  countries_list_display() {
+    return (
+      this.props.countries_list.map((country) => {
+        return (
+          <option value={country.code} key={country.name}>{country.name}</option>
+        )
+      })
+    )
   },
 
   stateProvinceCounty() {
@@ -37,7 +49,7 @@ let Address = React.createClass({
       return (
         <h4 onClick={this.handleClick} className="state-province-county-text">
           {this.state.state_province_county}
-          <i className="fa fa-pencil" id="edit-pencil" aria-hidden="true"></i>
+          <i className="fa fa-pencil edit-pencil" aria-hidden="true"></i>
         </h4>
       )
     }
@@ -52,7 +64,7 @@ let Address = React.createClass({
       return (
         <h4 onClick={this.handleClick} className="city-text">
           {this.state.city}
-          <i className="fa fa-pencil" id="edit-pencil" aria-hidden="true"></i>
+          <i className="fa fa-pencil edit-pencil" aria-hidden="true"></i>
         </h4>
       )
     }
@@ -94,7 +106,7 @@ let Address = React.createClass({
   btnGroup(){
     if (this.state.editable) {
       return (
-        <div className="btn-group pull-right" style={{"margin-bottom": "25px"}}>
+        <div className="btn-group pull-right" style={{"marginBottom": 25}}>
           <br/>
           { this.updateButton() }
           { this.cancelButton() }

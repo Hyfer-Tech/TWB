@@ -34,7 +34,7 @@ let ContactInfo = React.createClass({
       return (
         <h4 onClick={this.handleClick} className="email-text" >
           {this.state.email}
-          <i className="fa fa-pencil" id="edit-pencil" aria-hidden="true"></i>
+          <i className="fa fa-pencil edit-pencil" aria-hidden="true"></i>
         </h4>
       )
     }
@@ -49,7 +49,7 @@ let ContactInfo = React.createClass({
       return (
         <h4 onClick={this.handleClick} className="phone-text">
           {this.state.phone}
-          <i className="fa fa-pencil" id="edit-pencil" aria-hidden="true"></i>
+          <i className="fa fa-pencil edit-pencil" aria-hidden="true"></i>
         </h4>
       )
     }

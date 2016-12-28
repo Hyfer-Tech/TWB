@@ -1,5 +1,5 @@
 class Broker < ApplicationRecord
-  # include Searchable
+  include CountriesList
   BID_LIMIT = 10
 
   acts_as_taggable
@@ -29,5 +29,5 @@ class Broker < ApplicationRecord
   def suggested_users
     return BusinessUser
   end
-  
+
 end

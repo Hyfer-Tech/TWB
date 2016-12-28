@@ -1,8 +1,7 @@
 class ForwardFreight < ApplicationRecord
-
+  include CountriesList
   BID_LIMIT = 15
 
-  # include Searchable
   acts_as_taggable
 
   # Include default devise modules. Others available are:
@@ -32,7 +31,7 @@ class ForwardFreight < ApplicationRecord
   def bid_limit_exceeded?
     return account_type == 0 && bids.this_month.count >= BID_LIMITr
   end
-  
+
   def suggested_users
     return BusinessUser
   end

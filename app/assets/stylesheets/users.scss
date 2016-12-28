@@ -119,8 +119,19 @@
   margin-bottom: 5px;
 }
 
-#edit-pencil {
-  padding:10px;
+.edit-pencil {
+  padding-left:10px;
+  display: none !important;
+}
+
+.description-text:hover .edit-pencil,
+.email-text:hover .edit-pencil,
+.phone-text:hover .edit-pencil,
+.country-text:hover .edit-pencil,
+.city-text:hover .edit-pencil,
+.state-province-county-text:hover .edit-pencil
+{
+  display: inline-block !important;
 }
 
 .description-text:hover,
@@ -130,5 +141,5 @@
 .city-text:hover,
 .state-province-county-text:hover
 {
-  background-color:#EEEEEE;
+  background-color: #EEEEEE;
 }
