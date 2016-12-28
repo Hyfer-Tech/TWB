@@ -1,9 +1,21 @@
-<div class="row">
-  <div class="col-xs-12 col-md-6 col-md-offset-3">
-    <h1>Choose Products to Ship</h1>
+<section class="mg-100">
+    <div class="container-fluid">
 
-    <p><small>* To add a new product, <%= link_to 'click here', new_product_path %></small>.</p>
+        <!-- Sidebar -->
+        <div class="col-xs-12 col-md-3">
+            <%= render 'layouts/sidebar' %>
+        </div>
 
-    <%= render 'form' %>
-  </div>
-</div>
+   		  <div class="col-xs-12 col-md-7 col-md-offset-1 color-white dashboard-content">
+            <div class="row">
+                <div class="col-xs-12 col-md-6 col-md-offset-3">
+                  <h1>Choose Products to Ship</h1>
+
+                  <p><small>* To add a new product, <%= link_to 'click here', new_product_path %></small>.</p>
+
+                  <%= render 'form' %>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

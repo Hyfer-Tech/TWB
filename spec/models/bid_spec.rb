@@ -5,7 +5,7 @@ RSpec.describe Bid, type: :model do
   	context "when bids have not been accepted" do
 	  	it "updates the bid to not be accepted" do
 	  		business_user = FactoryGirl.create(:business_user)
-	  		job = FactoryGirl.create(:job, agent_id: nil)
+	  		job = FactoryGirl.create(:job, agent_id: nil, client_id: business_user.id)
 	  		broker = FactoryGirl.create(:broker)
 	  		bid = FactoryGirl.create(:bid, job_id: job.id, bidder_id: broker.id)
 
@@ -17,11 +17,11 @@ RSpec.describe Bid, type: :model do
     context "when the bids have been accepted" do
     	it "updates the bid to be accepted" do
 	  		business_user = FactoryGirl.create(:business_user)
-	  		job = FactoryGirl.create(:job, agent_id: nil)
+	  		job = FactoryGirl.create(:job, agent_id: nil, client_id: business_user.id)
 	  		broker = FactoryGirl.create(:broker)
 	  		bid = FactoryGirl.create(:bid, job_id: job.id, bidder_id: broker.id)
 
-	  		bid.toggle_accept!(bid)
+	  		bid.toggle_accept!(bid.accepted)
 
 	  		expect(bid.accepted).to eq(true)
 	  		expect(bid.job.agent_id).to eq(broker.id)
