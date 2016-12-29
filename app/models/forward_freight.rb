@@ -1,5 +1,7 @@
 class ForwardFreight < ApplicationRecord
   include CountriesList
+  include Storext.model
+
   BID_LIMIT = 15
 
   acts_as_taggable
@@ -27,6 +29,11 @@ class ForwardFreight < ApplicationRecord
 
 
   has_many :uploads, as: :user
+
+  store_attributes :settings do
+	  show_phone_number Boolean, default:false
+	  show_email_id Boolean, default:false
+  end
 
   def bid_limit_exceeded?
     return account_type == 0 && bids.this_month.count >= BID_LIMITr

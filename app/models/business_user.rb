@@ -1,5 +1,7 @@
 class BusinessUser < ApplicationRecord
   include CountriesList
+  include Storext.model
+
   acts_as_taggable
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -21,4 +23,10 @@ class BusinessUser < ApplicationRecord
 
   has_many :jobs, as: :client
   has_many :uploads, as: :user
+
+  store_attributes :settings do
+	  show_phone_number Boolean, default:false
+	  show_email_id Boolean, default:false
+  end
+
 end
