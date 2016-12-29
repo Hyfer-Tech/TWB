@@ -240,6 +240,33 @@ a.btn-download-app .main-text,
 }
 .navbar-default{
   background-color: #3b3d41;
+
+}
+.navbar-brand{
+  color:#fff !important;
+  font-size: 20px;
+  font-weight: 500;
+  font-family: 'Roboto', sans-serif;
+  padding-top: 22px;
+}
+.mobile-menu{
+  	display:inline
+}
+.mobile-menu li{
+  padding-top: 7px;
+  padding-bottom: 7px;
+  display: block;
+}
+.mobile-menu li a{
+  text-decoration: none;
+  color: #777;
+  display: block;
+  text-align: center;
+  font-size: 20px;
+}
+.mobile-menu li:hover{
+  background: rgba(255,255,255,0.2);
+
 }
 .label-new {
   background: #51a852;
