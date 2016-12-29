@@ -58,6 +58,9 @@ gem 'acts-as-taggable-on', '~> 4.0'
 #chosen-rails gem
 gem 'chosen-rails'
 
+#storext
+gem 'storext'
+
 # Draper gem for decorator
 gem 'activemodel-serializers-xml', github: 'rails/activemodel-serializers-xml'
 gem 'draper', github: 'drapergem/draper'
@@ -108,4 +111,3 @@ gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 source 'https://rails-assets.org' do
   gem 'rails-assets-datetimepicker'
 end
-
