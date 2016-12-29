@@ -14,6 +14,13 @@ let ContactInfo = React.createClass({
     this.setState({ [name]: e.target.value });
   },
 
+  onChangeBoolean(e) {
+    let name = e.target.name;
+    let value = e.target.value == "true"
+
+    this.setState({ [name]: value });
+  },
+
   handleClick() {
     if(this.state.editable) {
       let updated_user_info = { email: this.state.email, phone: this.state.phone, show_email: this.state.show_email, show_phone_number: this.state.show_phone_number }
@@ -35,7 +42,7 @@ let ContactInfo = React.createClass({
             <input name="email" onChange={this.onChange} type="text" defaultValue={this.state.email} className='form-control'/>
           </div>
           <div className="col-xs-3">
-            <select name="show_email" defaultValue={this.state.show_email} onChange={this.onChange} className="form-control">
+            <select name="show_email" defaultValue={this.state.show_email} onChange={this.onChangeBoolean} className="form-control">
               <option value="false">Hide</option>
               <option value="true">Show</option>
             </select>
@@ -61,7 +68,7 @@ let ContactInfo = React.createClass({
             <input name="phone" type="text" onChange={this.onChange} defaultValue={this.state.phone} className='form-control'/>
           </div>
           <div className="col-xs-3">
-            <select name="show_phone_number" defaultValue={this.state.show_phone_number} onChange={this.onChange} className="form-control">
+            <select name="show_phone_number" defaultValue={this.state.show_phone_number} onChange={this.onChangeBoolean} className="form-control">
               <option value="false">Hide</option>
               <option value="true">Show</option>
             </select>
@@ -72,7 +79,7 @@ let ContactInfo = React.createClass({
       return (
         <h4 onClick={this.handleClick} className="phone-text">
           {this.state.phone}
-          {this.props.status_icon(this.state.show_phone_number)}
+          {this.props.status_icon( this.state.show_phone_number)}
           <i className="fa fa-pencil edit-pencil" aria-hidden="true"></i>
         </h4>
       )
