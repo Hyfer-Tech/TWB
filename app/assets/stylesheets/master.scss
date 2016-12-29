@@ -6,8 +6,8 @@
  * Twitter: @3rdwave_themes
 */
 /* ======= Base ======= */
-/*html { 
-  background: url(bg-map.png) no-repeat center center fixed; 
+/*html {
+  background: url(bg-map.png) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -139,6 +139,7 @@ a.btn-ghost-alt:focus,
   color: #fff;
   outline: none;
 }
+
 a.btn-social,
 .btn-social {
   background: #159bc0;
@@ -236,6 +237,9 @@ a.btn-download-app .main-text,
   display: block;
   font-size: 16px;
   text-align: left;
+}
+.navbar-default{
+  background-color: #3b3d41;
 }
 .label-new {
   background: #51a852;
@@ -627,7 +631,7 @@ textarea {
   min-height: 70px;
 }
 .header .logo {
-  font-size: 20px;
+  font-size: 2em;
   font-weight: 500;
   float: left;
   margin-left: -50px;
@@ -657,7 +661,7 @@ textarea {
   background-color: #fff;
   height: 3px;
 }
-.main-nav .nav .nav-item {  
+.main-nav .nav .nav-item {
   font-weight: normal;
   text-transform: uppercase;
   font-size: 12px;
