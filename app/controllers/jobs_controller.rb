@@ -5,10 +5,10 @@ class JobsController < ApplicationController
 	def index
 		if params[:tag]
 			@jobs = Job.tagged_with(params[:tag]).includes(:shipment, :client, shipment: :products, shipment: :shipment_products)
-  	else
-		  @jobs = Job.all.includes(:shipment, :client, shipment: :products, shipment: :shipment_products)
-    end
-    @user_suggestions = current_user.suggested_users.tagged_with(current_user.tag_list, :any => true).order("RANDOM()").limit(10)
+	  	else
+			  @jobs = Job.all.includes(:shipment, :client, shipment: :products, shipment: :shipment_products)
+	    end
+	    @user_suggestions = current_user.suggested_users.tagged_with(current_user.tag_list, :any => true).order("RANDOM()").limit(10)
 	end
 
 	def new
@@ -32,7 +32,7 @@ class JobsController < ApplicationController
 	private
 
 	def jobs_params
-		params.require(:job).permit(:job_title, :job_type, :shipment_id, :date_of_shipment, :location_of_shipment, :place_being_shipped_to, :border_expected_to_cross, :tag_list => []).merge(client_id: current_user.id, client_type: current_user.class.name, shipment_id: params[:shipment_id])
+		params.require(:job).permit(:job_title, :job_type, :shipment_id, :date_of_shipment, :location_of_shipment, :place_being_shipped_to, :border_expected_to_cross, :price, :tag_list => []).merge(client_id: current_user.id, client_type: current_user.class.name, shipment_id: params[:shipment_id])
 	end
 
 	def ensure_business_user!

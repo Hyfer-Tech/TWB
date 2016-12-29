@@ -19,12 +19,15 @@ Rails.application.routes.draw do
   get 'search/:tag', to: 'dashboard#search', as: :tag
   get 'favorites',   to: 'dashboard#favorites'
   get 'job_tag/:tag', to: 'jobs#index', as: :job_tag
+  # get 'searches/:search',to: 'searches#index',as: :searches
+  namespace :jobs do
+    get '/search/',to: 'searches#index', as: :searches
+  end
 
   namespace :user do
     resources :jobs, only: :index
     resources :applications, only: :index
   end
-
 
   resources :jobs, only: [:index, :show] do
     resources :bids, only: [:new, :create, :index, :destroy]  
@@ -42,7 +45,9 @@ Rails.application.routes.draw do
   resources :products, only: [:new, :create, :show]
 
   resources :taggings, only: :create
-  resources :brokers, only: :show
+  resources :brokers, only: :show do
+    get 'Clients', to: "brokers#past_clients"
+  end
   resources :forward_freights, only: :show
   resources :business_users, only: :show
 

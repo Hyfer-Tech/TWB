@@ -5,6 +5,7 @@ RSpec.describe BrokersController, type: :controller do
     it "renders the show page" do
       broker = FactoryGirl.create(:broker)
 
+      sign_in broker
       get :show, id: broker.id
 
       expect(response).to render_template :show

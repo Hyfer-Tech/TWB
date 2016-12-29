@@ -28,5 +28,4 @@ class BusinessUser < ApplicationRecord
 	  show_phone_number Boolean, default:false
 	  show_email Boolean, default:false
   end
-
 end
