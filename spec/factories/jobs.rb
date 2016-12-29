@@ -11,5 +11,6 @@ FactoryGirl.define do
     location_of_shipment "US"
     place_being_shipped_to "Canada"
     border_expected_to_cross "US"
+    price 1111.222
   end
 end

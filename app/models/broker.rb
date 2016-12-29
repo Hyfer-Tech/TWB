@@ -29,5 +29,8 @@ class Broker < ApplicationRecord
   def suggested_users
     return BusinessUser
   end
-  
+
+  def self.successful_bids(current_user)
+    Bid.where('accepted = ? AND bidder_id = ? AND bidder_type = ?', true, current_user.id, current_user.class.name).includes(:job, job: :client)
+  end
 end

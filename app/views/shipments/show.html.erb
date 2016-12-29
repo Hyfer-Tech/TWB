@@ -1,13 +1,24 @@
-<div class="shipment-container">
-	<h5><%= @shipment.created_at.strftime("%m/%d/%Y %l:%M %p") %></h5>
-	<div class="row">
-		<% @shipment.products.each do |product| %>
-			<div class="col-xs-12 col-md-3">
-				<%= image_tag product.featured_image.url, class: 'img-responsive' %>
-				<h4 class="text-center"><%= link_to product.title, product %></h4>						
-			</div>
-		<% end %>
-	</div>
+<section class="ml-60">
+    <div class="container-fluid">
 
-	<%= link_to 'Create Job', new_shipment_job_path(@shipment), class: 'btn btn-sm btn-success btn-create-job' %>
-</div><!-- shipment-container -->
+        <!-- Sidebar -->
+        <div class="col-xs-12 col-md-3">
+            <%= render 'layouts/sidebar' %>
+        </div>
+
+				<div class="col-md-8 col-md-offset-1 color-white dashboard-content min-height-210">
+					<h5><%= @shipment.created_at.strftime("%m/%d/%Y %l:%M %p") %></h5>
+					<div class="row">
+						<% @shipment.products.each do |product| %>
+							<div class="col-xs-12 col-md-3">
+								<%= image_tag product.featured_image.url, class: 'img-responsive' %>
+								<h4 class="text-center"><%= link_to product.title, product %></h4>
+							</div>
+						<% end %>
+					</div>
+
+					<%= link_to 'Create Job', new_shipment_job_path(@shipment), class: 'btn btn-sm btn-success btn-create-job' %>
+				</div><!-- shipment-container -->
+
+		</div>
+</section>

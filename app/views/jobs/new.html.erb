@@ -32,9 +32,20 @@
 					<%= f.input :border_expected_to_cross, as: :select, collection: Job::EXPECTED_BORDERS_TO_BE_CROSSED %>
 				</div>
 
-				<div class="col-xs-12">
-					<%= f.submit class: "btn btn-success pull-right" %>
+				<div class="col-xs-12 col-md-6">
+					<%= f.input :price, required: true %>
 				</div>
+			</div>
+
+			<div class="row">
+		        <div class="col-xs-12 col-md-12">
+		          <%= f.input :tag_list, collection: ActsAsTaggableOn::Tag.all.map(&:name),
+		            input_html: { class: 'chosen-select', multiple: true } %>
+		        </div>
+			</div>
+
+			<div class="col-xs-12">
+				<%= f.submit class: "btn btn-success pull-right" %>
 			</div>
 		<% end %>
 	</div>

@@ -19,5 +19,7 @@ module Twb
     end
 
     config.react.addons = true
+
+    config.autoload_paths << Rails.root.join('services')
   end
 end

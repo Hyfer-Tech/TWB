@@ -5,15 +5,12 @@
 	   <%= f.association :product, collection: current_user.products.all, label: false, prompt: 'Choose an existing Product', input_html: {class: 'chosen-select', style: 'width: auto'} %>
     </div>
     <div class="col-xs-12 col-md-5">
-	   <%= f.input :quantity %>  
+	    <%= f.input :quantity %>
     </div>
-    <div class="col-xs-12 col-md-2 trash">  
+    <div class="col-xs-12 col-md-2 trash">
       <%= link_to_remove_association '<i class="fa fa-trash" aria-hidden="true"></i>'.html_safe, f, class: 'btn btn-sm btn-danger btn-remove' %>
     </div>
   </div>
-  
-
-
 </div>
 
 
