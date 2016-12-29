@@ -109,3 +109,5 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-datetimepicker'
 end
 
+gem 'bootstrap-will_paginate'
+gem 'will_paginate'
