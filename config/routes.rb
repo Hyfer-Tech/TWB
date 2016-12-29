@@ -30,7 +30,7 @@ Rails.application.routes.draw do
   end
 
   resources :jobs, only: [:index, :show] do
-    resources :bids, only: [:new, :create, :index, :destroy]  
+    resources :bids, only: [:new, :create, :index, :destroy]
   end
 
 
@@ -42,7 +42,7 @@ Rails.application.routes.draw do
     resources :jobs, only: [:new, :create]
   end
 
-  resources :products, only: [:new, :create, :show]
+  resources :products, only: [:new, :create, :show, :index, :edit, :update]
 
   resources :taggings, only: :create
   resources :brokers, only: :show do

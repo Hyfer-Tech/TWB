@@ -1,80 +1,81 @@
 <section class="ml-60">
     <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-xs-12 col-md-3">
+                <%= render 'layouts/sidebar' %>
+            </div>
 
-        <!-- Sidebar -->
-        <div class="col-xs-12 col-md-3">
-            <%= render 'layouts/sidebar' %>
-        </div>
+       		  <div class="col-xs-12 col-md-8 col-md-offset-1 color-white dashboard-content rendered-content">
+      				<h1>Add a New Product</h1>
 
-   		  <div class="col-xs-12 col-md-8 col-md-offset-1 color-white dashboard-content rendered-content">
-  				<h1>Add a New Product</h1>
+      				<%= simple_form_for @product do |f| %>
+      					<div class="row">
+      						<div class="col-xs-12 col-md-6">
+      							<%= f.input :title, label: false, placeholder: 'Title' %>
+      						</div>
 
-  				<%= simple_form_for @product do |f| %>
-  					<div class="row">
-  						<div class="col-xs-12 col-md-6">
-  							<%= f.input :title, label: false, placeholder: 'Title' %>
-  						</div>
+      						<div class="col-xs-12 col-md-6">
+      							<%= f.input :price, label: false, placeholder: 'Price' %>
+      						</div>
+      					</div>
 
-  						<div class="col-xs-12 col-md-6">
-  							<%= f.input :price, label: false, placeholder: 'Price' %>
-  						</div>
-  					</div>
+      					<div class="row">
+      						<div class="col-xs-12 col-md-6">
+      							<%= f.input :grams, label: false, placeholder: 'Grams' %>
+      						</div>
 
-  					<div class="row">
-  						<div class="col-xs-12 col-md-6">
-  							<%= f.input :grams, label: false, placeholder: 'Grams' %>
-  						</div>
+      						<div class="col-xs-12 col-md-6">
+      							<%= f.input :height, label: false, placeholder: 'Height' %>
+      						</div>
+      					</div>
 
-  						<div class="col-xs-12 col-md-6">
-  							<%= f.input :height, label: false, placeholder: 'Height' %>
-  						</div>
-  					</div>
+      					<div class="row">
+      						<div class="col-xs-12 col-md-6">
+      							<%= f.input :width, label: false, placeholder: 'Width' %>
+      						</div>
 
-  					<div class="row">
-  						<div class="col-xs-12 col-md-6">
-  							<%= f.input :width, label: false, placeholder: 'Width' %>
-  						</div>
+      						<div class="col-xs-12 col-md-6">
+      							<%= f.input :compare_at_price, label: false, placeholder: 'Compare At Price' %>
+      						</div>
+      					</div>
 
-  						<div class="col-xs-12 col-md-6">
-  							<%= f.input :compare_at_price, label: false, placeholder: 'Compare At Price' %>
-  						</div>
-  					</div>
+      					<div class="row">
+      						<div class="col-xs-12 col-md-6">
+      							<%= f.input :origin_of_manufacture, label: false, placeholder: 'Origin of Manufacture (Location)' %>
+      						</div>
 
-  					<div class="row">
-  						<div class="col-xs-12 col-md-6">
-  							<%= f.input :origin_of_manufacture, label: false, placeholder: 'Origin of Manufacture (Location)' %>
-  						</div>
-
-  						<div class="col-xs-12 col-md-6">
-  							<%= f.input :materials_used, label: false, placeholder: 'Materials Used' %>
-  						</div>
-  					</div>
+      						<div class="col-xs-12 col-md-6">
+      							<%= f.input :materials_used, label: false, placeholder: 'Materials Used' %>
+      						</div>
+      					</div>
 
 
-  					<div class="row">
-  						<div class="col-xs-12 col-md-6">
-  							<%= f.input :date_of_manufacture, label: false, as: :string, placeholder: 'Date of Manufacture', class: "datepicker" %>
-  						</div>
+      					<div class="row">
+      						<div class="col-xs-12 col-md-6">
+      							<%= f.input :date_of_manufacture, label: false, as: :string, placeholder: 'Date of Manufacture', class: "datepicker" %>
+      						</div>
 
-              <div class="col-xs-12 col-md-6">
-                <%= f.input :product_code, label: false, placeholder: "Product ID" %>
-              </div>
-  					</div>
+                  <div class="col-xs-12 col-md-6">
+                    <%= f.input :product_code, label: false, placeholder: "Product ID" %>
+                  </div>
+      					</div>
 
-  					<div class="row">
-  						<div class="col-xs-12 col-md-6">
-  							<%= f.input :taxable, as: :boolean %>
-  						</div>
+      					<div class="row">
+      						<div class="col-xs-12 col-md-6">
+      							<%= f.input :taxable, as: :boolean %>
+      						</div>
 
-  						<div class="col-xs-12 col-md-6">
-  							<%= f.input :available, as: :boolean %>
-  						</div>
-  					</div>
+      						<div class="col-xs-12 col-md-6">
+      							<%= f.input :available, as: :boolean %>
+      						</div>
+      					</div>
 
-  					<%= f.input :featured_image %>
-  					<%= f.button :submit, class: 'btn btn-primary pull-right' %>
-  				<% end %>
-			</div><!-- column -->
+      					<%= f.input :featured_image %>
+      					<%= f.button :submit, class: 'btn btn-primary pull-right' %>
+      				<% end %>
+    			</div><!-- column -->
+      </div>
     </div>
 </section>
 

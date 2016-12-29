@@ -1,40 +1,41 @@
 <section class="ml-60">
     <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-xs-12 col-md-3">
+                <%= render 'layouts/sidebar' %>
+            </div>
 
-        <!-- Sidebar -->
-        <div class="col-xs-12 col-md-3">
-            <%= render 'layouts/sidebar' %>
+       		  <div class="col-xs-12 col-md-8 col-md-offset-1 color-white dashboard-content rendered-content">
+    						<h1>Your Shipments<%= link_to 'Add Shipment', new_shipment_path, class: ' pull-right btn btn-sm btn-success' %></h1>
+
+    						<hr>
+    						<% if @shipments.present? %>
+    							<div class="row">
+    								<% @shipments.each do |shipment| %>
+    									<div class="col-xs-12 col-md-4">
+    										<div class="shipment-container">
+    											<h5><%= shipment.created_at.strftime("%m/%d/%Y %l:%M %p") %></h5>
+    											<div class="row">
+    												<% shipment.products.each do |product| %>
+    													<div class="col-xs-12 col-md-3">
+    														<% if product.featured_image.present? %>
+    															<%= image_tag product.featured_image.url, class: 'img-responsive' %>
+    														<% end %>
+    														<h4 class="text-center"><%= link_to product.title, product %></h4>
+    													</div>
+    												<% end %>
+    											</div>
+
+    											<%= link_to 'Create Job', new_shipment_job_path(shipment), class: 'btn btn-sm btn-success btn-create-job' %>
+    										</div><!-- shipment-container -->
+    									</div><!-- col-xs-12 col-md-4 -->
+    								<% end %>
+    							</div>
+    						<% else %>
+    							<%= link_to 'Create Shipment', new_shipment_path, class: 'btn btn-sm btn-success btn-create-job' %>
+    						<% end %>
+    				</div>
         </div>
-
-   		  <div class="col-xs-12 col-md-8 col-md-offset-1 color-white dashboard-content rendered-content">
-						<h1>Your Shipments</h1>
-
-						<hr>
-						<% if @shipments.present? %>
-							<div class="row">
-								<% @shipments.each do |shipment| %>
-									<div class="col-xs-12 col-md-4">
-										<div class="shipment-container">
-											<h5><%= shipment.created_at.strftime("%m/%d/%Y %l:%M %p") %></h5>
-											<div class="row">
-												<% shipment.products.each do |product| %>
-													<div class="col-xs-12 col-md-3">
-														<% if product.featured_image.present? %>
-															<%= image_tag product.featured_image.url, class: 'img-responsive' %>
-														<% end %>
-														<h4 class="text-center"><%= link_to product.title, product %></h4>
-													</div>
-												<% end %>
-											</div>
-
-											<%= link_to 'Create Job', new_shipment_job_path(shipment), class: 'btn btn-sm btn-success btn-create-job' %>
-										</div><!-- shipment-container -->
-									</div><!-- col-xs-12 col-md-4 -->
-								<% end %>
-							</div>
-						<% else %>
-							<%= link_to 'Create Shipment', new_shipment_path, class: 'btn btn-sm btn-success btn-create-job' %>
-						<% end %>
-				</div>
 		</div>
 </section>

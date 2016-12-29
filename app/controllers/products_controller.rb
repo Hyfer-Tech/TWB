@@ -1,5 +1,9 @@
-class ProductsController < ApplicationController	
+class ProductsController < ApplicationController
 	before_action :authenticate_business_user!
+
+	def index
+		@products = Product.all.order("title ASC")
+	end
 
 	def new
 		@product = Product.new
@@ -15,11 +19,27 @@ class ProductsController < ApplicationController
 		end
 	end
 
+	def edit
+		@product = Product.find(params[:id])
+	end
+
+	def update
+		@product = Product.find(params[:id])
+		@product.update(product_params)
+
+		if @product.valid?
+			flash[:updated] = "Product has been updated!"
+			redirect_to products_path
+		else
+			render :new, status: :unprocessable_entity
+		end
+	end
+
 	private
 	def product_params
 		params.require(:product).permit(
-			:title, 
-			:taxable, 
+			:title,
+			:taxable,
 			:featured_image,
 			:available, :price,
 		 	:grams,
