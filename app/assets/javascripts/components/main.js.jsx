@@ -29,6 +29,18 @@ let Main = React.createClass({
     this.setState(updated_user_info);
   },
 
+  status_icon(data) {
+    if(data){
+      return (
+        <i className="fa fa-globe" aria-hidden="true"></i>
+      )
+    } else {
+      return (
+        <i className="fa fa-lock" aria-hidden="true"></i>
+      )
+    }
+  },
+
   render() {
     return (
       <div>
@@ -44,6 +56,7 @@ let Main = React.createClass({
           updateMain={this.updateMain}
           show_email={this.state.show_email}
           show_phone_number={this.state.show_phone_number}
+          status_icon={this.status_icon}
         />
         <Address
           country={this.state.country}
