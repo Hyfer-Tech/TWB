@@ -26,7 +26,7 @@ class BusinessUser < ApplicationRecord
 
   store_attributes :settings do
 	  show_phone_number Boolean, default:false
-	  show_email_id Boolean, default:false
+	  show_email Boolean, default:false
   end
 
 end

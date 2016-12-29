@@ -32,7 +32,7 @@ class ForwardFreight < ApplicationRecord
 
   store_attributes :settings do
 	  show_phone_number Boolean, default:false
-	  show_email_id Boolean, default:false
+	  show_email Boolean, default:false
   end
 
   def bid_limit_exceeded?

@@ -7,7 +7,9 @@ let Main = React.createClass({
       country: this.props.country,
       state_province_county: this.props.state_province_county,
       city: this.props.city,
-      countries_list: this.props.countries_list
+      countries_list: this.props.countries_list,
+      show_email: this.props.show_email,
+      show_phone_number: this.props.show_phone_number
     }
   },
 
