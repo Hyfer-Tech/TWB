@@ -4,6 +4,8 @@ let ContactInfo = React.createClass({
       editable: false,
       email: this.props.email,
       phone: this.props.phone,
+      show_email: this.props.show_email,
+      show_phone_number: this.props.show_phone_number
     }
   },
 
@@ -14,7 +16,7 @@ let ContactInfo = React.createClass({
 
   handleClick() {
     if(this.state.editable) {
-      let updated_user_info = { email: this.state.email, phone: this.state.phone }
+      let updated_user_info = { email: this.state.email, phone: this.state.phone, show_email: this.state.show_email, show_phone_number: this.state.show_phone_number }
       this.props.handleUpdate(updated_user_info);
       this.props.updateMain(updated_user_info);
     }
@@ -28,12 +30,23 @@ let ContactInfo = React.createClass({
   email() {
     if(this.state.editable) {
       return (
-        <input name="email" onChange={this.onChange} type="text" defaultValue={this.state.email} className='form-control'/>
+        <div>
+          <div className="col-xs-9">
+            <input name="email" onChange={this.onChange} type="text" defaultValue={this.state.email} className='form-control'/>
+          </div>
+          <div className="col-xs-3">
+            <select name="show_email" onChange={this.onChange} className="form-control">
+              <option value="false">Hide</option>
+              <option value="true">Show</option>
+            </select>
+          </div>
+        </div>
       )
     } else {
       return (
         <h4 onClick={this.handleClick} className="email-text" >
           {this.state.email}
+          {this.condition_icon(this.state.show_email)}
           <i className="fa fa-pencil edit-pencil" aria-hidden="true"></i>
         </h4>
       )
@@ -43,14 +56,37 @@ let ContactInfo = React.createClass({
   phoneNumber() {
     if(this.state.editable) {
       return (
-        <input name="phone" type="text" onChange={this.onChange} defaultValue={this.state.phone} className='form-control'/>
+        <div>
+          <div className="col-xs-9">
+            <input name="phone" type="text" onChange={this.onChange} defaultValue={this.state.phone} className='form-control'/>
+          </div>
+          <div className="col-xs-3">
+            <select name="show_phone_number" onChange={this.onChange} className="form-control">
+              <option value="false">Hide</option>
+              <option value="true">Show</option>
+            </select>
+          </div>
+        </div>
       )
     } else {
       return (
         <h4 onClick={this.handleClick} className="phone-text">
           {this.state.phone}
+          {this.condition_icon(this.state.show_phone_number)}
           <i className="fa fa-pencil edit-pencil" aria-hidden="true"></i>
         </h4>
+      )
+    }
+  },
+
+  condition_icon(data) {
+    if(data){
+      return (
+        <i className="fa fa-globe" aria-hidden="true"></i>
+      )
+    } else {
+      return (
+        <i className="fa fa-lock" aria-hidden="true"></i>
       )
     }
   },

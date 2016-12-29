@@ -42,6 +42,8 @@ let Main = React.createClass({
           phone={this.state.phone}
           handleUpdate={this.handleUpdate}
           updateMain={this.updateMain}
+          show_email={this.state.show_email}
+          show_phone_number={this.state.show_phone_number}
         />
         <Address
           country={this.state.country}
