@@ -18,6 +18,7 @@ class BusinessUser < ApplicationRecord
 
   acts_as_follower
   acts_as_followable
+  acts_as_messageable
 
   has_many :jobs, as: :client
   has_many :uploads, as: :user

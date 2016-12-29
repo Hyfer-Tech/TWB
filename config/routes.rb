@@ -30,7 +30,7 @@ Rails.application.routes.draw do
   end
 
   resources :jobs, only: [:index, :show] do
-    resources :bids, only: [:new, :create, :index, :destroy]  
+    resources :bids, only: [:new, :create, :index, :destroy]
   end
 
 
@@ -60,4 +60,6 @@ Rails.application.routes.draw do
   post 'relationships', to: 'relationships#create'
   delete 'relationships', to: 'relationships#destroy'
 
+  resources :conversations, only: [:index, :show, :destroy]
+  resources :messages, only: [:new, :create]
 end
