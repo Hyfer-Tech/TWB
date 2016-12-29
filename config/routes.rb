@@ -60,6 +60,10 @@ Rails.application.routes.draw do
   post 'relationships', to: 'relationships#create'
   delete 'relationships', to: 'relationships#destroy'
 
-  resources :conversations, only: [:index, :show, :destroy]
+  resources :conversations, only: [:index, :show, :destroy] do
+    member do
+      post :reply
+    end
+  end
   resources :messages, only: [:new, :create]
 end
