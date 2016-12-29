@@ -2,6 +2,7 @@ class Broker < ApplicationRecord
   include CountriesList
   include Storext.model
 
+
   BID_LIMIT = 10
 
   acts_as_taggable
