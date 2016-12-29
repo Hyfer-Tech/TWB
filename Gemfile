@@ -111,3 +111,4 @@ end
 
 gem 'bootstrap-will_paginate'
 gem 'will_paginate'
+gem 'mailboxer'
