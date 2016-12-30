@@ -22,13 +22,13 @@
     														<% if product.featured_image.present? %>
     															<%= image_tag product.featured_image.url, class: 'img-responsive' %>
     														<% end %>
-    														<h4 class="text-center"><%= link_to product.title, product %></h4>
+      													<%= link_to product.title, product %>
     													</div>
     												<% end %>
     											</div>
 
-    											<%= link_to 'Create Job', new_shipment_job_path(shipment), class: 'btn btn-sm btn-success btn-create-job' %>
     										</div><!-- shipment-container -->
+                        <%= link_to 'Create Job', new_shipment_job_path(shipment), class: 'btn btn-sm btn-success btn-create-job' %>
     									</div><!-- col-xs-12 col-md-4 -->
     								<% end %>
     							</div>

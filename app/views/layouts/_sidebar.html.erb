@@ -6,28 +6,28 @@
     <%= link_to '<i class="fa fa-search" aria-hidden="true"></i> Search'.html_safe, search_path %>
   </li>
   <li>
-    <%= link_to '<i class="fa fa-bell-o" aria-hidden="true"></i> Notifications'.html_safe, '#' %>     
+    <%= link_to '<i class="fa fa-bell-o" aria-hidden="true"></i> Notifications'.html_safe, '#' %>
   </li>
   <li>
-    <%= link_to '<i class="fa fa-envelope" aria-hidden="true"></i> Messages'.html_safe, '#' %>     
+    <%= link_to '<i class="fa fa-envelope" aria-hidden="true"></i> Messages'.html_safe, '#' %>
   </li>
-  
+
   <% if business_user_signed_in? %>
     <li>
-      <%= link_to '<i class="fa fa-plus-circle" aria-hidden="true"></i> Post a Job'.html_safe, shipments_path %>     
+      <%= link_to '<i class="fa fa-plus-circle" aria-hidden="true"></i> Post a Job'.html_safe, shipments_path %>
     </li>
     <li>
-      <%= link_to '<i class="fa fa-shopping-basket" aria-hidden="true"></i> Products'.html_safe, new_product_path %>     
+      <%= link_to '<i class="fa fa-shopping-basket" aria-hidden="true"></i> Products'.html_safe, products_path %>     
     </li>
     <li>
-      <%= link_to '<i class="fa fa-truck" aria-hidden="true"></i> Shipments'.html_safe, shipments_path %>     
+      <%= link_to '<i class="fa fa-truck" aria-hidden="true"></i> Shipments'.html_safe, shipments_path %>
     </li>
   <% end %>
-  
+
   <li>
-    <%= link_to '<i class="fa fa-user" aria-hidden="true"></i> Matches'.html_safe, '#' %>     
-  </li>  
+    <%= link_to '<i class="fa fa-user" aria-hidden="true"></i> Matches'.html_safe, '#' %>
+  </li>
   <li>
-    <%= link_to '<i class="fa fa-history" aria-hidden="true"></i> History'.html_safe, '#' %>          
+    <%= link_to '<i class="fa fa-history" aria-hidden="true"></i> History'.html_safe, '#' %>
   </li>
 </ul>
