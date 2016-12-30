@@ -14,8 +14,8 @@
     							<div class="row">
     								<% @shipments.each do |shipment| %>
     									<div class="col-xs-12 col-md-4">
-    										<div class="shipment-container">
-    											<h5><%= shipment.created_at.strftime("%m/%d/%Y %l:%M %p") %></h5>
+    										<div class="shipment-container" style="color: black;">
+    											<h5><%= link_to shipment.title, shipment_path(shipment) %> <%= shipment.created_at.strftime("%m/%d/%Y %l:%M %p") %></h5>
     											<div class="row">
     												<% shipment.products.each do |product| %>
     													<div class="col-xs-12 col-md-3">
