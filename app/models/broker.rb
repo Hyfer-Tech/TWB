@@ -13,4 +13,5 @@ class Broker < ApplicationRecord
   has_many :jobs, as: :agent
   has_many :uploads, as: :user
   has_many :business_user, through: :rating
+  has_many :notifications, foreign_key: :recipient_id
 end
