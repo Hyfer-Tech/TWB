@@ -23,11 +23,10 @@ class ForwardFreight < ApplicationRecord
   acts_as_follower
 
   has_many :jobs, as: :agent
-
   has_many :bids, as: :bidder
-
-
   has_many :uploads, as: :user
+  has_many :business_user, through: :rating
+
 
   def bid_limit_exceeded?
     return account_type == 0 && bids.this_month.count >= BID_LIMIT
@@ -36,5 +35,4 @@ class ForwardFreight < ApplicationRecord
   def suggested_users
     return BusinessUser
   end
-
 end
