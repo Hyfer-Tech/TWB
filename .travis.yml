@@ -12,3 +12,5 @@ before_script:
 script:
 - RAILS_ENV=test bundle exec rake db:reset db:migrate --trace
 - bundle exec rspec
+addons:
+  postgresql: "9.4"
