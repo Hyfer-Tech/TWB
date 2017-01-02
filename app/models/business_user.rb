@@ -28,4 +28,8 @@ class BusinessUser < ApplicationRecord
 	  show_phone_number Boolean, default:false
 	  show_email Boolean, default:false
   end
+
+  def suggested_users
+    Broker.tagged_with(tag_list, :any => true).order("RANDOM()").limit(10) && ForwardFreight.tagged_with(tag_list, :any => true).order("RANDOM()").limit(10)
+  end
 end

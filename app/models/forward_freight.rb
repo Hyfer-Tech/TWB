@@ -40,7 +40,7 @@ class ForwardFreight < ApplicationRecord
   end
 
   def suggested_users
-    return BusinessUser
+    BusinessUser.tagged_with(tag_list, :any => true).order("RANDOM()").limit(10)
   end
 
 end
