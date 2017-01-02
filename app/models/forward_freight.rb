@@ -35,6 +35,4 @@ class ForwardFreight < ApplicationRecord
   def suggested_users
     return BusinessUser
   end
-
->>>>>>> 9952b29faae1524b6de3b73cb40f8c89c50e840c
 end
