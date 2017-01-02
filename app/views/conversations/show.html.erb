@@ -11,12 +11,11 @@
         <div class="media">
           <% message = receipt.message %>
           <div class="media-left">
-            <%= message.sender.first_name %>
+            <b><%= message.sender.first_name %></b>
           </div>
 
           <div class="media-body">
-            <h6 class="media-heading">says at <%= message.created_at.strftime("%-d %B %Y, %H:%M:%S") %><%= message.body %></h6>
-
+            <%= message.body %><div class="hide-default"><%= message.created_at.strftime("%-d %B %Y, %H:%M:%S") %></div>
           </div>
         </div>
       <% end %>
