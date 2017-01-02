@@ -37,12 +37,9 @@ Rails.application.routes.draw do
   resources :users, only: [] do
     get 'profile', to: :show, controller: 'users', on: :collection
     get 'saved', to: :saved, controller: 'users', on: :collection
+    resources :ratings
   end
-
-  resources :users do
-  resources :ratings
-  end
-
+  
   post 'relationships', to: 'relationships#create'
   delete 'relationships', to: 'relationships#destroy'
 

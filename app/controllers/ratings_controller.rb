@@ -1,5 +1,6 @@
 class RatingsController < ApplicationController
 	before_action :authenticate_any!
+	before_action :ensure_different_user_type!
 
 	def create
 		@rating = @user.ratings.new(rating_params)
@@ -8,12 +9,7 @@ class RatingsController < ApplicationController
 			redirect_to profile_users_path(@user), flash[:success] = "Your rating has been saved!"
 		else
 			redirect_to profile_users_path(@user), flash[:alert] = "Something went wrong!"
-		end
-
-		@user = User.find(params[:user_id])
-		return if current_user.class.name != @user.class.name
-		flash[:alert] = "You can't rate a #{current_user.class.name}!"
-		redirect_to profile_users_path(@user)
+		end		
 	end
 
 	def update
@@ -22,6 +18,13 @@ class RatingsController < ApplicationController
 	end
 
 	private
+
+	def ensure_different_user_type!
+		@user = User.find(params[:user_id])
+		return if current_user.class.name != @user.class.name
+		flash[:alert] = "You can't rate a #{current_user.class.name}!"
+		redirect_to profile_users_path(@user)
+	end
 
 	def rating_params
 		params.require(:value)
