@@ -9,9 +9,15 @@
 			<div class="row">
 
 				<div class="col-xs-12 col-md-6">
-					<%= f.input :date_of_shipment, as: :string, class: "datepicker", placeholder: 'Date Of Shipment' %>
+					<%= f.input :job_title %>
 				</div>
 
+				<div class="col-xs-12 col-md-6">
+					<%= f.input :date_of_shipment, as: :string, class: "datepicker", placeholder: 'Date Of Shipment' %>
+				</div>
+			</div>
+
+			<div class="row">
 				<div class="col-xs-12 col-md-6">
 					<%= f.input :location_of_shipment, placeholder: "Location of Shipment" %>
 				</div>
@@ -19,15 +25,36 @@
 				<div class="col-xs-12 col-md-6">
 					<%= f.input :place_being_shipped_to, placeholder: "Place Being Shipped To" %>
 				</div>
+			</div>
 
+			<div class="row">
 				<div class="col-xs-12 col-md-6">
 					<%= f.input :border_expected_to_cross, as: :select, collection: Job::EXPECTED_BORDERS_TO_BE_CROSSED %>
 				</div>
 
-				<div class="col-xs-12">
-					<%= f.submit class: "btn btn-success pull-right" %>
+				<div class="col-xs-12 col-md-6">
+					<%= f.input :price, required: true %>
 				</div>
+			</div>
+
+			<div class="row">
+		        <div class="col-xs-12 col-md-12">
+		          <%= f.input :tag_list, collection: ActsAsTaggableOn::Tag.all.map(&:name),
+		            input_html: { class: 'chosen-select', multiple: true } %>
+		        </div>
+			</div>
+
+			<div class="col-xs-12">
+				<%= f.submit class: "btn btn-success pull-right" %>
 			</div>
 		<% end %>
 	</div>
 </div>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+	$('#job_date_of_shipment').datepicker({
+		dateFormat: 'yy-mm-dd'
+	});
+});
+</script>

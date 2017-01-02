@@ -18,16 +18,36 @@ Rails.application.routes.draw do
   get 'search',   to: 'dashboard#search'
   get 'search/:tag', to: 'dashboard#search', as: :tag
   get 'favorites',   to: 'dashboard#favorites'
+  get 'job_tag/:tag', to: 'jobs#index', as: :job_tag
+  # get 'searches/:search',to: 'searches#index',as: :searches
+  namespace :jobs do
+    get '/search/',to: 'searches#index', as: :searches
+  end
 
-  resources :shipments, only: [:index, :show, :new, :create] do 
+  namespace :user do
+    resources :jobs, only: :index
+    resources :applications, only: :index
+  end
+
+  resources :jobs, only: [:index, :show] do
+    resources :bids, only: [:new, :create, :index, :destroy]  
+  end
+
+
+  resources :bids, only: :update do
+    resources :bid_acceptances, only: :create
+  end
+
+  resources :shipments, only: [:index, :show, :new, :create] do
     resources :jobs, only: [:new, :create]
   end
 
   resources :products, only: [:new, :create, :show]
-  resources :jobs, only: [:index]
 
   resources :taggings, only: :create
-  resources :brokers, only: :show
+  resources :brokers, only: :show do
+    get 'Clients', to: "brokers#past_clients"
+  end
   resources :forward_freights, only: :show
   resources :business_users, only: :show
 

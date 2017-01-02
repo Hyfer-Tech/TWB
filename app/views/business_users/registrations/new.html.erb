@@ -1,32 +1,119 @@
-<h2>Sign up</h2>
+<h1><center>Sign Up</center></h1>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
+  <div class="col-md-6" style="text-align: center;text-indent: 19px; padding-top: 50px;    line-height: 2.3em;">
+    <img src="https://openclipart.org/image/2400px/svg_to_png/99949/radacina-men-in-black-orange.png" width="300px"alt="" />
+    <p>
+      <h2>title</h2>
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+      Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+    </p>
+    </div>
 
-  <div class="form-inputs" id="business_sign_up_form">
-   <%= f.input :first_name, required: true, autofocus: true %>
-   <%= f.input :last_name, required: true %>
-   <%= f.input :email, required: true, input_html: { id: "sign_up_business_email" }%>
-   <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), input_html: { id: "sign_up_business_password" } %>
-   <%= f.input :password_confirmation, required: true, 
-               input_html: { id: "sign_up_business_password_confirmation" } %>
-   <%= f.input :phone, required: true %>
-   <%= f.input :description %>
-   <%= f.input :address_line_1, required: true %>
-   <%= f.input :address_line_2 %>
-   <%= f.input :address_line_3 %>
-   <%= f.input :city, required: true %>
-
-   <%= f.input :state_province_county, label: "State/Province/County", required: true %>
-   <%= f.input :country, as: :country, required: true %>
-   <%= f.file_field :avatar %>
-
- </div>
-
-
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up", id: "sign_up_button_business" %>
+  <div class="col-md-5 col-md-offset-1 form" id="business_user_sign_up_form">
+    <div class="row">
+      <div class="col-md-6">
+      <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+        <%= f.input :first_name, required: true, autofocus: true, label: false, placeholder: "John", input_html: { id: "business_user_first_name" } %>
+      </div><br>
+    </div>
+    <div class="col-md-6">
+      <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+        <%= f.input :last_name, required: true, label: false, class: "form-control", placeholder: "Doe", input_html: { id: "business_user_last_name" }   %>
+      </div><br>
+    </div>
   </div>
-<% end %>
+    <div class="input-group">
+      <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+        <%= f.input :email, required: true, label: false, placeholder: "user@example.com", input_html: { id: "sign_up_business_user_email" } %>
+    </div><br>
+    <div class="input-group">
+      <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+      <!-- <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), label: false, placeholder: "minimum 6 character length" %> -->
+      <%= f.input :password, required: true, label: false, placeholder: "minimum 6 character length", input_html: { id: "business_user_sign_up_password" } %>
+    </div><br>
 
-<%= render "business_users/shared/links" %>
+    <div class="input-group">
+      <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+      <%= f.input :password_confirmation, required: true, label: false, placeholder: "password confirmation", input_html: { id: "business_user_password_confirmation" }  %>
+    </div><br>
+
+    <div class="input-group">
+      <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+      <%= f.input :phone, required: true, label: false, placeholder: "98XXXXXX", input_html: { id: "business_user_phone" } %>
+    </div><br>
+
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+        <%= f.input :description, label: false, placeholder: "we are a five-star company called...", input_html: { id: "business_user_description" } %>
+    </div><br>
+
+
+    <div class="input-group">
+         <span class="input-group-addon"><i class="glyphicon glyphicon-map-marker"></i></span>
+         <%= f.input :address_line_1, required: true, label: false, placeholder: "963 Lovelace Road, Tampa Bay, FL 25235.", input_html: { id: "business_user_address_line_1" } %>
+    </div><br>
+
+    <div class="input-group">
+         <span class="input-group-addon"><i class="glyphicon glyphicon-map-marker"></i></span>
+         <%= f.input :address_line_2, label: false, placeholder: "963 Lovelace Road, Tampa Bay, FL 25235.", input_html: { id: "business_user_address_line_2" } %>
+    </div><br>
+
+    <div class="input-group">
+         <span class="input-group-addon"><i class="glyphicon glyphicon-map-marker"></i></span>
+         <%= f.input :address_line_3, label: false, placeholder: "963 Lovelace Road, Tampa Bay, FL 25235.", input_html: { id: "business_user_address_line_3" }%>
+    </div><br>
+
+    <div class="input-group">
+      <span class="input-group-addon"><i class="glyphicon glyphicon-send"></i></span>
+      <%= f.input :zip_postal_code, label: false, required: true, placeholder: "90250", input_html: { id: "business_user_zip_postal_code" } %>
+    </div><br>
+
+    <div class="input-group">
+         <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+         <%= f.input :city, required: true, label: false, placeholder: "paris", input_html: { id: "business_user_city" } %>
+    </div><br>
+
+    <div class="input-group">
+         <span class="input-group-addon"><i class="glyphicon glyphicon-road"></i></span>
+         <%= f.input :state_province_county, label: false, required: true, placeholder: "California", input_html: { id: "business_user_state" } %>
+    </div><br>
+
+    <div class="input-group">
+         <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
+         <%= f.input :country, as: :country, required: true, placeholder: "USA", label: false %>
+    </div><br>
+
+    <div class="input-group">
+         <!-- <span class="input-group-addon"><i class="glyphicon glyphicon-camera"></i></span> -->
+
+           <%= f.file_field :avatar, required: true, placeholder: "profile.jpg" %>
+    </div><br>
+
+    <div class="form-actions ">
+      <div class="input-group sign-up">
+      <%= f.button :submit, "Sign up", id: "sign_up_button_business" %>
+    </div>
+    </div>
+  <% end %>
+  <hr>
+    <div class="form-actions ">
+      <div class="input-group sign-up">
+        <%= render "business_users/shared/links" %>
+      </div>
+    </div>
+ </div>
+ <!-- <script>$(".help-block").remove();</script> -->
+ <script type="text/javascript">
+    $( "#business_user_zip_postal_code" ).keydown(function( event ) {
+      var elem = document.getElementById("business_user_zip_postal_code").value;
+      if(!(isNaN(elem[0]))){
+        $('#business_user_zip_postal_code').mask('AAAAA');
+      } else {
+        $('#business_user_zip_postal_code').mask('AAA AAA');
+      }
+  });
+  </script>

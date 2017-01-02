@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 20161228100029) do
 
   # These are extensions that must be enabled in order to support this database
@@ -203,6 +204,7 @@ ActiveRecord::Schema.define(version: 20161228100029) do
     t.string   "place_being_shipped_to"
     t.string   "border_expected_to_cross"
     t.string   "job_title"
+    t.decimal  "price"
     t.index ["agent_id"], name: "index_jobs_on_agent_id", using: :btree
     t.index ["client_id", "agent_id"], name: "index_jobs_on_client_id_and_agent_id", using: :btree
     t.index ["client_id"], name: "index_jobs_on_client_id", using: :btree
