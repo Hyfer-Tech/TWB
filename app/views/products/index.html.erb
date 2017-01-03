@@ -1,12 +1,11 @@
-<section class="ml-60">
     <div class="container-fluid">
       <div class="row">
             <!-- Sidebar -->
-            <div class="col-xs-12 col-md-3">
+            <div class="hidden-xs col-md-3">
                 <%= render 'layouts/sidebar' %>
             </div>
 
-       		  <div class="col-xs-12 col-md-8 col-md-offset-1 color-white dashboard-content rendered-content">
+       		  <div class="col-xs-12 col-md-8 color-white dashboard-content rendered-content">
     						<h1>Your Products<%= link_to 'Add a Product', new_product_path, class: 'pull-right btn btn-sm btn-success' %></h1>
 
     						<hr>
@@ -35,4 +34,3 @@
     				</div>
         </div>
 		</div>
-</section>

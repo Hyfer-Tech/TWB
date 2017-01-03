@@ -1,4 +1,4 @@
-class JobsController < ApplicationController
+	class JobsController < ApplicationController
 	before_action :ensure_business_user! ,except: [:index, :show]
 	before_action :ensure_broker!, only: [:show]
 
@@ -27,6 +27,10 @@ class JobsController < ApplicationController
 
 	def show
 		@job = Job.find(params[:id])
+		# when job_type will implement
+		# @job_taker = Job.job_taker.tagged_with(@job.tag_list, :any => true).order("RANDOM()").limit(10)
+		@job_taker = Broker.tagged_with(@job.tag_list, :any => true).order("RANDOM()").limit(10)
+
 	end
 
 	private

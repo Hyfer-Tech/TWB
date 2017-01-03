@@ -1,38 +1,76 @@
 <div class="container">
-    <h1 class="logo">
+    <!-- <h1 class="logo">
         <%= link_to 'Trade Without Borders', root_path, class: 'brand' %>
-        
-    </h1><!--//logo-->
-    <nav class="main-nav navbar-right" role="navigation">
+
+    </h1> -->
+    <!--//logo-->
+    <nav class="main-nav navbar-default" role="navigation">
         <div class="navbar-header">
-            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-collapse">
+            <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-collapse">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button><!--//nav-toggle-->
+                <%= link_to 'Trade Without Borders', root_path, class: 'navbar-brand' %>
         </div><!--//navbar-header-->
+
         <div id="navbar-collapse" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
               <% if current_user.present? %>
-                <li>
-                  <%= link_to '<i class="fa fa-plus-circle" aria-hidden="true"></i>'.html_safe, '#' %>     
+
+                <li  class="hidden-xs hidden-sm">
+                  <%= link_to '<i class="fa fa-plus-circle" aria-hidden="true"></i>'.html_safe, '#' %>
                 </li>
-                <li>
-                  <%= link_to '<i class="fa fa-envelope" aria-hidden="true"></i>'.html_safe, '#' %>     
+                <li  class="hidden-xs hidden-sm">
+                  <%= link_to '<i class="fa fa-envelope" aria-hidden="true"></i>'.html_safe, '#' %>
                 </li>
-                <li>
-                  <%= link_to '<i class="fa fa-bell" aria-hidden="true"></i>'.html_safe, '#' %>     
+                <li  class="hidden-xs hidden-sm">
+                  <%= link_to '<i class="fa fa-bell" aria-hidden="true"></i>'.html_safe, '#' %>
                 </li>
+
                 <li role="presentation" class="dropdown">
                   <a class="dropdown-toggle nav-dropdown" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                     <%= image_tag current_user.avatar, class: 'prof-pic-xs nav-prof' %> <span class="caret"></span>
                   </a>
                   <ul class="dropdown-menu">
                     <li><%= link_to "Profile", profile_users_path %></li>
-
                     <li><%= link_to 'Log Out', current_user.decorate.destroy_session_path, method: :delete %></li>
                   </ul>
-                </li>    
+                </li>
+                <div class="hidden-md hidden-lg mobile-menu">
+                  <li>
+                    <%= link_to '<i class="fa fa-home" aria-hidden="true"></i> Home'.html_safe, dashboard_path %>
+                  </li>
+                  <li>
+                    <%= link_to '<i class="fa fa-search" aria-hidden="true"></i> Search'.html_safe, search_path %>
+                  </li>
+                  <li>
+                    <%= link_to '<i class="fa fa-bell-o" aria-hidden="true"></i> Notifications'.html_safe, '#' %>
+                  </li>
+                  <li>
+                    <%= link_to '<i class="fa fa-envelope" aria-hidden="true"></i> Messages'.html_safe, '#' %>
+                  </li>
+
+                  <% if business_user_signed_in? %>
+                    <li>
+                      <%= link_to '<i class="fa fa-plus-circle" aria-hidden="true"></i> Post a Job'.html_safe, shipments_path %>
+                    </li>
+                    <li>
+                      <%= link_to '<i class="fa fa-shopping-basket" aria-hidden="true"></i> Products'.html_safe, products_path %>
+                    </li>
+                    <li>
+                      <%= link_to '<i class="fa fa-truck" aria-hidden="true"></i> Shipments'.html_safe, shipments_path %>
+                    </li>
+                  <% end %>
+
+                  <li>
+                    <%= link_to '<i class="fa fa-user" aria-hidden="true"></i> Matches'.html_safe, '#' %>
+                  </li>
+                  <li>
+                    <%= link_to '<i class="fa fa-history" aria-hidden="true"></i> History'.html_safe, '#' %>
+                  </li>
+
+                </div>
 
               <% else %>
 

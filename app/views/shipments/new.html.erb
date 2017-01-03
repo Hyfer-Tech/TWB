@@ -1,18 +1,12 @@
-<section class="ml-60">
-    <div class="container-fluid">
-        <div class="row">
-            <!-- Sidebar -->
-            <div class="col-xs-12 col-md-3">
-                <%= render 'layouts/sidebar' %>
-            </div>
-
-            <div class="col-xs-12 col-md-8 col-md-offset-1 color-white dashboard-content rendered-content">
-              <h1>Choose Products to Ship</h1>
-
-              <p><small>* To add a new product, <%= link_to 'click here', new_product_path %></small>.</p>
-
-              <%= render 'form' %>
-            </div>
-        </div>
-      </div>
-</section>
+<div class="container-fluid">
+<div class="row">
+  <div class="hidden-xs col-md-3">
+      <%= render 'layouts/sidebar' %>
+  </div>
+  <div class="col-xs-12 col-md-9 color-white dashboard-content rendered-content">
+    <h1>Choose Products to Ship</h1>
+    <p><small>* To add a new product, <%= link_to 'click here', new_product_path %></small>.</p>
+    <%= render 'form' %>
+  </div>
+</div>
+</div>
