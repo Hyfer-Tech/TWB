@@ -1,0 +1,75 @@
+<section class="ml-60">
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-xs-12 col-md-3">
+                <%= render 'layouts/sidebar' %>
+            </div>
+
+       		  <div class="col-xs-12 col-md-8 col-md-offset-1 color-white dashboard-content rendered-content">
+              <h1><%= @product.title %></h1>
+              <hr />
+
+              <div class="row">
+                  <div class="col-xs-12 col-md-12">
+                      <%= image_tag @product.featured_image, class: 'img-responsive' %>
+                  </div>
+              </div>
+
+              <div class="row">
+                  <div class="col-xs-12 col-md-4">
+                    Product Code: <%= @product.product_code %>
+                  </div>
+
+                  <div class="col-xs-12 col-md-4">
+                    Price: <%= @product.price %>
+                  </div>
+
+                  <div class="col-xs-12 col-md-4">
+                    Compare at Price: <%= @product.compare_at_price %>
+                  </div>
+              </div>
+
+              <div class="row">
+                  <div class="col-xs-12 col-md-4">
+                    Height: <%= @product.height %>
+                  </div>
+
+                  <div class="col-xs-12 col-md-4">
+                    Width: <%= @product.width %>
+                  </div>
+
+                  <div class="col-xs-12 col-md-4">
+                    Grams: <%= @product.grams %>
+                  </div>
+              </div>
+
+              <div class="row">
+                  <div class="col-xs-12 col-md-7">
+                    Materials Used: <%= @product.materials_used %>
+                  </div>
+
+                  <div class="col-xs-12 col-md-5">
+                    Manufactured Date: <%= @product.date_of_manufacture %>
+                  </div>
+              </div>
+
+              <div class="row">
+                  <div class="col-xs-12 col-md-4">
+                    Origin of Manufacture: <%= @product.origin_of_manufacture %>
+                  </div>
+
+                  <div class="col-xs-12 col-md-4">
+                    Taxable: <%= @product.taxable ? "Yes" : "No" %>
+
+                  </div>
+
+                  <div class="col-xs-12 col-md-4">
+                    Available: <%= @product.available ? "Yes" : "No" %>
+                  </div>
+              </div>
+              <%= link_to 'Update Product', edit_product_path(@product), class: ' pull-right btn btn-sm btn-success' %>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,8 +1,8 @@
 <div class="nested-fields nested-fields-shipments">
   <div class="row">
     <div class="col-xs-12 col-md-5">
-     <%= f.label :product %><br />
-	   <%= f.association :product, collection: current_user.products.all, label: false, prompt: 'Choose an existing Product', input_html: {class: 'chosen-select', style: 'width: auto'} %>
+       <%= f.label :product %><br />
+  	   <%= f.association :product, collection: current_user.products.all, label: false, prompt: 'Choose an existing Product', input_html: {class: 'chosen-select', style: 'width: auto'} %>
     </div>
     <div class="col-xs-12 col-md-5">
 	    <%= f.input :quantity %>
@@ -15,7 +15,7 @@
 
 
 <script type="text/javascript">
-$(document).bind('cocoon:after-insert', function(e,inserted_item) {
-  $('.chosen-select').chosen()
-});
+    $(document).bind('cocoon:after-insert', function(e,inserted_item) {
+      $('.chosen-select').chosen()
+    });
 </script>

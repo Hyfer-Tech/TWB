@@ -1,20 +1,45 @@
-<h1><%= @job.job_title %></h1>
-<div class="row">
-    <div>
-        Date of shipment: <%= @job.date_of_shipment %>
-    </div>
+<section class="ml-60">
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-xs-12 col-md-3">
+                <%= render 'layouts/sidebar' %>
+            </div>
 
-    <div>
-        Location of shipment: <%= @job.location_of_shipment %>
-    </div>
+    				<div class="col-md-8 col-md-offset-1 color-white dashboard-content min-height-210">
+              <h1><%= @job.job_title %></h1>
+              <hr />
+              <div class="row">
+                  <div class="col-xs-12 col-md-6">
+                      Date of shipment: <%= @job.date_of_shipment %>
+                  </div>
 
-    <div>
-        Place being shipped to: <%= @job.place_being_shipped_to %>
-    </div>
+                  <div class="col-xs-12 col-md-6">
+                      Location of shipment: <%= @job.location_of_shipment %>
+                  </div>
+              </div>
 
-    <div>
-        Border expected to cross: <%= @job.border_expected_to_cross %>
-    </div>
-</div>
+              <div class="row">
+                  <div class="col-xs-12 col-md-6">
+                      Place being shipped to: <%= @job.place_being_shipped_to %>
+                  </div>
 
-<%= link_to "Apply", new_job_bid_path(@job.id) %>
+                  <div class="col-xs-12 col-md-6">
+                      Border expected to cross: <%= @job.border_expected_to_cross %>
+                  </div>
+              </div>
+
+              <div class="row">
+                  <div class="col-xs-12 col-md-6">
+                      Price: <%= @job.price %>
+                  </div>
+
+                  <div class="col-xs-12 col-md-6">
+                      <%= link_to "Apply", new_job_bid_path(@job.id), class: 'pull-right btn btn-sm btn-success' %>
+                  </div>
+              </div>
+
+            </div>
+        </div>
+    </div>
+</section>

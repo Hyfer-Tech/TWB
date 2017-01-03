@@ -46,11 +46,11 @@
 }
 
 .update-name-button {
-  padding-bottom:5px; 
+  padding-bottom:5px;
 }
 
 #tags-list-profile {
-  margin:5px; 
+  margin:5px;
 }
 
 .user-actions {
@@ -79,7 +79,7 @@
 }
 
 .following-list-item {
-  position:relative; 
+  position:relative;
   background: white;
   border-bottom: 3px solid #eee;
   padding: 15px;
@@ -88,7 +88,7 @@
 .profile-details-container {
   background: white;
   padding: 15px 20px;
-  min-height: 200px;
+  height: 850px;
   border: 2px solid #eee;
 }
 
@@ -113,8 +113,37 @@
 
 .label-user {
   background-color: #fff;
-  border: 2px solid #159bc0; 
+  border: 2px solid #159bc0;
   color: #159bc0;
   padding: 5px;
   margin-bottom: 5px;
+}
+
+.edit-pencil {
+  padding-left:10px;
+  display: none !important;
+}
+
+.description-text:hover .edit-pencil,
+.email-text:hover .edit-pencil,
+.phone-text:hover .edit-pencil,
+.country-text:hover .edit-pencil,
+.city-text:hover .edit-pencil,
+.state-province-county-text:hover .edit-pencil
+{
+  display: inline-block !important;
+}
+
+.description-text:hover,
+.email-text:hover,
+.phone-text:hover,
+.country-text:hover,
+.city-text:hover,
+.state-province-county-text:hover
+{
+  background-color: #EEEEEE;
+}
+
+.fa, .fa-lock, .fa-globe {
+  padding-left: 10px;
 }

@@ -5,10 +5,12 @@ RSpec.describe BidsController, type: :controller do
   describe 'GET #new' do
     context "User is signed in" do
       it "Renders new template" do
+        sb = FactoryGirl.create(:business_user)
+        job = FactoryGirl.create(:job, client_id: sb.id)
         broker = FactoryGirl.create(:broker)
 
         sign_in broker
-        get :new, job_id: 1
+        get :new, job_id: job.id
 
         expect(response).to render_template :new
       end

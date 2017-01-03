@@ -7,7 +7,7 @@ class Shipment < ApplicationRecord
 	scope :this_month, -> {where(created_at: (Time.now.beginning_of_month..Time.zone.now))}
 
 	# validate :check_user_quota
-	validates :business_user_id, presence: true
+	validates :title, :business_user_id, presence: true
 	validates :shipment_products, length: {minimum: 1}
 
 	has_one :job

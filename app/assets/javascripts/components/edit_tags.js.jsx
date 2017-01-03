@@ -1,8 +1,8 @@
 let EditTags = React.createClass({
   getInitialState() {
-    return { 
+    return {
       editable: false,
-      tag_list: this.props.tag_list 
+      tag_list: this.props.tag_list
     }
   },
 
@@ -11,7 +11,7 @@ let EditTags = React.createClass({
   },
 
   handleEdit() {
-    if(this.state.editable) { 
+    if(this.state.editable) {
       let updated_tag_list = {
         tag_list: this.state.tag_list
       }
@@ -19,12 +19,12 @@ let EditTags = React.createClass({
       this.handleUpdate(updated_tag_list);
       $(".chosen-container").remove();
     }
-  
+
     this.setState(
       {editable: !this.state.editable},
     );
 
-    
+
   },
 
   handleTags(e) {
@@ -39,18 +39,17 @@ let EditTags = React.createClass({
   showTags(){
     if (this.state.editable) {
       return (
-        <div>
+        <div className="col-xs-12">
           <select multiple="true" className="chosen-select" value={this.state.tag_list}>
             {this.tags_list_display()}
           </select>
           <button type="button" className="btn btn-primary" onClick={this.handleEdit}>Update</button>
           <button type="button" className="btn btn-primary" onClick={this.handleCancel}>Cancel</button>
         </div>
-      )  
+      )
     } else {
       return (
-        <div onClick={this.handleEdit}>
-          <i className="fa fa-tags" aria-hidden="true"></i>
+        <div className="col-xs-12" onClick={this.handleEdit}>
           {
             this.state.tag_list.map((tag) => {
               return (
@@ -59,7 +58,7 @@ let EditTags = React.createClass({
             })
           }
         </div>
-      ) 
+      )
     }
   },
 
@@ -89,7 +88,12 @@ let EditTags = React.createClass({
   render() {
     return (
       <div>
-        {this.showTags()}
+        <div className="col-xs-12">
+          <h3>Tags</h3>
+        </div>
+        <div className="col-xs-12">
+          {this.showTags()}
+        </div>
       </div>
     )
   }
