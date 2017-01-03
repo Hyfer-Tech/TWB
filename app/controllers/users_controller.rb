@@ -3,13 +3,11 @@ class UsersController < ApplicationController
   
 	def profile
     @user = current_user.decorate
-    # render layout: 'profile'
 	end  
 
   def saved  
     @user = current_user.decorate  
-    @following = UserDecorator.decorate_collection(@user.all_following)
-    render layout: 'profile'
+    @following = UserDecorator.decorate_collection(@user.all_following)    
   end
 
 end

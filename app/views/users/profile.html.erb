@@ -3,73 +3,7 @@
 
     <div class="row profile">
       <div class="col-xs-12 col-md-4">
-        <div class="panel panel-default">
-          <div class="panel-body">
-            <!-- SIDEBAR USERPIC -->
-            <div class="profile-userpic">
-              <div class="picture">
-                <%= image_tag @user.avatar_url(:thumb), class: 'prof-pic' %>
-              
-                <a href="#" class="profile-pic-edit" data-toggle="modal" data-target="#myModal">
-                  <i class="fa fa-cloud-upload"></i> Update
-                </a>
-              </div>
-
-              <div class="modal fade" id="myModal" role="dialog">
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <%= simple_form_for @user.original, url: "/" + @user.user_type_name + "s", method: :patch do |f| %>
-                      <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Upload Profile Picture</h4>
-                      </div>
-                      <div class="modal-body">
-                        <%= f.input :avatar %>
-                      </div>
-                      <div class="modal-footer">
-                        <%= f.button :submit , "Update" %>
-                      </div>
-                    <% end %>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- END SIDEBAR USERPIC -->
-            <div class="row">
-              <div class="container-fluid">
-                <%= react_component 'EditName', { user: @user, user_type_name: @user.user_type_name } %>
-              </div>
-            </div>
-
-            <!-- END SIDEBAR BUTTONS -->
-            <!-- SIDEBAR MENU -->
-            <ul class="nav nav-user-actions">
-              <li class="active">
-                <a href="#">
-                <i class="glyphicon glyphicon-home"></i>
-                Overview </a>
-              </li>
-              <li>
-                <a href="#">
-                <i class="glyphicon glyphicon-star"></i>
-                Reviews </a>
-              </li>
-              <li>
-                <%= link_to saved_users_path do %>
-                  <i class="glyphicon glyphicon-saved"></i>
-                  Saved </a>
-                <% end %>
-              </li>
-              <li>
-                <%= link_to @user.edit_link do %>
-                  <%= "<i class='glyphicon glyphicon-edit'></i> Edit".html_safe %>
-                <% end %>
-              </li>
-            </ul>
-          </div>
-          <!-- END MENU -->
-        </div> <!-- panel end -->
+        <%= render partial: 'users/sidebar' %>
       </div>
       <div class="col-md-8 col-xs-12">
         <div class="profile-details-container">
