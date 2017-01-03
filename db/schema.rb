@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161230084727) do
+ActiveRecord::Schema.define(version: 20170101033804) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -127,11 +127,11 @@ ActiveRecord::Schema.define(version: 20161230084727) do
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "avatar"
-    t.string   "files"
     t.integer  "account_type"
     t.string   "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
+    t.string   "files"
     t.string   "zip_postal_code"
     t.jsonb    "settings",               default: {}, null: false
     t.index ["confirmation_token"], name: "index_business_users_on_confirmation_token", unique: true, using: :btree
@@ -192,8 +192,9 @@ ActiveRecord::Schema.define(version: 20161230084727) do
   create_table "jobs", force: :cascade do |t|
     t.integer  "job_type"
     t.integer  "shipment_id"
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.boolean  "completed",                default: false
+    t.datetime "created_at",                               null: false
+    t.datetime "updated_at",                               null: false
     t.integer  "client_id"
     t.integer  "agent_id"
     t.string   "client_type"
@@ -208,6 +209,17 @@ ActiveRecord::Schema.define(version: 20161230084727) do
     t.index ["client_id", "agent_id"], name: "index_jobs_on_client_id_and_agent_id", using: :btree
     t.index ["client_id"], name: "index_jobs_on_client_id", using: :btree
     t.index ["shipment_id"], name: "index_jobs_on_shipment_id", using: :btree
+  end
+
+  create_table "notifications", force: :cascade do |t|
+    t.integer  "recipient_id"
+    t.integer  "actor_id"
+    t.datetime "read_at"
+    t.string   "action"
+    t.integer  "notifiable_id"
+    t.string   "notifiable_type"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "products", force: :cascade do |t|
@@ -230,6 +242,13 @@ ActiveRecord::Schema.define(version: 20161230084727) do
     t.date     "date_of_manufacture"
     t.index ["business_user_id"], name: "index_products_on_business_user_id", using: :btree
     t.index ["shipment_id"], name: "index_products_on_shipment_id", using: :btree
+  end
+
+  create_table "ratings", force: :cascade do |t|
+    t.integer  "total_rate"
+    t.string   "rate_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "shipment_products", force: :cascade do |t|

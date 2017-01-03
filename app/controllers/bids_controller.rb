@@ -20,6 +20,12 @@ class BidsController < ApplicationController
     @bid = @job.bids.new(bids_params)
     if @bid.save
       flash[:notice] = "Bid successfully created."
+
+      #notification created here
+          (@bid.brokers.uniq - [current_user]).each do |user|
+            Notification.create(recipient: user, actor: current_user, action: "bidded", notifiable: @job)
+          end
+
       redirect_to root_path
     else
       render :new, status: :inprocessable_entity
