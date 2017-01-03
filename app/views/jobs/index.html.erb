@@ -1,38 +1,26 @@
 <div class="col-xs-8">
-	<h1>Jobs</h1>
+	<h1>Jobs <span class="subtitle"><%= link_to '(Post a new job)', new_shipment_path %></span></h1>
 
 	<div class="panel">
-		<div class="panel-body">
+		<div class="panel-body" style="position: relative;">
 			<% @jobs.each do |job| %>
-				<div class="">
-					<h2>Verify the classified docs</h2>
-				</div>
-				<div class="flashing-topbar">
+				<h2><%= job.job_title %></h2>
+				<h5><%= number_to_currency job.price %></h5>
+				
+				<ul class="no-bullet">
+					<li><strong>Borders Expected To Cross</strong>: <%= job.border_expected_to_cross %></li>
+					<li><strong>Date Of Shipment</strong>: <%= job.date_of_shipment %></li>
+					<li><strong>Location of Shipment</strong>: <%= job.location_of_shipment %></li>
+					<li><strong>Place Being Shipped To</strong>: <%= job.place_being_shipped_to %></li>
+				</ul>
+			  
+				<% job.tag_list.each do |tag| %>
+		    	<span class="label label-default"><%= link_to tag, job_tag_path(tag) %></span>
+		    <% end %>
 
-					<%= link_to job.job_title, job_path(job) %>
-
-					<span class="fa fa-briefcase " aria-hidden="true" title="job_type"><span class="data"><%= job.job_type %>hourly</span></span>
-					<span class="fa fa-gear " aria-hidden="true" title="skill required"><span class="data"><%= job.job_type %>expert</span></span>
-					<span class="fa fa-clock-o " aria-hidden="true" title="time required"><span class="data">1-3 months</span></span>
-					<span class="fa fa-flag " aria-hidden="true" title="job required"><span class="data"><%= job.created_at %> ago</span></span>
-				</div>
-				<div class="">
-					  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-				</div>
-
-				<div class="">
-					<span class="fa fa-check-circle-o " aria-hidden="true" title="job_type"><span class="data">Verified businessman</span></span>
-					<span class="fa fa-star " aria-hidden="true" title="skill required"></span>
-					<span class="fa fa-star " aria-hidden="true" title="skill required"></span>
-					<span class="fa fa-star " aria-hidden="true" title="skill required"></span>
-					<span class="fa fa-star " aria-hidden="true" title="skill required"></span>
-					<span class="fa fa-star " aria-hidden="true" title="skill required"></span>
-					<span class="data"></span>
-					<span class="fa fa-usd " aria-hidden="true" title="payment"><span class="data">500</span>	</span>
-					<span class="fa fa-globe " aria-hidden="true" title="border_expected_to_cross"><span class="data"><%= job.border_expected_to_cross %> japan hongkong nepal</span>	</span>
-				</div>
-			  <hr>
-		    <span> Tag: <%= raw job.tag_list.map { |t| link_to t, job_tag_path(t) }.join(', ') %></span>
+		    <% unless current_user == job.client %>
+		    	<%= link_to "Apply", new_job_bid_path(job.id), class: 'btn btn-lg btn-success btn-right' %>
+		    <% end %>
 		  <% end %>
 
 		  <% if @jobs.empty? %>

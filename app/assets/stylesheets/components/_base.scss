@@ -24,6 +24,15 @@ a:hover, a:active {
     text-decoration: none;
     color: $aLinkHover;
 }
+
+a.btn {
+  color: white;
+}
+
+.label a {
+  color: white;
+}
+
 h1, h2, h3, h4, h5, h6 {
     font-family:  $fontHeader;
     color: #424856;
@@ -31,6 +40,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 h1,.h1 {
   font-size: $size22px;
+
+  .subtitle {
+    font-size: $size10px;
+  }
 }
 
 
