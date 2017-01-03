@@ -1,5 +1,8 @@
 class Broker < ApplicationRecord
-  # include Searchable
+  include CountriesList
+  include Storext.model
+
+
   BID_LIMIT = 10
 
   acts_as_taggable
@@ -22,12 +25,17 @@ class Broker < ApplicationRecord
 
   has_many :uploads, as: :user
 
+  store_attributes :settings do
+	  show_phone_number Boolean, default:false
+	  show_email Boolean, default:false
+  end
+
   def bid_limit_exceeded?
     return account_type == 0 && bids.this_month.count >= BID_LIMIT
   end
 
   def suggested_users
-    return BusinessUser
+    BusinessUser.tagged_with(tag_list, :any => true).order("RANDOM()").limit(10)
   end
 
   def self.successful_bids(current_user)

@@ -17,7 +17,6 @@ class ShipmentsController < ApplicationController
 	def create
 		@shipment = current_business_user.shipments.new(shipment_params)
 
-		binding.pry
 		if @shipment.save
 			flash[:success] = "A shipment has been created."
 			redirect_to root_path

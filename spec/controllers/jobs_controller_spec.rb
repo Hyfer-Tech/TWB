@@ -19,7 +19,7 @@ RSpec.describe JobsController, type: :controller do
 				broker = FactoryGirl.create(:broker)
 				user = FactoryGirl.create(:business_user)
 				setup_shipment(user: user)
-				
+
 				sign_in broker
 				get :new, shipment_id: @shipment.id
 
@@ -60,7 +60,7 @@ RSpec.describe JobsController, type: :controller do
 		end
 
 		context "Business User is a premium user" do
-			it "creates a new job" do 
+			it "creates a new job" do
 				user = FactoryGirl.create(:business_user, account_type: 1)
 				setup_shipment(user: user)
 				setup_user_job_limit
@@ -76,11 +76,11 @@ RSpec.describe JobsController, type: :controller do
 end
 
 def setup_user_job_limit
-	FactoryGirl.create(:user_limit, user_type: BusinessUser.class.name.underscore, limit_type: :job_post_limit, amount: 5)	
+	FactoryGirl.create(:user_limit, user_type: BusinessUser.class.name.underscore, limit_type: :job_post_limit, amount: 5)
 end
 
 def setup_jobs(user:, shipment:, n:)
-	n.times do 
+	n.times do
 		FactoryGirl.create(:job, client_id: user.id, client_type: user.class.name, shipment_id: shipment.id)
 	end
 end

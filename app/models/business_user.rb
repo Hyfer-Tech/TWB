@@ -1,5 +1,7 @@
 class BusinessUser < ApplicationRecord
-  # include Searchable
+  include CountriesList
+  include Storext.model
+
   acts_as_taggable
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -22,4 +24,12 @@ class BusinessUser < ApplicationRecord
   has_many :jobs, as: :client
   has_many :uploads, as: :user
 
+  store_attributes :settings do
+	  show_phone_number Boolean, default:false
+	  show_email Boolean, default:false
+  end
+
+  def suggested_users
+    Broker.tagged_with(tag_list, :any => true).order("RANDOM()").limit(10) && ForwardFreight.tagged_with(tag_list, :any => true).order("RANDOM()").limit(10)
+  end
 end
