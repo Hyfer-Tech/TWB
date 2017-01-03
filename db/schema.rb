@@ -133,10 +133,7 @@ ActiveRecord::Schema.define(version: 20161230084727) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string   "zip_postal_code"
-<<<<<<< HEAD
-=======
     t.jsonb    "settings",               default: {}, null: false
->>>>>>> fdbeabbcb03297e88d28cdc4d86292b98f3326f3
     t.index ["confirmation_token"], name: "index_business_users_on_confirmation_token", unique: true, using: :btree
     t.index ["email"], name: "index_business_users_on_email", unique: true, using: :btree
     t.index ["first_name"], name: "index_business_users_on_first_name", using: :btree
@@ -255,10 +252,7 @@ ActiveRecord::Schema.define(version: 20161230084727) do
     t.datetime "updated_at",                         null: false
     t.integer  "business_user_id"
     t.boolean  "save_for_later_use", default: false, null: false
-<<<<<<< HEAD
-=======
     t.string   "title"
->>>>>>> fdbeabbcb03297e88d28cdc4d86292b98f3326f3
     t.index ["broker_id"], name: "index_shipments_on_broker_id", using: :btree
     t.index ["business_user_id"], name: "index_shipments_on_business_user_id", using: :btree
   end

@@ -1,6 +1,6 @@
 class ForwardFreight < ApplicationRecord
   include CountriesList
-  # include Storext.model
+  include Storext.model
 
   BID_LIMIT = 15
 
