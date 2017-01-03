@@ -1,78 +1,69 @@
-<div class="col-xs-10">
-	<center><h1>Jobs</h1></center>
-	<div class="all-jobs">
-	<% @jobs.each do |job| %>
-		<div class="">
-			<h2>Verify the classified docs</h2>
-		</div>
-		<div class="flashing-topbar">
+<div class="col-xs-8">
+	<h1>Jobs</h1>
 
-			<%= link_to job.job_title, job_path(job) %>
+	<div class="panel">
+		<div class="panel-body">
+			<% @jobs.each do |job| %>
+				<div class="">
+					<h2>Verify the classified docs</h2>
+				</div>
+				<div class="flashing-topbar">
 
-			<span class="fa fa-briefcase " aria-hidden="true" title="job_type"><span class="data"><%= job.job_type %>hourly</span></span>
-			<span class="fa fa-gear " aria-hidden="true" title="skill required"><span class="data"><%= job.job_type %>expert</span></span>
-			<span class="fa fa-clock-o " aria-hidden="true" title="time required"><span class="data">1-3 months</span></span>
-			<span class="fa fa-flag " aria-hidden="true" title="job required"><span class="data"><%= job.created_at %> ago</span></span>
-		</div>
-		<div class="">
-			  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-		</div>
+					<%= link_to job.job_title, job_path(job) %>
 
-		<div class="">
-			<span class="fa fa-check-circle-o " aria-hidden="true" title="job_type"><span class="data">Verified businessman</span></span>
-			<span class="fa fa-star " aria-hidden="true" title="skill required"></span>
-			<span class="fa fa-star " aria-hidden="true" title="skill required"></span>
-			<span class="fa fa-star " aria-hidden="true" title="skill required"></span>
-			<span class="fa fa-star " aria-hidden="true" title="skill required"></span>
-			<span class="fa fa-star " aria-hidden="true" title="skill required"></span>
-			<span class="data"></span>
-			<span class="fa fa-usd " aria-hidden="true" title="payment"><span class="data">500</span>	</span>
-			<span class="fa fa-globe " aria-hidden="true" title="border_expected_to_cross"><span class="data"><%= job.border_expected_to_cross %> japan hongkong nepal</span>	</span>
+					<span class="fa fa-briefcase " aria-hidden="true" title="job_type"><span class="data"><%= job.job_type %>hourly</span></span>
+					<span class="fa fa-gear " aria-hidden="true" title="skill required"><span class="data"><%= job.job_type %>expert</span></span>
+					<span class="fa fa-clock-o " aria-hidden="true" title="time required"><span class="data">1-3 months</span></span>
+					<span class="fa fa-flag " aria-hidden="true" title="job required"><span class="data"><%= job.created_at %> ago</span></span>
+				</div>
+				<div class="">
+					  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				</div>
+
+				<div class="">
+					<span class="fa fa-check-circle-o " aria-hidden="true" title="job_type"><span class="data">Verified businessman</span></span>
+					<span class="fa fa-star " aria-hidden="true" title="skill required"></span>
+					<span class="fa fa-star " aria-hidden="true" title="skill required"></span>
+					<span class="fa fa-star " aria-hidden="true" title="skill required"></span>
+					<span class="fa fa-star " aria-hidden="true" title="skill required"></span>
+					<span class="fa fa-star " aria-hidden="true" title="skill required"></span>
+					<span class="data"></span>
+					<span class="fa fa-usd " aria-hidden="true" title="payment"><span class="data">500</span>	</span>
+					<span class="fa fa-globe " aria-hidden="true" title="border_expected_to_cross"><span class="data"><%= job.border_expected_to_cross %> japan hongkong nepal</span>	</span>
+				</div>
+			  <hr>
+		    <span> Tag: <%= raw job.tag_list.map { |t| link_to t, job_tag_path(t) }.join(', ') %></span>
+		  <% end %>
+
+		  <% if @jobs.empty? %>
+		  	<h3>There are currently no jobs.</h3>
+		  <% end %>
 		</div>
-	  <hr>
-    <span> Tag: <%= raw job.tag_list.map { |t| link_to t, job_tag_path(t) }.join(', ') %></span>
-  <% end %>
+	</div>
 </div>
   
-<div class="col-xs-2">
+<div class="col-xs-4">
 	<h1>Suggestions</h1>
 	<% @user_suggestions.each do |user| %>
-		<div class="col-xs-12 text-center">
-			<%= image_tag user.avatar, class: 'prof-pic' %>
+		<div class="panel">
+			<div class="panel-body">
+				<div class="col-xs-12 text-center">
+					<%= image_tag user.avatar, class: 'prof-pic' %>
+				</div>
+				<div class="col-xs-12 text-center">
+					<span>
+						<%= link_to "#{user.first_name} #{user.last_name}", business_user_path(user) %>
+					</span>
+				</div>
+			</div>
 		</div>
-		<div class="col-xs-12 text-center">
-			<span>
-				<%= link_to "#{user.first_name} #{user.last_name}", business_user_path(user) %>
-			</span>
+	<% end %>
+
+	<% if @user_suggestions.empty? %>
+		<div class="panel">
+			<div class="panel-body">
+				<h3>There are no suggestions right now.</h3>
+			</div>
 		</div>
 	<% end %>
 </div>
-
-<style>
-  .fa{
-		font-size: 20px;
-		padding-top: 20px;
-	}
-	.data{
-		padding-left: 10px;
-		font-size: 18px;
-		padding-right: 20px;
-	}
-	.data-heading{
-		background-color: white;
-		text-align: center;
-	}
-	.all-jobs{
-		background-color: white;
-		padding:10px 20px 10px 20px;
-	}
-	hr{
-		border-width: thin;
-		border-color: black;
-		width: 70%;
-	}
-	.flashing-topbar{
-		padding-top: 10px;
-		padding-bottom: 10px;
-	}
-</style>

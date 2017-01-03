@@ -1,3 +1,24 @@
+
+
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require datetimepicker
+ *= require_self
+ */
+
+// chosen
+@import "bootstrap-chosen/bootstrap-chosen";
+
 // Google Fonts
 @import url("http://fonts.googleapis.com/css?family=Montserrat:400,700"); 
 @import url("http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800");
@@ -34,23 +55,3 @@
 @import "components/_theme-colors.scss";
 @import "components/_demo-settings.scss";    
       
-
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require chosen
- *= require datetimepicker
- *= require main
- *= require_self
- *= require_tree . 
- */
-

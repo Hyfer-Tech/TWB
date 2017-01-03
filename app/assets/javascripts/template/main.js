@@ -5,10 +5,7 @@ var app = function() {
         navToggleRight();
         navToggleLeft();
         navToggleSub();
-        profileToggle();
-        tooltips();
-        switcheryToggle();
-        fullscreenWidget();
+        profileToggle();        
         fullscreenMode();
     });
 
@@ -67,13 +64,6 @@ var app = function() {
         });
     };
 
-    //tooltips
-    var tooltips = function() {
-        $('.tooltip-wrapper').tooltip({
-            selector: "[data-toggle=tooltip]",
-            container: "body"
-        })
-    };
 
     //Sliders
     var sliders = function() {
