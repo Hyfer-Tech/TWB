@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <%= render 'shared/meta' %>
+    <head>
+        <%= render 'shared/meta' %>
 
-  </head>
+    </head>
     <body>
       <section id="main-wrapper" class="theme-default">
         <%= render partial: 'layouts/nav' %>
@@ -14,7 +14,7 @@
         <section class="main-content-wrapper">
             <div class="pageheader">
                 <h1>Dashboard</h1>
-                <p class="description">Welcome to NEUBOARD Responsive Admin Theme</p>
+                <p class="description">Hi <%= current_user.decorate.name %>!</p>
                 <div class="breadcrumb-wrapper hidden-xs">
                     <span class="label">You are here:</span>
                     <ol class="breadcrumb">

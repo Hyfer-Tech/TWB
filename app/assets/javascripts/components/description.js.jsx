@@ -6,18 +6,27 @@ let Description = React.createClass({
     }
   },
 
+  message(){
+    if (this.state.description.length == 0) {
+      return (
+        <span>Click to add description</span>
+      )
+    }
+  },
+
   description() {
     if(this.state.editable) {
       return (
-        <input onChange={this.onChange} type="text" defaultValue={this.state.description} className='form-control'/>
-      )
+        <input onChange={this.onChange} type="text" defaultValue={this.state.description} className='form-control'/>        
+      )      
     } else {
       return (
         <span onClick={this.handleClick} className="description-text" >
           {this.state.description}
-          <i className="fa fa-pencil edit-pencil" aria-hidden="true"></i>
+          {this.message()}
+          <i className="fa fa-pencil edit-pencil" aria-hidden="true"></i>          
         </span>
-      )
+      )      
     }
   },
 
