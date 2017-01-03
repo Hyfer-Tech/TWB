@@ -1,10 +1,13 @@
 <%= simple_form_for @shipment do |f| %>
+	<div>
+			<%= f.input :title, placeholder: "Shipment Title" %>
+	</div>
 	<div id="products">
 		<%= f.simple_fields_for :shipment_products do |shipment_product| %>
 			<%= render 'shipment_product_fields', f: shipment_product %>
 		<% end %>
 	</div>
-		<div class="links">	
+		<div class="links">
 			<%= link_to_add_association 'Add Product', f, :shipment_products, class: 'btn btn-sm btn-success' %>
 		</div>
 		<div class="row">
@@ -12,7 +15,7 @@
 				<%= f.input :save_for_later_use %>
 			</div>
 			<div class="col-xs-12 col-md-6">
-				<%= f.button :submit, class: 'btn-primary pull-right' %> 
+				<%= f.button :submit, class: 'btn-primary pull-right' %>
 			</div>
 		</div>
-<% end %>	
+<% end %>

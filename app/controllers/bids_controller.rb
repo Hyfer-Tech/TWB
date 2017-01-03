@@ -11,6 +11,7 @@ class BidsController < ApplicationController
   end
 
   def new
+    @job = Job.find(params[:job_id])
     @bid = Bid.new
   end
 
