@@ -1,5 +1,6 @@
 class Broker < ApplicationRecord
   # include Searchable
+  include MailboxerEmail
   BID_LIMIT = 10
 
   acts_as_taggable
@@ -15,6 +16,7 @@ class Broker < ApplicationRecord
   mount_uploader :avatar, AvatarUploader
   acts_as_followable
   acts_as_follower
+  acts_as_messageable
 
   has_many :jobs, as: :agent
 
@@ -29,5 +31,5 @@ class Broker < ApplicationRecord
   def suggested_users
     return BusinessUser
   end
-  
+
 end

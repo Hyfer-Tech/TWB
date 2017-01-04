@@ -1,5 +1,5 @@
 class MessagesController < ApplicationController
-  before_action :authenticate_business_user!
+  before_action :authenticate_any!
 
   def new
   end

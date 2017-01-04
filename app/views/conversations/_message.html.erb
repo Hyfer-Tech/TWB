@@ -1,0 +1,12 @@
+<% conversation.receipts_for(current_user).order(created_at: :asc).each do |receipt| %>
+  <div class="media">
+    <% message = receipt.message %>
+    <div class="media-left">
+      <b><%= message.sender.first_name %></b>
+    </div>
+
+    <div class="media-body">
+      <%= message.body %><div class="hide-default"><%= message.created_at.strftime("%-d %B %Y, %H:%M:%S") %></div>
+    </div>
+  </div>
+<% end %>

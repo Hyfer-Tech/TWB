@@ -6,26 +6,17 @@
   <div class="panel-heading"><%= @conversation.subject %></div>
 
   <div class="panel-body">
-    <div class="messages">
-      <% @conversation.receipts_for(current_user).order(created_at: :asc).each do |receipt| %>
-        <div class="media">
-          <% message = receipt.message %>
-          <div class="media-left">
-            <b><%= message.sender.first_name %></b>
-          </div>
+    <div class="messages" id="messages">
 
-          <div class="media-body">
-            <%= message.body %><div class="hide-default"><%= message.created_at.strftime("%-d %B %Y, %H:%M:%S") %></div>
-          </div>
-        </div>
-      <% end %>
+        <%= render partial: 'message', locals: {conversation: @conversation} %>
+
     </div>
   </div>
 </div>
 
-<%= form_tag reply_conversation_path(@conversation), method: :post do %>
+<%= form_tag reply_conversation_path(@conversation), remote: true, id: "new_message_box", method: :post do %>
   <div class="form-group">
-    <%= text_area_tag 'body', nil, cols: 3, class: 'form-control', placeholder: 'Type something...', required: true %>
+    <%= text_area_tag 'body', nil, cols: 3, class: 'form-control', id: 'new_message_content', placeholder: 'Type something...', required: true %>
   </div>
   <%= submit_tag "Send Message", class: 'btn btn-primary' %>
 <% end %>

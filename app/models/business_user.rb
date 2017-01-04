@@ -1,5 +1,6 @@
 class BusinessUser < ApplicationRecord
   # include Searchable
+  include MailboxerEmail
   acts_as_taggable
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -23,7 +24,4 @@ class BusinessUser < ApplicationRecord
   has_many :jobs, as: :client
   has_many :uploads, as: :user
 
-  def mailboxer_email(object)
-    email
-  end
 end

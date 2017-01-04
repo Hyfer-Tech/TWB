@@ -1,0 +1,2 @@
+ $("#messages").html("<%= escape_javascript(render partial: 'message', locals: { conversation: @conversation } ) %>");
+$('#new_message_content').val('');
