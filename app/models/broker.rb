@@ -26,7 +26,8 @@ class Broker < ApplicationRecord
   has_many :uploads, as: :user
 
   has_many :notifications, foreign_key: :recipient_id, dependent: :destroy
-  
+  # has_many :notifications, as: :actor, dependent: :destroy
+
   store_attributes :settings do
 	  show_phone_number Boolean, default:false
 	  show_email Boolean, default:false

@@ -18,13 +18,17 @@ class BidsController < ApplicationController
   def create
     @job = Job.find(params[:job_id])
     @bid = @job.bids.new(bids_params)
+
+    
+    
     if @bid.save
-      flash[:notice] = "Bid successfully created."
+      flash[:notice] = "Bid successfully created."  
 
       #notification created here
-          (@bid.brokers.uniq - [current_user]).each do |user|
-            Notification.create(recipient: user, actor: current_user, action: "bidded", notifiable: @job)
+          @job.bids.each do |bid|
+            Notification.create(recipient: @job.client, actor: @bid.bidder, action: "bidded", notifiable: @bid)
           end
+      #end of notification_sys
 
       redirect_to root_path
     else
