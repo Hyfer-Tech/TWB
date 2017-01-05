@@ -20,6 +20,7 @@ class Job < ApplicationRecord
 
 	has_many :brokers, through: :bid, as: :bidder
 	has_many :business_users, through: :bid, as: :client
+	has_many :forward_freights, through: :bid, as: :bidder
 
 	# def clone_job
 	# 	job_type = job_type.broker? forward_freight : broker
