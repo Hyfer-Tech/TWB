@@ -59,6 +59,10 @@ Rails.application.routes.draw do
     get 'saved', to: :saved, controller: 'users', on: :collection
   end
 
+  resources :users do
+  resources :ratings
+  end
+
   post 'relationships', to: 'relationships#create'
   delete 'relationships', to: 'relationships#destroy'
 

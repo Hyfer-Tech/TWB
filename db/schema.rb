@@ -12,6 +12,7 @@
 
 ActiveRecord::Schema.define(version: 20170105122438) do
 
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -220,8 +221,11 @@ ActiveRecord::Schema.define(version: 20170105122438) do
     t.string   "notifiable_type"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+<<<<<<< HEAD
     t.string   "actor_type"
     t.string   "recipient_type"
+=======
+>>>>>>> f207e9bc66d0ff9e8ec21f59e3ea50eaac4c3058
   end
 
   create_table "products", force: :cascade do |t|
@@ -272,8 +276,11 @@ ActiveRecord::Schema.define(version: 20170105122438) do
     t.datetime "created_at",                         null: false
     t.datetime "updated_at",                         null: false
     t.integer  "business_user_id"
+<<<<<<< HEAD
     t.boolean  "save_for_later_use", default: false, null: false
     t.string   "title"
+=======
+>>>>>>> f207e9bc66d0ff9e8ec21f59e3ea50eaac4c3058
     t.index ["broker_id"], name: "index_shipments_on_broker_id", using: :btree
     t.index ["business_user_id"], name: "index_shipments_on_business_user_id", using: :btree
   end

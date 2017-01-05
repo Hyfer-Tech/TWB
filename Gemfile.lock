@@ -130,6 +130,7 @@ GEM
       thor (~> 0.19)
     builder (3.2.2)
     bullet (5.5.0)
+    bullet (5.4.3)
       activesupport (>= 3.0.0)
       uniform_notifier (~> 1.10.0)
     byebug (9.0.6)
@@ -160,6 +161,7 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.4)
+    concurrent-ruby (1.0.3)
     connection_pool (2.2.1)
     countries (2.0.5)
       i18n_data (~> 0.7.0)
@@ -303,6 +305,8 @@ GEM
       fog-core
       fog-xml
     fog-vsphere (1.6.0)
+
+    fog-vsphere (1.5.2)
       fog-core
       rbvmomi (~> 1.9)
     fog-xenserver (0.2.3)
@@ -374,6 +378,7 @@ GEM
     pry-rails (0.3.4)
       pry (>= 0.9.10)
     public_suffix (2.0.5)
+    public_suffix (2.0.4)
     puma (3.6.2)
     rack (2.0.1)
     rack-test (0.6.3)
@@ -491,6 +496,7 @@ GEM
     storext (2.2.2)
       rails (>= 4.0, < 6.0)
       virtus
+
     thor (0.19.4)
     thread_safe (0.3.5)
     tilt (2.0.5)

@@ -43,4 +43,6 @@ class ForwardFreight < ApplicationRecord
     BusinessUser.tagged_with(tag_list, :any => true).order("RANDOM()").limit(10)
   end
 
+  has_many :business_user, through: :rating
+  has_many :notifications, foreign_key: :recipient_id
 end

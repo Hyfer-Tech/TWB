@@ -44,4 +44,6 @@ class Broker < ApplicationRecord
   def self.successful_bids(current_user)
     Bid.where('accepted = ? AND bidder_id = ? AND bidder_type = ?', true, current_user.id, current_user.class.name).includes(:job, job: :client)
   end
+  has_many :business_user, through: :rating
+  has_many :notifications, foreign_key: :recipient_id
 end

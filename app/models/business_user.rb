@@ -10,6 +10,10 @@ class BusinessUser < ApplicationRecord
 
   has_many :products
   has_many :shipments
+  has_many :rating
+  has_many :broker, through: :rating
+  has_many :forward_frieght, through: :rating
+  has_many :notifications, foreign_key: :recipient_id
 
   mount_uploader :avatar, AvatarUploader
   mount_uploader :files, FilesUploader
