@@ -12,8 +12,10 @@
 
   <div class="panel-body">
     <div class="messages" id="messages">
+      <% @conversation.receipts_for(current_user).order(created_at: :asc).each do |receipt| %>
 
-        <%= render partial: 'message', locals: {conversation: @conversation} %>
+        <%= render partial: 'message', locals: {receipt: receipt} %>
+      <% end %>
 
     </div>
   </div>

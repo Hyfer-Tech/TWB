@@ -55,4 +55,6 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
   config.action_mailer.delivery_method = :letter_opener
+
+  config.action_cable.allowed_request_origins = ['http://localhost:3000']
 end
