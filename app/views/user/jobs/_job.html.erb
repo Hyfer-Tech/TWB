@@ -1,0 +1,27 @@
+<div class="panel">
+  <div class="panel-body" style="position: relative;">
+  
+    <h2><%= job.job_title %></h2>
+    <h5><%= number_to_currency job.price %> | <%= pluralize job.bids.count, "bid" %></h5>
+    
+    <ul class="no-bullet">
+      <li><strong>Borders Expected To Cross</strong>: <%= job.border_expected_to_cross %></li>
+      <li><strong>Date Of Shipment</strong>: <%= job.date_of_shipment %></li>
+      <li><strong>Location of Shipment</strong>: <%= job.location_of_shipment %></li>
+      <li><strong>Place Being Shipped To</strong>: <%= job.place_being_shipped_to %></li>
+    </ul>
+    
+    <% job.tag_list.each do |tag| %>
+      <span class="label label-default"><%= link_to tag, job_tag_path(tag) %></span>
+    <% end %>
+
+    <% unless current_user == job.client %>
+      <%= link_to "Apply", new_job_bid_path(job.id), class: 'btn btn-lg btn-success btn-right' %>
+    <% end %>
+
+    <% if current_user == job.client %>
+      <%= link_to 'View Bids', job_bids_path(job.id), class: 'btn btn-warning btn-right' %>
+    <% end %>
+        
+  </div>
+</div>

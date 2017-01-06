@@ -1,5 +1,24 @@
-<%= simple_form_for @bid, url: job_bids_path, method: :post do |f| %>
-  <%= f.input :cover_letter, as: :text %>
-  <%= f.input :price %>
-  <%= f.button :submit, 'Bid' %>
-<% end %>
+<div class="col-xs-12 col-md-6">
+  <h1>Submit a Bid</h1>
+  <%= simple_form_for @bid, url: job_bids_path, method: :post do |f| %>
+    <%= f.input :cover_letter, as: :text, placeholder: 'Cover Letter', label: false %>
+    <%= f.input :price, placeholder: 'Bid Amount', label: false %>
+    <%= f.button :submit, 'Bid', class: 'btn btn-success' %>
+  <% end %>
+</div>
+
+<div class="col-xs-12 col-md-6">
+  <div class="panel">
+    <div class="panel-body">
+      <h1>Job Overview</h1>
+      <ul class="no-bullet">
+        <li><strong>Title</strong> <%= @job.job_title %></li>
+        <li><strong>Price</strong> <%= number_to_currency @job.price %></li>
+        <li><strong>Date of Shipment</strong> <%= @job.date_of_shipment %></li>
+        <li><strong>Borders Expected To Cross</strong> <%= @job.border_expected_to_cross %></li>
+        <li><strong>Location of Shipment</strong> <%= @job.location_of_shipment %></li>
+        <li><strong>Place Being Shipped To</strong> <%= @job.place_being_shipped_to %></li>
+      </ul>
+    </div>
+  </div>
+</div>

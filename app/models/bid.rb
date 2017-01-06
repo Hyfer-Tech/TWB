@@ -8,6 +8,7 @@ class Bid < ApplicationRecord
   delegate :client, to: :job
   
   delegate :email, :business_name, :first_name, :last_name, :phone, :description, :address_line_1, :address_line_2, :address_line_3, :city, :state_province_county, :country, :avatar, :account_type, :zip_postal_code, to: :client, prefix: true
+  delegate :avatar, :description, :past_experience, :firm_name, to: :bidder, prefix: true
 
   scope :this_month, -> {where(created_at: (Time.now.beginning_of_month..Time.zone.now))}
 

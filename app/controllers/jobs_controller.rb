@@ -4,9 +4,9 @@ class JobsController < ApplicationController
 
 	def index
 		if params[:tag]
-			@jobs = Job.tagged_with(params[:tag]).includes(:shipment, :client, shipment: :products, shipment: :shipment_products)
+			@jobs = Job.tagged_with(params[:tag]).includes(:shipment, :bids, :client, shipment: :products, shipment: :shipment_products)
 	  else
-			@jobs = Job.all.includes(:shipment, :client, shipment: :products, shipment: :shipment_products)
+			@jobs = Job.available.includes(:shipment, :bids, :client, shipment: :products, shipment: :shipment_products)
 	  end
 		@user_suggestions = current_user.suggested_users
 	end

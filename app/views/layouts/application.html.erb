@@ -8,7 +8,9 @@
       <section id="main-wrapper" class="theme-default">
         <%= render partial: 'layouts/nav' %>
         <!--sidebar left start-->
-        <%= render partial: 'components/sidebar' %>
+        <%= render partial: 'components/business_user/sidebar' if business_user_signed_in? %>
+        <%= render partial: 'components/broker/sidebar' if broker_signed_in? %>
+        <%= render partial: 'components/forward_freight/sidebar' if forward_freight_signed_in? %>
         <!--sidebar left end-->
         <!--main content start-->
         <section class="main-content-wrapper">
