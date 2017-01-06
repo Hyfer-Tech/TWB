@@ -1,7 +1,7 @@
 class Broker < ApplicationRecord
   include CountriesList
   include Storext.model
-
+  include Filterable
 
   BID_LIMIT = 10
 
@@ -29,6 +29,8 @@ class Broker < ApplicationRecord
 	  show_phone_number Boolean, default:false
 	  show_email Boolean, default:false
   end
+
+  # scope :has_tags, ->(tags) {Broker.tagged_with(tags, :any => true}
 
   def bid_limit_exceeded?
     return account_type == 0 && bids.this_month.count >= BID_LIMIT

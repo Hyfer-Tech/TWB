@@ -8,4 +8,8 @@ class BrokersController < ApplicationController
   def past_clients
   	@bids = Broker.successful_bids(current_user)
   end
+
+  def search
+    @brokers = Broker.filter(params.slice(:city))
+  end
 end
