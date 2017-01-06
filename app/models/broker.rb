@@ -4,13 +4,11 @@ class Broker < ApplicationRecord
   include Filterable
 
   BID_LIMIT = 10
+  POSTAL_CODE =  (/(\A[ABCEGHJKLMNPRSTVXY]\d[ABCEGHJ-NPRSTV-Z][ ]?\d[ABCEGHJ-NPRSTV-Z]\d\z)|(\A\d{5}([ \-](?:\d{4}|\d{6}))?\z)/)
 
   acts_as_taggable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
-
-  POSTAL_CODE =  (/(\A[ABCEGHJKLMNPRSTVXY]\d[ABCEGHJ-NPRSTV-Z][ ]?\d[ABCEGHJ-NPRSTV-Z]\d\z)|(\A\d{5}([ \-](?:\d{4}|\d{6}))?\z)/)
-
 
   validates :first_name, :last_name, :phone, :firm_name,:address_line_1, :city, :zip_postal_code,:state_province_county, :country, :broker_number, presence: true
   validates :zip_postal_code, format: { with: POSTAL_CODE }
@@ -20,9 +18,7 @@ class Broker < ApplicationRecord
   acts_as_follower
 
   has_many :jobs, as: :agent
-
   has_many :bids, as: :bidder
-
   has_many :uploads, as: :user
 
   store_attributes :settings do

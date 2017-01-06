@@ -36,15 +36,26 @@ let EditTags = React.createClass({
     $(".chosen-container").remove();
   },
 
+  message(){
+    if (this.state.tag_list.length == 0) {
+      return (
+        <p>Click to add tags</p>
+      )
+    }
+  },
+
   showTags(){
     if (this.state.editable) {
       return (
         <div className="col-xs-12">
           <select multiple="true" className="chosen-select" value={this.state.tag_list}>
             {this.tags_list_display()}
-          </select>
-          <button type="button" className="btn btn-primary" onClick={this.handleEdit}>Update</button>
-          <button type="button" className="btn btn-primary" onClick={this.handleCancel}>Cancel</button>
+          </select>          
+
+          <div className="btn-group" style={{"marginTop": "10px"}}>
+            <button type="button" className="btn btn-sm btn-success" onClick={this.handleEdit}>Update</button>
+            <button type="button" className="btn btn-sm btn-danger" onClick={this.handleCancel}>Cancel</button>
+          </div>
         </div>
       )
     } else {
@@ -55,8 +66,11 @@ let EditTags = React.createClass({
               return (
                 <span className="label label-user" id="tags-list-profile" key={tag}>{tag}</span>
               )
-            })
+            })            
           }
+
+          {this.message()}
+
         </div>
       )
     }

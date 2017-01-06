@@ -1,18 +1,41 @@
-<section class="ml-60">
-    <div class="container-fluid">
-        <div class="row">
-            <!-- Sidebar -->
-            <div class="col-xs-12 col-md-3">
-                <%= render 'layouts/sidebar' %>
-            </div>
+<div class="col-xs-12 col-md-6" style="margin-bottom: 50px;">
 
-            <div class="col-xs-12 col-md-8 col-md-offset-1 color-white dashboard-content rendered-content">
-              <h1>Choose Products to Ship</h1>
+	<div class="progress">
+	    <div class="progress-bar progress-bar-success" style="width: 33%">33%</div>
+	</div>
 
-              <p><small>* To add a new product, <%= link_to 'click here', new_product_path %></small>.</p>
+  <h1>Choose Products to Ship</h1>
 
-              <%= render 'form' %>
-            </div>
-        </div>
-      </div>
-</section>
+  <p><small>* To add a new product, <%= link_to 'click here', new_product_path %></small>.</p>
+
+  <%= render 'form' %>
+
+</div>
+
+<div class="col-xs-12 col-md-6">
+  <h1>Choose Existing Shipment</h1>
+
+  <table class="table table-responsive">
+    <tr>
+      <th>Created At</th>
+      <th>Products</th>
+      <th></th>
+    </tr>
+
+    <% if @shipments %>
+      <% @shipments.each do |shipment| %>
+        <tr>
+          <td><%= shipment.created_at.strftime('%m/%d/%y') %></td>
+          <td>
+            <% shipment.products.each do |product| %>
+              <p><%= product.title %></p>
+            <% end %>
+          </td>
+          <td>
+            <%= link_to 'Select', new_shipment_job_path(shipment), class: 'btn btn-warning' %>
+          </td>
+        </tr>
+      <% end %>
+    <% end %>
+  </table>
+</div>

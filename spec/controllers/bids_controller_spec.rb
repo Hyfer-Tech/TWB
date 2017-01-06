@@ -5,8 +5,8 @@ RSpec.describe BidsController, type: :controller do
   describe 'GET #new' do
     context "User is signed in" do
       it "Renders new template" do
-        sb = FactoryGirl.create(:business_user)
-        job = FactoryGirl.create(:job, client_id: sb.id)
+        business_user = FactoryGirl.create(:business_user)
+        job = FactoryGirl.create(:job, client_type: "BusinessUser", client_id: business_user.id)
         broker = FactoryGirl.create(:broker)
 
         sign_in broker
@@ -18,7 +18,11 @@ RSpec.describe BidsController, type: :controller do
 
     context "User is not signed in" do
       it "should redirect to the login page" do
-        get :new, job_id: 1
+        business_user = FactoryGirl.create(:business_user)
+        job = FactoryGirl.create(:job, client_type: "BusinessUser", client_id: business_user.id)
+        broker = FactoryGirl.create(:broker)
+
+        get :new, job_id: job.id
 
         expect(response).to redirect_to root_path
       end
@@ -26,11 +30,12 @@ RSpec.describe BidsController, type: :controller do
 
     context "User is a bussiness_user" do
       it "should be redirect to dashboard with flash message" do
-        sb = FactoryGirl.create(:business_user)
+        business_user = FactoryGirl.create(:business_user)
+        job = FactoryGirl.create(:job, client_type: "BusinessUser", client_id: business_user.id)
 
-        sign_in sb
+        sign_in business_user
 
-        get :new, job_id: 1
+        get :new, job_id: job.id
 
         expect(response).to redirect_to root_path
         expect(flash[:alert]).to be_present
@@ -39,14 +44,15 @@ RSpec.describe BidsController, type: :controller do
 
     context "User has already bidded on a job" do
       it "should redirect to dashboard with flash message" do
-        sb = FactoryGirl.create(:business_user)
-        job = FactoryGirl.create(:job, client_id: sb.id)
+        business_user = FactoryGirl.create(:business_user)
         broker = FactoryGirl.create(:broker)
+        job = FactoryGirl.create(:job, client_type: "BusinessUser", client_id: business_user.id)
+        bid = FactoryGirl.create(:bid, job_id: job.id, bidder_id: broker.id, bidder_type: broker.class.name)
 
         sign_in broker
-        bid = FactoryGirl.create(:bid, bidder_id: broker.id, bidder_type: broker.class.name)
+        
 
-        get :new, job_id: 1
+        get :new, job_id: job.id
 
         expect(response).to redirect_to root_path
         expect(flash[:alert]).to be_present

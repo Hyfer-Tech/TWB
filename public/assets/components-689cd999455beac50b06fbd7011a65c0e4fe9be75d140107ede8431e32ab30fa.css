@@ -1,0 +1,71 @@
+/* line 1, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/components.scss */
+.chosen-container {
+  width: 100% !important;
+}
+
+/* line 5, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/components.scss */
+.btn-round {
+  border-radius: 20px;
+  display: block;
+  margin: 0 auto;
+}
+
+/* line 11, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/components.scss */
+.background-bg {
+  background: url(bg-map.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/* line 19, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/components.scss */
+.container-main {
+  background: #eee;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+/* line 25, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/components.scss */
+.container-white {
+  background: white;
+}
+
+/* line 29, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/components.scss */
+.top-heading {
+  height: 400px;
+  color: white;
+  padding-top: 80px;
+}
+
+/* line 35, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/components.scss */
+.top-heading-text {
+  text-align: center;
+}
+
+/* line 39, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/components.scss */
+.login-form-container {
+  margin-top: 30px;
+}
+
+/* line 43, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/components.scss */
+.container-authenticated {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+/* line 48, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/components.scss */
+.mg-100 {
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+/* line 53, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/components.scss */
+.color-white {
+  color: white;
+}
+
+/* line 57, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/components.scss */
+.fa {
+  display: inline !important;
+}

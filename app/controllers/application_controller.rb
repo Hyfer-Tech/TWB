@@ -2,8 +2,17 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   before_action :configure_permitted_parameters, if: :devise_controller?
+  layout :layout_by_resource
 
   protected
+
+  def layout_by_resource
+    if devise_controller?
+      "landing_page"
+    else
+      "application"
+    end
+  end
 
   def authenticate_broker_or_forward_freight
     return if broker_signed_in? || forward_freight_signed_in?

@@ -237,6 +237,13 @@ ActiveRecord::Schema.define(version: 20161230084727) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "ratings", force: :cascade do |t|
+    t.integer  "total_rate"
+    t.string   "rate_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "shipment_products", force: :cascade do |t|
     t.integer  "product_id"
     t.integer  "shipment_id"
