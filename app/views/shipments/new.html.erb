@@ -22,18 +22,20 @@
       <th></th>
     </tr>
 
-    <% @shipments.each do |shipment| %>
-      <tr>
-        <td><%= shipment.created_at.strftime('%m/%d/%y') %></td>
-        <td>
-          <% shipment.products.each do |product| %>
-            <p><%= product.title %></p>
-          <% end %>
-        </td>
-        <td>
-          <%= link_to 'Select', new_shipment_job_path(shipment), class: 'btn btn-warning' %>
-        </td>
-      </tr>
+    <% if @shipments %>
+      <% @shipments.each do |shipment| %>
+        <tr>
+          <td><%= shipment.created_at.strftime('%m/%d/%y') %></td>
+          <td>
+            <% shipment.products.each do |product| %>
+              <p><%= product.title %></p>
+            <% end %>
+          </td>
+          <td>
+            <%= link_to 'Select', new_shipment_job_path(shipment), class: 'btn btn-warning' %>
+          </td>
+        </tr>
+      <% end %>
     <% end %>
   </table>
 </div>

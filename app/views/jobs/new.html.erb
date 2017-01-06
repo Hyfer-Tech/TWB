@@ -62,12 +62,14 @@
 				<th class="col-xs-2">Quantity</th>
 			</tr>
 
-			<% @shipment.shipment_products.each do |shipment_product| %>
-				<tr>
-					<td><%= image_tag shipment_product.product.featured_image.url, class: 'img-responsive' if shipment_product.product.featured_image.present? %></td>		
-					<td><%= link_to shipment_product.product.title, shipment_product.product %></td>
-					<td><%= shipment_product.quantity %></td>
-				</tr>
+			<% if @shipment %>
+				<% @shipment.shipment_products.each do |shipment_product| %>
+					<tr>
+						<td><%= image_tag shipment_product.product.featured_image.url, class: 'img-responsive' if shipment_product.product.featured_image.present? %></td>		
+						<td><%= link_to shipment_product.product.title, shipment_product.product %></td>
+						<td><%= shipment_product.quantity %></td>
+					</tr>
+				<% end %>
 			<% end %>
 		</table>
 	</div>
