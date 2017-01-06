@@ -14,11 +14,7 @@
     <% job.tag_list.each do |tag| %>
       <span class="label label-default"><%= link_to tag, job_tag_path(tag) %></span>
     <% end %>
-
-    <% unless current_user == job.client %>
-      <%= link_to "Apply", new_job_bid_path(job.id), class: 'btn btn-lg btn-success btn-right' %>
-    <% end %>
-
+    
     <% if current_user == job.client %>
       <%= link_to 'View Bids', job_bids_path(job.id), class: 'btn btn-warning btn-right' %>
     <% end %>

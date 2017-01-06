@@ -14,10 +14,15 @@ class Bid < ApplicationRecord
 
   def toggle_accept!(status)
   	self.accepted = !status
-  	self.job.agent_id = accepted ? bidder.id : nil
-  	self.save
-  	self.job.save
+    self.save  	
   end
+
+  def assign_agent!
+    self.job.agent_id = accepted ? bidder.id : nil
+    self.job.agent_type = accepted ? bidder.class.name : nil
+    self.job.save
+  end
+
 
   def client_business_name
   	client.business_name
