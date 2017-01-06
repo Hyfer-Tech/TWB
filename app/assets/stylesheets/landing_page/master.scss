@@ -6,8 +6,8 @@
  * Twitter: @3rdwave_themes
 */
 /* ======= Base ======= */
-html { 
-  background: url(/assets/bg-map.jpg) no-repeat center center fixed; 
+html {
+  background: url(bg-map.png) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -249,7 +249,7 @@ a.btn-download-app .main-text,
   font-size: 16px;
 }
 .form-control::-webkit-input-placeholder {
-  /* WebKit browsers */
+  /* WebKit browsers 
   color: #ccc;
 }
 .form-control:-moz-placeholder {
@@ -657,7 +657,7 @@ textarea {
   background-color: #fff;
   height: 3px;
 }
-.main-nav .nav .nav-item {  
+.main-nav .nav .nav-item {
   font-weight: normal;
   text-transform: uppercase;
   font-size: 12px;
@@ -3253,4 +3253,17 @@ body.sticky-page-nav .overview-section {
   height: 130px;
   width: 130px;
   border-radius: 50%;
+}
+
+section.ml-60 {
+    margin-left: -60px;
+}
+
+div.rendered-content{
+    min-height: 392px;
+    min-width: 750px;
+}
+
+div.min-height-210 {
+    min-height: 210px;
 }
