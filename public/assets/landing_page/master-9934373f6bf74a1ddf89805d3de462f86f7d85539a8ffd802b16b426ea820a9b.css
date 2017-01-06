@@ -1,0 +1,4406 @@
+/*
+ * Template Name: Startup Kit - Responsive website template for startups
+ * Version: 1.0
+ * Author: Xiaoying Riley at 3rd Wave Media
+ * Website: http://themes.3rdwavemedia.com/
+ * Twitter: @3rdwave_themes
+*/
+/* ======= Base ======= */
+/* line 10, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+html {
+  background: url(bg-map.png) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/* line 18, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+body {
+  overflow-x: hidden;
+  font-family: 'Noto Sans', sans-serif;
+  color: #656972;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: whitesmoke;
+}
+
+/* line 27, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+}
+
+/* line 36, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+p {
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+/* line 40, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+a {
+  color: #159bc0;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -ms-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+}
+
+/* line 47, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+a:hover,
+a:active {
+  text-decoration: underline;
+  color: #1288a9;
+}
+
+/* line 52, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+a:focus {
+  text-decoration: none;
+  color: #1288a9;
+  outline: none;
+}
+
+/* line 57, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.btn,
+a.btn {
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -ms-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  font-weight: 700;
+  padding: 6px 20px;
+}
+
+/* line 66, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+a.btn-cta,
+.btn-cta {
+  font-size: 16px;
+  padding: 12px 25px;
+  padding-top: 13px;
+  font-weight: 900;
+}
+
+/* line 73, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+a.btn-primary,
+.btn-primary {
+  margin-top: 5px;
+  margin-right: 15px;
+  background: #51a852;
+  border: 2px solid #51a852;
+  color: #fff;
+}
+
+/* line 81, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+a.btn-primary:hover,
+.btn-primary:hover,
+a.btn-primary:active,
+.btn-primary:active,
+a.btn-primary:focus,
+.btn-primary:focus {
+  background: #49974a;
+  border: 2px solid #49974a;
+  color: #fff;
+  outline: none;
+}
+
+/* line 92, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+a.btn-secondary,
+.btn-secondary {
+  background: #159bc0;
+  border: 2px solid #159bc0;
+  color: #fff;
+}
+
+/* line 98, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+a.btn-secondary:hover,
+.btn-secondary:hover,
+a.btn-secondary:active,
+.btn-secondary:active,
+a.btn-secondary:focus,
+.btn-secondary:focus {
+  background: #1288a9;
+  border: 2px solid #1288a9;
+  color: #fff;
+  outline: none;
+}
+
+/* line 109, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+a.btn-ghost,
+.btn-ghost {
+  background: none;
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+/* line 115, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+a.btn-ghost:hover,
+.btn-ghost:hover,
+a.btn-ghost:active,
+.btn-ghost:active,
+a.btn-ghost:focus,
+.btn-ghost:focus {
+  background: #fff;
+  border: 2px solid #fff;
+  color: #35373C;
+  outline: none;
+}
+
+/* line 126, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+a.btn-ghost-alt,
+.btn-ghost-alt {
+  background: none;
+  border: 2px solid #656972;
+  color: #656972;
+}
+
+/* line 132, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+a.btn-ghost-alt:hover,
+.btn-ghost-alt:hover,
+a.btn-ghost-alt:active,
+.btn-ghost-alt:active,
+a.btn-ghost-alt:focus,
+.btn-ghost-alt:focus {
+  background: #656972;
+  border: 2px solid #656972;
+  color: #fff;
+  outline: none;
+}
+
+/* line 143, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+a.btn-social,
+.btn-social {
+  background: #159bc0;
+  border: none;
+  color: #fff;
+  padding: 6px 15px;
+  font-weight: normal;
+  text-align: left;
+}
+
+/* line 152, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+a.btn-social:hover,
+.btn-social:hover,
+a.btn-social:active,
+.btn-social:active,
+a.btn-social:focus,
+.btn-social:focus {
+  background: #1288a9;
+  border: none;
+  color: #fff;
+  outline: none;
+}
+
+/* line 163, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+a.btn-social .fa,
+.btn-social .fa {
+  padding-right: 10px;
+  border-right: 1px solid rgba(0, 0, 0, 0.2);
+  display: inline-block;
+  text-align: left;
+  font-size: 16px;
+  padding-top: 2px;
+}
+
+/* line 172, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+a.btn-social .btn-text,
+.btn-social .btn-text {
+  padding-left: 10px;
+  display: inline-block;
+  text-align: center;
+}
+
+/* line 178, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+a.btn-google,
+.btn-google {
+  background: #d73d32;
+}
+
+/* line 182, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+a.btn-google:hover,
+.btn-google:hover,
+a.btn-google:active,
+.btn-google:active,
+a.btn-google:focus,
+.btn-google:focus {
+  background: #c83227;
+}
+
+/* line 190, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+a.btn-facebook,
+.btn-facebook {
+  background: #3b5998;
+}
+
+/* line 194, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+a.btn-facebook:hover,
+.btn-facebook:hover,
+a.btn-facebook:active,
+.btn-facebook:active,
+a.btn-facebook:focus,
+.btn-facebook:focus {
+  background: #344e86;
+}
+
+/* line 202, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+a.btn-download-app,
+.btn-download-app {
+  border: 2px solid #fff;
+  background: none;
+  padding-left: 45px;
+  font-weight: normal;
+  color: #fff;
+  position: relative;
+}
+
+/* line 211, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+a.btn-download-app:hover,
+.btn-download-app:hover,
+a.btn-download-app:active,
+.btn-download-app:active,
+a.btn-download-app:focus,
+.btn-download-app:focus {
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.2);
+  color: #fff;
+  outline: none;
+}
+
+/* line 222, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+a.btn-download-app .fa,
+.btn-download-app .fa {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  font-size: 24px;
+}
+
+/* line 229, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+a.btn-download-app .intro-text,
+.btn-download-app .intro-text {
+  display: block;
+  font-size: 10px;
+  text-align: left;
+}
+
+/* line 235, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+a.btn-download-app .main-text,
+.btn-download-app .main-text {
+  display: block;
+  font-size: 16px;
+  text-align: left;
+}
+
+/* line 241, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.label-new {
+  background: #51a852;
+}
+
+/* line 244, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.form-control {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  height: 45px;
+  border-color: #ccc;
+  font-size: 16px;
+}
+
+/* line 252, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.form-control::-webkit-input-placeholder {
+  /* WebKit browsers 
+  color: #ccc;
+}
+.form-control:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: #ccc;
+}
+
+/* line 260, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.form-control::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: #ccc;
+}
+
+/* line 264, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.form-control:-ms-input-placeholder {
+  /* Internet Explorer 10+ */
+  color: #ccc;
+}
+
+/* line 268, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.form-control:focus {
+  border-color: #b3b3b3;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+/* line 274, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="submit"],
+input[type="button"],
+textarea {
+  appearance: none;
+  /* for mobile safari */
+  -webkit-appearance: none;
+}
+
+/* line 284, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.form-group {
+  margin-bottom: 30px;
+}
+
+/* line 287, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+#topcontrol {
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -ms-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  background: #4d5057;
+  color: #fff;
+  text-align: center;
+  display: inline-block;
+  z-index: 30;
+  width: 36px;
+  height: 36px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+
+/* line 308, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+#topcontrol:hover {
+  background: #41434a;
+  color: #fff;
+}
+
+/* line 312, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+#topcontrol .fa {
+  position: relative;
+  top: 3px;
+  font-size: 25px;
+  font-weight: normal;
+}
+
+/* Generic section styling */
+/* line 319, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.section {
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+
+/* line 323, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.section-title {
+  margin-top: 0;
+  margin-bottom: 30px;
+  font-size: 28px;
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  text-align: center;
+  color: #35373C;
+}
+
+/* line 335, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.section-intro {
+  margin-top: 0;
+  margin-bottom: 60px;
+  font-size: 16px;
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  text-align: center;
+  color: #656972;
+}
+
+/* Generic heading section styling */
+/* line 348, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.heading-section {
+  height: 500px;
+  padding-top: 120px;
+}
+
+/* line 352, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.heading-section .heading-content {
+  z-index: 10;
+  position: relative;
+  color: #fff;
+  text-align: center;
+}
+
+/* line 358, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.heading-section .heading-content .headline {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 36px;
+}
+
+/* line 363, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.heading-section .heading-content .tagline {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 30px;
+}
+
+/* line 368, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.heading-section .heading-content .actions .btn {
+  display: inline-block;
+  margin-right: 15px;
+  margin-bottom: 15px;
+}
+
+/* line 373, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.heading-section .heading-content .actions .btn:last-child {
+  margin-right: 0;
+}
+
+/* line 376, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.hero-wrapper {
+  content: "";
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 500px;
+  background: #35373C;
+}
+
+/* line 385, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.hero-holder {
+  height: 500px;
+}
+
+/* line 388, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.hero-mask-gradient {
+  background-color: rgba(0, 0, 0, 0.6) 50%;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.6) 50%), to(transparent));
+  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.6) 50%, transparent);
+  background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.6) 50%, transparent);
+  background: -ms-linear-gradient(top, rgba(0, 0, 0, 0.6) 50%, transparent);
+  background: -o-linear-gradient(top, rgba(0, 0, 0, 0.6) 50%, transparent);
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 5;
+}
+
+/* line 403, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.hero-mask-solid {
+  background: rgba(0, 0, 0, 0.65);
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 5;
+}
+
+/*sidebar css*/
+/* Toggle Styles */
+/* line 417, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+#wrapper {
+  padding-left: 0;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+/* line 425, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+#wrapper.toggled {
+  padding-left: 150px;
+}
+
+/* line 429, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+#sidebar-wrapper {
+  z-index: 1000;
+  float: left;
+  position: inherit;
+  /*left: 150px;*/
+  width: 0;
+  height: 100%;
+  margin-left: -350px;
+  overflow-y: auto;
+  background: rgba(0, 0, 0, 0.3);
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+/* line 445, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+#wrapper.toggled #sidebar-wrapper {
+  width: 250px;
+}
+
+/* line 449, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+#page-content-wrapper {
+  width: 100%;
+  position: absolute;
+  padding: 15px;
+}
+
+/* line 455, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+#wrapper.toggled #page-content-wrapper {
+  position: absolute;
+  margin-right: -250px;
+}
+
+/* Sidebar Styles */
+/* line 462, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.sidebar-nav {
+  background: rgba(0, 0, 0, 0.4);
+  width: 250px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-radius: 2px;
+  border: 1px solid #4a4a4a;
+}
+/* line 471, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.sidebar-nav .fa {
+  margin-right: 10px;
+}
+
+/* line 476, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.sidebar-nav li {
+  text-indent: 20px;
+  line-height: 40px;
+  border-bottom: 2px solid #3a3a3a;
+}
+
+/* line 482, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.sidebar-nav li a {
+  display: block;
+  text-decoration: none;
+  color: #fff;
+}
+
+/* line 488, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.sidebar-nav li a:hover {
+  text-decoration: none;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* line 494, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus {
+  text-decoration: none;
+}
+
+/* line 499, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.sidebar-nav > .sidebar-brand {
+  height: 65px;
+  font-size: 18px;
+  line-height: 60px;
+}
+
+/* line 505, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.sidebar-nav > .sidebar-brand a {
+  color: #999999;
+}
+
+/* line 509, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.sidebar-nav > .sidebar-brand a:hover {
+  color: #fff;
+  background: none;
+}
+
+@media (min-width: 768px) {
+  /* line 515, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+  #wrapper {
+    padding-left: 250px;
+  }
+
+  /* line 519, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+  #wrapper.toggled {
+    padding-left: 0;
+  }
+
+  /* line 523, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+  #sidebar-wrapper {
+    width: 250px;
+  }
+
+  /* line 527, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+  #wrapper.toggled #sidebar-wrapper {
+    width: 0;
+  }
+
+  /* line 531, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+  #page-content-wrapper {
+    padding: 20px;
+    position: relative;
+  }
+
+  /* line 536, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+  #wrapper.toggled #page-content-wrapper {
+    position: relative;
+    margin-right: 0;
+  }
+}
+/*end sidebar*/
+/*tab css*/
+/* line 544, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+#t-wrapper {
+  height: 480px;
+  /*  overflow-y: sidebar;
+    overflow-x: hidden;*/
+  padding-left: 200px;
+}
+
+/* line 551, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+#tHistory {
+  height: 450px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* line 557, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+#tHistory::-webkit-scrollbar {
+  display: none;
+}
+
+/*end tab css*/
+/* Page Nav */
+/* line 563, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.page-nav-space-holder {
+  height: 62px;
+  position: relative;
+}
+
+/* line 567, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.page-nav-wrapper {
+  background: #f5f5f5;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  position: absolute;
+  width: 100%;
+  left: 0;
+}
+
+/* line 575, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.page-nav-wrapper.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+  background: #fff;
+}
+
+/* line 586, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.page-nav-wrapper a {
+  color: #35373C;
+  text-decoration: none;
+}
+
+/* line 590, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.page-nav-wrapper .page-nav {
+  margin: 0 auto;
+  display: inline-block;
+}
+
+/* line 594, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.page-nav-wrapper .page-nav li {
+  margin-right: 30px;
+  display: inline-block;
+  background: none;
+}
+
+/* line 599, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.page-nav-wrapper .page-nav li:hover,
+.page-nav-wrapper .page-nav li:active {
+  background: none;
+}
+
+/* line 603, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.page-nav-wrapper .page-nav li.active a {
+  color: #159bc0;
+  background: none;
+}
+
+/* line 607, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.page-nav-wrapper .page-nav li a {
+  color: #656972;
+  padding: inherit;
+}
+
+/* line 611, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.page-nav-wrapper .page-nav li a:hover {
+  color: #35373C;
+}
+
+/* line 614, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.page-nav-wrapper .page-nav li a:hover,
+.page-nav-wrapper .page-nav li a:active,
+.page-nav-wrapper .page-nav li a:focus {
+  background: none;
+}
+
+/* line 619, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.page-nav-wrapper .page-nav li:last-child {
+  margin-right: 0;
+}
+
+/* ====== Header ======= */
+/* line 623, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.header {
+  background: rgba(53, 55, 60, 0.8);
+  color: #fff;
+  width: 100%;
+  z-index: 100;
+  min-height: 70px;
+}
+
+/* line 630, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.header .logo {
+  font-size: 20px;
+  font-weight: 500;
+  float: left;
+  margin-left: -50px;
+  margin-top: 22px;
+  margin-bottom: 0;
+}
+
+/* line 638, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.header .logo .text {
+  margin-left: 5px;
+}
+
+/* line 641, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.header .logo a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* ====== Nav ======= */
+/* line 646, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.main-nav .navbar-toggle {
+  margin-right: 0;
+  margin-top: 0;
+  background: none;
+  position: absolute;
+  right: 10px;
+  top: 13px;
+}
+
+/* line 654, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.main-nav .navbar-toggle:focus {
+  outline: none;
+}
+
+/* line 657, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.main-nav .navbar-toggle .icon-bar {
+  background-color: #fff;
+  height: 3px;
+}
+
+/* line 661, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.main-nav .nav .nav-item {
+  font-weight: normal;
+  text-transform: uppercase;
+  font-size: 12px;
+  display: block;
+}
+
+/* line 667, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.main-nav .nav .nav-item.active a {
+  color: #fff;
+  background: none;
+  font-weight: bold;
+}
+
+/* line 672, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.main-nav .nav .nav-item a {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* line 675, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.main-nav .nav .nav-item a:hover {
+  color: #fff;
+  background: none;
+}
+
+/* line 679, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.main-nav .nav .nav-item a:focus {
+  outline: none;
+  background: none;
+}
+
+/* line 683, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.main-nav .nav .nav-item a:active {
+  outline: none;
+  background: none;
+}
+
+/* line 687, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.main-nav .nav .nav-item.active {
+  color: #fff;
+}
+
+/* line 690, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.main-nav .nav .nav-item.last {
+  margin-right: 0;
+}
+
+/* line 693, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.main-nav .nav .nav-item .btn-signup {
+  background: rgba(0, 0, 0, 0.4);
+  padding: 5px 10px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  position: relative;
+  top: 20px;
+}
+
+/* line 707, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.main-nav .nav .nav-item .btn-signup:active {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+/* line 710, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.main-nav .nav .nav-item .btn-signup:hover {
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+}
+
+/* line 714, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.main-nav .nav.active {
+  position: relative;
+}
+
+/* line 717, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.main-nav .nav.active > a {
+  background: #107692;
+  color: #fff;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* line 722, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.main-nav .nav.active > a:before {
+  content: "\f0d8";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  text-align: center;
+  font-family: FontAwesome;
+  display: block;
+  font-size: 12px;
+  width: 100%;
+}
+
+/* line 733, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.main-nav .nav.active > a.dropdown-toggle:before {
+  display: none;
+}
+
+/* line 736, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.main-nav .nav.open a {
+  background: none;
+}
+
+/* line 739, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.main-nav .nav .dropdown-menu {
+  -webkit-border-top-right-radius: 0;
+  -webkit-border-bottom-right-radius: 4px;
+  -webkit-border-bottom-left-radius: 4px;
+  -webkit-border-top-left-radius: 0;
+  -moz-border-radius-topright: 0;
+  -moz-border-radius-bottomright: 4px;
+  -moz-border-radius-bottomleft: 4px;
+  -moz-border-radius-topleft: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border-top-left-radius: 0;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  padding: 0;
+  margin: 0;
+  border: none;
+  text-transform: none;
+  min-width: 200px;
+  background: rgba(53, 55, 60, 0.8);
+  animation-fill-mode: both;
+}
+
+/* line 763, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.main-nav .nav .dropdown-menu a {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 8px 20px;
+  color: rgba(255, 255, 255, 0.8);
+  -webkit-opacity: 1;
+  -moz-opacity: 1;
+  opacity: 1;
+  display: block;
+}
+
+/* line 772, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.main-nav .nav .dropdown-menu a:hover {
+  background: #35373C;
+  color: #fff;
+}
+
+/* line 776, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.open > .dropdown-menu {
+  -webkit-opacity: 1;
+  -moz-opacity: 1;
+  opacity: 1;
+  -webkit-transform: scale(1, 1);
+  -moz-transform: scale(1, 1);
+  -ms-transform: scale(1, 1);
+  -o-transform: scale(1, 1);
+}
+
+/* line 785, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.dropdown-menu {
+  display: block;
+  -webkit-opacity: 0.3;
+  -moz-opacity: 0.3;
+  opacity: 0.3;
+  -webkit-transform: scale(1, 0);
+  -moz-transform: scale(1, 0);
+  -ms-transform: scale(1, 0);
+  -o-transform: scale(1, 0);
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -ms-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  -webkit-transform-origin: top;
+  transform-origin: top;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+/* Override bootstrap default */
+/* line 804, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.nav .open > a,
+.nav .open > a:hover,
+.nav .open > a:focus {
+  background: none;
+}
+
+/* Animated Hamburger Icon for Bootstrap */
+/* line 810, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.navbar-toggle .icon-bar:nth-of-type(2) {
+  top: 1px;
+}
+
+/* line 813, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.navbar-toggle .icon-bar:nth-of-type(3) {
+  top: 2px;
+}
+
+/* line 816, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.navbar-toggle .icon-bar {
+  position: relative;
+  transition: all 500ms ease-in-out;
+}
+
+/* line 820, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.navbar-toggle.active .icon-bar:nth-of-type(1) {
+  top: 8px;
+  transform: rotate(45deg);
+}
+
+/* line 824, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.navbar-toggle.active .icon-bar:nth-of-type(2) {
+  background-color: transparent;
+}
+
+/* line 827, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.navbar-toggle.active .icon-bar:nth-of-type(3) {
+  top: -6px;
+  transform: rotate(-45deg);
+}
+
+/* ======= Footer ======= */
+/* line 832, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.footer {
+  background: #35373C;
+  color: rgba(255, 255, 255, 0.7);
+  padding-top: 45px;
+  padding-bottom: 45px;
+}
+
+/* line 838, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.footer a {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* line 841, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.footer .divider {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* line 846, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.footer .social-media {
+  margin-bottom: 15px;
+}
+
+/* line 849, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.footer .social-media li a {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  background: rgba(0, 0, 0, 0.1);
+  padding-top: 5px;
+}
+
+/* line 864, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.footer .social-media li a:hover {
+  background: rgba(0, 0, 0, 0.2);
+  color: #fff;
+}
+
+/* line 868, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.footer .social-media li .fa {
+  font-size: 16px;
+}
+
+/* line 871, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.footer .copyright {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 12px;
+}
+
+/* line 875, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.footer .copyright a {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* line 878, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.footer-col .col-title {
+  font-size: 16px;
+  color: #fff;
+  font-weight: normal;
+}
+
+/* line 883, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.footer-col .footer-menu li {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+/* line 887, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.footer-col .label-new {
+  margin-left: 5px;
+}
+
+/* ======= Home ======= */
+/* line 891, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.promo-section {
+  color: #fff;
+  height: 680px;
+  padding-bottom: 0;
+  padding-top: 170px;
+  background: #35373C;
+}
+
+/* line 898, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.promo-section a {
+  color: #fff;
+}
+
+/* line 901, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.promo-section .promo-content {
+  margin-top: -70px;
+  z-index: 10;
+  position: relative;
+}
+
+/* line 906, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.promo-section .headline {
+  font-size: 36px;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+/* line 911, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.promo-section .tagline {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+/* line 915, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.promo-section .actions .btn {
+  margin-right: 30px;
+}
+
+/* line 918, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.promo-section .actions .play-icon {
+  margin-right: 10px;
+}
+
+/* line 921, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.hero-slider-wrapper {
+  content: "";
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 680px;
+  background: #35373C;
+}
+
+/* line 930, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.hero-slider-wrapper .flexslider {
+  margin: 0;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  border: none;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  border-radius: 0;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  background: #35373C;
+}
+
+/* line 946, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.hero-slider-wrapper .flexslider .slide {
+  display: none;
+  height: 680px;
+}
+
+/* line 950, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.hero-slider-wrapper .flexslider .slide.slide-1 {
+  background: #35373C url("../images/hero/background.png") no-repeat 50% top;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/* line 957, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.hero-slider-wrapper .flexslider .slide.slide-2 {
+  background: #35373C url("../images/hero/background.png") no-repeat 50% top;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/* line 964, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.hero-slider-wrapper .flexslider .slide.slide-3 {
+  background: #35373C url("../images/hero/background.png") no-repeat 50% top;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/* line 971, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.hero-slider-wrapper .flexslider .flex-control-nav {
+  z-index: 30;
+  bottom: 30px;
+  position: relative;
+}
+
+/* line 976, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.hero-slider-wrapper .flexslider .flex-control-nav li a {
+  background: #ccc;
+}
+
+/* line 979, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.hero-slider-wrapper .flexslider .flex-control-nav li a.flex-active {
+  background: #f2f2f2;
+}
+
+/* line 982, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.hero-slider-mask {
+  background-color: rgba(0, 0, 0, 0.6) 35%;
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.6) 35%), to(transparent));
+  background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.6) 35%, transparent);
+  background-image: -moz-linear-gradient(left, rgba(0, 0, 0, 0.6) 35%, transparent);
+  background-image: -ms-linear-gradient(left, rgba(0, 0, 0, 0.6) 35%, transparent);
+  background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0.6) 35%, transparent);
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 5;
+}
+
+/* line 997, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+body.sticky-page-nav .overview-section {
+  padding-top: 150px;
+}
+
+/* line 1000, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.overview-section {
+  padding-bottom: 0;
+}
+
+/* line 1003, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.sticky-page-nav .overview-section {
+  padding-top: 150px;
+}
+
+/* line 1006, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.overview-section .container {
+  position: relative;
+}
+
+/* line 1009, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.overview-section .macbook-screen img {
+  width: 1140px;
+}
+
+/* line 1012, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.overview-section .ipad-screen {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+/* line 1017, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.overview-section .ipad-screen img {
+  width: 520px;
+}
+
+/* line 1020, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.overview-section .iphone-screen {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+/* line 1025, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.overview-section .iphone-screen img {
+  width: 205px;
+}
+
+/* line 1028, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.overview-section .play-icon {
+  position: absolute;
+  top: 200px;
+  -webkit-opacity: 0.6;
+  -moz-opacity: 0.6;
+  opacity: 0.6;
+}
+
+/* line 1035, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.overview-section .play-icon:hover {
+  -webkit-opacity: 0.8;
+  -moz-opacity: 0.8;
+  opacity: 0.8;
+}
+
+/* line 1040, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.benefits-wrapper {
+  background: #159bc0;
+  color: #fff;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  margin-top: -90px;
+  z-index: 5;
+  position: relative;
+}
+
+/* line 1049, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.benefits-wrapper .item-inner {
+  padding: 30px;
+}
+
+/* line 1052, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.benefits-wrapper .item-icon {
+  margin-bottom: 15px;
+}
+
+/* line 1055, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.benefits-wrapper .item-title {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+/* line 1061, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.press-wrapper {
+  background: #f5f5f5;
+  padding-top: 30px;
+  padding-bottom: 15px;
+}
+
+/* line 1066, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.press-wrapper .logo {
+  text-align: center;
+  margin-bottom: 15px;
+  -webkit-opacity: 0.5;
+  -moz-opacity: 0.5;
+  opacity: 0.5;
+}
+
+/* line 1073, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.press-wrapper .logo img {
+  margin: 0 auto;
+}
+
+/* line 1076, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.features-section {
+  position: relative;
+  padding-top: 90px;
+  padding-bottom: 150px;
+}
+
+/* line 1081, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.features-section .section-title {
+  margin-bottom: 60px;
+}
+
+/* line 1084, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.features-content-wrapper {
+  padding-right: 60px;
+  position: relative;
+  margin-bottom: 60px;
+}
+
+/* line 1089, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.features-content-wrapper .intro {
+  margin-bottom: 30px;
+}
+
+/* line 1092, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.features-content-wrapper .feature-list {
+  margin-bottom: 60px;
+  margin-left: 30px;
+}
+
+/* line 1096, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.features-content-wrapper .feature-list li {
+  margin-bottom: 15px;
+}
+
+/* line 1099, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.features-content-wrapper .feature-list .tick-icon {
+  margin-right: 5px;
+}
+
+/* line 1102, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.features-figure-wrapper {
+  overflow: hidden;
+  position: absolute;
+  right: -120px;
+  top: 90px;
+  max-width: 900px;
+}
+
+/* line 1109, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.reviews-carousel {
+  margin-bottom: 30px;
+}
+
+/* line 1112, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.reviews-carousel .carousel-inner {
+  padding-bottom: 30px;
+}
+
+/* line 1115, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.reviews-carousel .review {
+  border-left: none;
+  position: relative;
+  font-size: 14px;
+  padding: 30px 60px;
+}
+
+/* line 1121, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.reviews-carousel .review .fa-quote-left {
+  position: absolute;
+  top: 15px;
+  left: 30px;
+  color: #999ca4;
+  font-size: 18px;
+}
+
+/* line 1128, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.reviews-carousel .source {
+  text-align: center;
+}
+
+/* line 1131, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.reviews-carousel .profile {
+  width: 60px;
+  margin-bottom: 10px;
+}
+
+/* line 1135, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.reviews-carousel .name {
+  font-size: 13px;
+  color: #999ca4;
+}
+
+/* line 1139, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.reviews-carousel .rating {
+  color: #159bc0;
+  margin-bottom: 15px;
+}
+
+/* line 1143, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.reviews-carousel .carousel-indicators {
+  bottom: 0;
+  margin-bottom: 0;
+}
+
+/* line 1147, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.reviews-carousel .carousel-indicators li {
+  background-color: #cfd0d4;
+  border: none;
+  width: 10px;
+  height: 10px;
+  margin: 0;
+  margin-right: 5px;
+}
+
+/* line 1155, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.reviews-carousel .carousel-indicators li.active {
+  background-color: #656972;
+  width: 10px;
+  height: 10px;
+  margin: 0;
+  margin-right: 5px;
+}
+
+/* line 1162, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.customers-section {
+  background: #f5f5f5;
+}
+
+/* line 1165, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.customers-section .item {
+  margin-bottom: 30px;
+}
+
+/* line 1168, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.customers-section .item-inner {
+  position: relative;
+  height: 380px;
+  overflow: hidden;
+}
+
+/* line 1173, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.customers-section .item-inner:hover .item-content {
+  margin-top: 15px;
+}
+
+/* line 1176, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.customers-section .item-inner:hover .item-mask {
+  background-color: transparent 0;
+  background: -webkit-gradient(linear, left top, left bottom, from(transparent 0), to(rgba(0, 0, 0, 0.8) 35%));
+  background: -webkit-linear-gradient(top, transparent 0, rgba(0, 0, 0, 0.8) 35%);
+  background: -moz-linear-gradient(top, transparent 0, rgba(0, 0, 0, 0.8) 35%);
+  background: -ms-linear-gradient(top, transparent 0, rgba(0, 0, 0, 0.8) 35%);
+  background: -o-linear-gradient(top, transparent 0, rgba(0, 0, 0, 0.8) 35%);
+}
+
+/* line 1184, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.customers-section .item-1 .item-inner {
+  background: url("customers/customer-1.jpg") no-repeat 50% 50%;
+  background-size: cover;
+}
+
+/* line 1188, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.customers-section .item-2 .item-inner {
+  background: url("customers/customer-2.jpg") no-repeat 50% 50%;
+  background-size: cover;
+}
+
+/* line 1192, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.customers-section .item-3 .item-inner {
+  background: url("customers/customer-3.jpg") no-repeat 50% 50%;
+  background-size: cover;
+}
+
+/* line 1196, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.customers-section .item-4 .item-inner {
+  background: url("customers/customer-4.jpg") no-repeat 50% 50%;
+  background-size: cover;
+}
+
+/* line 1200, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.customers-section .item-mask {
+  background-color: transparent 0;
+  background: -webkit-gradient(linear, left top, left bottom, from(transparent 0), to(rgba(0, 0, 0, 0.8) 85%));
+  background: -webkit-linear-gradient(top, transparent 0, rgba(0, 0, 0, 0.8) 85%);
+  background: -moz-linear-gradient(top, transparent 0, rgba(0, 0, 0, 0.8) 85%);
+  background: -ms-linear-gradient(top, transparent 0, rgba(0, 0, 0, 0.8) 85%);
+  background: -o-linear-gradient(top, transparent 0, rgba(0, 0, 0, 0.8) 85%);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+
+/* line 1213, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.customers-section .item-content {
+  padding: 45px;
+  color: #fff;
+  position: absolute;
+  width: 100%;
+  height: 380px;
+  left: 0;
+  -webkit-transition: margin-top 0.4s ease-in-out;
+  -moz-transition: margin-top 0.4s ease-in-out;
+  -ms-transition: margin-top 0.4s ease-in-out;
+  -o-transition: margin-top 0.4s ease-in-out;
+  margin-top: 230px;
+}
+
+/* line 1226, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.customers-section .item-link {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+
+/* line 1233, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.customers-section .content-title {
+  margin-top: 0;
+  margin-bottom: 45px;
+  line-height: 1.5;
+  font-size: 24px;
+}
+
+/* line 1239, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.customers-section .content-desc .fa {
+  width: 32px;
+  height: 32px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  background: #fff;
+  color: #000;
+  padding-top: 8px;
+  margin-bottom: 15px;
+}
+
+/* line 1255, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.customers-section .stories-wrapper {
+  margin-bottom: 30px;
+}
+
+/* line 1258, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.signup-section {
+  background-color: #159bc0;
+}
+
+/* line 1261, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.signup-section .section-inner {
+  background: url(/assets/bg-map.jpg) no-repeat left top;
+  background-size: cover;
+}
+
+/* line 1265, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.signup-section .counter-wrapper {
+  margin-bottom: 15px;
+}
+
+/* line 1268, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.signup-section .counter-desc {
+  color: #fff;
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+
+/* line 1273, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.signup-section .form-title {
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+
+/* line 1280, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.signup-section .form-wrapper {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+/* line 1284, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.signup-section .form-box {
+  background: #fff;
+  padding: 45px;
+  position: relative;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+
+/* line 1297, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.signup-section .form-box:after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #fff;
+  position: absolute;
+  top: -10px;
+  margin-left: -10px;
+  left: 50%;
+}
+
+/* line 1310, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.signup-section .form-heading {
+  margin-top: 0;
+  color: #35373C;
+  font-size: 28px;
+}
+
+/* line 1315, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.signup-section .form-desc {
+  margin-bottom: 30px;
+}
+
+/* line 1318, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.signup-section .legal-note {
+  font-size: 14px;
+  margin-bottom: 30px;
+  color: #999ca4;
+}
+
+/* line 1323, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.signup-section .social-buttons {
+  margin-bottom: 45px;
+}
+
+/* line 1326, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.signup-section .social-buttons li {
+  margin-bottom: 15px;
+}
+
+/* line 1329, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.signup-section .divider {
+  border-bottom: 1px solid #ccc;
+  position: relative;
+  margin-bottom: 45px;
+}
+
+/* line 1334, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.signup-section .or-text {
+  position: relative;
+  position: absolute;
+  top: -12px;
+  padding: 0 10px;
+  background: #fff;
+  display: inline-block;
+  left: 50%;
+  margin-left: -21px;
+}
+
+/* line 1344, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.signup-section .alter-login {
+  margin-top: 15px;
+  margin-bottom: 30px;
+  font-size: 14px;
+  color: #999ca4;
+}
+
+/* line 1350, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.support-section {
+  padding-bottom: 0;
+}
+
+/* line 1353, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.support-section .section-intro {
+  margin-bottom: 30px;
+}
+
+/* line 1356, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.support-section .support-team {
+  padding-top: 45px;
+}
+
+/* line 1359, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.support-section .team-figure {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+/* line 1363, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.apps-section {
+  background: #159bc0;
+  padding-top: 60px;
+  padding-bottom: 45px;
+}
+
+/* line 1368, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.apps-section .section-title {
+  color: #fff;
+}
+
+/* line 1371, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.apps-section .apps-list li {
+  margin-bottom: 15px;
+}
+
+/* line 1374, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.features-page .hero-holder {
+  background: #35373C url("../images/hero/hero-features.jpg") no-repeat 50% 50%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/* line 1381, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.feature-blocks {
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+
+/* line 1385, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.feature-blocks .feature-block {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+/* line 1389, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.feature-blocks .feature-block:first-child {
+  padding-top: 0;
+}
+
+/* line 1392, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.feature-blocks .feature-title {
+  color: #35373C;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+/* line 1397, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.feature-blocks .feature-desc {
+  padding-right: 30px;
+  font-size: 14px;
+}
+
+/* line 1401, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.feature-blocks .figure-holder img {
+  border: 1px solid #eee;
+  -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+}
+
+/* line 1407, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.stories-page .hero-holder {
+  background: #35373C url("../images/hero/hero-stories.jpg") no-repeat 50% 50%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/* line 1414, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.stories-page .actions {
+  margin-top: 60px;
+}
+
+/* line 1417, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.stories-page .actions a {
+  color: #fff;
+  margin-bottom: 10px;
+  display: block;
+  -webkit-opacity: 0.8;
+  -moz-opacity: 0.8;
+  opacity: 0.8;
+}
+
+/* line 1425, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.stories-page .actions a:hover {
+  -webkit-opacity: 1;
+  -moz-opacity: 1;
+  opacity: 1;
+  text-decoration: none;
+}
+
+/* line 1431, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.stories-page .actions a img {
+  -webkit-opacity: 0.7;
+  -moz-opacity: 0.7;
+  opacity: 0.7;
+}
+
+/* line 1436, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.stories-page .actions a img:hover {
+  -webkit-opacity: 1;
+  -moz-opacity: 1;
+  opacity: 1;
+}
+
+/* line 1441, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.stories-page .heading-section {
+  padding-top: 180px;
+}
+
+/* line 1444, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.stories {
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+
+/* line 1448, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.story-block {
+  margin-bottom: 60px;
+}
+
+/* line 1451, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.story-item {
+  background: #159bc0;
+  color: #fff;
+  margin-bottom: 60px;
+}
+
+/* line 1456, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.story-item .figure-holder .inner {
+  position: relative;
+}
+
+/* line 1459, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.story-item .figure-mask {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(21, 155, 192, 0.2);
+}
+
+/* line 1467, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.story-item .content .inner {
+  padding: 30px;
+  padding-left: 15px;
+}
+
+/* line 1471, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.story-item .content .logo {
+  margin-bottom: 15px;
+}
+
+/* line 1474, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.story-item .content .heading {
+  margin-bottom: 15px;
+  margin-top: 0;
+  font-size: 24px;
+}
+
+/* line 1479, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.story-item .content .desc {
+  margin-bottom: 30px;
+  font-size: 16px;
+}
+
+/* line 1483, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.quote-item {
+  padding-top: 40px;
+  margin-bottom: 30px;
+}
+
+/* line 1487, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.quote-item .inner {
+  background: #f5f5f5;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  padding: 45px;
+  padding-top: 60px;
+  position: relative;
+}
+
+/* line 1501, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.quote-item .inner .fa-quote-left {
+  position: absolute;
+  left: 30px;
+  top: 30px;
+  -webkit-opacity: 0.3;
+  -moz-opacity: 0.3;
+  opacity: 0.3;
+}
+
+/* line 1509, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.quote-item .quote {
+  font-weight: lighter;
+  font-style: italic;
+  font-family: 'Roboto', sans-serif;
+  border-left: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 1517, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.quote-item .source {
+  font-size: 14px;
+  margin-top: 30px;
+}
+
+/* line 1521, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.quote-item .source .title {
+  color: #7d828d;
+}
+
+/* line 1524, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.quote-item .profile {
+  position: absolute;
+  left: 50%;
+  top: -40px;
+  margin-left: -40px;
+}
+
+/* line 1530, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.quote-item .profile img {
+  width: 80px;
+}
+
+/* line 1533, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.story-single-page .hero-holder {
+  background: #35373C url("../images/hero/hero-story-single.jpg") no-repeat 50% 50%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/* line 1540, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.story-single-page .actions {
+  margin-top: 60px;
+}
+
+/* line 1543, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.story-single-page .actions a {
+  color: #fff;
+  margin-bottom: 10px;
+  display: block;
+  -webkit-opacity: 0.8;
+  -moz-opacity: 0.8;
+  opacity: 0.8;
+}
+
+/* line 1551, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.story-single-page .actions a:hover {
+  -webkit-opacity: 1;
+  -moz-opacity: 1;
+  opacity: 1;
+  text-decoration: none;
+}
+
+/* line 1557, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.story-single-page .actions a img {
+  -webkit-opacity: 0.7;
+  -moz-opacity: 0.7;
+  opacity: 0.7;
+}
+
+/* line 1562, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.story-single-page .actions a img:hover {
+  -webkit-opacity: 1;
+  -moz-opacity: 1;
+  opacity: 1;
+}
+
+/* line 1567, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.story-single-page .heading-section {
+  padding-top: 180px;
+}
+
+/* line 1570, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.story-single-page .heading-section .meta {
+  margin-bottom: 15px;
+}
+
+/* line 1573, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.story-article-block {
+  max-width: 800px;
+  padding: 60px 30px;
+  margin: 0 auto;
+}
+
+/* line 1578, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.story-article-block .client-meta {
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+  padding-top: 30px;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+/* line 1585, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.story-article-block .client-meta .material-icons {
+  font-size: 42px;
+  color: #159bc0;
+}
+
+/* line 1589, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.story-article-block .client-meta .meta-title {
+  color: #999ca4;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+/* line 1594, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.story-article-block .client-meta .meta-info {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* line 1598, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.story-article-block .client-meta .item {
+  margin-bottom: 15px;
+}
+
+/* line 1601, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.story-article-block .video-holder {
+  margin-top: 45px;
+  margin-bottom: 45px;
+}
+
+/* line 1605, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.story-article-block .quote-container {
+  margin-top: 45px;
+  margin-bottom: 45px;
+  text-align: center;
+}
+
+/* line 1610, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.story-article-block .quote-container .quote {
+  font-size: 28px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  border-left: none;
+  padding: 30px;
+  color: #159bc0;
+}
+
+/* line 1618, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.story-article-block .quote-container .fa-quote-right {
+  width: 36px;
+  height: 36px;
+  background: #159bc0;
+  color: #fff;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  padding-top: 10px;
+}
+
+/* line 1633, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.story-article-block .quote-container .profile {
+  margin-bottom: 10px;
+}
+
+/* line 1636, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.story-article-block .quote-container .profile img {
+  width: 80px;
+  height: 80px;
+}
+
+/* line 1640, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.story-article-block .quote-container .source {
+  color: #999ca4;
+  font-size: 14px;
+}
+
+/* line 1644, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.other-stories-block {
+  background: #f5f5f5;
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+
+/* line 1649, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.other-stories-block .block-heading {
+  margin-top: 0;
+  margin-bottom: 45px;
+  font-size: 24px;
+}
+
+/* line 1654, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.other-stories-block .item {
+  margin-bottom: 15px;
+}
+
+/* line 1657, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.other-stories-block .item-inner {
+  padding: 30px;
+  background: #159bc0;
+  color: #fff;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+
+/* line 1670, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.other-stories-block .item-inner .logo img {
+  max-width: 100px;
+}
+
+/* line 1673, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.other-stories-block .item-inner .heading {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+/* line 1677, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.other-stories-block .item-inner .desc {
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+/* line 1681, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.pricing-page .hero-holder {
+  background: #35373C url("../images/hero/hero-pricing.jpg") no-repeat 50% 50%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/* line 1688, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.pricing-page .actions {
+  margin-top: 60px;
+}
+
+/* line 1691, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.pricing-page .actions a {
+  color: #fff;
+  margin-bottom: 10px;
+  display: block;
+  -webkit-opacity: 0.8;
+  -moz-opacity: 0.8;
+  opacity: 0.8;
+}
+
+/* line 1699, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.pricing-page .actions a:hover {
+  -webkit-opacity: 1;
+  -moz-opacity: 1;
+  opacity: 1;
+  text-decoration: none;
+}
+
+/* line 1705, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.pricing-page .actions a img {
+  -webkit-opacity: 0.7;
+  -moz-opacity: 0.7;
+  opacity: 0.7;
+}
+
+/* line 1710, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.pricing-page .actions a img:hover {
+  -webkit-opacity: 1;
+  -moz-opacity: 1;
+  opacity: 1;
+}
+
+/* line 1715, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.pricing-page .heading-section {
+  padding-top: 180px;
+}
+
+/* line 1718, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.pricing-block {
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+
+/* line 1722, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.pricing-block .block-heading {
+  margin-top: 0;
+  margin-bottom: 90px;
+  font-size: 28px;
+  color: #35373C;
+}
+
+/* line 1728, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.pricing-block .item {
+  margin-bottom: 30px;
+}
+
+/* line 1731, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.pricing-block .item.item-2 {
+  margin-bottom: 60px;
+}
+
+/* line 1734, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.pricing-block .item-inner {
+  color: #fff;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+
+/* line 1745, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.pricing-block .item-heading {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+/* line 1751, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.pricing-block .item-intro {
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+/* line 1755, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.pricing-block .summary-box {
+  padding: 30px;
+  background: #159bc0;
+  -webkit-border-top-right-radius: 4px;
+  -webkit-border-bottom-right-radius: 0;
+  -webkit-border-bottom-left-radius: 0;
+  -webkit-border-top-left-radius: 4px;
+  -moz-border-radius-topright: 4px;
+  -moz-border-radius-bottomright: 0;
+  -moz-border-radius-bottomleft: 0;
+  -moz-border-radius-topleft: 4px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 4px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+
+/* line 1774, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.pricing-block .item-popular .item-inner {
+  position: relative;
+}
+
+/* line 1777, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.pricing-block .item-popular .summary-box {
+  background: #51a852;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  border-radius: 0;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+
+/* line 1788, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.pricing-block .item-popular .popular-tag {
+  color: #fff;
+  background: #408641;
+  position: absolute;
+  top: -30px;
+  left: 0;
+  width: 100%;
+  -webkit-border-top-right-radius: 4px;
+  -webkit-border-bottom-right-radius: 0;
+  -webkit-border-bottom-left-radius: 0;
+  -webkit-border-top-left-radius: 4px;
+  -moz-border-radius-topright: 4px;
+  -moz-border-radius-bottomright: 0;
+  -moz-border-radius-bottomleft: 0;
+  -moz-border-radius-topleft: 4px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 4px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+/* line 1816, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.pricing-block .currency {
+  font-size: 28px;
+}
+
+/* line 1819, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.pricing-block .number {
+  font-size: 46px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+}
+
+/* line 1824, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.pricing-block .unit {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+  margin-bottom: 30px;
+}
+
+/* line 1829, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.pricing-block .btn-container {
+  margin-bottom: 10px;
+}
+
+/* line 1832, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.pricing-block .note {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* line 1836, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.pricing-block .details-box {
+  padding: 30px;
+  background: #656972;
+  -webkit-border-top-right-radius: 0;
+  -webkit-border-bottom-right-radius: 4px;
+  -webkit-border-bottom-left-radius: 4px;
+  -webkit-border-top-left-radius: 0;
+  -moz-border-radius-topright: 0;
+  -moz-border-radius-bottomright: 4px;
+  -moz-border-radius-bottomleft: 4px;
+  -moz-border-radius-topleft: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border-top-left-radius: 0;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+
+/* line 1855, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.pricing-block .details-list li {
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+/* line 1859, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.pricing-block .details-list li .fa {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+/* line 1862, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.faqs-block {
+  padding-top: 90px;
+  padding-bottom: 90px;
+  background: #159bc0;
+  color: #fff;
+}
+
+/* line 1868, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.faqs-block .block-heading {
+  margin-top: 0;
+  margin-bottom: 60px;
+  font-size: 28px;
+}
+
+/* line 1873, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.faqs-block .panel {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+/* line 1881, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.faqs-block .panel-title {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* line 1885, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.faqs-block .panel-title a {
+  color: #fff;
+}
+
+/* line 1888, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.faqs-block .panel-title .fa {
+  margin-right: 8px;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+/* line 1892, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.faqs-block .panel-body {
+  font-size: 14px;
+}
+
+/* line 1895, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.about-page .hero-holder {
+  background: #35373C url("../images/hero/hero-about.jpg") no-repeat 50% 50%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/* line 1902, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.about-page .actions {
+  margin-top: 60px;
+}
+
+/* line 1905, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.about-page .actions a {
+  color: #fff;
+  margin-bottom: 10px;
+  display: block;
+  -webkit-opacity: 0.8;
+  -moz-opacity: 0.8;
+  opacity: 0.8;
+}
+
+/* line 1913, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.about-page .actions a:hover {
+  -webkit-opacity: 1;
+  -moz-opacity: 1;
+  opacity: 1;
+  text-decoration: none;
+}
+
+/* line 1919, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.about-page .actions a img {
+  -webkit-opacity: 0.7;
+  -moz-opacity: 0.7;
+  opacity: 0.7;
+}
+
+/* line 1924, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.about-page .actions a img:hover {
+  -webkit-opacity: 1;
+  -moz-opacity: 1;
+  opacity: 1;
+}
+
+/* line 1929, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.about-page .heading-section {
+  padding-top: 180px;
+}
+
+/* line 1932, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.team-block {
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+
+/* line 1936, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.team-block .block-heading {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 28px;
+  color: #35373C;
+}
+
+/* line 1942, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.team-block .block-intro {
+  max-width: 720px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+
+/* line 1947, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.team-block .block-cta {
+  margin-bottom: 60px;
+}
+
+/* line 1950, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.team-block .item {
+  margin-bottom: 30px;
+}
+
+/* line 1953, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.team-block .item-inner {
+  position: relative;
+}
+
+/* line 1956, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.team-block .item-inner img {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+
+/* line 1966, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.team-block .item-inner .mask {
+  background-color: transparent 0;
+  background: -webkit-gradient(linear, left top, left bottom, from(transparent 0), to(rgba(0, 0, 0, 0.8) 85%));
+  background: -webkit-linear-gradient(top, transparent 0, rgba(0, 0, 0, 0.8) 85%);
+  background: -moz-linear-gradient(top, transparent 0, rgba(0, 0, 0, 0.8) 85%);
+  background: -ms-linear-gradient(top, transparent 0, rgba(0, 0, 0, 0.8) 85%);
+  background: -o-linear-gradient(top, transparent 0, rgba(0, 0, 0, 0.8) 85%);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  -webkit-opacity: 0;
+  -moz-opacity: 0;
+  opacity: 0;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -ms-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+
+/* line 1994, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.team-block .item-inner .info {
+  padding: 15px;
+  color: #fff;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -ms-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  -webkit-opacity: 0;
+  -moz-opacity: 0;
+  opacity: 0;
+}
+
+/* line 2009, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.team-block .item-inner:hover {
+  cursor: pointer;
+}
+
+/* line 2012, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.team-block .item-inner:hover .info {
+  -webkit-opacity: 1;
+  -moz-opacity: 1;
+  opacity: 1;
+  bottom: 15px;
+}
+
+/* line 2018, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.team-block .item-inner:hover .mask {
+  -webkit-opacity: 1;
+  -moz-opacity: 1;
+  opacity: 1;
+}
+
+/* line 2023, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.team-block .item-inner .name {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+/* line 2027, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.team-block .item-inner .title {
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 10px;
+}
+
+/* line 2031, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.team-block .item-inner .social {
+  margin-bottom: 0;
+}
+
+/* line 2034, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.team-block .item-inner .social a {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 22px;
+  display: inline-block;
+}
+
+/* line 2039, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.team-block .item-inner .social a:hover {
+  color: #fff;
+}
+
+/* line 2042, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.career-page .hero-holder {
+  background: #35373C url("../images/hero/hero-career.jpg") no-repeat 50% 50%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/* line 2049, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.career-page .actions {
+  margin-top: 60px;
+}
+
+/* line 2052, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.career-page .actions a {
+  color: #fff;
+  margin-bottom: 10px;
+  display: block;
+  -webkit-opacity: 0.8;
+  -moz-opacity: 0.8;
+  opacity: 0.8;
+}
+
+/* line 2060, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.career-page .actions a:hover {
+  -webkit-opacity: 1;
+  -moz-opacity: 1;
+  opacity: 1;
+  text-decoration: none;
+}
+
+/* line 2066, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.career-page .actions a img {
+  -webkit-opacity: 0.7;
+  -moz-opacity: 0.7;
+  opacity: 0.7;
+}
+
+/* line 2071, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.career-page .actions a img:hover {
+  -webkit-opacity: 1;
+  -moz-opacity: 1;
+  opacity: 1;
+}
+
+/* line 2076, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.career-page .heading-section {
+  padding-top: 180px;
+}
+
+/* line 2079, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.career-page .block-heading {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 28px;
+  color: #35373C;
+}
+
+/* line 2085, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.career-page .block-intro {
+  max-width: 720px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+
+/* line 2090, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.culture-block {
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+
+/* line 2094, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.culture-block .video-holder {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* line 2098, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.benefits-block {
+  padding-top: 90px;
+  padding-bottom: 90px;
+  background: #f5f5f5;
+}
+
+/* line 2103, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.benefits-block .benefits-list {
+  margin-top: 30px;
+  margin-bottom: 45px;
+}
+
+/* line 2107, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.benefits-block .benefits-list li {
+  margin-bottom: 15px;
+}
+
+/* line 2110, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.benefits-block .benefits-list .fa {
+  margin-right: 5px;
+}
+
+/* line 2113, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.jobs-block {
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+
+/* line 2117, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.job-list {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+/* line 2121, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.job-list .item {
+  border-bottom: 1px solid #eee;
+  margin-bottom: 15px;
+}
+
+/* line 2125, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.job-list .item .title {
+  margin-bottom: 10px;
+  margin-top: 0;
+  font-size: 20px;
+}
+
+/* line 2130, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.job-list .item .meta {
+  color: #999ca4;
+  font-size: 14px;
+  padding-bottom: 5px;
+}
+
+/* line 2135, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.job-list .item .meta li:after {
+  content: "\f111";
+  padding-left: 10px;
+  font: normal normal normal 5px/1 FontAwesome;
+  position: relative;
+  bottom: 3px;
+}
+
+/* line 2142, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.job-list .item .meta li.last:after {
+  display: none;
+}
+
+/* line 2145, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.job-single-page .hero-wrapper {
+  height: 360px;
+}
+
+/* line 2148, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.job-single-page .hero-holder {
+  background: #35373C url("../images/hero/hero-job-single.jpg") no-repeat 50% 50%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 360px;
+}
+
+/* line 2156, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.job-single-page .heading-section {
+  padding-top: 160px;
+  height: 360px;
+}
+
+/* line 2160, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.job-single-page .heading-section .back-to-main {
+  color: #fff;
+  position: absolute;
+  left: 15px;
+  top: -75px;
+  font-size: 14px;
+}
+
+/* line 2167, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.job-single-page .heading-section .back-to-main a {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* line 2170, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.job-single-page .block-heading {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 28px;
+  color: #35373C;
+}
+
+/* line 2176, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.job-single-page .block-intro {
+  max-width: 720px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+
+/* line 2181, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.job-single-block {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 90px 30px;
+}
+
+/* line 2186, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.job-single-block .job-details .subtitle {
+  margin-top: 30px;
+  margin-bottom: 15px;
+  color: #35373C;
+  font-weight: 500;
+}
+
+/* line 2192, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.blog-page .hero-holder {
+  background: #35373C url("../images/hero/hero-blog.jpg") no-repeat 50% 50%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/* line 2199, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.blog-page .actions {
+  margin-top: 60px;
+}
+
+/* line 2202, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.blog-page .actions a {
+  color: #fff;
+  margin-bottom: 10px;
+  display: block;
+  -webkit-opacity: 0.8;
+  -moz-opacity: 0.8;
+  opacity: 0.8;
+}
+
+/* line 2210, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.blog-page .actions a:hover {
+  -webkit-opacity: 1;
+  -moz-opacity: 1;
+  opacity: 1;
+  text-decoration: none;
+}
+
+/* line 2216, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.blog-page .actions a img {
+  -webkit-opacity: 0.7;
+  -moz-opacity: 0.7;
+  opacity: 0.7;
+}
+
+/* line 2221, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.blog-page .actions a img:hover {
+  -webkit-opacity: 1;
+  -moz-opacity: 1;
+  opacity: 1;
+}
+
+/* line 2226, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.blog-page .heading-section {
+  padding-top: 180px;
+}
+
+/* line 2229, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.posts-promo-block {
+  background: #f5f5f5;
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+
+/* line 2234, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.posts-promo-block .carousel {
+  background: #fff;
+}
+
+/* line 2237, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.posts-promo-block .figure-holder {
+  height: 340px;
+}
+
+/* line 2240, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.posts-promo-block .item-1 .figure-holder {
+  background: #35373C url("../images/blog/featured-4.jpg") no-repeat 50% 50%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/* line 2247, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.posts-promo-block .item-2 .figure-holder {
+  background: #35373C url("../images/blog/featured-2.jpg") no-repeat 50% 50%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/* line 2254, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.posts-promo-block .item-3 .figure-holder {
+  background: #35373C url("../images/blog/featured-3.jpg") no-repeat 50% 50%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/* line 2261, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.posts-promo-block .item-4 .figure-holder {
+  background: #35373C url("../images/blog/featured-1.jpg") no-repeat 50% 50%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/* line 2268, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.posts-promo-block .item-content-inner {
+  padding: 15px;
+}
+
+/* line 2271, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.posts-promo-block .item-title {
+  font-size: 24px;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+/* line 2276, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.posts-promo-block .item-title a {
+  color: #656972;
+}
+
+/* line 2279, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.posts-promo-block .item-title a:hover {
+  color: #35373C;
+  text-decoration: none;
+}
+
+/* line 2283, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.posts-promo-block .item-meta {
+  font-size: 14px;
+  color: #999ca4;
+  margin-bottom: 15px;
+}
+
+/* line 2288, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.posts-promo-block .item-intro {
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+/* line 2292, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.posts-promo-block .carousel-indicators {
+  bottom: -45px;
+}
+
+/* line 2295, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.posts-promo-block .carousel-indicators li {
+  background-color: #ccc;
+  border: none;
+  width: 11px;
+  height: 11px;
+  margin: 0;
+  margin-right: 5px;
+}
+
+/* line 2303, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.posts-promo-block .carousel-indicators li.active {
+  background-color: #159bc0;
+}
+
+/* line 2306, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.posts-block {
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+
+/* line 2310, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.posts-block .block-heading {
+  margin-top: 0;
+  margin-bottom: 45px;
+  font-size: 28px;
+  color: #35373C;
+}
+
+/* line 2316, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.posts-block .nav-tabs {
+  border: none;
+  margin: 0 auto;
+  display: inline-block;
+  margin-bottom: 60px;
+}
+
+/* line 2322, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.posts-block .nav-tabs > li {
+  margin-bottom: 0;
+  margin-right: 15px;
+}
+
+/* line 2326, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.posts-block .nav-tabs > li:last-child {
+  margin-right: 0;
+}
+
+/* line 2329, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.posts-block .nav-tabs > li > a {
+  color: #656972;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  padding: 5px 10px;
+  border: none;
+}
+
+/* line 2342, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.posts-block .nav-tabs > li > a:hover {
+  background: #999ca4;
+  color: #fff;
+}
+
+/* line 2346, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.posts-block .nav-tabs > li.active > a,
+.posts-block .nav-tabs > li.active > a:focus,
+.posts-block .nav-tabs > li.active > a:hover {
+  background: #656972;
+  color: #fff;
+  border: none;
+}
+
+/* line 2353, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.posts-block .post {
+  max-width: 800px;
+  margin: 0 auto;
+  margin-bottom: 45px;
+  padding-top: 45px;
+  border-top: 1px solid #eee;
+}
+
+/* line 2360, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.posts-block .post .post-title {
+  font-size: 24px;
+  margin-bottom: 30px;
+  text-align: left;
+  padding-left: 200px;
+}
+
+/* line 2366, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.posts-block .post .post-title a {
+  color: #656972;
+}
+
+/* line 2369, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.posts-block .post .post-title a:hover {
+  color: #35373C;
+  text-decoration: none;
+}
+
+/* line 2373, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.posts-block .post .post-content {
+  position: relative;
+  padding-left: 200px;
+  text-align: left;
+}
+
+/* line 2378, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.posts-block .post .meta {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 200px;
+  font-size: 14px;
+  color: #999ca4;
+  padding: 15px;
+  padding-top: 0;
+  text-align: center;
+}
+
+/* line 2389, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.posts-block .post .author-profile {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 10px;
+}
+
+/* line 2394, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.posts-block .post .post-thumb {
+  margin-bottom: 30px;
+}
+
+/* line 2397, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.posts-block .post .post-thumb img {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+
+/* line 2407, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.pagination {
+  margin-bottom: 60px;
+  font-size: 14px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* line 2413, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.pagination li a {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  border: none;
+  margin-right: 5px;
+  color: #159bc0;
+}
+
+/* line 2426, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.pagination li a:hover {
+  color: #0d637b;
+}
+
+/* line 2429, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.pagination > .active > a,
+.pagination > .active > span,
+.pagination > .active > a:hover,
+.pagination > .active > span:hover,
+.pagination > .active > a:focus,
+.pagination > .active > span:focus {
+  background-color: #159bc0;
+  border: none;
+}
+
+/* line 2438, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.pagination > li > a:hover,
+.pagination > li > span:hover,
+.pagination > li > a:focus,
+.pagination > li > span:focus {
+  background-color: #f5f5f5;
+  border: none;
+}
+
+/* line 2445, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.pagination > li:first-child > a,
+.pagination > li:first-child > span,
+.pagination > li:last-child > a,
+.pagination > li:last-child > span {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  background: none;
+}
+
+/* line 2459, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.blog-signup-block {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background: #159bc0;
+  color: #fff;
+}
+
+/* line 2465, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.blog-signup-block .block-heading {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 28px;
+}
+
+/* line 2470, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.blog-signup-block .block-intro {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+  margin-bottom: 30px;
+}
+
+/* line 2475, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.blog-signup-block .subscribe-form .email-field {
+  width: 300px;
+  border: none;
+}
+
+/* line 2479, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.blog-signup-block .subscribe-form .btn {
+  height: 45px;
+  background: rgba(0, 0, 0, 0.3);
+  border: none;
+}
+
+/* line 2484, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.blog-signup-block .subscribe-form .btn:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* line 2487, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.blog-single-page .hero-holder {
+  background: #35373C url("../images/hero/hero-blog-single.jpg") no-repeat 50% 50%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/* line 2494, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.blog-single-page .actions {
+  margin-top: 60px;
+}
+
+/* line 2497, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.blog-single-page .actions a {
+  color: #fff;
+  margin-bottom: 10px;
+  display: block;
+  -webkit-opacity: 0.8;
+  -moz-opacity: 0.8;
+  opacity: 0.8;
+}
+
+/* line 2505, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.blog-single-page .actions a:hover {
+  -webkit-opacity: 1;
+  -moz-opacity: 1;
+  opacity: 1;
+  text-decoration: none;
+}
+
+/* line 2511, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.blog-single-page .actions a img {
+  -webkit-opacity: 0.7;
+  -moz-opacity: 0.7;
+  opacity: 0.7;
+}
+
+/* line 2516, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.blog-single-page .actions a img:hover {
+  -webkit-opacity: 1;
+  -moz-opacity: 1;
+  opacity: 1;
+}
+
+/* line 2521, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.blog-single-page .heading-section {
+  padding-top: 160px;
+}
+
+/* line 2524, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.blog-single-page .heading-section .back-to-main {
+  color: #fff;
+  position: absolute;
+  left: 15px;
+  top: -75px;
+  font-size: 14px;
+}
+
+/* line 2531, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.blog-single-page .heading-section .back-to-main a {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* line 2534, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.blog-single-page .heading-section .intro {
+  margin-bottom: 30px;
+}
+
+/* line 2537, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.blog-single-page .heading-section .meta {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+}
+
+/* line 2541, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.blog-single-page .heading-section .author-profile {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 10px;
+}
+
+/* line 2546, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.post-single-block {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 90px 30px;
+}
+
+/* line 2551, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.post-single-block .post-heading {
+  margin-top: 45px;
+  margin-bottom: 30px;
+  font-size: 24px;
+  font-weight: 500;
+  color: #35373C;
+}
+
+/* line 2558, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.post-single-block strong {
+  color: #35373C;
+}
+
+/* line 2561, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.post-single-block .figure {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* line 2566, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.post-single-block .figure img {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  margin: 0 auto;
+}
+
+/* line 2577, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.post-single-block .figure-caption {
+  color: #999ca4;
+  font-size: 14px;
+  margin-top: 10px;
+  font-style: italic;
+}
+
+/* line 2583, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.post-single-block .blog-quote {
+  font-family: 'Roboto Slab', serif;
+  font-weight: 300;
+  font-size: 24px;
+  border-left: none;
+  max-width: 90%;
+  margin: 45px auto;
+  padding: 45px;
+  position: relative;
+  color: #159bc0;
+  font-style: italic;
+  border-top: 2px solid #38c3e9;
+  border-bottom: 2px solid #38c3e9;
+}
+
+/* line 2597, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.post-single-block .blog-quote .fa-quote-left {
+  position: absolute;
+  left: 15px;
+  top: 30px;
+  color: #159bc0;
+}
+
+/* line 2603, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.post-single-block .blog-quote .source {
+  font-size: 16px;
+}
+
+/* line 2606, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.post-single-block .blog-quote .quote-tweet {
+  font-size: 14px;
+  text-align: right;
+}
+
+/* line 2610, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.post-single-block .blog-quote .quote-tweet .fa {
+  font-size: 28px;
+}
+
+/* line 2613, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.post-single-block .author-container {
+  margin-top: 60px;
+  padding: 30px;
+  position: relative;
+  min-height: 140px;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+/* line 2621, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.post-single-block .author-container .author {
+  position: absolute;
+  left: 30px;
+  top: 30px;
+}
+
+/* line 2626, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.post-single-block .author-container .author-profile {
+  width: 80px;
+  height: 80px;
+}
+
+/* line 2630, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.post-single-block .author-container .author-name {
+  font-weight: 500;
+  color: #35373C;
+}
+
+/* line 2634, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.post-single-block .author-container .intro {
+  padding-left: 110px;
+}
+
+/* line 2637, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.post-single-block .author-container .social a {
+  font-size: 20px;
+  color: #999ca4;
+}
+
+/* line 2641, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.post-single-block .author-container .social a:hover {
+  color: #159bc0;
+}
+
+/* line 2644, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.related-posts {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background: #f5f5f5;
+}
+
+/* line 2649, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.related-posts .title {
+  margin-top: 0;
+  margin-bottom: 45px;
+}
+
+/* line 2653, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.related-posts .item {
+  margin-bottom: 30px;
+}
+
+/* line 2656, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.related-posts .item .inner {
+  background: #fff;
+  border: 1px solid #eee;
+}
+
+/* line 2660, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.related-posts .item .title {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+/* line 2664, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.related-posts .item .content {
+  padding: 30px;
+  font-size: 14px;
+}
+
+/* line 2668, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.related-posts .item img {
+  margin: 0 auto;
+}
+
+/* line 2671, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.related-posts .item:hover img {
+  -webkit-opacity: 0.9;
+  -moz-opacity: 0.9;
+  opacity: 0.9;
+}
+
+/* line 2676, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.support-page .hero-holder {
+  background: #35373C url("../images/hero/hero-support.jpg") no-repeat 50% 50%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/* line 2683, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.support-page .actions {
+  margin-top: 60px;
+}
+
+/* line 2686, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.support-page .actions a {
+  color: #fff;
+  margin-bottom: 10px;
+  display: block;
+  -webkit-opacity: 0.8;
+  -moz-opacity: 0.8;
+  opacity: 0.8;
+}
+
+/* line 2694, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.support-page .actions a:hover {
+  -webkit-opacity: 1;
+  -moz-opacity: 1;
+  opacity: 1;
+  text-decoration: none;
+}
+
+/* line 2700, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.support-page .actions a img {
+  -webkit-opacity: 0.7;
+  -moz-opacity: 0.7;
+  opacity: 0.7;
+}
+
+/* line 2705, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.support-page .actions a img:hover {
+  -webkit-opacity: 1;
+  -moz-opacity: 1;
+  opacity: 1;
+}
+
+/* line 2710, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.support-page .heading-section {
+  padding-top: 180px;
+}
+
+/* line 2713, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.support-page .heading-section .headline {
+  margin-bottom: 30px;
+}
+
+/* line 2716, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.support-page .heading-section .help-search-form {
+  width: 520px;
+}
+
+/* line 2719, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.support-page .heading-section .btn {
+  height: 45px;
+}
+
+/* line 2722, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.topics-block {
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+
+/* line 2726, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.topics-block .block-heading {
+  margin-top: 0;
+  margin-bottom: 90px;
+  font-size: 28px;
+  color: #35373C;
+}
+
+/* line 2732, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.topics-block .item {
+  margin-bottom: 30px;
+}
+
+/* line 2735, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.topics-block .item-inner {
+  padding: 30px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  position: relative;
+}
+
+/* line 2747, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.topics-block .item-inner:hover {
+  background: #f5f5f5;
+}
+
+/* line 2750, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.topics-block .item-inner .figure-holder {
+  display: inline-block;
+  border: 2px solid #999ca4;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  width: 72px;
+  height: 72px;
+  padding-top: 14px;
+}
+
+/* line 2765, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.topics-block .item-inner .title {
+  color: #35373C;
+}
+
+/* line 2768, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.topics-block .item-inner .material-icons {
+  color: #656972;
+  font-size: 36px;
+}
+
+/* line 2772, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.topics-block .item-inner a.link {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* line 2780, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.articles-block .container {
+  border-top: 1px solid #eee;
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+
+/* line 2785, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.articles-block .block-heading {
+  margin-top: 0;
+  margin-bottom: 90px;
+  font-size: 28px;
+  color: #35373C;
+}
+
+/* line 2791, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.articles-block li {
+  margin-bottom: 15px;
+}
+
+/* line 2794, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.tips-block .container {
+  border-top: 1px solid #eee;
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+
+/* line 2799, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.tips-block .block-heading {
+  margin-top: 0;
+  margin-bottom: 90px;
+  font-size: 28px;
+  color: #35373C;
+}
+
+/* line 2805, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.tips-block .item {
+  margin-bottom: 15px;
+}
+
+/* line 2808, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.tips-block .item-inner {
+  padding: 30px;
+  border: 1px solid #eee;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  position: relative;
+  padding-left: 96px;
+}
+
+/* line 2822, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.tips-block .item-inner .figure-holder {
+  position: absolute;
+  left: 30px;
+  top: 30px;
+}
+
+/* line 2827, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.tips-block .item-inner .material-icons {
+  color: #159bc0;
+  font-size: 36px;
+}
+
+/* line 2831, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.extra-block {
+  padding-top: 30px;
+  padding-bottom: 60px;
+}
+
+/* line 2835, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.extra-block .block-heading {
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+
+/* line 2839, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.contact-page .hero-wrapper {
+  height: 360px;
+}
+
+/* line 2842, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.contact-page .hero-holder {
+  background: #35373C url("../images/hero/hero-contact.jpg") no-repeat 50% 50%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 360px;
+}
+
+/* line 2850, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.contact-page .heading-section {
+  padding-top: 160px;
+  height: 360px;
+}
+
+/* line 2854, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.contact-page .block-heading {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 28px;
+  color: #35373C;
+}
+
+/* line 2860, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.contact-page .block-intro {
+  max-width: 720px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+
+/* line 2865, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.contact-methods {
+  padding-top: 90px;
+  padding-bottom: 30px;
+  margin-bottom: 60px;
+}
+
+/* line 2870, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.contact-methods .item {
+  margin-bottom: 30px;
+}
+
+/* line 2873, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.contact-methods .item-inner {
+  padding: 30px;
+  border: 1px solid #eee;
+}
+
+/* line 2877, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.contact-methods .item-inner .fa {
+  margin-right: 5px;
+}
+
+/* line 2880, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.contact-methods .item-title {
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+/* line 2884, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.form-block {
+  padding-top: 90px;
+  padding-bottom: 90px;
+  background: #f5f5f5;
+}
+
+/* line 2889, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.contact-form {
+  max-width: 680px;
+  padding-left: 30px;
+  padding-right: 30px;
+  margin: 0 auto;
+}
+
+/* line 2895, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.contact-form .form-title {
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+
+/* ======= Modal ======= */
+/* line 2900, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.modal-body {
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 30px;
+  font-size: 16px;
+}
+
+/* line 2906, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.modal-body iframe {
+  max-width: 100%;
+}
+
+/* line 2909, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.modal-content {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+
+/* line 2919, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.modal-header {
+  border: none;
+  padding-top: 45px;
+  position: relative;
+}
+
+/* line 2924, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.modal button.close {
+  font-size: 24px;
+  font-weight: 300;
+  text-shadow: none;
+  background: none;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  z-index: 10;
+  -webkit-opacity: 0.6;
+  -moz-opacity: 0.6;
+  opacity: 0.6;
+  width: 28px;
+  height: 28px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  background: #999ca4;
+  color: #fff;
+  outline: none;
+}
+
+/* line 2950, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.modal button.close:hover {
+  -webkit-opacity: 1;
+  -moz-opacity: 1;
+  opacity: 1;
+}
+
+/* line 2955, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.modal-backdrop.in {
+  -webkit-opacity: 0.8;
+  -moz-opacity: 0.8;
+  opacity: 0.8;
+}
+
+/* line 2960, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.modal .modal-title {
+  font-size: 24px;
+}
+
+/* line 2963, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.modal-auth .form-group {
+  margin-bottom: 15px;
+  position: relative;
+}
+
+/* line 2967, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.modal-auth .form-group .icon {
+  position: absolute;
+  left: 15px;
+  top: 12px;
+  color: #999ca4;
+  font-size: 20px;
+}
+
+/* line 2974, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.modal-auth .form-group input {
+  padding-left: 40px;
+}
+
+/* line 2977, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.modal-auth .legal-note {
+  font-size: 14px;
+  margin-bottom: 30px;
+  color: #999ca4;
+}
+
+/* line 2982, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.modal-auth .social-buttons {
+  margin-bottom: 30px;
+}
+
+/* line 2985, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.modal-auth .social-buttons li {
+  margin-bottom: 15px;
+}
+
+/* line 2988, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.modal-auth a.btn-social,
+.modal-auth .btn-social {
+  padding: 12px 16px;
+  text-align: center;
+  position: relative;
+}
+
+/* line 2994, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.modal-auth a.btn-social .fa,
+.modal-auth .btn-social .fa {
+  position: absolute;
+  left: 16px;
+  top: 12px;
+  min-width: 24px;
+  display: inline-block;
+}
+
+/* line 3002, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.modal-auth .divider {
+  border-bottom: 1px solid #eee;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+/* line 3007, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.modal-auth .or-text {
+  position: relative;
+  position: absolute;
+  top: -10px;
+  padding: 0 10px;
+  background: #fff;
+  display: inline-block;
+  left: 50%;
+  margin-left: -21px;
+  color: #999ca4;
+  font-size: 14px;
+}
+
+/* line 3019, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.modal-auth .alter-login {
+  margin-top: 15px;
+  margin-bottom: 30px;
+  font-size: 14px;
+  color: #999ca4;
+}
+
+/* line 3025, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.modal-auth .extra {
+  position: relative;
+}
+
+/* line 3028, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.modal-auth .remember {
+  color: #999ca4;
+  font-size: 14px;
+}
+
+/* line 3032, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.modal-auth .forgotten-password {
+  text-align: right;
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 14px;
+}
+
+/* line 3039, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.modal-auth .forgotten-password a {
+  color: #999ca4;
+}
+
+/* line 3042, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.modal-auth .option-container {
+  border-top: 1px solid #eee;
+  margin-top: 30px;
+  padding-top: 30px;
+  position: relative;
+}
+
+/* line 3048, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.modal-auth .option-container .lead-text {
+  font-size: 16px;
+  text-align: left;
+  color: #656972;
+}
+
+/* line 3053, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.modal-auth .option-container .btn {
+  position: absolute;
+  right: 0;
+  top: 23px;
+}
+
+/* line 3058, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.modal-resetpass .intro {
+  color: #656972;
+  font-size: 14px;
+}
+
+/* line 3062, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.modal-resetpass .form-group {
+  margin-bottom: 15px;
+}
+
+/* line 3065, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.modal-video .modal-content {
+  background: none;
+  border: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+/* line 3072, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.modal-video .modal-header {
+  padding-top: 30px;
+}
+
+/* Extra small devices (phones, less than 768px) */
+@media (max-width: 767px) {
+  /* line 3077, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+  .main-nav .navbar-header {
+    padding-bottom: 15px;
+  }
+
+  /* line 3080, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+  .main-nav .navbar-nav {
+    padding-bottom: 15px;
+  }
+
+  /* line 3083, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+  .main-nav .nav .nav-item .btn-signup {
+    position: static;
+  }
+
+  /* line 3086, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+  .main-nav .nav .nav-item {
+    color: #fff;
+  }
+
+  /* line 3089, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+  .main-nav .nav .nav-item.active a {
+    color: #159bc0;
+  }
+
+  /* line 3092, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+  .heading-section .heading-content .actions .btn {
+    margin-right: 0;
+  }
+
+  /* line 3095, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+  .promo-section .actions .btn {
+    margin-bottom: 15px;
+  }
+
+  /* line 3098, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+  .features-content-wrapper {
+    padding-right: 0;
+    margin-bottom: 0;
+  }
+
+  /* line 3102, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+  .features-figure-wrapper {
+    position: static;
+    margin-top: 0;
+    max-width: 100%;
+    margin-bottom: 45px;
+  }
+
+  /* line 3108, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+  .ipad-screen {
+    max-width: 220px;
+  }
+
+  /* line 3111, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+  .iphone-screen {
+    max-width: 80px;
+  }
+
+  /* line 3114, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+  .benefits-wrapper {
+    margin-top: -30px;
+  }
+
+  /* line 3117, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+  .overview-section .play-icon {
+    top: 60px;
+  }
+
+  /* line 3120, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+  .posts-block .post .meta {
+    position: static;
+    width: inherit;
+  }
+
+  /* line 3124, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+  .posts-block .post .author-profile {
+    width: 40px;
+    height: 40px;
+  }
+
+  /* line 3128, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+  .posts-block .post .post-content {
+    padding-left: 0;
+  }
+
+  /* line 3131, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+  .posts-block .post .post-title {
+    padding-left: 0;
+  }
+
+  /* line 3134, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+  .posts-block .nav-tabs > li {
+    margin-bottom: 15px;
+  }
+
+  /* line 3137, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+  .post-single-block .author-container .author {
+    position: static;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  /* line 3142, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+  .post-single-block .author-container .intro {
+    padding-left: 0;
+  }
+
+  /* line 3145, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+  .blog-single-page .heading-section .author-profile {
+    width: 40px;
+    height: 40px;
+  }
+
+  /* line 3149, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+  .blog-signup-block .subscribe-form .email-field {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  /* line 3153, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+  .blog-signup-block .subscribe-form .btn {
+    width: 100%;
+  }
+
+  /* line 3156, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+  .support-page .heading-section .help-search-form {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  /* line 3160, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+  .support-page .heading-section .btn {
+    width: 100%;
+  }
+
+  /* line 3163, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+  .modal-auth .modal-dialog {
+    width: inherit;
+  }
+
+  /* line 3166, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+  .modal-video .modal-dialog {
+    width: inherit;
+  }
+}
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  /* line 3172, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+  .navbar-nav > li > a {
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+
+  /* line 3176, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+  .features-figure-wrapper {
+    max-width: 60%;
+    top: 150px;
+    right: -90px;
+  }
+
+  /* line 3181, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+  .ipad-screen {
+    max-width: 460px;
+  }
+
+  /* line 3184, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+  .iphone-screen {
+    max-width: 160px;
+  }
+
+  /* line 3187, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+  .benefits-wrapper {
+    margin-top: -60px;
+  }
+
+  /* line 3190, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+  .overview-section .play-icon {
+    top: 120px;
+  }
+
+  /* line 3193, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+  .modal-auth .modal-dialog {
+    width: 520px;
+  }
+
+  /* line 3196, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+  .modal-video .modal-dialog {
+    width: 660px;
+  }
+}
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  /* line 3202, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+  .main-nav .nav .nav-item {
+    margin-right: 15px;
+  }
+
+  /* line 3205, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+  .header .logo {
+    font-size: 24px;
+  }
+
+  /* line 3208, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+  .features-figure-wrapper {
+    width: 50%;
+    max-width: 600px;
+    top: 160px;
+    right: 0px;
+  }
+
+  /* line 3214, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+  .ipad-screen {
+    max-width: inherit;
+  }
+
+  /* line 3217, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+  .iphone-screen {
+    max-width: inherit;
+  }
+
+  /* line 3220, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+  .benefits-wrapper {
+    margin-top: -90px;
+  }
+
+  /* line 3223, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+  .overview-section .play-icon {
+    top: 200px;
+  }
+
+  /* line 3226, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+  .modal-auth .modal-dialog {
+    width: 520px;
+  }
+
+  /* line 3229, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+  .modal-video .modal-dialog {
+    width: 720px;
+  }
+}
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  /* line 3235, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+  .features-figure-wrapper {
+    width: 60%;
+    max-width: 800px;
+    top: 120px;
+    right: -120px;
+  }
+}
+/* X-Large devices (large desktops, 1400px and up) */
+@media (min-width: 1400px) {
+  /* line 3244, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+  .features-figure-wrapper {
+    width: 60%;
+    max-width: 900px;
+    top: 120px;
+    right: -90px;
+  }
+}
+/* line 3253, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+.past_client_image {
+  height: 130px;
+  width: 130px;
+  border-radius: 50%;
+}
+
+/* line 3259, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+section.ml-60 {
+  margin-left: -60px;
+}
+
+/* line 3263, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+div.rendered-content {
+  min-height: 392px;
+  min-width: 750px;
+}
+
+/* line 3268, /Users/takehiromouri/Documents/code/TWB/app/assets/stylesheets/landing_page/master.scss */
+div.min-height-210 {
+  min-height: 210px;
+}
