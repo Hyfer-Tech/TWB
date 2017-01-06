@@ -1,4 +1,4 @@
-<div class="col-xs-6" style="margin-bottom: 50px;">
+<div class="col-xs-12 col-md-6" style="margin-bottom: 50px;">
 
 	<div class="progress">
 	    <div class="progress-bar progress-bar-success" style="width: 25%">25%</div>
@@ -12,3 +12,28 @@
 
 </div>
 
+<div class="col-xs-12 col-md-6">
+  <h1>Choose Existing Shipment</h1>
+
+  <table class="table table-responsive">
+    <tr>
+      <th>Created At</th>
+      <th>Products</th>
+      <th></th>
+    </tr>
+
+    <% @shipments.each do |shipment| %>
+      <tr>
+        <td><%= shipment.created_at.strftime('%m/%d/%y') %></td>
+        <td>
+          <% shipment.products.each do |product| %>
+            <p><%= product.title %></p>
+          <% end %>
+        </td>
+        <td>
+          <%= link_to 'Select', new_shipment_job_path(shipment), class: 'btn btn-warning' %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+</div>

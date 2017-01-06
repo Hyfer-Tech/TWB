@@ -12,6 +12,8 @@ class ShipmentsController < ApplicationController
 	def new
 		@shipment = Shipment.new
 		@shipment.shipment_products.build
+
+		@shipments = current_user.shipments.all
 	end
 
 	def create

@@ -8,31 +8,31 @@
 			<div class="row">
 
 				<div class="col-xs-12 col-md-6">
-					<%= f.input :job_title %>
+					<%= f.input :job_title, placeholder: 'Job Title', label: false %>
 				</div>
 
 				<div class="col-xs-12 col-md-6">
-					<%= f.input :date_of_shipment, as: :string, class: "datepicker", placeholder: 'Date Of Shipment' %>
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="col-xs-12 col-md-6">
-					<%= f.input :location_of_shipment, placeholder: "Location of Shipment" %>
-				</div>
-
-				<div class="col-xs-12 col-md-6">
-					<%= f.input :place_being_shipped_to, placeholder: "Place Being Shipped To" %>
+					<%= f.input :date_of_shipment, as: :string, class: "datepicker", placeholder: 'Date Of Shipment', label: false %>
 				</div>
 			</div>
 
 			<div class="row">
 				<div class="col-xs-12 col-md-6">
-					<%= f.input :border_expected_to_cross, as: :select, collection: Job::EXPECTED_BORDERS_TO_BE_CROSSED %>
+					<%= f.input :location_of_shipment, placeholder: "Location of Shipment", label: false %>
 				</div>
 
 				<div class="col-xs-12 col-md-6">
-					<%= f.input :price, required: true %>
+					<%= f.input :place_being_shipped_to, placeholder: "Place Being Shipped To", label: false %>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-xs-12 col-md-6">
+					<%= f.input :border_expected_to_cross, as: :select, collection: Job::EXPECTED_BORDERS_TO_BE_CROSSED, label: false, include_blank: 'Select Border Expected To Cross' %>
+				</div>
+
+				<div class="col-xs-12 col-md-6">
+					<%= f.input :price, required: true, placeholder: 'Price', label: false %>
 				</div>
 			</div>
 

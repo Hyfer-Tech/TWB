@@ -9,7 +9,7 @@ class ProductsController < ApplicationController
 		@product = current_business_user.products.new(product_params)
 		if @product.save
 			flash[:success] = "Product has been created!"
-			redirect_to root_path
+			redirect_to products_path
 		else
 			render :new, status: :unprocessable_entity
 		end
