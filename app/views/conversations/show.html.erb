@@ -3,7 +3,12 @@
 </p>
 
 <div class="panel panel-default">
-  <div class="panel-heading"><%= @conversation.subject %></div>
+  <div class="panel-heading"><%= @conversation.subject %> id <%= @conversation.id %>
+<br>
+<% current_user.mailbox.inbox.each do |conversation| %>
+  <%= conversation.id %>
+<% end %>
+  </div>
 
   <div class="panel-body">
     <div class="messages" id="messages">

@@ -9,15 +9,17 @@ class ConversationsController < ApplicationController
   end
 
   def show
+    @conversations = @mailbox.inbox
   end
 
   def reply
     @reply = current_user.reply_to_conversation(@conversation, params[:body])
-    flash[:success] = 'Reply sent'
-
-    respond_to do |format|
-      format.js
-    end
+    MessageRelayJob.perform_later(@reply)
+    # flash[:success] = 'Reply sent'
+    #
+    # respond_to do |format|
+    #   format.js
+    # end
   end
 
   private

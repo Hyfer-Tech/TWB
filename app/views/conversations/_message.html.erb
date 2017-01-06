@@ -2,7 +2,7 @@
   <div class="media">
     <% message = receipt.message %>
     <div class="media-left">
-      <b><%= message.sender.first_name %></b>
+      <b><%= message.sender.first_name %> <%= message.sender.email %> <%= message.sender.class.name %></b>
     </div>
 
     <div class="media-body">
