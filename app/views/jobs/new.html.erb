@@ -1,7 +1,10 @@
 <div class="row">
-  <div class="col-xs-12 col-md-6 col-md-offset-3">
-		<h1>Create a New Job</h1>
-		<p><small><%= link_to 'Review your shipment', shipment_path(params[:shipment_id]), target: '_blank' %></small></p>
+  <div class="col-xs-12 col-md-6">
+  	<div class="progress">
+	    <div class="progress-bar progress-bar-success" style="width: 66%">66%</div>
+		</div>
+
+		<h1>Post a New Job</h1>
 
 		<hr/>
 
@@ -9,31 +12,31 @@
 			<div class="row">
 
 				<div class="col-xs-12 col-md-6">
-					<%= f.input :job_title %>
+					<%= f.input :job_title, placeholder: 'Job Title', label: false %>
 				</div>
 
 				<div class="col-xs-12 col-md-6">
-					<%= f.input :date_of_shipment, as: :string, class: "datepicker", placeholder: 'Date Of Shipment' %>
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="col-xs-12 col-md-6">
-					<%= f.input :location_of_shipment, placeholder: "Location of Shipment" %>
-				</div>
-
-				<div class="col-xs-12 col-md-6">
-					<%= f.input :place_being_shipped_to, placeholder: "Place Being Shipped To" %>
+					<%= f.input :date_of_shipment, as: :string, class: "datepicker", placeholder: 'Date Of Shipment', label: false %>
 				</div>
 			</div>
 
 			<div class="row">
 				<div class="col-xs-12 col-md-6">
-					<%= f.input :border_expected_to_cross, as: :select, collection: Job::EXPECTED_BORDERS_TO_BE_CROSSED %>
+					<%= f.input :location_of_shipment, placeholder: "Location of Shipment", label: false %>
 				</div>
 
 				<div class="col-xs-12 col-md-6">
-					<%= f.input :price, required: true %>
+					<%= f.input :place_being_shipped_to, placeholder: "Place Being Shipped To", label: false %>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-xs-12 col-md-6">
+					<%= f.input :border_expected_to_cross, as: :select, collection: Job::EXPECTED_BORDERS_TO_BE_CROSSED, label: false, include_blank: 'Select Border Expected To Cross' %>
+				</div>
+
+				<div class="col-xs-12 col-md-6">
+					<%= f.input :price, required: true, placeholder: 'Price', label: false %>
 				</div>
 			</div>
 
@@ -48,6 +51,27 @@
 				<%= f.submit class: "btn btn-success pull-right" %>
 			</div>
 		<% end %>
+	</div>
+
+	<div class="col-xs-12 col-md-6">
+		<h1>Shipments Being Made</h1>
+		<table class="table table-responsive">
+			<tr>
+				<th class="col-xs-2"></th>
+				<th class="col-xs-8">Title</th>
+				<th class="col-xs-2">Quantity</th>
+			</tr>
+
+			<% if @shipment %>
+				<% @shipment.shipment_products.each do |shipment_product| %>
+					<tr>
+						<td><%= image_tag shipment_product.product.featured_image.url, class: 'img-responsive' if shipment_product.product.featured_image.present? %></td>		
+						<td><%= link_to shipment_product.product.title, shipment_product.product %></td>
+						<td><%= shipment_product.quantity %></td>
+					</tr>
+				<% end %>
+			<% end %>
+		</table>
 	</div>
 </div>
 

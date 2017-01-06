@@ -114,7 +114,7 @@ let EditName = React.createClass({
 
   render() {    
     return (
-      <div className="text-center">
+      <div>
         <h3>{ this.firstName() } { this.lastName() }</h3>
 
         {this.btnGroup()}

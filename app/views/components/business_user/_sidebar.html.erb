@@ -1,0 +1,124 @@
+<aside class="sidebar sidebar-left">
+    <div class="sidebar-profile">
+        <div class="avatar">
+            <%= image_tag current_user.avatar, class: 'img-circle profile-image', alt: current_user.decorate.name %>
+            <i class="on border-dark animated bounceIn"></i>
+        </div>
+        <div class="profile-body dropdown">
+            <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><h4><%= current_user.decorate.name %> <span class="caret"></span></h4></a>
+            <small class="title"><%= current_user.class.name.underscore.humanize.titleize %></small>
+            <ul class="dropdown-menu animated fadeInRight" role="menu">
+                <li class="profile-progress">
+                    <h5>
+                        <span>80%</span>
+                        <small>Profile complete</small>
+                    </h5>
+                    <div class="progress progress-xs">
+                        <div class="progress-bar progress-bar-primary" style="width: 80%">
+                        </div>
+                    </div>
+                </li>
+                <li class="divider"></li>
+                <li>
+                  <%= link_to '<span class="icon"><i class="fa fa-user"></i></span>Profile'.html_safe, profile_users_path %>
+                </li>
+                <li>
+                    <a href="javascript:void(0);">
+                        <span class="icon"><i class="fa fa-envelope"></i>
+                        </span>Messages</a>
+                </li>
+                <li class="divider"></li>
+                <li>
+                    <li><%= link_to 'Log Out', current_user.decorate.destroy_session_path, method: :delete %></li>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <nav>
+        <h5 class="sidebar-header">Navigation</h5>
+        <ul class="nav nav-pills nav-stacked">
+            <li>
+                <%= link_to '<i class="fa  fa-fw fa-tachometer"></i> Dashboard'.html_safe, dashboard_path %>                
+            </li>
+            <li class="nav-dropdown">
+                <a href="#">
+                    <i class="fa  fa-fw fa-cogs"></i> Jobs
+                </a>
+                <ul class="nav-sub">
+                    <li>
+                        <%= link_to 'View All Jobs', jobs_path %>
+                    </li>
+                    <li>
+                        <%= link_to 'Ongoing Jobs', user_jobs_path %>
+                    </li>
+                    <li>
+                        <%= link_to 'Post Job', new_shipment_path %>
+                    </li>                    
+                </ul>
+            </li>
+            <li class="nav-dropdown">
+                <a href="#">
+                    <i class="fa  fa-fw fa-edit"></i> Products
+                </a>
+                <ul class="nav-sub">
+                    <li>
+                        <%= link_to 'View Existing Products', products_path %>
+                    </li>
+
+                    <li>
+                        <%= link_to 'Create New Product', new_product_path %>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-dropdown">
+                <a href="#">
+                    <i class="fa  fa-fw fa-th-list"></i> History
+                </a>
+                <ul class="nav-sub">
+                    <li><%= link_to 'Past Jobs', '' %></li>
+                    <li><%= link_to 'Past Clients', '' %></li>
+                </ul>
+            </li>
+    
+            <li class="nav-dropdown">
+                <a href="#" title="Mail">
+                    <i class="fa fa-fw fa-envelope-o"></i> Messages
+                    <span class="label label-primary label-circle pull-right">8</span>
+                </a>
+                <ul class="nav-sub">
+                    <li>
+                        <a href="mail-inbox.html" title="Mail Inbox">
+                            Inbox
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mail-compose.html" title="Mail Compose">
+                             Compose Mail
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            
+               
+        </ul>
+    </nav>
+    <h5 class="sidebar-header">Account Settings</h5>
+    <div class="setting-list">
+        <div class="row">
+            <div class="col-xs-8">
+                <label for="check1" class="control-label">Share your status</label>
+            </div>
+            <div class="col-xs-4">
+                <input type="checkbox" class="js-switch" checked id="check1" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-8">
+                <label for="check2" class="control-label">Push Notifications</label>
+            </div>
+            <div class="col-xs-4">
+                <input type="checkbox" class="js-switch" id="check2" />
+            </div>
+        </div>
+    </div>
+</aside>

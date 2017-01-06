@@ -1,6 +1,6 @@
 class DashboardController < ApplicationController
   before_action :authenticate_any!
-  layout 'dashboard'
+  layout 'application'
 
   def index
     if business_user_signed_in?
