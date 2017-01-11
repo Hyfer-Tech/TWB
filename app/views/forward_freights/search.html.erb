@@ -1,0 +1,10 @@
+<h1> SEARCH RESULTS </h1>
+<% if @forward_freights.present? %>
+  <% @forward_freights.each do |ff| %>
+    Email: <%= ff.email %>
+    First Name: <%= ff.first_name %>
+    <hr/>
+  <% end %>
+<% else %>
+  <h5> No Forward Freight Found!</h5>
+<% end %>

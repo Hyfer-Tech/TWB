@@ -26,7 +26,6 @@ class Broker < ApplicationRecord
 	  show_email Boolean, default:false
   end
 
-  # scope :has_tags, ->(tags) {Broker.tagged_with(tags, :any => true}
   scope :city, -> (search) { where city: search}
   scope :having_tags, ->(search) { Broker.tagged_with(search, any: true) }
 

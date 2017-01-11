@@ -24,24 +24,19 @@
         </li>
 
         <li>
-            <%= form_tag brokers_search_path, method: 'get' do %>
-              <%= text_field_tag :city, params[:city], required: true, placeholder: 'Search Broker by City' %>
-              <%= submit_tag "Search", name: nil %>
+            Search For a Broker:
+            <%= simple_form_for :search, url: brokers_search_path, method: 'get' do |f| %>
+              Search by Tags: <%= f.input :having_tags, required: true, label: false,  collection: ActsAsTaggableOn::Tag.all.map(&:name), input_html: { class: 'chosen-select', multiple: true } %>
+              <%= f.input :city,label: 'Search by City', required: true, placeholder: 'Search Broker by City' %>
+              <%= f.submit 'Search' %>
             <% end %>
         </li>
 
         <li>
-            <!--<%= form_tag brokers_search_path, method: 'get' do %>
-              <%= text_field_tag :having_tags, params[:having_tags], class: 'chosen-select',  collection: ActsAsTaggableOn::Tag.all.map(&:name), required: true, placeholder: 'Search Broker by Tags', input_html: { class: 'chosen-select', multiple: true } %>
-              <%= submit_tag "Search", name: nil %>
-            <% end %>-->
-        </li>
-
-        <li>
-            <%= simple_form_for :search, url: brokers_search_path, method: 'get' do |f| %>
-              <%= f.input :having_tags, required: true, placeholder: 'Search Broker by Tags',label: false,  collection: ActsAsTaggableOn::Tag.all.map(&:name),
-              input_html: { class: 'chosen-select', multiple: true } %>
-              <%= f.input :city, required: true, placeholder: 'Search Broker by City' %>
+            Search For a Forward Freight:
+            <%= simple_form_for :search, url: forward_freights_search_path, method: 'get' do |f| %>
+              Search by Tags: <%= f.input :having_tags, required: true, label: false,  collection: ActsAsTaggableOn::Tag.all.map(&:name), input_html: { class: 'chosen-select', multiple: true } %>
+              <%= f.input :city, label: 'Search by City', required: true, placeholder: 'Search Broker by City' %>
               <%= f.submit 'Search' %>
             <% end %>
         </li>

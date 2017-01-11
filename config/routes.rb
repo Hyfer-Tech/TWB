@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   get 'job_tag/:tag', to: 'jobs#index', as: :job_tag
   # get 'searches/:search',to: 'searches#index',as: :searches
   get 'brokers/search/',to: 'brokers#search'
+  get 'forward_freights/search', to: 'forward_freights#search'
 
   namespace :jobs do
     get '/search/',to: 'searches#index', as: :searches

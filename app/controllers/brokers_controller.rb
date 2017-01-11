@@ -11,7 +11,5 @@ class BrokersController < ApplicationController
 
   def search
     @brokers = Broker.filter(params[:search].slice(:city, :having_tags))
-      # @brokers = Broker.all.city(params[:search])
-    binding.pry
   end
 end
