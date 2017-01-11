@@ -5,7 +5,11 @@ class ForwardFreightsController < ApplicationController
     @user = ForwardFreight.find(params[:id]).decorate
   end
 
-  def search
-    @forward_freights = ForwardFreight.filter(params[:search].slice(:city, :having_tags))
+  def search 
+    if params[:search]
+      @forward_freights = ForwardFreight.filter(params[:search].slice(:city, :with_tags)).decorate
+    else
+      @forward_freights = ForwardFreight.all.decorate
+    end
   end
 end

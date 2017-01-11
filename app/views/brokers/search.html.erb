@@ -1,33 +1,13 @@
-<h1> SEARCH RESULTS </h1>
+<%= simple_form_for :search, url: brokers_search_path, method: :get do |f| %>
+  <%= f.input :with_tags, required: true, label: false,  collection: ActsAsTaggableOn::Tag.all.map(&:name), input_html: { class: 'chosen-select', multiple: true, data: {placeholder: "Click to Select Tags"} } %>
+  <%= f.input :city, label: 'Search by City', label: false, placeholder: 'Search Broker by City' %>
+  <%= f.submit 'Search', class: 'btn btn-primary' %>
+<% end %>
+
+
+<h1>Search Results</h1>
 <% if @brokers.present? %>
-  <% @brokers.each do |broker| %>
-    <div class="row">
-      <div class="col-md-2">
-        <%= image_tag broker.avatar %>
-      </div>
-
-      <div class="col-md-10">
-        <div class="row">
-          <div class="col-md-12">
-            <h3><%= broker.first_name %> <%= broker.last_name %></h3>
-          </div>
-
-          <div class="col-md-12">
-            <%= broker.description %>
-          </div>
-
-          <div class="col-md-12">
-            Tags: <%= broker.tag_list %>
-          </div>
-
-          <div class="col-md-12">
-            Projects: <%= broker.jobs.count %>
-          </div>
-        </div>
-      </div>
-    </div>
-    <hr/>
-  <% end %>
+  <%= render partial: 'brokers/broker', collection: @brokers %>
 <% else %>
   <h5> No Broker Found!</h5>
 <% end %>
