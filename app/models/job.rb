@@ -22,7 +22,7 @@ class Job < ApplicationRecord
 	def self.search(search)
 		return Job.all unless search
 		search_array = search.split(" ")
-		where("lower(location_of_shipment) || lower(place_being_shipped_to) LIKE ?", "%#{search.downcase}%") || Job.tagged_with(search_array, :any => true)
+		where("lower(location_of_shipment) || lower(place_being_shipped_to) LIKE ?", "%#{search.downcase}%") || Job.tagged_with(search_array, any: true)
 	end
 
 	private

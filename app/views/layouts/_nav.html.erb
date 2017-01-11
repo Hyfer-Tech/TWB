@@ -22,6 +22,29 @@
             <button type="submit" class="btn btn-sm btn-search"><i class="fa fa-search"></i>
             </button>
         </li>
+
+        <li>
+            <%= form_tag brokers_search_path, method: 'get' do %>
+              <%= text_field_tag :city, params[:city], required: true, placeholder: 'Search Broker by City' %>
+              <%= submit_tag "Search", name: nil %>
+            <% end %>
+        </li>
+
+        <li>
+            <!--<%= form_tag brokers_search_path, method: 'get' do %>
+              <%= text_field_tag :having_tags, params[:having_tags], class: 'chosen-select',  collection: ActsAsTaggableOn::Tag.all.map(&:name), required: true, placeholder: 'Search Broker by Tags', input_html: { class: 'chosen-select', multiple: true } %>
+              <%= submit_tag "Search", name: nil %>
+            <% end %>-->
+        </li>
+
+        <li>
+            <%= simple_form_for :search, url: brokers_search_path, method: 'get' do |f| %>
+              <%= f.input :having_tags, required: true, placeholder: 'Search Broker by Tags',label: false,  collection: ActsAsTaggableOn::Tag.all.map(&:name),
+              input_html: { class: 'chosen-select', multiple: true } %>
+              <%= f.input :city, required: true, placeholder: 'Search Broker by City' %>
+              <%= f.submit 'Search' %>
+            <% end %>
+        </li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
         <li class="dropdown profile hidden-xs">

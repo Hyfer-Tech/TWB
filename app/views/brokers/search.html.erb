@@ -1,0 +1,10 @@
+<h1> SEARCH RESULTS </h1>
+<% if @brokers.present? %>
+  <% @brokers.each do |broker| %>
+    Email: <%= broker.email %>
+    First Name: <%= broker.first_name %>
+    <hr/>
+  <% end %>
+<% else %>
+  <h5> No Broker Found!</h5>
+<% end %>

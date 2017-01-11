@@ -1,5 +1,5 @@
 class BrokersController < ApplicationController
-  before_action :authenticate_broker!
+  before_action :authenticate_broker!, only: [:show, :past_clients]
 
   def show
     @user = Broker.find(params[:id]).decorate
@@ -10,6 +10,8 @@ class BrokersController < ApplicationController
   end
 
   def search
-    @brokers = Broker.filter(params.slice(:city))
+    @brokers = Broker.filter(params[:search].slice(:city, :having_tags))
+      # @brokers = Broker.all.city(params[:search])
+    binding.pry
   end
 end

@@ -27,6 +27,8 @@ class Broker < ApplicationRecord
   end
 
   # scope :has_tags, ->(tags) {Broker.tagged_with(tags, :any => true}
+  scope :city, -> (search) { where city: search}
+  scope :having_tags, ->(search) { Broker.tagged_with(search, any: true) }
 
   def bid_limit_exceeded?
     return account_type == 0 && bids.this_month.count >= BID_LIMIT
