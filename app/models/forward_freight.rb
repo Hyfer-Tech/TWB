@@ -47,5 +47,5 @@ class ForwardFreight < ApplicationRecord
   end
 
   has_many :business_user, through: :rating
-  
+
 end
