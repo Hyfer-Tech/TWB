@@ -1,8 +1,31 @@
 <h1> SEARCH RESULTS </h1>
 <% if @brokers.present? %>
   <% @brokers.each do |broker| %>
-    Email: <%= broker.email %>
-    First Name: <%= broker.first_name %>
+    <div class="row">
+      <div class="col-md-2">
+        <%= image_tag broker.avatar %>
+      </div>
+
+      <div class="col-md-10">
+        <div class="row">
+          <div class="col-md-12">
+            <h3><%= broker.first_name %> <%= broker.last_name %></h3>
+          </div>
+
+          <div class="col-md-12">
+            <%= broker.description %>
+          </div>
+
+          <div class="col-md-12">
+            Tags: <%= broker.tag_list %>
+          </div>
+
+          <div class="col-md-12">
+            Projects: <%= broker.jobs.count %>
+          </div>
+        </div>
+      </div>
+    </div>
     <hr/>
   <% end %>
 <% else %>

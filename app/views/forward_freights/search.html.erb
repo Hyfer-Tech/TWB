@@ -1,10 +1,33 @@
 <h1> SEARCH RESULTS </h1>
 <% if @forward_freights.present? %>
-  <% @forward_freights.each do |ff| %>
-    Email: <%= ff.email %>
-    First Name: <%= ff.first_name %>
+  <% @forward_freights.each do |forward_freight| %>
+    <div class="row">
+      <div class="col-md-2">
+        <%= image_tag forward_freight.avatar %>
+      </div>
+
+      <div class="col-md-10">
+        <div class="row">
+          <div class="col-md-12">
+            <h3><%= forward_freight.first_name %> <%= forward_freight.last_name %></h3>
+          </div>
+
+          <div class="col-md-12">
+            <%= forward_freight.description %>
+          </div>
+
+          <div class="col-md-12">
+            Tags: <%= forward_freight.tag_list %>
+          </div>
+
+          <div class="col-md-12">
+            Projects: <%= forward_freight.jobs.count %>
+          </div>
+        </div>
+      </div>
+    </div>
     <hr/>
   <% end %>
 <% else %>
-  <h5> No Forward Freight Found!</h5>
+  <h5> No forward_freight Found!</h5>
 <% end %>
