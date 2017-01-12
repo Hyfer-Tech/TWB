@@ -9,7 +9,7 @@ class Jobs::SearchesController < ApplicationController
 		unless @jobs.present?
 		 	flash[:alert] = "No such jobs exist!"
 		 	redirect_to root_path
-	  	end
+	  end
 	end
 
 	private

@@ -1,8 +1,7 @@
-
 <div class="row profile">
   <div class="col-xs-12 col-md-3">
-    <div class="panel panel-default panelbg1">
-      <div class="profile-sidebar">
+    <div class="panel panel-default">
+      <div class="panel-body">
         <!-- SIDEBAR USERPIC -->
         <div class="profile-userpic">
           <div class="picture">
@@ -11,7 +10,7 @@
         </div>
         <!-- END SIDEBAR USERPIC -->
 
-        <h3 class="text-center"><%= @user.name %></h3>
+        <h3><%= @user.name %></h3>
 
         <div id="actions" class="user-actions">
           <%= render partial: 'relationships/actions', locals: {user: @user} %>
@@ -22,24 +21,7 @@
           <%= link_to 'Message', '#', class: 'btn btn-danger btn-round' %>
         </div>
         <!-- END SIDEBAR BUTTONS -->
-        <!-- SIDEBAR MENU -->
-        <ul class="nav nav-user-actions text-center">
-          <li class="active">
-            <a href="#">
-            <i class="glyphicon glyphicon-home"></i>
-            Overview </a>
-          </li>
-          <li>
-            <a href="#">
-            <i class="glyphicon glyphicon-star"></i>
-            Reviews </a>
-          </li>
-          <li>
-            <a href="#">
-            <i class="glyphicon glyphicon-saved"></i>
-            Saved </a>
-          </li>
-        </ul>
+        
       </div>
       <!-- END MENU -->
     </div> <!-- panel end -->

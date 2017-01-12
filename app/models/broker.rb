@@ -1,6 +1,7 @@
 class Broker < ApplicationRecord
   include CountriesList
   include Storext.model
+  include Filterable
 
   BID_LIMIT = 10
   POSTAL_CODE =  (/(\A[ABCEGHJKLMNPRSTVXY]\d[ABCEGHJ-NPRSTV-Z][ ]?\d[ABCEGHJ-NPRSTV-Z]\d\z)|(\A\d{5}([ \-](?:\d{4}|\d{6}))?\z)/)
@@ -24,6 +25,9 @@ class Broker < ApplicationRecord
 	  show_phone_number Boolean, default:false
 	  show_email Boolean, default:false
   end
+
+  scope :city, -> (search) { where city: search}
+  scope :with_tags, ->(search) { Broker.tagged_with(search, any: true) }
 
   def bid_limit_exceeded?
     return account_type == 0 && bids.this_month.count >= BID_LIMIT

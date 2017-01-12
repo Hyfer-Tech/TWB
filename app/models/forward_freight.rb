@@ -1,6 +1,7 @@
 class ForwardFreight < ApplicationRecord
   include CountriesList
   include Storext.model
+  include Filterable
 
   BID_LIMIT = 15
 
@@ -24,16 +25,16 @@ class ForwardFreight < ApplicationRecord
   acts_as_follower
 
   has_many :jobs, as: :agent
-
   has_many :bids, as: :bidder
-
-
   has_many :uploads, as: :user
 
   store_attributes :settings do
 	  show_phone_number Boolean, default:false
 	  show_email Boolean, default:false
   end
+
+  scope :city, -> (search) { where city: search}
+  scope :with_tags, ->(search) { ForwardFreight.tagged_with(search, any: true) }
 
   def bid_limit_exceeded?
     return account_type == 0 && bids.this_month.count >= BID_LIMIT
