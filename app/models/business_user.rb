@@ -10,6 +10,9 @@ class BusinessUser < ApplicationRecord
 
   has_many :products
   has_many :shipments
+  has_many :jobs, as: :client
+  has_many :uploads, as: :user
+  has_many :audits, dependent: :destroy
 
   mount_uploader :avatar, AvatarUploader
   mount_uploader :files, FilesUploader
@@ -21,8 +24,6 @@ class BusinessUser < ApplicationRecord
   acts_as_follower
   acts_as_followable
 
-  has_many :jobs, as: :client
-  has_many :uploads, as: :user
 
   store_attributes :settings do
 	  show_phone_number Boolean, default:false
