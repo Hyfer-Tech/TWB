@@ -1,4 +1,4 @@
-class Feedback < ApplicationRecord
+class AuditRequest < ApplicationRecord
   belongs_to :audit
   belongs_to :agent, polymorphic: true, foreign_key: "agent_id"
 end

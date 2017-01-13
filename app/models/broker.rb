@@ -20,6 +20,8 @@ class Broker < ApplicationRecord
   has_many :jobs, as: :agent
   has_many :bids, as: :bidder
   has_many :uploads, as: :user
+  has_many :feedbacks, as: :agent
+  has_many :audit_requests, as: :agent
 
   store_attributes :settings do
 	  show_phone_number Boolean, default:false
