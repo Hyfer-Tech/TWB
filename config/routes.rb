@@ -37,6 +37,15 @@ Rails.application.routes.draw do
     resources :bids, only: [:new, :create, :index, :destroy]
   end
 
+  resources :audits do
+    resources :feedbacks
+    resources :audit_requests, only: :create
+  end
+
+  resources :audit_requests, only: [] do
+    post 'approvals', to: 'audit_requests/approvals#create'
+    post 'rejections', to: 'audit_requests/rejections#create'
+  end
 
   resources :bids, only: :update do
     resources :bid_acceptances, only: :create
