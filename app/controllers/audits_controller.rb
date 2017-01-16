@@ -2,11 +2,12 @@ class AuditsController < ApplicationController
   before_action :authenticate_business_user!, except: :index
 
   def index
+    return unless @audits.present?
     @audits = Audit.all.order("created_at DESC")
   end
 
   def new
-    @audit = current_business_user.audits.new(audit_params)
+    @audit = current_business_user.audits.new
   end
 
   def create

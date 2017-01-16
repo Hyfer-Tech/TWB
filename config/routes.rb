@@ -31,6 +31,7 @@ Rails.application.routes.draw do
   namespace :user do
     resources :jobs, only: :index
     resources :applications, only: :index
+    resources :audits, only: :index
   end
 
   resources :jobs, only: [:index, :show] do
