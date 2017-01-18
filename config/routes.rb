@@ -40,7 +40,7 @@ Rails.application.routes.draw do
 
   resources :audits do
     resources :feedbacks
-    resources :audit_requests, only: :create
+    resources :audit_requests, only: [:index, :create]
   end
 
   resources :audit_requests, only: [] do

@@ -31,6 +31,14 @@ class Broker < ApplicationRecord
   scope :city, -> (search) { where city: search}
   scope :with_tags, ->(search) { Broker.tagged_with(search, any: true) }
 
+  def has_requested_audit_for?(audit)
+    audit_requests.where(audit: audit).any?
+  end
+
+  def has_approved_audit_request_for?(audit)
+    audit_requests.where(audit: audit, status: :approved).any?
+  end
+
   def bid_limit_exceeded?
     return account_type == 0 && bids.this_month.count >= BID_LIMIT
   end

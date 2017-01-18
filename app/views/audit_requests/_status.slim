@@ -1,0 +1,8 @@
+- if request.status == "pending"
+  .btn-group
+    = link_to 'Approve', audit_request_approvals_path(request), method: :post, remote: true, class: 'btn btn-success'
+
+    = link_to 'Reject', audit_request_rejections_path(request), method: :post, remote: true, class: 'btn btn-danger'
+- else 
+  .btn.btn-default.btn-block
+    = request.status.capitalize

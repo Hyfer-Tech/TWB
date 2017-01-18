@@ -1,21 +1,37 @@
-<div class="panel">
+<div class="panel" style="position: relative">
   <div class="panel-body">
     <div class="col-xs-6 col-md-2">
-
-      <%= link_to audit.nafta_certificate.url, target: "_blank" do %>
+      <% if audit.business_user == current_user || current_user.has_approved_audit_request_for?(audit) %>
+        <%= link_to audit.nafta_certificate.url, target: "_blank" do %>
+          <%= image_tag 'icons/file.png', class: 'file-icon center-block' %>
+          <figcaption class="text-center"><small>Nafta Certificate</small></figcaption>
+        <% end %>
+      <% else %>
         <%= image_tag 'icons/file.png', class: 'file-icon center-block' %>
         <figcaption class="text-center"><small>Nafta Certificate</small></figcaption>
       <% end %>
-
     </div>
 
     <div class="col-xs-6 col-md-2">
-
-      <%= link_to audit.canada_customs.url, target: "_blank" do %> 
+      <% if audit.business_user == current_user || current_user.has_approved_audit_request_for?(audit) %>
+        <%= link_to audit.canada_customs.url, target: "_blank" do %> 
+          <%= image_tag 'icons/file.png', class: 'file-icon center-block' %>
+          <figcaption class="text-center"><small>Canada Customs</small></figcaption>
+        <% end %>
+      <% else %>
         <%= image_tag 'icons/file.png', class: 'file-icon center-block' %>
         <figcaption class="text-center"><small>Canada Customs</small></figcaption>
       <% end %>
-
     </div>
+
+    <% if business_user_signed_in? %>
+      <%= link_to 'View Requests', audit_audit_requests_path(audit), class: 'btn btn-primary btn-right' %>
+    <% else %>
+      <% if current_user.has_requested_audit_for?(audit) %>
+        <button class="btn btn-default btn-right">Requested</button>
+      <% else %>
+        <%= link_to "Request Audit", audit_audit_requests_path(audit), method: :post, class: 'btn btn-primary btn-right' %>
+      <% end %>
+    <% end %>
   </div>
 </div>

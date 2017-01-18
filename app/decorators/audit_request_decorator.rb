@@ -1,4 +1,5 @@
 class AuditRequestDecorator < Draper::Decorator
+  decorates_association :agent
   delegate_all
 
   # Define presentation-specific methods here. Helpers are accessed through

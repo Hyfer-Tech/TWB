@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170113103733) do
+ActiveRecord::Schema.define(version: 20170118041211) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 20170113103733) do
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
     t.integer  "status",     default: 0, null: false
+    t.string   "agent_type"
     t.index ["agent_id"], name: "index_audit_requests_on_agent_id", using: :btree
     t.index ["audit_id", "agent_id"], name: "index_audit_requests_on_audit_id_and_agent_id", using: :btree
     t.index ["audit_id"], name: "index_audit_requests_on_audit_id", using: :btree
