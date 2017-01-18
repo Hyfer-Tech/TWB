@@ -2,6 +2,7 @@ class Broker < ApplicationRecord
   include CountriesList
   include Storext.model
   include Filterable
+  include Auditable
 
   BID_LIMIT = 10
   POSTAL_CODE =  (/(\A[ABCEGHJKLMNPRSTVXY]\d[ABCEGHJ-NPRSTV-Z][ ]?\d[ABCEGHJ-NPRSTV-Z]\d\z)|(\A\d{5}([ \-](?:\d{4}|\d{6}))?\z)/)
@@ -19,9 +20,7 @@ class Broker < ApplicationRecord
 
   has_many :jobs, as: :agent
   has_many :bids, as: :bidder
-  has_many :uploads, as: :user
-  has_many :feedbacks, as: :agent
-  has_many :audit_requests, as: :agent
+  has_many :uploads, as: :user  
 
   store_attributes :settings do
 	  show_phone_number Boolean, default:false
@@ -30,14 +29,6 @@ class Broker < ApplicationRecord
 
   scope :city, -> (search) { where city: search}
   scope :with_tags, ->(search) { Broker.tagged_with(search, any: true) }
-
-  def has_requested_audit_for?(audit)
-    audit_requests.where(audit: audit).any?
-  end
-
-  def has_approved_audit_request_for?(audit)
-    audit_requests.where(audit: audit, status: :approved).any?
-  end
 
   def bid_limit_exceeded?
     return account_type == 0 && bids.this_month.count >= BID_LIMIT

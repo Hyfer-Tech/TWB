@@ -28,7 +28,7 @@
       <%= link_to 'View Requests', audit_audit_requests_path(audit), class: 'btn btn-primary btn-right' %>
     <% else %>
       <% if current_user.has_requested_audit_for?(audit) %>
-        <button class="btn btn-default btn-right">Requested</button>
+        <button class="btn btn-default btn-right"><%= current_user.audit_request_for(audit).status.capitalize %></button>
       <% else %>
         <%= link_to "Request Audit", audit_audit_requests_path(audit), method: :post, class: 'btn btn-primary btn-right' %>
       <% end %>
