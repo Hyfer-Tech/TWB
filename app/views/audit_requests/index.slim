@@ -9,6 +9,11 @@
               br
               div id="request-status-#{request.id}"
                 = render partial: 'audit_requests/status', locals: {request: request}
+
+              - agent_feedback = request.agent.feedback_for(@audit)
+
+              - if agent_feedback
+                = link_to 'View Feedback', audit_feedback_path(@audit, agent_feedback), class: 'btn btn-success btn-block'
             .col-xs-12.col-md-8
               h3
                 = request.agent.name
@@ -20,6 +25,7 @@
                 | <strong>City</strong>
               p
                 = request.agent_city
+                          
     - if @audit_requests.empty?
       p
         | There are no requests at the moment.

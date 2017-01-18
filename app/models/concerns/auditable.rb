@@ -7,12 +7,12 @@ module Auditable
     has_many :audits, through: :audit_requests
   end
 
-  def audit_request_for(audit)
-    audit_requests.find_by(audit: audit)
+  def feedback_for(audit)
+    feedbacks.find_by(audit: audit)
   end
 
-  def has_requested_audit_for?(audit)
-    audit_requests.where(audit: audit).any?
+  def audit_request_for(audit)
+    audit_requests.find_by(audit: audit)
   end
 
   def has_approved_audit_request_for?(audit)

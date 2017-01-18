@@ -1,0 +1,38 @@
+.panel style="position: relative"
+  .panel-body
+    .col-xs-6.col-md-2
+      - if audit.business_user == current_user || current_user.has_approved_audit_request_for?(audit)
+        = link_to audit.nafta_certificate.url, target: "_blank" do
+          = image_tag 'icons/file.png', class: 'file-icon center-block'
+          figcaption.text-center
+            small Nafta Certificate
+      - else
+        = image_tag 'icons/file.png', class: 'file-icon center-block'
+        figcaption.text-center
+          small Nafta Certificate
+    .col-xs-6.col-md-2
+      - if audit.business_user == current_user || current_user.has_approved_audit_request_for?(audit)
+        = link_to audit.canada_customs.url, target: "_blank" do
+          = image_tag 'icons/file.png', class: 'file-icon center-block'
+          figcaption.text-center
+            small Canada Customs
+      - else
+        = image_tag 'icons/file.png', class: 'file-icon center-block'
+        figcaption.text-center
+          small Canada Customs
+    - if business_user_signed_in?      
+      = link_to 'View Requests', audit_audit_requests_path(audit), class: 'btn btn-primary btn-right'
+    - else
+
+      - current_user_audit_request = current_user.audit_request_for(audit)
+      - current_user_feedback = current_user.feedback_for(audit)
+
+      - if current_user_audit_request
+        - if current_user_audit_request.approved? && current_user_feedback
+          = link_to 'View Feedback', audit_feedback_path(audit, current_user_feedback), class: 'btn btn-success btn-right'
+        - elsif current_user_audit_request.approved?
+          = link_to 'Give Feedback', new_audit_feedback_path(audit), class: 'btn btn-success btn-right'
+        - else
+          button.btn.btn-default.btn-right= current_user_audit_request.status.capitalize
+      - else
+        = link_to "Request Audit", audit_audit_requests_path(audit), method: :post, class: 'btn btn-primary btn-right'
