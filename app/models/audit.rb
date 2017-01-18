@@ -4,4 +4,6 @@ class Audit < ApplicationRecord
 
   mount_uploader :nafta_certificate, AuditsUploader
   mount_uploader :canada_customs, AuditsUploader
+
+  validates :nafta_certificate, :canada_customs, presence: true
 end

@@ -1,13 +1,19 @@
-<h3>Create a new audit</h3>
 <div class="row">
-  <%= simple_form_for @audit do |f| %>
-    <div class="col-md-6" %>
-      Upload NAFTA Certificate of Origin<%= f.file_field :nafta_certificate, required: true %>
-    </div>
+  <div class="col-md-6 col-xs-12" %>
+    <div class="panel">
+      <div class="panel-body">
+        <h3>Create a new audit</h3>
+        
+        <%= simple_form_for @audit do |f| %>
+          
+            <%= f.input :nafta_certificate, required: true, label: "NAFTA Certificate of Origin" %>
+        
+            <%= f.input :canada_customs, required: true, label: "Canada Customs Invoice/Commercial Invoice" %>
 
-    <div class="col-md-6" %>
-      Upload Canada Customs Invoice/Commercial Invoice<%= f.file_field :canada_customs, required: true %>
+            <%= f.submit 'Submit', class:'btn btn-success pull-right'%>          
+          
+        <% end %>        
+      </div>
     </div>
-    <%= f.submit 'Submit' ,class:'btn btn-success pull-right'%>
-  <% end %>
+  </div>
 </div>
