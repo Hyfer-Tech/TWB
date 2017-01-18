@@ -2,6 +2,7 @@ class Broker < ApplicationRecord
   include CountriesList
   include Storext.model
   include Filterable
+  include Auditable
 
   BID_LIMIT = 10
   POSTAL_CODE =  (/(\A[ABCEGHJKLMNPRSTVXY]\d[ABCEGHJ-NPRSTV-Z][ ]?\d[ABCEGHJ-NPRSTV-Z]\d\z)|(\A\d{5}([ \-](?:\d{4}|\d{6}))?\z)/)
@@ -19,7 +20,7 @@ class Broker < ApplicationRecord
 
   has_many :jobs, as: :agent
   has_many :bids, as: :bidder
-  has_many :uploads, as: :user
+  has_many :uploads, as: :user  
 
   store_attributes :settings do
 	  show_phone_number Boolean, default:false

@@ -4,6 +4,7 @@ class Bid < ApplicationRecord
   belongs_to :shipment
 
   validates :bidder_id, :job_id, :bidder_type, :cover_letter, :price, presence: true
+  validates :job_id, uniqueness: { scope: [:bidder_id, :bidder_type] }
 
   delegate :client, to: :job
   

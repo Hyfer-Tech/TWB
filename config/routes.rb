@@ -31,12 +31,22 @@ Rails.application.routes.draw do
   namespace :user do
     resources :jobs, only: :index
     resources :applications, only: :index
+    resources :audits, only: :index
   end
 
   resources :jobs, only: [:index, :show] do
     resources :bids, only: [:new, :create, :index, :destroy]
   end
 
+  resources :audits do
+    resources :feedbacks
+    resources :audit_requests, only: [:index, :create]
+  end
+
+  resources :audit_requests, only: [] do
+    post 'approvals', to: 'audit_requests/approvals#create'
+    post 'rejections', to: 'audit_requests/rejections#create'
+  end
 
   resources :bids, only: :update do
     resources :bid_acceptances, only: :create

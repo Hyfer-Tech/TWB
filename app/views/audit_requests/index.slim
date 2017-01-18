@@ -1,0 +1,46 @@
+.row
+  .col-xs-12.col-md-6
+    - @audit_requests.each do |request|
+      .panel
+        .panel-body
+          .row
+            .col-xs-12.col-md-4
+              = image_tag "#{request.agent_avatar}", class: "img-responsive"
+              br
+              div id="request-status-#{request.id}"
+                = render partial: 'audit_requests/status', locals: {request: request}
+
+              - agent_feedback = request.agent.feedback_for(@audit)
+
+              - if agent_feedback
+                = link_to 'View Feedback', audit_feedback_path(@audit, agent_feedback), class: 'btn btn-success btn-block'
+            .col-xs-12.col-md-8
+              h3
+                = request.agent.name
+              h5
+                | <strong>Description</strong> 
+              p
+                = request.agent.description
+              h5
+                | <strong>City</strong>
+              p
+                = request.agent_city
+                          
+    - if @audit_requests.empty?
+      p
+        | There are no requests at the moment.
+                
+  .col-xs-12.col-md-6
+    .panel
+      .panel-body
+        .row
+          .col-xs-6.col-md-2
+            = link_to @audit.nafta_certificate.url, target: "_blank"
+              = image_tag 'icons/file.png', class: 'file-icon center-block'
+              <figcaption class="text-center"><small>Nafta Certificate</small></figcaption>
+          .col-xs-6.col-md-2
+            = link_to @audit.canada_customs.url, target: "_blank"
+              = image_tag 'icons/file.png', class: 'file-icon center-block'
+              <figcaption class="text-center"><small>Canada Customs</small></figcaption>
+            
+            

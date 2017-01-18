@@ -1,0 +1,21 @@
+.row
+  .col-xs-12.col-md-6
+    .panel
+      .panel-body
+        h3
+          | Feedback Form
+        = simple_form_for @feedback, url: audit_feedbacks_path(@audit) do |f|
+          = f.input :body, label: false, placeholder: 'Write your feedback here'
+          = f.submit 'Finish Audit', class: 'btn btn-success'
+  .col-xs-12.col-md-6
+    .panel
+      .panel-body
+        .row
+          .col-xs-6.col-md-2
+            = link_to @audit.nafta_certificate.url, target: "_blank"
+              = image_tag 'icons/file.png', class: 'file-icon center-block'
+              <figcaption class="text-center"><small>Nafta Certificate</small></figcaption>
+          .col-xs-6.col-md-2
+            = link_to @audit.canada_customs.url, target: "_blank"
+              = image_tag 'icons/file.png', class: 'file-icon center-block'
+              <figcaption class="text-center"><small>Canada Customs</small></figcaption>
