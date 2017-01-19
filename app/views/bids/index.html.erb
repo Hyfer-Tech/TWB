@@ -35,4 +35,10 @@
       </div>
     </div>
   <% end %>
+
+  <% if @bids.empty? %>
+    <div class="col-xs-12">
+      <h3>There are currently no bids for this job.</h3>
+    </div>
+  <% end %>
 </div>
