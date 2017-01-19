@@ -1,0 +1,17 @@
+.message-container
+  .user-image-small
+    = image_tag message.user_avatar
+  .message-body-container
+    .message-user-info
+      .user-info
+        .display-name
+          = message.user.decorate.name
+    .card style=("margin-bottom: 0px;") 
+      .card-section
+        .message-body
+          p
+            = message.body
+/! message-container
+p.float-right
+  small= message.timestamp
+ 

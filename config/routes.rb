@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-
+  mount ActionCable.server => '/cable'
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
@@ -75,5 +75,7 @@ Rails.application.routes.draw do
 
   post 'relationships', to: 'relationships#create'
   delete 'relationships', to: 'relationships#destroy'
+
+  resources :chat_rooms, only: [:index, :show]
 
 end

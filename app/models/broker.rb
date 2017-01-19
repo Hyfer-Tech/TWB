@@ -3,6 +3,7 @@ class Broker < ApplicationRecord
   include Storext.model
   include Filterable
   include Auditable
+  include Messagable
 
   BID_LIMIT = 10
   POSTAL_CODE =  (/(\A[ABCEGHJKLMNPRSTVXY]\d[ABCEGHJ-NPRSTV-Z][ ]?\d[ABCEGHJ-NPRSTV-Z]\d\z)|(\A\d{5}([ \-](?:\d{4}|\d{6}))?\z)/)
