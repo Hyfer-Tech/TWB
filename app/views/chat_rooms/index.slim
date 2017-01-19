@@ -11,7 +11,7 @@
       #messages.callout data-chat-room-id="#{@chat_room.id}" 
         = render @chat_room.messages
       = form_for @message, url: '' do |f|
-        = f.text_area :body, class: 'message-form', autofocus: true, placeholder: 'メッセージ'
+        = f.text_area :body, autofocus: true, placeholder: 'メッセージ'
     - else
       #messages.callout
         h5.text-center You have no message history.

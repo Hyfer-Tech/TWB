@@ -35,6 +35,7 @@ $(document).on('ready', function () {
       var textarea;
       textarea = $('#message_body');
       if ($.trim(textarea.val()).length > 1) {
+        console.log(textarea.val());
         App.global_chat.send_message(textarea.val(), messages.data('chat-room-id'));
         textarea.val('');
       }
@@ -44,7 +45,7 @@ $(document).on('ready', function () {
 
     form.keypress(function(e){
       if(e.which == 13){
-        $('#start-message').remove();
+        $('#js-start-message').remove();
         $(this).closest('form').submit();   
         return false;
        }
