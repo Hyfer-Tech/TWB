@@ -83,4 +83,7 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  config.web_socket_server_url = "https://twb-hyfer.herokuapp.com/cable"
+  config.action_cable.allowed_request_origins = ['https://twb-hyfer.herokuapp.com', 'http://twb-hyfer.herokuapp.com']
 end
