@@ -15,17 +15,12 @@ class ChatRoom < ApplicationRecord
 
   scope :most_recent, -> {order(updated_at: :desc).first}
 
-
   scope :broker_user_with_name, -> (name) { joins(:broker_user).where("LOWER(brokers.first_name) LIKE ? OR LOWER(brokers.last_name) LIKE ?", name, name) }
   scope :broker_member_with_name, -> (name) { joins(:broker_member).where("LOWER(brokers.first_name) LIKE ? OR LOWER(brokers.last_name) LIKE ?", name, name) }
   scope :business_user_with_name, -> (name) { joins(:business_user).where("LOWER(business_users.first_name) LIKE ? OR LOWER(business_users.last_name) LIKE ?", name, name) }
   scope :business_member_with_name, -> (name) { joins(:business_member).where("LOWER(business_users.first_name) LIKE ? OR LOWER(business_users.last_name) LIKE ?", name, name) }
   scope :forward_freight_user_with_name, -> (name) { joins(:forward_freight_user).where("LOWER(forward_freights.first_name) LIKE ? OR LOWER(forward_freights.last_name) LIKE ?", name, name) }
   scope :forward_freight_member_with_name, -> (name) { joins(:forward_freight_member).where("LOWER(forward_freights.first_name) LIKE ? OR LOWER(forward_freights.last_name) LIKE ?", name, name) }
-
-  def user
-
-  end
 
   def other_user_for(current_user) 
     return member if current_user == user
