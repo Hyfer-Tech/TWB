@@ -1,0 +1,9 @@
+= link_to chat_room_path(ChatRoom.room_with(current_user, other_user))
+  .panel
+    .panel-body
+      .row
+        .col-xs-12.col-md-3
+          = image_tag other_user.avatar, class: 'img-circle chat-room--prof-pic'
+        .col-xs-12.col-md-9
+          h3.chat-room--user-name
+            = "#{other_user.first_name} #{other_user.last_name}"

@@ -1,0 +1,2 @@
+- chat_rooms.each do |chat_room|
+  = render partial: 'chat_rooms/chat_room', locals: {chat_room: chat_room, other_user: chat_room.other_user_for(current_user)}
