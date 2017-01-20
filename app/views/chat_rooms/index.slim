@@ -11,7 +11,7 @@
     - if @chat_room.present?
       #js-messages.messages-container data-chat-room-id="#{@chat_room.id}" 
         = render @chat_room.messages
-        = simple_form_for @message, url: '' do |f|
+      = simple_form_for @message, url: '' do |f|
           = f.input :body, autofocus: true, placeholder: 'Your message here', label: false
     - else
       #messages.callout
