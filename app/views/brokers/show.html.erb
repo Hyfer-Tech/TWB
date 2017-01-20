@@ -18,7 +18,7 @@
 
         <!-- SIDEBAR BUTTONS -->
         <div class="user-actions">
-          <%= link_to 'Message', '#', class: 'btn btn-danger btn-round' %>
+          <%= link_to 'Message', broker_chat_rooms_path(@user.id), method: :post, class: 'btn btn-danger btn-round' %>
         </div>
         <!-- END SIDEBAR BUTTONS -->
         

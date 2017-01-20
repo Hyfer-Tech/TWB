@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170118052244) do
+ActiveRecord::Schema.define(version: 20170120044903) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -162,6 +162,18 @@ ActiveRecord::Schema.define(version: 20170118052244) do
     t.index ["reset_password_token"], name: "index_business_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  create_table "chat_rooms", force: :cascade do |t|
+    t.string   "title"
+    t.integer  "user_id"
+    t.integer  "member_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "user_type"
+    t.string   "member_type"
+    t.index ["member_id"], name: "index_chat_rooms_on_member_id", using: :btree
+    t.index ["user_id"], name: "index_chat_rooms_on_user_id", using: :btree
+  end
+
   create_table "feedbacks", force: :cascade do |t|
     t.integer  "audit_id"
     t.integer  "agent_id"
@@ -241,6 +253,17 @@ ActiveRecord::Schema.define(version: 20170118052244) do
     t.index ["client_id", "agent_id"], name: "index_jobs_on_client_id_and_agent_id", using: :btree
     t.index ["client_id"], name: "index_jobs_on_client_id", using: :btree
     t.index ["shipment_id"], name: "index_jobs_on_shipment_id", using: :btree
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.text     "body"
+    t.integer  "user_id"
+    t.integer  "chat_room_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.string   "user_type"
+    t.index ["chat_room_id"], name: "index_messages_on_chat_room_id", using: :btree
+    t.index ["user_id"], name: "index_messages_on_user_id", using: :btree
   end
 
   create_table "products", force: :cascade do |t|

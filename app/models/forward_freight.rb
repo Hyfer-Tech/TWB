@@ -3,6 +3,7 @@ class ForwardFreight < ApplicationRecord
   include Storext.model
   include Filterable
   include Auditable
+  include Messagable
 
   BID_LIMIT = 15  
 

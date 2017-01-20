@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-
+  mount ActionCable.server => '/cable'
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
@@ -23,21 +23,17 @@ Rails.application.routes.draw do
   get 'brokers/search/',to: 'brokers#search'
   get 'forward_freights/search', to: 'forward_freights#search'
 
+
+  # Jobs
   namespace :jobs do
     get '/search/',to: 'searches#index', as: :searches
-  end
-
-
-  namespace :user do
-    resources :jobs, only: :index
-    resources :applications, only: :index
-    resources :audits, only: :index
-  end
+  end  
 
   resources :jobs, only: [:index, :show] do
     resources :bids, only: [:new, :create, :index, :destroy]
   end
 
+  # Audits
   resources :audits do
     resources :feedbacks
     resources :audit_requests, only: [:index, :create]
@@ -59,14 +55,26 @@ Rails.application.routes.draw do
   resources :products, only: [:new, :create, :show, :index, :edit, :update]
 
   resources :taggings, only: :create
+
+  # Users
   resources :brokers, only: :show do
-    get 'Clients', to: "brokers#past_clients"
+    get 'clients', to: "brokers#past_clients"
+    post :chat_rooms, to: "broker_chat_rooms#create"
   end
-  resources :forward_freights, only: :show
-  resources :business_users, only: :show
 
-  resources :uploads
+  resources :forward_freights, only: :show do
+    post :chat_rooms, to: "forward_freight_chat_rooms#create"
+  end
 
+  resources :business_users, only: :show do
+    post :chat_rooms, to: "business_user_chat_rooms#create"
+  end
+
+  namespace :user do
+    resources :jobs, only: :index
+    resources :applications, only: :index
+    resources :audits, only: :index    
+  end
 
   resources :users, only: [] do
     get 'profile', to: :show, controller: 'users', on: :collection
@@ -75,5 +83,11 @@ Rails.application.routes.draw do
 
   post 'relationships', to: 'relationships#create'
   delete 'relationships', to: 'relationships#destroy'
+
+  resources :uploads  
+
+  # Chat
+  resources :chat_rooms, only: [:index, :show]
+  resources :chat_room_searches, only: :index
 
 end

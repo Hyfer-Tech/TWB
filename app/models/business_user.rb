@@ -1,6 +1,7 @@
 class BusinessUser < ApplicationRecord
   include CountriesList
   include Storext.model
+  include Messagable
 
   acts_as_taggable
   # Include default devise modules. Others available are:

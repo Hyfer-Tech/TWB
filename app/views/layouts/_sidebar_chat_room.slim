@@ -1,0 +1,12 @@
+= link_to chat_room_path(ChatRoom.room_with(current_user, other_user))
+  li
+    .row
+      .col-md-3
+        span.avatar
+          = image_tag other_user.avatar, class: 'img-circle', alt: other_user.decorate.name
+      .col-md-9
+        .name 
+          = other_user.decorate.name
+        small.location.text-muted
+          i.icon-pointer
+          = other_user.decorate.user_type
