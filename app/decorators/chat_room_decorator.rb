@@ -1,6 +1,4 @@
 class ChatRoomDecorator < Draper::Decorator
-  decorate_association :user
-  decorate_association :member
   delegate_all
 
   # Define presentation-specific methods here. Helpers are accessed through
