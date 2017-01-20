@@ -20,6 +20,6 @@ class ChatRoomsController < ApplicationController
     end
     @chat_room = ChatRoom.includes(messages: :user).find_by(id: params[:id])
     @message = Message.new    
-    @message_search = MessageSearch.new(params[:message_search])    
+    @message_search = MessageSearch.new(params[:message_search])   
   end
 end
