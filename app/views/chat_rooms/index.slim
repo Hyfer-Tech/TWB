@@ -4,14 +4,15 @@
       h5.text-center Messages
       = simple_form_for @message_search, url: chat_rooms_path, method: :get, remote: true do |f|
         = f.input :name, label: false, placeholder: "Search by name"
-      ul#message-list.no-bullet.message-list
+      ul#js-chat-rooms-list.no-bullet.message-list
+        = render partial: 'chat_rooms/chat_rooms', locals: {chat_rooms: @chat_rooms}
         
   .col-xs-12.col-md-9
     - if @chat_room.present?
-      #messages.callout data-chat-room-id="#{@chat_room.id}" 
+      #js-messages.messages-container data-chat-room-id="#{@chat_room.id}" 
         = render @chat_room.messages
-      = form_for @message, url: '' do |f|
-        = f.text_area :body, autofocus: true, placeholder: 'メッセージ'
+        = simple_form_for @message, url: '' do |f|
+          = f.input :body, autofocus: true, placeholder: 'Your message here', label: false
     - else
       #messages.callout
         h5.text-center You have no message history.

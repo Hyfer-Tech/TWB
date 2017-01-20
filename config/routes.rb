@@ -88,5 +88,6 @@ Rails.application.routes.draw do
 
   # Chat
   resources :chat_rooms, only: [:index, :show]
+  resources :chat_room_searches, only: :index
 
 end
