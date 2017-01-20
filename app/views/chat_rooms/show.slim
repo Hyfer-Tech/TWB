@@ -1,13 +1,13 @@
 .row
   .col-xs-12.col-md-3
     .callout
-      h5.text-center メッセージ
+      h5.text-center Messages
       = simple_form_for @message_search, url: chat_rooms_path, method: :get, remote: true do |f|
         = f.input :name, label: false, placeholder: "Search by name"
       ul#message-list.no-bullet.message-list
        
   .col-xs-12.col-md-9
-    #messages.callout data-chat-room-id="#{@chat_room.id}" 
+    #js-messages.messages-container data-chat-room-id="#{@chat_room.id}" 
       - if @chat_room.messages.empty?
         h6#js-start-message.text-center Start a conversation
       - else

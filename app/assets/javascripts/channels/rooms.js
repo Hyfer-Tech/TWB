@@ -1,6 +1,6 @@
 $(document).on('ready', function () {
   var messages, messages_to_bottom, form;
-  messages = $('#messages');
+  messages = $('#js-messages');
   form = $('#new_message');
 
   if (messages.length > 0) {
