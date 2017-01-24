@@ -1,0 +1,37 @@
+h1
+  | Edit #{@product.title}
+hr/
+= simple_form_for @product, url: product_path(@product), method: :patch do |f|
+  .row
+    .col-xs-12.col-md-6
+      = f.input :title, placeholder: 'Title'
+    .col-xs-12.col-md-6
+      = f.input :price, placeholder: 'Price'
+  .row
+    .col-xs-12.col-md-6
+      = f.input :grams, placeholder: 'Grams'
+    .col-xs-12.col-md-6
+      = f.input :height, placeholder: 'Height'
+  .row
+    .col-xs-12.col-md-6
+      = f.input :width, placeholder: 'Width'
+    .col-xs-12.col-md-6
+      = f.input :compare_at_price, placeholder: 'Compare At Price'
+  .row
+    .col-xs-12.col-md-6
+      = f.input :origin_of_manufacture, placeholder: 'Origin of Manufacture (Location)'
+    .col-xs-12.col-md-6
+      = f.input :materials_used, placeholder: 'Materials Used'
+  .row
+    .col-xs-12.col-md-6
+      = f.input :date_of_manufacture, as: :string, placeholder: 'Date of Manufacture', class: "datepicker"
+    .col-xs-12.col-md-6
+      = f.input :product_code, placeholder: "Product ID"
+  .row
+    .col-xs-12.col-md-6
+      = f.input :taxable, as: :boolean
+    .col-xs-12.col-md-6
+      = f.input :available, as: :boolean
+  = f.input :featured_image
+  = f.submit 'Update',  class: 'btn btn-primary pull-right'
+ 

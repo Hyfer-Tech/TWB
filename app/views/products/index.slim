@@ -1,0 +1,66 @@
+h1
+  | Your Products#{link_to 'Add a Product', new_product_path, class: 'pull-right btn btn-sm btn-success'}
+hr/
+- if @products.present?
+  table.table.table-responsive
+    tr      
+      th.products-table-th
+        | Created At
+      th.products-table-th
+        | Product Name
+      th.products-table-th
+        | Price
+      th.products-table-th 
+        | Grams
+      th.products-table-th 
+        | Height
+      th.products-table-th
+        | Width
+      th.products-table-th 
+        | Compare At Price
+      th.products-table-th
+        | Origin of Manufacture
+      th.products-table-th 
+        | Materials Used
+      th.products-table-th 
+        | Date of Manufacture
+      th.products-table-th
+        | Product ID
+      th.products-table-th
+        | Taxable
+      th.products-table-th
+        | Available
+      th.products-table-th
+    - @products.each do |product|
+      tr
+        td          
+          = product.created_at.strftime("%m/%d/%Y %l:%M %p")
+        td          
+          = product.title
+        td 
+          = product.price
+        td
+          = product.grams
+        td 
+          = product.height
+        td
+          = product.width
+        td
+          = product.compare_at_price
+        td
+          = product.origin_of_manufacture
+        td
+          = product.materials_used
+        td 
+          = product.date_of_manufacture.strftime("%m/%d/%Y")
+        td
+          = product.product_code
+        td
+          = product.taxable ? "Yes" : "No"
+        td
+          = product.available ? "Yes" : "No"
+        td
+          = link_to 'Update', edit_product_path(product), class: 'btn btn-warning'
+- else
+  h5 You do not have any products.
+ 
