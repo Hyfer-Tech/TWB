@@ -12,6 +12,8 @@ class ShipmentsController < ApplicationController
 	def new
 		@shipment = Shipment.new
 		@shipment.shipment_products.build
+
+		@shipments = current_user.shipments.all
 	end
 
 	def create
@@ -19,7 +21,7 @@ class ShipmentsController < ApplicationController
 
 		if @shipment.save
 			flash[:success] = "A shipment has been created."
-			redirect_to root_path
+			redirect_to new_shipment_job_path(@shipment)
 		else
 			flash[:alert] = "An error has occured. Please try again."
 			render :new, status: :inprocessable_entity

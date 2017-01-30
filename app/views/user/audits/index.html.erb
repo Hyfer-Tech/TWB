@@ -1,0 +1,9 @@
+<h3>My Audits <small><%= link_to '(Create an Audit)', new_audit_path, style: 'text-decoration: underline' %></small></h3>
+
+
+<% if @audits.present? %>
+  <%= render partial: 'audits/audit', collection: @audits %>
+<% else %>
+  <p>You have no audits yet!</p>
+<% end %>
+

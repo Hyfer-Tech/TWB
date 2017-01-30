@@ -1,0 +1,90 @@
+aside.sidebar.sidebar-left
+  .sidebar-profile
+    .avatar
+      = image_tag current_user.avatar, class: 'img-circle profile-image', alt: current_user.decorate.name
+      i.on.border-dark.animated.bounceIn
+    .profile-body.dropdown
+      a.dropdown-toggle[href="javascript:void(0);" data-toggle="dropdown" aria-expanded="false"]
+      h4
+        = current_user.decorate.name
+        span.caret
+      small.title
+        = current_user.class.name.underscore.humanize.titleize
+      ul.dropdown-menu.animated.fadeInRight[role="menu"]
+        li.profile-progress
+          h5
+            span
+              | 80%
+            small
+              | Profile complete
+          .progress.progress-xs
+            .progress-bar.progress-bar-primary[style="width: 80%"]
+
+        li.divider
+        li
+          = link_to '<span class="icon"><i class="fa fa-user"></i></span>Profile'.html_safe, profile_users_path
+        li
+          a[href="javascript:void(0);"]
+            span.icon
+              i.fa.fa-envelope
+            | Messages
+        li.divider
+        li
+
+        li
+          = link_to 'Log Out', current_user.decorate.destroy_session_path, method: :delete
+  nav
+    h5.sidebar-header
+      | Navigation
+    ul.nav.nav-pills.nav-stacked
+      li
+        = link_to '<i class="fa  fa-fw fa-tachometer"></i> Dashboard'.html_safe, dashboard_path
+      li.nav-dropdown
+        a[href="#"]
+          i.fa.fa-fw.fa-cogs
+          |  Audits 
+        ul.nav-sub
+          li
+            = link_to 'My Audits', user_audits_path
+          li
+            = link_to 'All Audits', audits_path
+      li.nav-dropdown
+        a[href="#"]
+          i.fa.fa-fw.fa-cogs
+          |  Jobs 
+        ul.nav-sub
+          li
+            = link_to 'Find Jobs', jobs_path
+      li.nav-dropdown
+        a[href="#"]
+          i.fa.fa-fw.fa-th-list
+          |  History 
+        ul.nav-sub
+          li
+            = link_to 'Past Jobs', ''
+          li
+            = link_to 'Past Clients', ''
+      li.nav-dropdown
+        a[href="#" title="Mail"]
+          i.fa.fa-fw.fa-envelope-o
+          |  Messages 
+          span.label.label-primary.label-circle.pull-right
+            | 8
+        ul.nav-sub
+          li
+            = link_to 'Inbox', chat_rooms_path
+  h5.sidebar-header
+    | Account Settings
+  .setting-list
+    .row
+      .col-xs-8
+        label.control-label[for="check1"]
+          | Share your status
+      .col-xs-4
+        input#check1.js-switch[type="checkbox" checked]
+    .row
+      .col-xs-8
+        label.control-label[for="check2"]
+          | Push Notifications
+      .col-xs-4
+        input#check2.js-switch[type="checkbox"]

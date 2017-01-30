@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170105122438) do
-
+ActiveRecord::Schema.define(version: 20170120044903) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,6 +44,27 @@ ActiveRecord::Schema.define(version: 20170105122438) do
     t.datetime "updated_at",                          null: false
     t.index ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
+  end
+
+  create_table "audit_requests", force: :cascade do |t|
+    t.integer  "agent_id"
+    t.integer  "audit_id"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.integer  "status",     default: 0, null: false
+    t.string   "agent_type"
+    t.index ["agent_id"], name: "index_audit_requests_on_agent_id", using: :btree
+    t.index ["audit_id", "agent_id"], name: "index_audit_requests_on_audit_id_and_agent_id", using: :btree
+    t.index ["audit_id"], name: "index_audit_requests_on_audit_id", using: :btree
+  end
+
+  create_table "audits", force: :cascade do |t|
+    t.string   "nafta_certificate"
+    t.string   "canada_customs"
+    t.integer  "business_user_id"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.index ["business_user_id"], name: "index_audits_on_business_user_id", using: :btree
   end
 
   create_table "bids", force: :cascade do |t|
@@ -142,6 +162,30 @@ ActiveRecord::Schema.define(version: 20170105122438) do
     t.index ["reset_password_token"], name: "index_business_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  create_table "chat_rooms", force: :cascade do |t|
+    t.string   "title"
+    t.integer  "user_id"
+    t.integer  "member_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "user_type"
+    t.string   "member_type"
+    t.index ["member_id"], name: "index_chat_rooms_on_member_id", using: :btree
+    t.index ["user_id"], name: "index_chat_rooms_on_user_id", using: :btree
+  end
+
+  create_table "feedbacks", force: :cascade do |t|
+    t.integer  "audit_id"
+    t.integer  "agent_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text     "body"
+    t.string   "agent_type"
+    t.index ["agent_id"], name: "index_feedbacks_on_agent_id", using: :btree
+    t.index ["audit_id", "agent_id"], name: "index_feedbacks_on_audit_id_and_agent_id", using: :btree
+    t.index ["audit_id"], name: "index_feedbacks_on_audit_id", using: :btree
+  end
+
   create_table "follows", force: :cascade do |t|
     t.string   "followable_type",                 null: false
     t.integer  "followable_id",                   null: false
@@ -212,6 +256,7 @@ ActiveRecord::Schema.define(version: 20170105122438) do
     t.index ["shipment_id"], name: "index_jobs_on_shipment_id", using: :btree
   end
 
+
   create_table "notifications", force: :cascade do |t|
     t.integer  "recipient_id"
     t.integer  "actor_id"
@@ -221,11 +266,9 @@ ActiveRecord::Schema.define(version: 20170105122438) do
     t.string   "notifiable_type"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
-<<<<<<< HEAD
     t.string   "actor_type"
     t.string   "recipient_type"
-=======
->>>>>>> f207e9bc66d0ff9e8ec21f59e3ea50eaac4c3058
+
   end
 
   create_table "products", force: :cascade do |t|
@@ -276,11 +319,8 @@ ActiveRecord::Schema.define(version: 20170105122438) do
     t.datetime "created_at",                         null: false
     t.datetime "updated_at",                         null: false
     t.integer  "business_user_id"
-<<<<<<< HEAD
     t.boolean  "save_for_later_use", default: false, null: false
     t.string   "title"
-=======
->>>>>>> f207e9bc66d0ff9e8ec21f59e3ea50eaac4c3058
     t.index ["broker_id"], name: "index_shipments_on_broker_id", using: :btree
     t.index ["business_user_id"], name: "index_shipments_on_business_user_id", using: :btree
   end
@@ -327,4 +367,6 @@ ActiveRecord::Schema.define(version: 20170105122438) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "audit_requests", "audits"
+  add_foreign_key "audits", "business_users"
 end

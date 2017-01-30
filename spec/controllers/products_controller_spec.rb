@@ -39,7 +39,7 @@ RSpec.describe ProductsController, type: :controller do
 				sign_in user
 				post :create, product: FactoryGirl.attributes_for(:product)		
 
-				expect(response).to redirect_to root_path
+				expect(response).to redirect_to products_path
 			end
 		end
 

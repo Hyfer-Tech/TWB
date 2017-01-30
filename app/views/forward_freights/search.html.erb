@@ -1,0 +1,12 @@
+<%= simple_form_for :search, url: forward_freights_search_path, method: 'get' do |f| %>  
+  <%= f.input :with_tags, required: true, label: false,  collection: ActsAsTaggableOn::Tag.all.map(&:name), input_html: { class: 'chosen-select', multiple: true, data: {placeholder: "Click to Select Tags"} } %>
+  <%= f.input :city, label: false, placeholder: 'Search Broker by City' %>
+  <%= f.submit 'Search', class: 'btn btn-primary' %>
+<% end %>
+
+<h1>SEARCH RESULTS</h1>
+<% if @forward_freights.present? %>
+  <%= render partial: 'forward_freights/forward_freight', collection: @forward_freights %>
+<% else %>
+  <h5> No forward_freight Found!</h5>
+<% end %>

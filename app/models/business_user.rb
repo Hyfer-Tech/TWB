@@ -1,6 +1,7 @@
 class BusinessUser < ApplicationRecord
   include CountriesList
   include Storext.model
+  include Messagable
 
   acts_as_taggable
   # Include default devise modules. Others available are:
@@ -15,6 +16,9 @@ class BusinessUser < ApplicationRecord
   has_many :forward_frieght, through: :rating
   has_many :notifications, foreign_key: :recipient_id, dependent: :destroy
   # has_many :notifications, as: :recipient, dependent: :destroy
+  has_many :jobs, as: :client
+  has_many :uploads, as: :user
+  has_many :audits, dependent: :destroy
 
   mount_uploader :avatar, AvatarUploader
   mount_uploader :files, FilesUploader
@@ -29,6 +33,7 @@ class BusinessUser < ApplicationRecord
   has_many :jobs, as: :client
   has_many :uploads, as: :user
   
+
 
   store_attributes :settings do
 	  show_phone_number Boolean, default:false

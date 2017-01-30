@@ -16,7 +16,7 @@
   <div class="panel panel-default">
     <div class="panel-body">
       <% ActsAsTaggableOn::Tag.all.each do |tag| %>
-      <span class="label label-user" style= "display:inline-block;"> <%= link_to tag, tag_path(tag.name) %> </span>
+      <span class="label label-default" style= "display:inline-block;"> <%= link_to tag, tag_path(tag.name) %> </span>
       <% end %>
     </div>
   </div>

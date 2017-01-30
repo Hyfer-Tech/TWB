@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="col-md-6 col-xs-12" %>
+    <div class="panel">
+      <div class="panel-body">
+        <h3>Create a new audit</h3>
+        
+        <%= simple_form_for @audit do |f| %>
+          
+            <%= f.input :nafta_certificate, required: true, label: "NAFTA Certificate of Origin" %>
+        
+            <%= f.input :canada_customs, required: true, label: "Canada Customs Invoice/Commercial Invoice" %>
+
+            <%= f.submit 'Submit', class:'btn btn-success pull-right'%>          
+          
+        <% end %>        
+      </div>
+    </div>
+  </div>
+</div>

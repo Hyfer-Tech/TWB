@@ -1,15 +1,44 @@
-<%= @bids.each  do |bid| %>
-  <%= bid.cover_letter %>
+<div class="row">
+  <% @bids.each  do |bid| %>
+    <div class="col-xs-12 col-md-4">
+      <div class="panel">
+        <div class="panel-body">
+          <%= image_tag bid.bidder_avatar, class: 'prof-pic' %>
+          <h3><%= "#{bid.bidder.first_name} #{bid.bidder.last_name}" %></h3>
+          <%= content_tag(:p, bid.bidder_description) if bid.bidder_description %>
+          <%= content_tag(:p, bid.bidder_past_experience) if bid.bidder_past_experience %>
+          <%= content_tag(:p, bid.bidder_firm_name) if bid.bidder_firm_name %>
+        </div>
+      </div>
+    </div>
 
-  <% if business_user_signed_in? %>
+    <div class="col-xs-12 col-md-8">
+      <div class="panel">
+        <div class="panel-body">
+          <h5>Cover Letter</h5>
+          <p>
+            <%= bid.cover_letter %>
+          </p>
 
-    <%= simple_form_for  :bid, url: bid_bid_acceptances_path(bid), method: :post do |f| %>
-      <%= f.button :submit , bid.accepted ? 'Reject Bid' : 'Accept Bid' %>
-    <% end %>
+          <% if business_user_signed_in? %>
 
+            <%= simple_form_for  :bid, url: bid_bid_acceptances_path(bid), method: :post do |f| %>
+              <%= f.button :submit , bid.accepted ? 'Reject Bid' : 'Accept Bid', class: 'btn btn-danger' %>
+            <% end %>
+
+          <% end %>
+
+          <% if (bid.bidder_id.eql? current_user.id) && (bid.bidder_type.eql? current_user.class.name) %>
+            <%= link_to 'Delete', job_bid_path(job_id: bid.job_id, id: bid.id), method: :delete %>
+          <% end %>
+        </div>
+      </div>
+    </div>
   <% end %>
 
-  <% if (bid.bidder_id.eql? current_user.id) && (bid.bidder_type.eql? current_user.class.name) %>
-    <%= link_to 'Delete', job_bid_path(job_id: bid.job_id, id: bid.id), method: :delete %>
+  <% if @bids.empty? %>
+    <div class="col-xs-12">
+      <h3>There are currently no bids for this job.</h3>
+    </div>
   <% end %>
-<% end %>
+</div>

@@ -13,6 +13,7 @@ class BidsController < ApplicationController
   def new
     @job = Job.find(params[:job_id])
     @bid = Bid.new
+    @job = Job.find(params[:job_id])
   end
 
   def create
@@ -25,9 +26,9 @@ class BidsController < ApplicationController
       flash[:notice] = "Bid successfully created."  
 
       #notification created here
-          @job.bids.each do |bid|
+        
             Notification.create(recipient: @job.client, actor: @bid.bidder, action: "bidded", notifiable: @bid)
-          end
+          
       #end of notification_sys
 
       redirect_to root_path
@@ -51,7 +52,7 @@ class BidsController < ApplicationController
 
   def ensure_business_user!
     return unless business_user_signed_in?
-    flash[:alert] = "Your Account type is business user you can't bid to jobs"
+    flash[:alert] = "You cannot bid to this job."
     redirect_to root_path
   end
 
@@ -80,4 +81,5 @@ class BidsController < ApplicationController
     flash[:alert] = "Sorry! You can't bid on more then #{current_user.class::BID_LIMIT} jobs please switch to premium plan."
     redirect_to root_path
   end
+
 end

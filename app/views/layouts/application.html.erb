@@ -1,17 +1,56 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <%= render 'shared/meta' %>
-
-  </head>
-
-  <body class="background-bg">
-    <%= render 'layouts/nav' %>
-    <div class="container container-authenticated">
-      <%= render 'shared/flash_messages' %>
-      <%= yield %>
-    </div>
-
-    <%= render 'layouts/footer' %>
+    <head>
+        <%= render 'shared/meta' %>
+    </head>
+    <body>
+      <section id="main-wrapper" class="theme-default">
+        <%= render partial: 'layouts/nav' %>
+        <!--sidebar left start-->
+        <%= render partial: 'components/business_user/sidebar' if business_user_signed_in? %>
+        <%= render partial: 'components/broker/sidebar' if broker_signed_in? %>
+        <%= render partial: 'components/forward_freight/sidebar' if forward_freight_signed_in? %>
+        <!--sidebar left end-->
+        <!--main content start-->
+        <section class="main-content-wrapper">
+            <div class="pageheader">
+                <%= render partial: 'shared/flash_messages' %>
+                <h1>Dashboard</h1>
+                <p class="description">Hi <%= current_user.decorate.name %>!</p>
+                <div class="breadcrumb-wrapper hidden-xs">
+                    <span class="label">You are here:</span>
+                    <ol class="breadcrumb">
+                        <li class="active">Dashboard</li>
+                    </ol>
+                </div>
+            </div>
+            <section id="main-content" class="animated fadeInUp">
+                <%= yield %>
+            </section>
+        </section>
+        <!--main content end-->
+    </section>
+    <!--sidebar right start-->
+    <aside id="sidebar-right">
+        <h4 class="sidebar-title">contact List</h4>
+        <div id="contact-list-wrapper">
+            <div class="heading">
+                <ul>
+                    <li>
+                        <%= simple_form_for MessageSearch.new, url: chat_room_searches_path, method: :get, remote: true, format: :html do |f| %>
+                            <%= f.input :name, placeholder: 'Search', label: false, input_html: {class: 'search'} %>
+                        <% end %>
+                    </li>
+                </ul>
+            </div>
+            <div id="contact-list">
+                <ul id="js-contact-ul">
+                    <%= render partial: 'layouts/sidebar_chat_rooms', locals: {chat_rooms: current_user.chat_rooms} %>
+                </ul>
+            </div>            
+        </div>
+    </aside>
+    <!--/sidebar right end-->
+    
   </body>
 </html>

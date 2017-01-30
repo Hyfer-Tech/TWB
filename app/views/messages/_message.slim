@@ -1,0 +1,17 @@
+.message-container
+  .message-prof-pic-container
+    = image_tag message.user_avatar, class: 'message-prof-pic'
+
+  .message-body-container
+    .message-user-info
+      .user-info
+        .display-name
+          = message.user.decorate.name
+    .panel 
+      .panel-body
+        .message-body
+          p
+            = message.body
+    p.pull-right.message-timestamp
+      small= message.timestamp
+     

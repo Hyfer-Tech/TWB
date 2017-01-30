@@ -1,0 +1,1 @@
+$("#request-status-<%= @audit_request.id %>").html("<%= escape_javascript render partial: 'audit_requests/status', locals: {request: @audit_request} %>");
