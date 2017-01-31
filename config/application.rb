@@ -21,5 +21,6 @@ module Twb
     config.react.addons = true
 
     config.autoload_paths << Rails.root.join('services')
+    config.exceptions_app = self.routes
   end
 end

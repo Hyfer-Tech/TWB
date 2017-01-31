@@ -16,7 +16,7 @@
             <div class="pageheader">
                 <%= render partial: 'shared/flash_messages' %>
                 <h1>Dashboard</h1>
-                <p class="description">Hi <%= current_user.decorate.name %>!</p>
+                <p class="description"><% if current_user.present? %>Hi <%= current_user.decorate.name %>!<% end %></p>
                 <div class="breadcrumb-wrapper hidden-xs">
                     <span class="label">You are here:</span>
                     <ol class="breadcrumb">
@@ -45,12 +45,12 @@
             </div>
             <div id="contact-list">
                 <ul id="js-contact-ul">
-                    <%= render partial: 'layouts/sidebar_chat_rooms', locals: {chat_rooms: current_user.chat_rooms} %>
+                    <%= render partial: 'layouts/sidebar_chat_rooms', locals: {chat_rooms: current_user.chat_rooms} if current_user.present?%>
                 </ul>
-            </div>            
+            </div>
         </div>
     </aside>
     <!--/sidebar right end-->
-    
+
   </body>
 </html>

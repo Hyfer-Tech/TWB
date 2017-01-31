@@ -6,44 +6,44 @@
  *= require messages/message
  *= require chat_rooms/chat_room
  *= require products
+ *= require errors
  */
 
 // chosen
 @import "bootstrap-chosen/bootstrap-chosen";
 
 // Google Fonts
-@import url("http://fonts.googleapis.com/css?family=Montserrat:400,700"); 
+@import url("http://fonts.googleapis.com/css?family=Montserrat:400,700");
 @import url("http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800");
 
 // Variables, Mixins
-@import "components/_variables.scss"; 
-@import "components/_mixins.scss"; 
- 
+@import "components/_variables.scss";
+@import "components/_mixins.scss";
+
 @import "components/_base.scss";
-@import "components/_page-loader.scss";  
+@import "components/_page-loader.scss";
 @import "components/_header.scss";
 @import "components/_left-sidebar.scss";
 @import "components/_main-content.scss";
-@import "components/_right-sidebar.scss"; 
+@import "components/_right-sidebar.scss";
 @import "components/_profile-status.scss";
 @import "components/_buttons.scss";
-@import "components/_progress.scss"; 
+@import "components/_progress.scss";
 @import "components/_panels.scss";
 @import "components/_widgets.scss";
 @import "components/_tabs.scss";
 @import "components/_badge.scss";
-@import "components/_misc.scss"; 
+@import "components/_misc.scss";
 @import "components/_sliders.scss";
-@import "components/_charts.scss"; 
-@import "components/_nested-sortable.scss"; 
+@import "components/_charts.scss";
+@import "components/_nested-sortable.scss";
 @import "components/_icons.scss";
 @import "components/_forms.scss";
-@import "components/_pages.scss";  
-@import "components/_calendar.scss"; 
+@import "components/_pages.scss";
+@import "components/_calendar.scss";
 @import "components/_preloader.scss";
 @import "components/_modals.scss";
-@import "components/_mail.scss"; 
-@import "components/_contacts.scss"; 
+@import "components/_mail.scss";
+@import "components/_contacts.scss";
 @import "components/_theme-colors.scss";
-@import "components/_demo-settings.scss";    
-      
+@import "components/_demo-settings.scss";

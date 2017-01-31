@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'errors/not_found'
+
+  get 'errors/internal_server_error'
+
   mount ActionCable.server => '/cable'
 
   devise_for :admin_users, ActiveAdmin::Devise.config
@@ -27,7 +31,7 @@ Rails.application.routes.draw do
   # Jobs
   namespace :jobs do
     get '/search/',to: 'searches#index', as: :searches
-  end  
+  end
 
   resources :jobs, only: [:index, :show] do
     resources :bids, only: [:new, :create, :index, :destroy]
@@ -73,7 +77,7 @@ Rails.application.routes.draw do
   namespace :user do
     resources :jobs, only: :index
     resources :applications, only: :index
-    resources :audits, only: :index    
+    resources :audits, only: :index
   end
 
   resources :users, only: [] do
@@ -84,10 +88,13 @@ Rails.application.routes.draw do
   post 'relationships', to: 'relationships#create'
   delete 'relationships', to: 'relationships#destroy'
 
-  resources :uploads  
+  resources :uploads
 
   # Chat
   resources :chat_rooms, only: [:index, :show]
   resources :chat_room_searches, only: :index
 
+  #errors
+  match "/404", to: "errors#not_found", via: :all
+  match "/500", to: "errors#internal_server_error", via: :all
 end

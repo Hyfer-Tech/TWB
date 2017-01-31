@@ -21,17 +21,19 @@
             <input type="text" class="search" placeholder="Search users...">
             <button type="submit" class="btn btn-sm btn-search"><i class="fa fa-search"></i>
             </button>
-        </li>        
+        </li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
         <li class="dropdown profile hidden-xs">
             <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
                 <span class="meta">
+                  <% if current_user.present? %>
                     <span class="avatar">
-                    	<%= image_tag current_user.avatar, class: 'img-circle', alt: current_user.decorate.name %>
+                      	<%= image_tag current_user.avatar, class: 'img-circle', alt: current_user.decorate.name %>
                     </span>
                 <span class="text"><%= current_user.decorate.name %></span>
                 <span class="caret"></span>
+                  <% end %>
                 </span>
             </a>
             <ul class="dropdown-menu animated fadeInRight" role="menu">
@@ -62,7 +64,9 @@
                 </li>
                 <li class="divider"></li>
                 <li>
+                  <% if current_user.present? %>
                     <li><%= link_to 'Log Out', current_user.decorate.destroy_session_path, method: :delete %></li>
+                  <% end %>
                 </li>
             </ul>
         </li>
