@@ -17,7 +17,7 @@
         <div class="panel-body">
           <h5>Cover Letter</h5>
           <p>
-            <b><%= number_to_currency(bid.price) %></b> | <%= bid.cover_letter %>
+            <%= bid.cover_letter %>
           </p>
           <p>
 
@@ -26,7 +26,7 @@
           <% if business_user_signed_in? %>
 
             <%= simple_form_for  :bid, url: bid_bid_acceptances_path(bid), method: :post do |f| %>
-              <%= f.button :submit , bid.accepted ? 'Reject Bid' : 'Accept Bid', class: 'btn btn-danger' %>
+              <b><%= number_to_currency(bid.price) %></b> <%= f.button :submit , bid.accepted ? 'Reject Bid' : 'Accept Bid', class: 'btn btn-danger' %>
             <% end %>
 
           <% end %>
