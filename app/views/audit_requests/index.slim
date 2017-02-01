@@ -17,14 +17,14 @@
             .col-xs-12.col-md-8
               h3
                 = request.agent.name
-              h5
-                | <strong>Description</strong> 
               p
-                = request.agent.description
-              h5
-                | <strong>City</strong>
-              p
+                <i class="fa fa-map-marker icon-fa" aria-hidden="true"></i>
                 = request.agent_city
+              p
+                <i class="fa fa-pencil icon-fa" aria-hidden="true"></i>
+                = request.agent.description
+              p
+                = request.created_at.strftime("Requested on %B %e, %Y ")
                           
     - if @audit_requests.empty?
       p
