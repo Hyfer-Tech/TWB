@@ -3,16 +3,22 @@
     <div class="panel">
       <div class="panel-body">
         <h3>Create a new audit</h3>
-        
+
         <%= simple_form_for @audit do |f| %>
-          
+
             <%= f.input :nafta_certificate, required: true, label: "NAFTA Certificate of Origin" %>
-        
+
             <%= f.input :canada_customs, required: true, label: "Canada Customs Invoice/Commercial Invoice" %>
 
-            <%= f.submit 'Submit', class:'btn btn-success pull-right'%>          
-          
-        <% end %>        
+            <%= f.input :b3_customs_entry, required: true, label: "B3 Cusoms Entry" %>
+
+            <%= f.input :previous_ruling, label: "Documents From Previous Ruling<sup>*</sup>".html_safe %>
+
+            <%= f.submit 'Submit', class:'btn btn-success pull-right'%>
+
+            <p>* Please provide in zipped format</p>
+
+        <% end %>
       </div>
     </div>
   </div>
