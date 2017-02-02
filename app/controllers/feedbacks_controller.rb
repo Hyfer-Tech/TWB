@@ -1,5 +1,5 @@
 class FeedbacksController < ApplicationController
-  before_action :authenticate_broker_or_forward_freight
+  before_action :authenticate_broker_or_forward_freight, only: [:new, :create]
 
   def show
     @feedback = Feedback.find(params[:id]).decorate
