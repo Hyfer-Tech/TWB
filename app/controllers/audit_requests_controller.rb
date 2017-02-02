@@ -15,7 +15,7 @@ class AuditRequestsController < ApplicationController
     else
       flash[:alert] = @audit_request.errors.full_messages[0]
     end
-    redirect_to audit_path(@audit)
+    redirect_to audits_path(@audit)
   end
 
   private
