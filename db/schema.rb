@@ -150,12 +150,12 @@ ActiveRecord::Schema.define(version: 20170201082953) do
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "avatar"
+    t.string   "files"
     t.integer  "account_type"
     t.string   "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string   "zip_postal_code"
-    t.string   "files"
     t.jsonb    "settings",               default: {}, null: false
     t.index ["confirmation_token"], name: "index_business_users_on_confirmation_token", unique: true, using: :btree
     t.index ["email"], name: "index_business_users_on_email", unique: true, using: :btree
@@ -257,59 +257,6 @@ ActiveRecord::Schema.define(version: 20170201082953) do
     t.index ["shipment_id"], name: "index_jobs_on_shipment_id", using: :btree
   end
 
-  create_table "mailboxer_conversation_opt_outs", force: :cascade do |t|
-    t.string  "unsubscriber_type"
-    t.integer "unsubscriber_id"
-    t.integer "conversation_id"
-    t.index ["conversation_id"], name: "index_mailboxer_conversation_opt_outs_on_conversation_id", using: :btree
-    t.index ["unsubscriber_id", "unsubscriber_type"], name: "index_mailboxer_conversation_opt_outs_on_unsubscriber_id_type", using: :btree
-  end
-
-  create_table "mailboxer_conversations", force: :cascade do |t|
-    t.string   "subject",    default: ""
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
-  end
-
-  create_table "mailboxer_notifications", force: :cascade do |t|
-    t.string   "type"
-    t.text     "body"
-    t.string   "subject",              default: ""
-    t.string   "sender_type"
-    t.integer  "sender_id"
-    t.integer  "conversation_id"
-    t.boolean  "draft",                default: false
-    t.string   "notification_code"
-    t.string   "notified_object_type"
-    t.integer  "notified_object_id"
-    t.string   "attachment"
-    t.datetime "updated_at",                           null: false
-    t.datetime "created_at",                           null: false
-    t.boolean  "global",               default: false
-    t.datetime "expires"
-    t.index ["conversation_id"], name: "index_mailboxer_notifications_on_conversation_id", using: :btree
-    t.index ["notified_object_id", "notified_object_type"], name: "index_mailboxer_notifications_on_notified_object_id_and_type", using: :btree
-    t.index ["sender_id", "sender_type"], name: "index_mailboxer_notifications_on_sender_id_and_sender_type", using: :btree
-    t.index ["type"], name: "index_mailboxer_notifications_on_type", using: :btree
-  end
-
-  create_table "mailboxer_receipts", force: :cascade do |t|
-    t.string   "receiver_type"
-    t.integer  "receiver_id"
-    t.integer  "notification_id",                            null: false
-    t.boolean  "is_read",                    default: false
-    t.boolean  "trashed",                    default: false
-    t.boolean  "deleted",                    default: false
-    t.string   "mailbox_type",    limit: 25
-    t.datetime "created_at",                                 null: false
-    t.datetime "updated_at",                                 null: false
-    t.boolean  "is_delivered",               default: false
-    t.string   "delivery_method"
-    t.string   "message_id"
-    t.index ["notification_id"], name: "index_mailboxer_receipts_on_notification_id", using: :btree
-    t.index ["receiver_id", "receiver_type"], name: "index_mailboxer_receipts_on_receiver_id_and_receiver_type", using: :btree
-  end
-
   create_table "messages", force: :cascade do |t|
     t.text     "body"
     t.integer  "user_id"
@@ -332,6 +279,7 @@ ActiveRecord::Schema.define(version: 20170201082953) do
     t.datetime "created_at",                            null: false
     t.datetime "updated_at",                            null: false
     t.integer  "business_user_id"
+    t.integer  "shipment_id"
     t.float    "height"
     t.float    "width"
     t.float    "grams"
@@ -339,13 +287,7 @@ ActiveRecord::Schema.define(version: 20170201082953) do
     t.string   "materials_used"
     t.date     "date_of_manufacture"
     t.index ["business_user_id"], name: "index_products_on_business_user_id", using: :btree
-  end
-
-  create_table "shipment_limits", force: :cascade do |t|
-    t.integer  "amount"
-    t.string   "user_type"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.index ["shipment_id"], name: "index_products_on_shipment_id", using: :btree
   end
 
   create_table "shipment_products", force: :cascade do |t|
@@ -360,6 +302,8 @@ ActiveRecord::Schema.define(version: 20170201082953) do
   end
 
   create_table "shipments", force: :cascade do |t|
+    t.integer  "broker_id"
+    t.integer  "forward_freight_id"
     t.boolean  "approval",           default: false, null: false
     t.boolean  "shipment_confirmed", default: false, null: false
     t.datetime "created_at",                         null: false
@@ -367,6 +311,7 @@ ActiveRecord::Schema.define(version: 20170201082953) do
     t.integer  "business_user_id"
     t.boolean  "save_for_later_use", default: false, null: false
     t.string   "title"
+    t.index ["broker_id"], name: "index_shipments_on_broker_id", using: :btree
     t.index ["business_user_id"], name: "index_shipments_on_business_user_id", using: :btree
   end
 
@@ -414,7 +359,4 @@ ActiveRecord::Schema.define(version: 20170201082953) do
 
   add_foreign_key "audit_requests", "audits"
   add_foreign_key "audits", "business_users"
-  add_foreign_key "mailboxer_conversation_opt_outs", "mailboxer_conversations", column: "conversation_id", name: "mb_opt_outs_on_conversations_id"
-  add_foreign_key "mailboxer_notifications", "mailboxer_conversations", column: "conversation_id", name: "notifications_on_conversation_id"
-  add_foreign_key "mailboxer_receipts", "mailboxer_notifications", column: "notification_id", name: "receipts_on_notification_id"
 end
