@@ -1,46 +1,54 @@
 .panel style="position: relative"
   .panel-body
-    .col-xs-3.col-md-2
-      - if audit.business_user == current_user || current_user.has_approved_audit_request_for?(audit)
-        = link_to audit.nafta_certificate.url, target: "_blank" do
-          = image_tag 'icons/file.png', class: 'file-icon center-block'
-          figcaption.text-center
-            small Nafta Certificate
-      - else
-        = image_tag 'icons/file.png', class: 'file-icon center-block'
-        figcaption.text-center
-          small Nafta Certificate
-    .col-xs-3.col-md-2
-      - if audit.business_user == current_user || current_user.has_approved_audit_request_for?(audit)
-        = link_to audit.canada_customs.url, target: "_blank" do
-          = image_tag 'icons/file.png', class: 'file-icon center-block'
-          figcaption.text-center
-            small Canada Customs
-      - else
-        = image_tag 'icons/file.png', class: 'file-icon center-block'
-        figcaption.text-center
-          small Canada Customs
-    .col-xs-3.col-md-2
-      - if audit.business_user == current_user || current_user.has_approved_audit_request_for?(audit)
-        = link_to audit.b3_customs_entry.url, target: "_blank" do
-          = image_tag 'icons/file.png', class: 'file-icon center-block'
-          figcaption.text-center
-            small B3 Customs Entry
-      - else
-        = image_tag 'icons/file.png', class: 'file-icon center-block'
-        figcaption.text-center
-          small B3 Customs Entry
-    - if audit.previous_ruling.present?
+    .row
       .col-xs-3.col-md-2
         - if audit.business_user == current_user || current_user.has_approved_audit_request_for?(audit)
-          = link_to audit.previous_ruling.url, target: "_blank" do
+          = link_to audit.nafta_certificate.url, target: "_blank" do
             = image_tag 'icons/file.png', class: 'file-icon center-block'
             figcaption.text-center
-              small Documents From Previous Ruling
+              small Nafta Certificate
         - else
           = image_tag 'icons/file.png', class: 'file-icon center-block'
           figcaption.text-center
-            small Documents From Previous Ruling
+            small Nafta Certificate
+      .col-xs-3.col-md-2
+        - if audit.business_user == current_user || current_user.has_approved_audit_request_for?(audit)
+          = link_to audit.canada_customs.url, target: "_blank" do
+            = image_tag 'icons/file.png', class: 'file-icon center-block'
+            figcaption.text-center
+              small Canada Customs
+        - else
+          = image_tag 'icons/file.png', class: 'file-icon center-block'
+          figcaption.text-center
+            small Canada Customs
+      .col-xs-3.col-md-2
+        - if audit.business_user == current_user || current_user.has_approved_audit_request_for?(audit)
+          = link_to audit.b3_customs_entry.url, target: "_blank" do
+            = image_tag 'icons/file.png', class: 'file-icon center-block'
+            figcaption.text-center
+              small B3 Customs Entry
+        - else
+          = image_tag 'icons/file.png', class: 'file-icon center-block'
+          figcaption.text-center
+            small B3 Customs Entry
+      - if audit.previous_ruling.present?
+        .col-xs-3.col-md-2
+          - if audit.business_user == current_user || current_user.has_approved_audit_request_for?(audit)
+            = link_to audit.previous_ruling.url, target: "_blank" do
+              = image_tag 'icons/file.png', class: 'file-icon center-block'
+              figcaption.text-center
+                small Documents From Previous Ruling
+          - else
+            = image_tag 'icons/file.png', class: 'file-icon center-block'
+            figcaption.text-center
+              small Documents From Previous Ruling
+    .row
+      .col-xs-12.col-md-8
+        - if audit.business_user.tag_list.present?
+          .small-tag
+            = audit.business_user.tag_list
+            br
+            small = audit.created_at.strftime("%B %e, %Y ")
     - if business_user_signed_in?      
       = link_to 'View Requests', audit_audit_requests_path(audit), class: 'btn btn-primary btn-right'
     - else
