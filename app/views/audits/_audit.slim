@@ -43,10 +43,11 @@
             figcaption.text-center
               small Documents From Previous Ruling
     .row
-      - if audit.business_user.tag_list.present?
-        small = audit.business_user.tag_list
-        br
-        small = audit.created_at.strftime("%B %e, %Y ")
+      .col-xs-3.col-md-12
+        - if audit.business_user.tag_list.present?
+          small = audit.business_user.tag_list
+          br
+          small = audit.created_at.strftime("%B %e, %Y ")
     - if business_user_signed_in?      
       = link_to 'View Requests', audit_audit_requests_path(audit), class: 'btn btn-primary btn-right'
     - else
