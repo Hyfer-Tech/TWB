@@ -11,11 +11,20 @@
     .panel
       .panel-body
         .row
-          .col-xs-6.col-md-2
+          .col-xs-3.col-md-3
             = link_to @audit.nafta_certificate.url, target: "_blank"
               = image_tag 'icons/file.png', class: 'file-icon center-block'
               <figcaption class="text-center"><small>Nafta Certificate</small></figcaption>
-          .col-xs-6.col-md-2
+          .col-xs-3.col-md-3
             = link_to @audit.canada_customs.url, target: "_blank"
               = image_tag 'icons/file.png', class: 'file-icon center-block'
               <figcaption class="text-center"><small>Canada Customs</small></figcaption>
+          .col-xs-3.col-md-3
+            = link_to @audit.b3_customs_entry.url, target: "_blank"
+              = image_tag 'icons/file.png', class: 'file-icon center-block'
+              <figcaption class="text-center"><small>B3 Cusoms Entry</small></figcaption>
+          - if @audit.previous_ruling.present?
+            .col-xs-3.col-md-3
+              = link_to @audit.previous_ruling.url, target: "_blank"
+                = image_tag 'icons/file.png', class: 'file-icon center-block'
+                <figcaption class="text-center"><small>Documents From Previous Ruling</small></figcaption>

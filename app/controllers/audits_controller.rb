@@ -22,6 +22,6 @@ class AuditsController < ApplicationController
 
   private
   def audit_params
-    params.require(:audit).permit(:nafta_certificate, :canada_customs)
+    params.require(:audit).permit(:nafta_certificate, :canada_customs, :b3_customs_entry, :previous_ruling)
   end
 end
