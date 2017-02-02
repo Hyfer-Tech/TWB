@@ -168,6 +168,7 @@ GEM
     country_select (3.0.0)
       countries (~> 2.0)
       sort_alphabetical (~> 1.0)
+    database_cleaner (1.5.3)
     debug_inspector (0.0.2)
     descendants_tracker (0.0.4)
       thread_safe (~> 0.3, >= 0.3.1)
@@ -545,6 +546,7 @@ DEPENDENCIES
   cocoon
   coffee-rails (~> 4.2)
   country_select
+  database_cleaner
   devise!
   draper!
   factory_girl_rails (~> 4.0)
