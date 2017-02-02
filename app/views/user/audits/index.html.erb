@@ -1,4 +1,4 @@
-<h3>My Audits <small><%= link_to '(Create an Audit)', new_audit_path, style: 'text-decoration: underline' %></small></h3>
+<h3>My Audits <small><%= link_to '(Create an Audit)', new_audit_path, style: 'text-decoration: underline' if business_user_signed_in? %></small></h3>
 
 
 <% if @audits.present? %>
