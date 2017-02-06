@@ -9,4 +9,5 @@ class Audit < ApplicationRecord
   mount_uploader :previous_ruling, AuditsUploader
 
   validates :nafta_certificate, :canada_customs, :b3_customs_entry, presence: true
+
 end

@@ -1,7 +1,16 @@
+<h3>New Audits</h3>
+<% @audits.each do |audit| %>
+  <%= audit_count = audit.audit_requests.pending_count %>
+  <% if audit_count != 0 %>
+    <%= audit.business_user_id %>
+  <% end %>
+  <br>
+<% end %>
+
+<hr>
 <h3>All Audits</h3>
 <% if @audits.present? %>
   <%= render @audits %>
 <% else %>
   <p>No Audits have been posted yet!</p>
 <% end %>
-

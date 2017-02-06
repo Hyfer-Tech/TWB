@@ -16,4 +16,6 @@ class AuditRequest < ApplicationRecord
   def reject!
     update(status: :rejected)
   end
+
+  scope :pending_count, -> () {where(status: :pending).count}
 end

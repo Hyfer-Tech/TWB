@@ -49,8 +49,9 @@
             = audit.business_user.tag_list
             br
             small = audit.created_at.strftime("%B %e, %Y ")
-    - if business_user_signed_in?      
-      = link_to 'View Requests', audit_audit_requests_path(audit), class: 'btn btn-primary btn-right'
+    - if business_user_signed_in?
+      - request_count = audit.audit_requests.pending_count
+      = link_to "<b>(#{request_count})</b> View Requests".html_safe, audit_audit_requests_path(audit), class: 'btn btn-primary btn-right'
     - else
 
       - current_user_audit_request = current_user.audit_request_for(audit)
