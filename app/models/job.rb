@@ -19,6 +19,12 @@ class Job < ApplicationRecord
 
 	acts_as_taggable
 
+	mount_uploader :canada_cost_invoice, JobUploader
+	mount_uploader :commercial_invoice, JobUploader
+	mount_uploader :free_trade_certificate, JobUploader
+	mount_uploader :form_A, JobUploader
+	mount_uploader :bill_of_lading, JobUploader
+
 	def self.search(search)
 		return Job.all unless search
 		search_array = search.split(" ")
