@@ -40,6 +40,46 @@
 				</div>
 			</div>
 
+      <div class="row">
+				<div class="col-xs-12 col-md-6">
+					<%= f.input :fta_tt, as: :radio_buttons, collection: ["Yes", "No", "Unknown"], label: "Is there applicable free trade agreement or tarrif treatment?" %>
+				</div>
+
+				<div class="col-xs-12 col-md-6">
+					<%= f.input :insured, as: :radio_buttons, collection: ["Yes", "No", "Unknown"], label: "Are goods insured?" %>
+				</div>
+			</div>
+
+      <div class="row">
+        <div class="col-xs-12 col-md-6">
+          <%= f.input :type_of_job, as: :radio_buttons, collection: ["Onetime", "Ongoing"], label: "What type of job is it?" %>
+        </div>
+
+        <div class="col-xs-12 col-md-6">
+          <%= f.input :canada_cost_invoice, label: "Canada Cost Invoice" %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12 col-md-6">
+          <%= f.input :commercial_invoice, label: "Commercial Invoice" %>
+        </div>
+
+        <div class="col-xs-12 col-md-6">
+          <%= f.input :free_trade_certificate, label: "Free Trade Certificate" %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12 col-md-6">
+          <%= f.input :form_A, label: "Form A" %>
+        </div>
+
+        <div class="col-xs-12 col-md-6">
+          <%= f.input :bill_of_lading, label: "Bill of Lading" %>
+        </div>
+      </div>
+
 			<div class="row">
 		        <div class="col-xs-12 col-md-12">
 		          <%= f.input :tag_list, collection: ActsAsTaggableOn::Tag.all.map(&:name),
@@ -65,7 +105,7 @@
 			<% if @shipment %>
 				<% @shipment.shipment_products.each do |shipment_product| %>
 					<tr>
-						<td><%= image_tag shipment_product.product.featured_image.url, class: 'img-responsive' if shipment_product.product.featured_image.present? %></td>		
+						<td><%= image_tag shipment_product.product.featured_image.url, class: 'img-responsive' if shipment_product.product.featured_image.present? %></td>
 						<td><%= link_to shipment_product.product.title, shipment_product.product %></td>
 						<td><%= shipment_product.quantity %></td>
 					</tr>
